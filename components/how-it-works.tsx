@@ -1,6 +1,6 @@
 'use client'
 
-import { MapPin, Pencil, Lion } from 'lucide-react'
+import { MapPin, Pencil, Compass } from 'lucide-react'
 
 const steps = [
   {
@@ -14,7 +14,7 @@ const steps = [
     description: 'Our team builds it around your dates, group, and budget',
   },
   {
-    icon: Lion,
+    icon: Compass,
     title: 'Experience Kenya',
     description: 'We handle everything. You just arrive and be present.',
   },
