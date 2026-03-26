@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -15,13 +16,15 @@ const services = [
     description: 'Guided game drives through Kenya\'s greatest national parks in our 4x4 pop-up roof jeeps. Witness the Big Five in their natural habitat.',
     details: 'Parks: Maasai Mara · Amboseli · Tsavo East & West · Lake Nakuru · Lake Bogoria · Aberdare · Mt. Kenya · Meru · Samburu\nAvailable as: Private or Group | From $128/person/day (excl. international flights)',
     image: '[Photo: 4x4 pop-up roof safari jeep on open savannah game drive]',
+    isPlaceholder: true,
   },
   {
     title: 'Cultural Expeditions',
     tag: 'Cultural',
     description: 'Immerse yourself in Kenya\'s vibrant traditions and daily life. Meet local communities, learn their customs, and savour authentic cuisine — including Kalenjin mursik and Gikuyu githeri.',
     details: 'Available as: Private or Group',
-    image: '[Photo: Kenyan cultural experience — traditional attire, warm community gathering]',
+    image: '/images/cultural-community-gathering.jpg',
+    isPlaceholder: false,
   },
   {
     title: 'Adventure Safaris',
@@ -29,6 +32,7 @@ const services = [
     description: 'For thrill-seekers: hiking, biking, and hot air ballooning across Kenya\'s most spectacular terrain.',
     details: 'Available as: Private or Group',
     image: '[Photo: Hot air balloon at sunrise over Maasai Mara, golden mist below]',
+    isPlaceholder: true,
   },
   {
     title: 'Beach Escapes',
@@ -36,6 +40,7 @@ const services = [
     description: 'Unwind on the pristine shores of Kenya\'s Indian Ocean coast — Diani, Watamu, or Malindi. Relax in luxury beach resorts and explore marine life through snorkelling and diving.',
     details: 'Available as: Private or customized',
     image: '[Photo: Diani Beach — white sand, turquoise Indian Ocean, palm trees]',
+    isPlaceholder: true,
   },
   {
     title: 'Customized Safaris',
@@ -43,6 +48,7 @@ const services = [
     description: 'Fully tailor-made itineraries built around your interests, group size, timeline, and budget — whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
     details: 'Available as: Fully private and personalized',
     image: '[Photo: Family group on Kenya safari, smiling, binoculars out]',
+    isPlaceholder: true,
   },
 ]
 
@@ -117,24 +123,35 @@ export default function SafarisPage() {
         <div className="max-w-7xl mx-auto space-y-12">
           {filteredServices.map((service, index) => (
             <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-2xl overflow-hidden shadow-lg">
-              {/* Placeholder Image */}
-              <div
-                style={{
-                  backgroundColor: '#C4A882',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  aspectRatio: '4/3',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '13px',
-                  fontStyle: 'italic',
-                  color: '#6B5240',
-                  textAlign: 'center',
-                  padding: '16px',
-                }}
-              >
-                {service.image}
-              </div>
+              {/* Image */}
+              {service.isPlaceholder ? (
+                <div
+                  style={{
+                    backgroundColor: '#C4A882',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    aspectRatio: '4/3',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '13px',
+                    fontStyle: 'italic',
+                    color: '#6B5240',
+                    textAlign: 'center',
+                    padding: '16px',
+                  }}
+                >
+                  {service.image}
+                </div>
+              ) : (
+                <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
 
               {/* Content */}
               <div className="p-8 space-y-4">
