@@ -15,8 +15,8 @@ const services = [
     tag: 'Safari Tours',
     description: 'Guided game drives through Kenya\'s greatest national parks in our 4x4 pop-up roof jeeps. Witness the Big Five in their natural habitat.',
     details: 'Parks: Maasai Mara · Amboseli · Tsavo East & West · Lake Nakuru · Lake Bogoria · Aberdare · Mt. Kenya · Meru · Samburu\nAvailable as: Private or Group | From $128/person/day (excl. international flights)',
-    image: '[Photo: 4x4 pop-up roof safari jeep on open savannah game drive]',
-    isPlaceholder: true,
+    image: '/images/elephant-kilimanjaro.webp',
+    isPlaceholder: false,
   },
   {
     title: 'Cultural Expeditions',
@@ -39,16 +39,16 @@ const services = [
     tag: 'Beach',
     description: 'Unwind on the pristine shores of Kenya\'s Indian Ocean coast — Diani, Watamu, or Malindi. Relax in luxury beach resorts and explore marine life through snorkelling and diving.',
     details: 'Available as: Private or customized',
-    image: '[Photo: Diani Beach — white sand, turquoise Indian Ocean, palm trees]',
-    isPlaceholder: true,
+    image: '/images/beach-diving.webp',
+    isPlaceholder: false,
   },
   {
     title: 'Customized Safaris',
     tag: 'All',
     description: 'Fully tailor-made itineraries built around your interests, group size, timeline, and budget — whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
     details: 'Available as: Fully private and personalized',
-    image: '[Photo: Family group on Kenya safari, smiling, binoculars out]',
-    isPlaceholder: true,
+    image: '/images/zebras-savanna.webp',
+    isPlaceholder: false,
   },
 ]
 

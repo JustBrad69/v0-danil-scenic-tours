@@ -8,8 +8,8 @@ const services = [
   {
     title: 'Safari Tours',
     description: 'Big Five game drives through Kenya\'s greatest national parks.',
-    image: '[Photo: 4x4 pop-up roof safari jeep on open savannah game drive]',
-    isPlaceholder: true,
+    image: '/images/elephant-kilimanjaro.webp',
+    isPlaceholder: false,
   },
   {
     title: 'Cultural Expeditions',
@@ -26,8 +26,8 @@ const services = [
   {
     title: 'Beach Escapes',
     description: 'Unwind on Kenya\'s pristine Indian Ocean coastline.',
-    image: '[Photo: Diani Beach — white sand, turquoise Indian Ocean, palm trees]',
-    isPlaceholder: true,
+    image: '/images/beach-diving.webp',
+    isPlaceholder: false,
   },
 ]
 
