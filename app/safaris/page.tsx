@@ -60,8 +60,11 @@ const services = [
   },
 ]
 
+const filters = ['All', 'Safari Tours', 'Cultural', 'Adventure', 'Beach']
+
 const SafarisPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [selectedFilter, setSelectedFilter] = useState('All')
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,6 +72,10 @@ const SafarisPage = () => {
     }, 5000)
     return () => clearInterval(interval)
   }, [])
+
+  const filteredServices = selectedFilter === 'All'
+    ? services
+    : services.filter((service) => service.tag === selectedFilter)
 
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
@@ -231,3 +238,5 @@ const SafarisPage = () => {
     </main>
   )
 }
+
+export default SafarisPage

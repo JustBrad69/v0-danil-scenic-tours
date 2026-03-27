@@ -23,22 +23,16 @@ const nextConfig = {
   },
   headers: async () => [
     {
-      source: '/:path*',
+      source: '/images/:path*',
       headers: [
         {
           key: 'Cache-Control',
           value: 'public, max-age=31536000, immutable',
         },
       ],
-      has: [
-        {
-          type: 'pathname',
-          value: '/_next/image',
-        },
-      ],
     },
     {
-      source: '/images/:path*',
+      source: '/_next/image(.*)',
       headers: [
         {
           key: 'Cache-Control',
