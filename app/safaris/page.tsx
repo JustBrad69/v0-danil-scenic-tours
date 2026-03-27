@@ -37,8 +37,8 @@ const services = [
     tag: 'Adventure',
     description: 'For thrill-seekers: hiking, biking, and hot air ballooning across Kenya\'s most spectacular terrain.',
     details: 'Available as: Private or Group',
-    image: '[Photo: Hot air balloon at sunrise over Maasai Mara, golden mist below]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
+    isPlaceholder: false,
   },
   {
     title: 'Beach Escapes',

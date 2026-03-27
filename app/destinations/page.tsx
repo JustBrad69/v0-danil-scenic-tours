@@ -31,8 +31,8 @@ const destinations = [
   {
     name: 'Tsavo East & West National Parks',
     description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
-    image: '[Photo: Leopard resting in tree, Tsavo National Park]',
-    isPlaceholder: true,
+    image: '/images/cheetah-resting.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Lake Nakuru National Park',
@@ -43,8 +43,8 @@ const destinations = [
   {
     name: 'Lake Bogoria National Reserve',
     description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
-    image: '[Photo: Lake Bogoria hot springs and flamingo colony]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Aberdare National Park',
@@ -55,8 +55,8 @@ const destinations = [
   {
     name: 'Mt. Kenya',
     description: 'Kenya\'s second-highest mountain. Dramatic clouds, verdant slopes, and alpine trails.',
-    image: '[Photo: Mt. Kenya highland peak — dramatic clouds, greenery]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Meru National Park',
@@ -73,8 +73,8 @@ const destinations = [
   {
     name: 'Diani Beach',
     description: 'Pristine white sand coastline along the Indian Ocean. Perfect for snorkelling, diving, and relaxation.',
-    image: '[Photo: Diani Beach — white sand, turquoise Indian Ocean, palm trees]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
+    isPlaceholder: false,
   },
 ]
 

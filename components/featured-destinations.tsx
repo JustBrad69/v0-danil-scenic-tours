@@ -20,8 +20,8 @@ const destinations = [
   {
     name: 'Lake Nakuru',
     description: 'Rift Valley gem renowned for flamingo colonies, rhinos, and leopards.',
-    image: '[Photo: Flamingos in flight over Lake Nakuru, pink sky reflection]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
+    isPlaceholder: false,
   },
 ]
 
