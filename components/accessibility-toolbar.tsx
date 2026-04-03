@@ -88,7 +88,7 @@ export default function AccessibilityToolbar() {
   if (!mounted) return null
 
   return (
-    <div className="fixed bottom-8 left-8 z-40">
+    <div className="fixed bottom-8 left-8 z-50 md:z-40">
       {/* Expanded Panel */}
       {isOpen && (
         <div
@@ -167,10 +167,10 @@ export default function AccessibilityToolbar() {
         </div>
       )}
 
-      {/* Toggle Button */}
+      {/* Toggle Button - Orange on Desktop, moved on Mobile */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-[#2A4A35] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        className="w-14 h-14 rounded-full bg-[#D4870A] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         title="Open accessibility options"
       >
         <ChevronUp

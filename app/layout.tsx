@@ -27,11 +27,11 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Masai Mara Safari Packages',
-  description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Masai Mara safari packages, private tours, and professional car hire. Unforgettable wildlife experiences await.',
+  title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Maasai Mara Safari Packages',
+  description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Maasai Mara safari packages, private tours, and professional car hire. Unforgettable wildlife experiences await.',
   openGraph: {
-    title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Masai Mara Safari Packages',
-    description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Masai Mara safari packages, private tours, and professional car hire.',
+    title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Maasai Mara Safari Packages',
+    description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Maasai Mara safari packages, private tours, and professional car hire.',
     type: 'website',
   },
 }
