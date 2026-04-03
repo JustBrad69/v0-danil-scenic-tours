@@ -36,7 +36,7 @@ export default function ServicesGrid() {
     <section className="py-20 px-4 bg-[#F2E8D5]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mb-16">
-          What We Offer
+          Kenya Safari Tours, Kenya Safari Packages & Private Safari Tours
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -69,8 +69,9 @@ export default function ServicesGrid() {
                 <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - ${service.description} by Danil Scenic Tours Nairobi`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -93,6 +94,79 @@ export default function ServicesGrid() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Travel & Transport Solutions Section */}
+        <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mt-24 mb-16">
+          Custom Safari Adventures & Professional Car Hire
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Custom Safaris Card */}
+          <div
+            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            aria-label="Custom Safaris service"
+          >
+            {/* Custom Safaris Image */}
+            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2010.39.00-zWbc5Kff8Ov83PkpY3KGpLCAFeWlks.webp"
+                alt="Custom Safaris - Luxury relaxation area with fruits and beachfront view by Danil Scenic Tours Nairobi"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-8 space-y-4">
+              <h3 className="text-2xl font-playfair text-[#2A4A35]">
+                Custom Safaris
+              </h3>
+              <p className="text-[#1C1208] font-inter leading-relaxed">
+                Tailor-made itineraries designed specifically for your interests, budget, and pace. From private family getaways to specialized photography expeditions.
+              </p>
+              <button
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
+                aria-label="Request a Custom Proposal for safaris"
+              >
+                Request a Custom Proposal <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+
+          {/* Professional Car Hire Card */}
+          <div
+            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            aria-label="Professional Car Hire service"
+          >
+            {/* Car Hire Image */}
+            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2022.58.01-CLCCC7SKHsOzZrZZbCo84McmWU3mT7.webp"
+                alt="Professional Car Hire - Safari 4x4 Land Cruiser vehicle by Danil Scenic Tours Nairobi"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-8 space-y-4">
+              <h3 className="text-2xl font-playfair text-[#2A4A35]">
+                Professional Car Hire
+              </h3>
+              <p className="text-[#1C1208] font-inter leading-relaxed">
+                Explore Kenya at your own pace with our fleet of reliable 4x4 Land Cruisers and Safari Vans. Available with professional drivers or as self-drive options.
+              </p>
+              <button
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
+                aria-label="View Fleet and Rates for car hire"
+              >
+                View Fleet & Rates <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
