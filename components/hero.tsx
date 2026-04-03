@@ -38,10 +38,11 @@ export default function Hero() {
           >
             <Image
               src={image}
-              alt={`Kenya wildlife slide ${index + 1}`}
+              alt={`Maasai Mara Safari and Kenya wildlife tour by Danil Scenic Tours in Nairobi`}
               fill
               className="object-cover"
               priority={index === 0}
+              loading={index === 0 ? 'eager' : 'lazy'}
               sizes="100vw"
             />
           </div>
@@ -63,8 +64,8 @@ export default function Hero() {
           NAIROBI, KENYA · EST. 2023
         </div>
         
-        <h1 className="font-cormorant text-4xl sm:text-5xl md:text-7xl text-white mb-4 md:mb-6 leading-tight">
-          Kenya Is Calling.
+        <h1 className="font-playfair text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+          Best Tour Operator Nairobi
         </h1>
         
         <p className="text-white text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed" style={{ opacity: 0.85 }}>

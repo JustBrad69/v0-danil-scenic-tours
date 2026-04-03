@@ -98,6 +98,7 @@ const SafarisPage = () => {
                 fill
                 className="object-cover"
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
                 sizes="100vw"
               />
             </div>
