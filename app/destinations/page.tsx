@@ -61,15 +61,15 @@ const destinations = [
   },
   {
     name: 'Meru National Park',
-    description: 'Remote wilderness featuring the Big Five, dramatic rocky outcrops, and pristine landscapes.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2818%29-1SnJ32U0g0LQrcsevyrXtdAYw4riyf.webp',
+    description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets, rocky outcrops, and pristine landscapes.',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20091948-biQwM7Q4NGVZhod3fPu11cfeAmNkch.webp',
     isPlaceholder: false,
   },
   {
     name: 'Samburu National Reserve',
-    description: 'Semi-arid landscape home to reticulated giraffes and other unique species.',
-    image: '[Photo: Samburu landscape — reticulated giraffe against dry acacia brush]',
-    isPlaceholder: true,
+    description: 'Remote semi-arid landscape perfect for stargazing beneath the African night sky. Home to unique wildlife species and breathtaking celestial experiences.',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20104911-swbjNVoqCHnEWJmaJx9kyU1T75H9Wv.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Diani Beach',

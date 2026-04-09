@@ -20,8 +20,8 @@ const galleryImages = [
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp', isPlaceholder: false },
   { image: '/images/zebras-savanna.webp', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp', isPlaceholder: false },
-  { image: '[Photo: Meru National Park remote wilderness at dusk]', isPlaceholder: true },
-  { image: '[Photo: Aberdare National Park highland waterfalls and forest]', isPlaceholder: true },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20091948-biQwM7Q4NGVZhod3fPu11cfeAmNkch.webp', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2817%29-Cqk060woGnPsSL466intzq9kOsG3WA.webp', isPlaceholder: false },
 ]
 
 const heroSlideImages = [
