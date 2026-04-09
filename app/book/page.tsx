@@ -146,7 +146,7 @@ export default function BookPage() {
       <section className="py-20 px-4 bg-[#FAF4E8]">
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" id="booking-form">
               {/* Name */}
               <FormField
                 control={form.control}
@@ -210,25 +210,25 @@ export default function BookPage() {
                 )}
               />
 
-              {/* Tour Type */}
+              {/* Service Type */}
               <FormField
                 control={form.control}
                 name="tourType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className={labelClassName}>Tour Type *</FormLabel>
+                    <FormLabel className={labelClassName}>Service Type *</FormLabel>
                     <FormControl>
                       <select
                         {...field}
                         className={inputClassName}
                         disabled={isLoading}
                       >
-                        <option value="">Select a tour type</option>
-                        <option value="safari">Safari Tours</option>
-                        <option value="cultural">Cultural Expeditions</option>
-                        <option value="adventure">Adventure Safaris</option>
-                        <option value="beach">Beach Escapes</option>
-                        <option value="custom">Customized Safari</option>
+                        <option value="">Select a service type</option>
+                        <option value="professional-car-hire">Professional Car Hire</option>
+                        <option value="custom-safari">Custom Safari</option>
+                        <option value="maasai-mara-safari">Maasai Mara Safari</option>
+                        <option value="amboseli-safari">Amboseli Safari</option>
+                        <option value="lake-nakuru-safari">Lake Nakuru Safari</option>
                       </select>
                     </FormControl>
                     <FormMessage />
