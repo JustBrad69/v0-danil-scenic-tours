@@ -126,12 +126,12 @@ export default function ServicesGrid() {
               <p className="text-[#1C1208] font-inter leading-relaxed">
                 Tailor-made itineraries designed specifically for your interests, budget, and pace. From private family getaways to specialized photography expeditions.
               </p>
-              <button
+              <Link
+                href="/book#booking-form"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
-                aria-label="Request a Custom Proposal for safaris"
               >
-                Request a Custom Proposal <ArrowRight size={16} />
-              </button>
+                Consult an Expert Planner → <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
 
@@ -159,12 +159,12 @@ export default function ServicesGrid() {
               <p className="text-[#1C1208] font-inter leading-relaxed">
                 Explore Kenya at your own pace with our fleet of reliable 4x4 Land Cruisers and Safari Vans. Available with professional drivers or as self-drive options.
               </p>
-              <button
+              <Link
+                href="/book#booking-form"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
-                aria-label="View Fleet and Rates for car hire"
               >
-                View Fleet & Rates <ArrowRight size={16} />
-              </button>
+                Request a Transport Quote → <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>
