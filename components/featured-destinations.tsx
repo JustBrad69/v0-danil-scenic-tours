@@ -88,7 +88,7 @@ export default function FeaturedDestinations() {
                   href="/book#booking-form"
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                 >
-                  See This Destination <ArrowRight size={14} />
+                  Book This Safari → <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
