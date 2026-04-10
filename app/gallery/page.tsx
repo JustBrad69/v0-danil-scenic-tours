@@ -25,6 +25,9 @@ const galleryImages = [
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20104911-swbjNVoqCHnEWJmaJx9kyU1T75H9Wv.webp', alt: 'Samburu National Reserve Milky Way stargazing Kenya', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2022.58.01-CLCCC7SKHsOzZrZZbCo84McmWU3mT7.webp', alt: 'Professional Car Hire Kenya 4x4 Land Cruiser safari vehicle', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2010.39.00-zWbc5Kff8Ov83PkpY3KGpLCAFeWlks.webp', alt: 'Custom Safaris Kenya luxury travel experience', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105006-p0LsV0tdCnZNmkjIG5Aey8nntoVSAo.webp', alt: 'Nairobi National Park City Skyline Safari', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105056-xa82k3Wfrb10L11nrnWTuyqp0AybAo.webp', alt: 'Ol Pejeta Rhino Conservancy Safari', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105258-8JEgBeQ61PSLAly1hdLtvwRg4Q28qR.webp', alt: 'Lake Naivasha Crescent Island Wildebeest', isPlaceholder: false },
 ]
 
 const heroSlideImages = [
