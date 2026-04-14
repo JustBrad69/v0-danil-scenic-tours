@@ -28,6 +28,7 @@ const galleryImages = [
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105006-p0LsV0tdCnZNmkjIG5Aey8nntoVSAo.webp', alt: 'Nairobi National Park City Skyline Safari', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105056-xa82k3Wfrb10L11nrnWTuyqp0AybAo.webp', alt: 'Ol Pejeta Rhino Conservancy Safari', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105258-8JEgBeQ61PSLAly1hdLtvwRg4Q28qR.webp', alt: 'Lake Naivasha Crescent Island Wildebeest', isPlaceholder: false },
+  { image: '/images/lion-savanna.webp', alt: 'Lion Kenya Savanna wildlife Big Five', isPlaceholder: false },
 ]
 
 const heroSlideImages = [
