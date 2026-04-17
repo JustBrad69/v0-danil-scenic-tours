@@ -74,13 +74,10 @@ export default function AboutPage() {
             >
               <Image
                 src={image}
-                alt={`Kenya safaris slideshow ${index + 1}`}
+                alt={`Kenya destinations slideshow ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                sizes="100vw"
-                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}

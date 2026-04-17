@@ -15,7 +15,6 @@ export default function FinalCTABanner() {
           className="object-cover"
           sizes="100vw"
           priority
-          fetchPriority="high"
         />
       </div>
 

@@ -124,13 +124,10 @@ export default function DestinationsPage() {
             >
               <Image
                 src={image}
-                alt={`Kenya destinations slideshow ${index + 1}`}
+                alt={`Kenya wonders slide ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                sizes="100vw"
-                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
@@ -182,14 +179,13 @@ export default function DestinationsPage() {
                   </div>
                 ) : (
                   <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-                  <Image
-                    src={dest.image}
-                    alt={`${dest.name} Safari destination Kenya Nairobi tour operator - ${dest.description}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    loading="lazy"
-                  />
+                    <Image
+                      src={dest.image}
+                      alt={dest.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
                 )}
 

@@ -71,7 +71,6 @@ export default function GalleryPage() {
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 sizes="100vw"
-                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
@@ -100,17 +99,46 @@ export default function GalleryPage() {
             {galleryImages.map((item, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                style={{ aspectRatio: '4/3' }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                style={{
+                  aspectRatio: '4/3',
+                  position: 'relative',
+                }}
               >
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                />
+                {item.isPlaceholder ? (
+                  <div
+                    style={{
+                      backgroundColor: '#C4A882',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '16px',
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '13px',
+                        fontStyle: 'italic',
+                        color: '#6B5240',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {item.image}
+                    </p>
+                  </div>
+                ) : (
+                  <Image
+                    src={item.image}
+                    alt={item.alt || 'Gallery image'}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index > 3 ? 'lazy' : 'eager'}
+                  />
+                )}
               </div>
             ))}
           </div>

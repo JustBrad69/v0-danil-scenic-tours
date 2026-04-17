@@ -101,7 +101,6 @@ const SafarisPage = () => {
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 sizes="100vw"
-                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
@@ -172,12 +171,10 @@ const SafarisPage = () => {
                 <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
                   <Image
                     src={service.image}
-                    alt={`${service.title} - Best tour operator Nairobi Kenya safari`}
+                    alt={service.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    loading="lazy"
-                    placeholder="blur"
                   />
                 </div>
               )}

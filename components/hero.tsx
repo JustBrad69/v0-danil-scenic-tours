@@ -44,7 +44,6 @@ export default function Hero() {
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
               sizes="100vw"
-              fetchPriority={index === 0 ? 'high' : 'low'}
             />
           </div>
         ))}
