@@ -96,7 +96,6 @@ export default function FeaturedDestinations() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority={index === 0}
                     loading={index === 0 ? 'eager' : 'lazy'}
-                    placeholder="blur"
                   />
                 </div>
               )}

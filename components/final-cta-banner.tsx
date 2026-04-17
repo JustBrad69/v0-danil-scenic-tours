@@ -16,7 +16,6 @@ export default function FinalCTABanner() {
           sizes="100vw"
           priority
           fetchPriority="high"
-          placeholder="blur"
         />
       </div>
 
