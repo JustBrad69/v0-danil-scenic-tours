@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-<meta name="google-site-verification" content="8F3J1nKpoYMge2swC3AhBxFknN3Im-VpwE56RBuND8M" />
+
 export default function StorytellingSectionHome() {
   return (
     <section className="py-20 px-4 bg-[#FAF4E8]">
