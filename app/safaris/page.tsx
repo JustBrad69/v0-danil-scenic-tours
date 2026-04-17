@@ -2,7 +2,6 @@
 
 // Optimized Safari Experiences Page with Dynamic Image Slideshow - v2
 import { useState, useEffect } from 'react'
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -10,16 +9,6 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Kenya Safari Tours & Packages | Best Tour Operator in Nairobi',
-  description: 'Explore Kenya safari tours with Danil Scenic Tours. Maasai Mara safaris, cultural expeditions, adventure tours, and beach escapes. Professional guides, authentic wildlife experiences.',
-  openGraph: {
-    title: 'Kenya Safari Tours & Packages | Best Tour Operator in Nairobi',
-    description: 'Discover premium Kenya safari tours by the best tour operator in Nairobi. Maasai Mara, Amboseli, Lake Nakuru, and more.',
-    type: 'website',
-  },
-}
 
 const heroSlideImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',

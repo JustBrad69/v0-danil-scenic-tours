@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -9,16 +8,6 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Kenya Safari Destinations | Maasai Mara, Amboseli & More | Best Tour Operator',
-  description: 'Explore Kenya\'s top safari destinations with Danil Scenic Tours, the best tour operator in Nairobi. Maasai Mara, Amboseli, Lake Nakuru, and exclusive national parks.',
-  openGraph: {
-    title: 'Kenya Safari Destinations | Maasai Mara, Amboseli & More | Best Tour Operator',
-    description: 'Discover Kenya safari destinations including Maasai Mara, Amboseli, Lake Nakuru, Tsavo, and coastal reserves with expert guides.',
-    type: 'website',
-  },
-}
 
 const heroSlideImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',

@@ -1,22 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
-
-export const metadata: Metadata = {
-  title: 'Kenya Safari Gallery | Wildlife & Destination Photos | Danil Scenic Tours',
-  description: 'Browse stunning Kenya safari photography featuring wildlife, Maasai Mara, Amboseli, Lake Nakuru, and coastal destinations. See why we&apos;re the best tour operator in Nairobi.',
-  openGraph: {
-    title: 'Kenya Safari Gallery | Wildlife & Destination Photos | Danil Scenic Tours',
-    description: 'Explore Kenya safari experiences through our gallery featuring Big Five wildlife, landscapes, and destination photography.',
-    type: 'website',
-  },
-}
 
 const galleryImages = [
   { image: '/images/elephant-kilimanjaro.webp', alt: 'Maasai Mara Safari Kenya buffalo herd at sunset', isPlaceholder: false },
@@ -123,7 +112,6 @@ export default function GalleryPage() {
                   loading="lazy"
                   placeholder="blur"
                 />
-                )}
               </div>
             ))}
           </div>
