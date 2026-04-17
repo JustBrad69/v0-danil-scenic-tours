@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -8,6 +9,16 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Kenya Safari Destinations | Maasai Mara, Amboseli & More | Best Tour Operator',
+  description: 'Explore Kenya\'s top safari destinations with Danil Scenic Tours, the best tour operator in Nairobi. Maasai Mara, Amboseli, Lake Nakuru, and exclusive national parks.',
+  openGraph: {
+    title: 'Kenya Safari Destinations | Maasai Mara, Amboseli & More | Best Tour Operator',
+    description: 'Discover Kenya safari destinations including Maasai Mara, Amboseli, Lake Nakuru, Tsavo, and coastal reserves with expert guides.',
+    type: 'website',
+  },
+}
 
 const heroSlideImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
@@ -124,10 +135,13 @@ export default function DestinationsPage() {
             >
               <Image
                 src={image}
-                alt={`Kenya wonders slide ${index + 1}`}
+                alt={`Kenya destinations slideshow ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                sizes="100vw"
+                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
@@ -179,13 +193,15 @@ export default function DestinationsPage() {
                   </div>
                 ) : (
                   <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-                    <Image
-                      src={dest.image}
-                      alt={dest.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+                  <Image
+                    src={dest.image}
+                    alt={`${dest.name} Safari destination Kenya Nairobi tour operator - ${dest.description}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                    placeholder="blur"
+                  />
                   </div>
                 )}
 

@@ -2,6 +2,7 @@
 
 // Optimized Safari Experiences Page with Dynamic Image Slideshow - v2
 import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -9,6 +10,16 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Kenya Safari Tours & Packages | Best Tour Operator in Nairobi',
+  description: 'Explore Kenya safari tours with Danil Scenic Tours. Maasai Mara safaris, cultural expeditions, adventure tours, and beach escapes. Professional guides, authentic wildlife experiences.',
+  openGraph: {
+    title: 'Kenya Safari Tours & Packages | Best Tour Operator in Nairobi',
+    description: 'Discover premium Kenya safari tours by the best tour operator in Nairobi. Maasai Mara, Amboseli, Lake Nakuru, and more.',
+    type: 'website',
+  },
+}
 
 const heroSlideImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
@@ -101,6 +112,7 @@ const SafarisPage = () => {
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 sizes="100vw"
+                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
@@ -171,10 +183,12 @@ const SafarisPage = () => {
                 <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - Best tour operator Nairobi Kenya safari`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                    placeholder="blur"
                   />
                 </div>
               )}

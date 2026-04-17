@@ -1,12 +1,23 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
+
+export const metadata: Metadata = {
+  title: 'Book Your Kenya Safari | Contact Danil Scenic Tours',
+  description: 'Ready to book your Kenya safari? Contact the best tour operator in Nairobi. WhatsApp or call to plan your Maasai Mara safari adventure today.',
+  openGraph: {
+    title: 'Book Your Kenya Safari | Contact Danil Scenic Tours',
+    description: 'Connect with our team via WhatsApp or phone call to book your dream Kenya safari experience.',
+    type: 'website',
+  },
+}
 
 const heroSlideImages = [
   '/images/cheetah-resting.webp',
@@ -53,6 +64,7 @@ export default function BookPage() {
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 sizes="100vw"
+                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}

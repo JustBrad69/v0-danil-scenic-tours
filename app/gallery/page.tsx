@@ -1,11 +1,22 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
+
+export const metadata: Metadata = {
+  title: 'Kenya Safari Gallery | Wildlife & Destination Photos | Danil Scenic Tours',
+  description: 'Browse stunning Kenya safari photography featuring wildlife, Maasai Mara, Amboseli, Lake Nakuru, and coastal destinations. See why we&apos;re the best tour operator in Nairobi.',
+  openGraph: {
+    title: 'Kenya Safari Gallery | Wildlife & Destination Photos | Danil Scenic Tours',
+    description: 'Explore Kenya safari experiences through our gallery featuring Big Five wildlife, landscapes, and destination photography.',
+    type: 'website',
+  },
+}
 
 const galleryImages = [
   { image: '/images/elephant-kilimanjaro.webp', alt: 'Maasai Mara Safari Kenya buffalo herd at sunset', isPlaceholder: false },
@@ -71,6 +82,7 @@ export default function GalleryPage() {
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 sizes="100vw"
+                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
@@ -99,45 +111,18 @@ export default function GalleryPage() {
             {galleryImages.map((item, index) => (
               <div
                 key={index}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                style={{
-                  aspectRatio: '4/3',
-                  position: 'relative',
-                }}
+                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                style={{ aspectRatio: '4/3' }}
               >
-                {item.isPlaceholder ? (
-                  <div
-                    style={{
-                      backgroundColor: '#C4A882',
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '16px',
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '13px',
-                        fontStyle: 'italic',
-                        color: '#6B5240',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {item.image}
-                    </p>
-                  </div>
-                ) : (
-                  <Image
-                    src={item.image}
-                    alt={item.alt || 'Gallery image'}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    loading={index > 3 ? 'lazy' : 'eager'}
-                  />
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  placeholder="blur"
+                />
                 )}
               </div>
             ))}

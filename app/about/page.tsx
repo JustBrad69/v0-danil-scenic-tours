@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -8,6 +9,16 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { Star } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'About Us | Danil Scenic Tours - Best Tour Operator in Nairobi',
+  description: 'Meet the best tour operator in Nairobi. Danil Scenic Tours specializes in unforgettable Kenya safaris, Maasai Mara tours, and authentic travel experiences since 2023.',
+  openGraph: {
+    title: 'About Us | Danil Scenic Tours - Best Tour Operator in Nairobi',
+    description: 'Discover our mission, expertise, and commitment to creating unforgettable Kenya safari and tour experiences.',
+    type: 'website',
+  },
+}
 
 const allTestimonials = [
   {
@@ -74,10 +85,13 @@ export default function AboutPage() {
             >
               <Image
                 src={image}
-                alt={`Kenya destinations slideshow ${index + 1}`}
+                alt={`Kenya safaris slideshow ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                sizes="100vw"
+                fetchPriority={index === 0 ? 'high' : 'low'}
               />
             </div>
           ))}
