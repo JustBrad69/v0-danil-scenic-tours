@@ -28,12 +28,25 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Maasai Mara Safari Packages',
-  description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Maasai Mara safari packages, private tours, and professional car hire. Unforgettable wildlife experiences await.',
+  title: 'Danil Scenic Tours | Best Tour Operator in Nairobi, Kenya',
+  description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Maasai Mara safari packages, Ol Pejeta Conservancy, Lake Nakuru, and private tours. Unforgettable wildlife experiences await.',
   openGraph: {
-    title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Maasai Mara Safari Packages',
-    description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Maasai Mara safari packages, private tours, and professional car hire.',
+    title: 'Danil Scenic Tours | Best Tour Operator in Nairobi, Kenya',
+    description: 'Explore Kenya with Danil Scenic Tours. Experience Maasai Mara safaris, Ol Pejeta Conservancy, Lake Nakuru flamingo colonies, and exclusive wildlife tours.',
     type: 'website',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Vibrant flamingo colonies at Lake Nakuru National Park - Danil Scenic Tours',
+        type: 'image/webp',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp'],
   },
 }
 

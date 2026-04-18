@@ -128,6 +128,7 @@ export default function DestinationsPage() {
                 fill
                 className="object-cover"
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
               />
             </div>
           ))}
@@ -185,6 +186,8 @@ export default function DestinationsPage() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
+                      priority={false}
                     />
                   </div>
                 )}
