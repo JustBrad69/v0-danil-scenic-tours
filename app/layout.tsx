@@ -30,6 +30,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Danil Scenic Tours | Best Tour Operator in Nairobi, Kenya',
   description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Maasai Mara safari packages, Ol Pejeta Conservancy, Lake Nakuru, and private tours. Unforgettable wildlife experiences await.',
+  robots: 'index, follow',
   openGraph: {
     title: 'Danil Scenic Tours | Best Tour Operator in Nairobi, Kenya',
     description: 'Explore Kenya with Danil Scenic Tours. Experience Maasai Mara safaris, Ol Pejeta Conservancy, Lake Nakuru flamingo colonies, and exclusive wildlife tours.',
