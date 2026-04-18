@@ -29,6 +29,10 @@ const nextConfig = {
           key: 'Cache-Control',
           value: 'public, s-maxage=1, stale-while-revalidate=59',
         },
+        {
+          key: 'Clear-Site-Data',
+          value: '"cache", "storage"',
+        },
       ],
     },
     {
