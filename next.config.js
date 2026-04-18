@@ -18,7 +18,6 @@ const nextConfig = {
   swcMinify: true,
   compress: true,
   poweredByHeader: false,
-  trailingSlash: true,
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },

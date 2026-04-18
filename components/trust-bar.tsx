@@ -5,7 +5,7 @@ import { Star, FileText, Badge, Globe, MapPin } from 'lucide-react'
 export default function TrustBar() {
   const items = [
     { icon: Star, label: '5.0/5 on SafariBookings' },
-    { icon: FileText, label: '24 Verified Reviews' },
+    { icon: FileText, label: '23 Verified Reviews' },
     { icon: Badge, label: 'TRA Licensed Operator' },
     { icon: Globe, label: 'Guides in 4 Languages' },
     { icon: MapPin, label: 'Based in Nairobi since 2023' },

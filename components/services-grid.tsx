@@ -50,7 +50,7 @@ const services = [
     isPlaceholder: false,
     modalButton: 'See Beach & Coast Options →',
     modalLink: '/safaris#beach',
-    price: 'Starting from $180 / Night',
+    price: 'Packages from $180 / Night',
   },
 ]
 
@@ -214,7 +214,7 @@ export default function ServicesGrid() {
                 Explore Kenya at your own pace with our fleet of reliable 4x4 Land Cruisers and Safari Vans. Available with professional drivers or as self-drive options.
               </p>
               <p className="text-[#2A4A35] font-montserrat font-semibold">
-                Starting from $120 / Day
+                Daily Rates from $120
               </p>
               <Link
                 href="/book#booking-form"
