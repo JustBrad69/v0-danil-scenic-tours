@@ -198,7 +198,7 @@ export default function DestinationsPage() {
                     {dest.description}
                   </p>
                   <Link
-                    href="/book"
+                    href="/book#booking-form"
                     className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                   >
                     Plan a Safari Here <ArrowRight size={14} />
