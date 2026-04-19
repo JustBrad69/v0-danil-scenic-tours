@@ -53,6 +53,16 @@ export default function Footer() {
             <h4 className="font-montserrat font-semibold text-[#D4870A]">Contact</h4>
             <div className="space-y-3 font-inter text-sm">
               <div>
+                <p className="opacity-75">Phone / WhatsApp</p>
+                <Link href="tel:+254722919249" className="hover:text-[#D4870A] transition-colors">
+                  +254 722 919 249
+                </Link>
+              </div>
+              <div>
+                <p className="opacity-75">Address</p>
+                <p>P.O. Box 49377-00100, Nairobi, Kenya</p>
+              </div>
+              <div>
                 <p className="opacity-75 mb-2">Email Us</p>
                 <div className="space-y-1">
                   <Link 
@@ -89,7 +99,7 @@ export default function Footer() {
             </Link>
             <div className="font-inter text-sm space-y-1">
               <p className="text-[#D4870A]">★★★★★ 5.0/5</p>
-              <p className="opacity-75">23 Verified Reviews</p>
+              <p className="opacity-75">24 Verified Reviews</p>
             </div>
           </div>
         </div>

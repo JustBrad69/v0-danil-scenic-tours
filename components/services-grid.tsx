@@ -109,11 +109,11 @@ export default function ServicesGrid() {
                   <h3 className="text-2xl font-playfair text-[#2A4A35]">
                     {service.title}
                   </h3>
-                  <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
-                    {service.price}
-                  </p>
                   <p className="text-[#1C1208] font-inter leading-relaxed">
                     {service.teaser}
+                  </p>
+                  <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+                    {service.price}
                   </p>
                   {service.hasModal && (
                     <DialogTrigger asChild>
@@ -216,11 +216,11 @@ export default function ServicesGrid() {
               <h3 className="text-2xl font-playfair text-[#2A4A35]">
                 Professional Car Hire
               </h3>
-              <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
-                Starting from $120/Day
-              </p>
               <p className="text-[#1C1208] font-inter leading-relaxed">
                 Explore Kenya at your own pace with our fleet of reliable 4x4 Land Cruisers and Safari Vans. Available with professional drivers or as self-drive options.
+              </p>
+              <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+                Starting from $120/Day
               </p>
               <Link
                 href="/book#booking-form"
