@@ -52,7 +52,64 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        {/* JSON-LD AI Search & Crawler Optimization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TravelAgency",
+              "name": "Danil Scenic Tours",
+              "description": "Premium Kenya safaris, car hire, and tailor-made adventures.",
+              "url": "https://danilscenictours.co.ke",
+              "telephone": "+254722919249",
+              "email": ["danilscenic@gmail.com", "safari@danilscenictours.co.ke"],
+              "priceRange": "$$$",
+              "areaServed": {
+                "@type": "Country",
+                "name": "Kenya"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nairobi",
+                "addressCountry": "KE"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Kenya Safari Packages",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Maasai Mara Safari" },
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "350", "priceCurrency": "USD", "description": "Starting from per day" }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Amboseli Safari" },
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "280", "priceCurrency": "USD", "description": "Starting from per day" }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Lake Nakuru Safari" },
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "250", "priceCurrency": "USD", "description": "Starting from per day" }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Ol Pejeta Conservancy" },
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "320", "priceCurrency": "USD", "description": "Starting from per day" }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Beach Escapes (Diani/Watamu)" },
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "180", "priceCurrency": "USD", "description": "Starting from per night" }
+                  }
+                ]
+              }
+            }),
+          }}
+        />
+      </head>
       <body className={`font-sans antialiased ${cormorant.variable} ${playfair.variable} ${inter.variable} ${montserrat.variable}`}>
         {children}
         <Analytics />
