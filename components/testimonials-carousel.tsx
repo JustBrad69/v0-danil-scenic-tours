@@ -118,9 +118,9 @@ export default function TestimonialsCarousel() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all pulse-glow"
-            aria-label="View all 23 reviews on SafariBookings"
+            aria-label="Read all reviews on SafariBookings"
           >
-            Read All 23 Reviews on SafariBookings
+            Read All Reviews on Safaribookings
           </Link>
         </div>
       </div>
