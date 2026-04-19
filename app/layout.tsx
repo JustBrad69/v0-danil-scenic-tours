@@ -30,6 +30,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Danil Scenic Tours | Best Tour Operator Nairobi',
   description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
+  verification: {
+    google: '8F3J1nKpoYMge2swC3AhBxFknN3Im-VpwE56RBuND8M',
+  },
   openGraph: {
     title: 'Danil Scenic Tours | Best Tour Operator Nairobi',
     description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
