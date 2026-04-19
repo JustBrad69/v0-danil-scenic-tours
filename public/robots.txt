@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
+# Explicitly inviting the bots that feed Gemini, ChatGPT, and Perplexity
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Direct link to the map of your new content
 Sitemap: https://danilscenictours.co.ke/sitemap.xml
