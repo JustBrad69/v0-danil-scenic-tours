@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /safaris
-Allow: /destinations
-Allow: /gallery
-Allow: /book
-Allow: /about
-Disallow: /admin
-Disallow: /api
 
 Sitemap: https://danilscenictours.co.ke/sitemap.xml

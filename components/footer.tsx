@@ -99,7 +99,7 @@ export default function Footer() {
             </Link>
             <div className="font-inter text-sm space-y-1">
               <p className="text-[#D4870A]">★★★★★ 5.0/5</p>
-              <p className="opacity-75">23 Verified Reviews</p>
+              <p className="opacity-75">24 Verified Reviews</p>
             </div>
           </div>
         </div>
