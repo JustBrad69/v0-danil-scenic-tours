@@ -7,7 +7,6 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
-import KenyaInteractiveMap from '@/components/kenya-interactive-map'
 import { ArrowRight } from 'lucide-react'
 
 const heroSlideImages = [
@@ -150,9 +149,6 @@ export default function DestinationsPage() {
         </div>
       </section>
 
-      {/* Interactive Kenya Map */}
-      <KenyaInteractiveMap />
-
       {/* Destination Cards */}
       <section className="py-20 md:py-28 px-4 md:px-6 bg-[#FAF4E8]">
         <div className="max-w-7xl mx-auto">
@@ -160,7 +156,6 @@ export default function DestinationsPage() {
             {destinations.map((dest, index) => (
               <div
                 key={index}
-                id={dest.name.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
                 {/* Image */}
