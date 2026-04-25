@@ -16,45 +16,6 @@ const heroSlideImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
 ]
 
-const customizedTours = [
-  {
-    name: 'Maasai Mara',
-    description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
-  },
-  {
-    name: 'Amboseli',
-    description: 'Famous elephant herds set against Mt. Kilimanjaro\'s breathtaking backdrop.',
-  },
-  {
-    name: 'Tsavo East & West',
-    description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
-  },
-  {
-    name: 'Lake Nakuru',
-    description: 'Rift Valley gem renowned for flamingo colonies, rhinos, and leopards.',
-  },
-  {
-    name: 'Lake Bogoria',
-    description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
-  },
-  {
-    name: 'Aberdare National Park',
-    description: 'Dense highland forests with waterfalls, mountain streams, and scenic views.',
-  },
-  {
-    name: 'Mt. Kenya',
-    description: 'Kenya\'s second-highest mountain with dramatic clouds, verdant slopes, and alpine trails.',
-  },
-  {
-    name: 'Meru National Park',
-    description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets and pristine landscapes.',
-  },
-  {
-    name: 'Samburu National Reserve',
-    description: 'Remote semi-arid landscape perfect for stargazing. Home to unique wildlife species and breathtaking celestial experiences.',
-  },
-]
-
 const destinations = [
   {
     name: 'Maasai Mara National Reserve',
@@ -185,38 +146,6 @@ export default function DestinationsPage() {
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto" style={{ opacity: 0.85 }}>
             Custom tours to every park, reserve, and coastline across Kenya.
           </p>
-        </div>
-      </section>
-
-      {/* Customized Tours Section */}
-      <section className="py-20 md:py-28 px-4 md:px-6 bg-[#F2E8D5]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] mb-4">
-            Customized Tours
-          </h2>
-          <p className="text-[#1C1208] font-inter text-base md:text-lg mb-12 max-w-3xl">
-            We offer fully customizable itineraries tailored to your interests, group size, timeline, and budget. Choose from any of these renowned destinations:
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {customizedTours.map((tour, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 space-y-3 shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-playfair text-[#2A4A35]">
-                  {tour.name}
-                </h3>
-                <p className="text-[#1C1208] font-inter text-sm leading-relaxed">
-                  {tour.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link
-              href="/book#booking-form"
-              className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-base hover:gap-3 transition-all"
-            >
-              Plan Your Custom Safari <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
 
