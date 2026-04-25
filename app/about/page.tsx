@@ -137,7 +137,7 @@ export default function AboutPage() {
           <div className="bg-white rounded-2xl p-8 space-y-4 font-inter text-[#1C1208]">
             <div>
               <p className="font-semibold text-[#D4870A]">Company Name</p>
-              <p>Danil Scenic Tours (Daniel Scenic Tours Limited)</p>
+              <p>Danil Scenic Tours</p>
             </div>
             <div>
               <p className="font-semibold text-[#D4870A]">Founded</p>
