@@ -217,3 +217,17 @@ html.dyslexia-font * {
 .text-balance {
   text-wrap: balance;
 }
+
+/* Logo Blend Mode Fix - Ensures white background disappears across all states */
+.navbar-logo-wrapper {
+  background: transparent !important;
+  mix-blend-mode: multiply !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-wrapper img,
+.navbar-logo-wrapper [role='img'] {
+  mix-blend-mode: multiply !important;
+  background: transparent !important;
+}

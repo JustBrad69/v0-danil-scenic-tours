@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
@@ -34,9 +35,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold font-cormorant">
-          <Link href="/">Danil Scenic Tours</Link>
-        </div>
+        <Link href="/" className="navbar-logo-wrapper">
+          <Image
+            src="/logo.webp"
+            alt="Danil Scenic Tours Logo"
+            width={180}
+            height={50}
+            priority
+            unoptimized
+            className="h-12 w-auto object-contain"
+          />
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">

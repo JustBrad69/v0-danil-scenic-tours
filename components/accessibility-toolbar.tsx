@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ChevronUp, Plus, Minus } from 'lucide-react'
+import { ChevronUp, Plus, Minus, Accessibility } from 'lucide-react'
 
 export default function AccessibilityToolbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -173,10 +173,7 @@ export default function AccessibilityToolbar() {
         className="w-14 h-14 rounded-full bg-[#D4870A] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         title="Open accessibility options"
       >
-        <ChevronUp
-          size={24}
-          className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
-        />
+        <Accessibility size={24} />
       </button>
     </div>
   )

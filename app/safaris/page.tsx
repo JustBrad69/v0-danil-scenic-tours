@@ -49,7 +49,6 @@ const services = [
     details: 'Available as: Private or customized',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
     isPlaceholder: false,
-    price: 'Packages from $180 / Night',
   },
   {
     title: 'Customized Safaris',
