@@ -35,24 +35,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <div
-            style={{
-              mixBlendMode: 'multiply',
-              height: '50px',
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
-            <Image
-              src="/logo.webp"
-              alt="Danil Scenic Tours Logo"
-              width={180}
-              height={50}
-              priority
-              className="h-full w-auto object-contain"
-            />
-          </div>
+        <Link href="/" className="flex items-center" style={{ mixBlendMode: 'multiply' }}>
+          <Image
+            src="/logo.webp"
+            alt="Danil Scenic Tours Logo"
+            width={180}
+            height={50}
+            priority
+            className="h-12 w-auto object-contain"
+            style={{ mixBlendMode: 'multiply' }}
+          />
         </Link>
 
         {/* Desktop Navigation */}
