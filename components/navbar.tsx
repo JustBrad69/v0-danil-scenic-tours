@@ -35,15 +35,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center" style={{ mixBlendMode: 'multiply' }}>
+        <Link href="/" className="navbar-logo-wrapper">
           <Image
             src="/logo.webp"
             alt="Danil Scenic Tours Logo"
             width={180}
             height={50}
             priority
+            unoptimized
             className="h-12 w-auto object-contain"
-            style={{ mixBlendMode: 'multiply' }}
           />
         </Link>
 
