@@ -42,7 +42,7 @@ const services: Service[] = [
     title: 'Cultural Expeditions',
     tag: 'Cultural',
     description: 'Immerse yourself in Kenya\'s vibrant traditions and daily life. Meet local communities, learn their customs, and savour authentic cuisine — including Kalenjin mursik and Gikuyu githeri.',
-    details: 'Available as: Private or Group',
+    details: 'Experience highlights:\n• Maasai warrior village\n• Walking tour of Old Town Mombasa and Fort Jesus\n• Lamu Cultural Festival\n• Swahili heritage\n\nAvailable as: Private or Group',
     image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
     isPlaceholder: false,
     price: 'Starting from $250/Day',
@@ -201,7 +201,7 @@ const SafarisPage = () => {
                 <p className="text-[#1C1208] font-inter leading-relaxed text-base md:text-lg">
                   {service.description}
                 </p>
-                <div className="text-sm md:text-base text-[#1C1208] font-inter whitespace-pre-line opacity-90">
+                <div className="text-sm md:text-base text-[#1C1208] font-inter whitespace-pre-wrap opacity-90">
                   {service.details}
                 </div>
                 {service.price && (

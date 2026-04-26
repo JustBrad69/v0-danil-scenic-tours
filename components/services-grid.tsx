@@ -28,7 +28,7 @@ const services = [
   {
     title: 'Cultural Expeditions',
     teaser: 'Live the traditions, taste the cuisine, meet the people.',
-    fullDescription: 'Experience authentic cultural expeditions that connect you with local communities, traditions, and heritage sites across Kenya. Explore meaningful journeys that blend culture, history, and unforgettable travel experiences.',
+    fullDescription: 'Experience authentic cultural expeditions that connect you with local communities, traditions, and heritage sites across Kenya. Explore meaningful journeys that blend culture, history, and unforgettable travel experiences.\n\nExperience highlights:\n• Maasai warrior village\n• Walking tour of Old Town Mombasa and Fort Jesus\n• Lamu Cultural Festival\n• Swahili heritage',
     image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
     isPlaceholder: false,
     price: 'Starting from $250/Day',
@@ -141,7 +141,7 @@ export default function ServicesGrid() {
                       {service.title}
                     </DialogTitle>
                   </DialogHeader>
-                  <DialogDescription className="text-[#1C1208] font-inter leading-relaxed text-base">
+                  <DialogDescription className="text-[#1C1208] font-inter leading-relaxed text-base whitespace-pre-wrap">
                     {service.fullDescription}
                   </DialogDescription>
                   {service.price && (
