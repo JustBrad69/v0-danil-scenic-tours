@@ -13,13 +13,14 @@ import {
   DialogTrigger,
   DialogFooter,
 } from '@/components/ui/dialog'
+import { SERVICE_IMAGES, BLOB_IMAGES } from '@/lib/images'
 
 const services = [
   {
     title: 'Safari Tours',
     teaser: 'Big Five game drives through Kenya\'s greatest national parks.',
     fullDescription: 'Discover unforgettable Kenya safari tours with guided wildlife experiences across top destinations including Maasai Mara, Amboseli, and Lake Nakuru. Enjoy comfortable transport, expert guides, and tailored safari packages for every traveler.',
-    image: '/images/elephant-kilimanjaro.webp',
+    image: SERVICE_IMAGES.SAFARI_TOURS,
     isPlaceholder: false,
     price: 'Starting from $350/Day',
     hasModal: true,
@@ -28,7 +29,7 @@ const services = [
     title: 'Cultural Expeditions',
     teaser: 'Live the traditions, taste the cuisine, meet the people.',
     fullDescription: 'Experience authentic cultural expeditions that connect you with local communities, traditions, and heritage sites across Kenya. Explore meaningful journeys that blend culture, history, and unforgettable travel experiences.',
-    image: '/images/cultural-gathering.webp',
+    image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
     isPlaceholder: false,
     price: 'Starting from $250/Day',
     hasModal: true,
@@ -37,7 +38,7 @@ const services = [
     title: 'Adventure Safaris',
     teaser: 'Hiking, biking, and hot air ballooning for the thrill-seeker.',
     fullDescription: 'Take on thrilling adventure safaris with game drives, scenic landscapes, and exciting wildlife encounters across Kenya\'s iconic national parks and reserves.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
+    image: SERVICE_IMAGES.ADVENTURE_SAFARIS,
     isPlaceholder: false,
     price: 'Starting from $280/Day',
     hasModal: true,
@@ -46,7 +47,7 @@ const services = [
     title: 'Beach Escapes',
     teaser: 'Unwind on Kenya\'s pristine Indian Ocean coastline.',
     fullDescription: 'Unwind with relaxing beach escapes along Kenya\'s beautiful coastline, combining luxury stays, ocean views, and seamless travel experiences after your safari adventure.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
+    image: SERVICE_IMAGES.BEACH_ESCAPES,
     isPlaceholder: false,
     price: 'Starting from $180/Night',
     hasModal: false,
@@ -175,7 +176,7 @@ export default function ServicesGrid() {
             {/* Custom Safaris Image */}
             <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2010.39.00-zWbc5Kff8Ov83PkpY3KGpLCAFeWlks.webp"
+                src={BLOB_IMAGES.SAFARI_PHOTO_1}
                 alt="Custom Safaris - Luxury relaxation area with fruits and beachfront view by Danil Scenic Tours Nairobi"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -208,7 +209,7 @@ export default function ServicesGrid() {
             {/* Car Hire Image */}
             <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2022.58.01-CLCCC7SKHsOzZrZZbCo84McmWU3mT7.webp"
+                src={BLOB_IMAGES.SAFARI_PHOTO_2}
                 alt="Professional Car Hire - Safari 4x4 Land Cruiser vehicle by Danil Scenic Tours Nairobi"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

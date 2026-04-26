@@ -8,91 +8,92 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
+import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
 
 const heroSlideImages = [
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
+  BLOB_IMAGES.CTA_BANNER,
+  BLOB_IMAGES.LAKE_NAKURU,
+  BLOB_IMAGES.DIANI_BEACH,
+  BLOB_IMAGES.MAASAI_MARA,
 ]
 
 const destinations = [
   {
     name: 'Maasai Mara National Reserve',
     description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July–October).',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+    image: BLOB_IMAGES.CTA_BANNER,
     isPlaceholder: false,
   },
   {
     name: 'Amboseli National Park',
     description: 'Famous elephant herds set against the breathtaking backdrop of Mt. Kilimanjaro.',
-    image: '/images/amboseli-elephants.webp',
+    image: LOCAL_IMAGES.AMBOSELI_ELEPHANTS,
     isPlaceholder: false,
   },
   {
     name: 'Tsavo East & West National Parks',
     description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
-    image: '/images/cheetah-resting.webp',
+    image: LOCAL_IMAGES.CHEETAH_RESTING,
     isPlaceholder: false,
   },
   {
     name: 'Lake Nakuru National Park',
     description: 'Rift Valley gem renowned for its flamingo colonies, rhinos, and leopards.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
+    image: BLOB_IMAGES.LAKE_NAKURU,
     isPlaceholder: false,
   },
   {
     name: 'Lake Bogoria National Reserve',
     description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp',
+    image: BLOB_IMAGES.TSAVO_EAST,
     isPlaceholder: false,
   },
   {
     name: 'Aberdare National Park',
     description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2817%29-Cqk060woGnPsSL466intzq9kOsG3WA.webp',
+    image: BLOB_IMAGES.MAASAI_MARA,
     isPlaceholder: false,
   },
   {
     name: 'Mt. Kenya',
     description: 'Kenya\'s second-highest mountain. Dramatic clouds, verdant slopes, and alpine trails.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
+    image: BLOB_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
   },
   {
     name: 'Meru National Park',
     description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets, rocky outcrops, and pristine landscapes.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20091948-biQwM7Q4NGVZhod3fPu11cfeAmNkch.webp',
+    image: BLOB_IMAGES.WATAMU,
     isPlaceholder: false,
   },
   {
     name: 'Samburu National Reserve',
     description: 'Remote semi-arid landscape perfect for stargazing beneath the African night sky. Home to unique wildlife species and breathtaking celestial experiences.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20104911-swbjNVoqCHnEWJmaJx9kyU1T75H9Wv.webp',
+    image: BLOB_IMAGES.SAMBURU,
     isPlaceholder: false,
   },
   {
     name: 'Diani Beach',
     description: 'Pristine white sand coastline along the Indian Ocean. Perfect for snorkelling, diving, and relaxation.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
+    image: BLOB_IMAGES.DIANI_BEACH,
     isPlaceholder: false,
   },
   {
     name: 'Nairobi National Park',
     description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105006-p0LsV0tdCnZNmkjIG5Aey8nntoVSAo.webp',
+    image: BLOB_IMAGES.WATAMU,
     isPlaceholder: false,
   },
   {
     name: 'Ol Pejeta Conservancy',
     description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105056-xa82k3Wfrb10L11nrnWTuyqp0AybAo.webp',
+    image: BLOB_IMAGES.SAMBURU,
     isPlaceholder: false,
   },
   {
     name: 'Lake Naivasha (Crescent Island)',
     description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105258-8JEgBeQ61PSLAly1hdLtvwRg4Q28qR.webp',
+    image: BLOB_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
   },
 ]

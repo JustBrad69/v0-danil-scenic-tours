@@ -3,47 +3,48 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { DESTINATION_IMAGES, LOCAL_IMAGES } from '@/lib/images'
 
 const destinations = [
   {
     name: 'Maasai Mara',
     description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20094056-epSavrISmZLiwYYh4tsgGqat52e34W.webp',
+    image: DESTINATION_IMAGES.MAASAI_MARA,
     isPlaceholder: false,
     price: 'Starting from $350/Day',
   },
   {
     name: 'Amboseli',
     description: 'Famous elephant herds set against Mt. Kilimanjaro\'s breathtaking backdrop.',
-    image: '/images/amboseli-elephants.webp',
+    image: DESTINATION_IMAGES.AMBOSELI,
     isPlaceholder: false,
     price: 'Starting from $280/Day',
   },
   {
     name: 'Lake Nakuru',
     description: 'Rift Valley gem renowned for flamingo colonies, rhinos, and leopards.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
+    image: DESTINATION_IMAGES.LAKE_NAKURU,
     isPlaceholder: false,
     price: 'Starting from $250/Day',
   },
   {
     name: 'Nairobi National Park',
     description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105006-p0LsV0tdCnZNmkjIG5Aey8nntoVSAo.webp',
+    image: DESTINATION_IMAGES.WATAMU,
     isPlaceholder: false,
     price: 'Starting from $150/Day',
   },
   {
     name: 'Ol Pejeta Conservancy',
     description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105056-xa82k3Wfrb10L11nrnWTuyqp0AybAo.webp',
+    image: DESTINATION_IMAGES.SAMBURU,
     isPlaceholder: false,
     price: 'Starting from $320/Day',
   },
   {
     name: 'Lake Naivasha',
     description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105258-8JEgBeQ61PSLAly1hdLtvwRg4Q28qR.webp',
+    image: DESTINATION_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
     price: 'Starting from $200/Day',
   },

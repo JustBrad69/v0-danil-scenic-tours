@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { BLOB_IMAGES } from '@/lib/images'
 
 export default function StorytellingSectionHome() {
   return (
@@ -33,7 +34,7 @@ export default function StorytellingSectionHome() {
             }}
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp"
+              src={BLOB_IMAGES.LAKE_NAKURU}
               alt="Flamingos at Lake Nakuru"
               fill
               className="object-cover"
