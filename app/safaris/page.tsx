@@ -17,7 +17,17 @@ const heroSlideImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
 ]
 
-const services = [
+interface Service {
+  title: string
+  tag: string
+  description: string
+  details: string
+  image: string
+  isPlaceholder: boolean
+  price?: string
+}
+
+const services: Service[] = [
   {
     title: 'Safari Tours',
     tag: 'Safari Tours',
@@ -25,6 +35,7 @@ const services = [
     details: 'Parks: Maasai Mara · Amboseli · Tsavo East & West · Lake Nakuru · Lake Bogoria · Aberdare · Mt. Kenya · Meru · Samburu\nAvailable as: Private or Group',
     image: '/images/elephant-kilimanjaro.webp',
     isPlaceholder: false,
+    price: 'Starting from $350/Day',
   },
   {
     title: 'Cultural Expeditions',
@@ -33,6 +44,7 @@ const services = [
     details: 'Available as: Private or Group',
     image: '/images/cultural-gathering.webp',
     isPlaceholder: false,
+    price: 'Starting from $250/Day',
   },
   {
     title: 'Adventure Safaris',
@@ -41,6 +53,7 @@ const services = [
     details: 'Available as: Private or Group',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
     isPlaceholder: false,
+    price: 'Starting from $280/Day',
   },
   {
     title: 'Beach Escapes',
@@ -57,6 +70,7 @@ const services = [
     details: 'Available as: Fully private and personalized',
     image: '/images/zebras-savanna.webp',
     isPlaceholder: false,
+    price: 'Custom pricing',
   },
 ]
 
