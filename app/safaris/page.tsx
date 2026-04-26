@@ -67,8 +67,8 @@ const services: Service[] = [
   {
     title: 'Customized Safaris',
     tag: 'All',
-    description: 'Fully tailor-made itineraries built around your interests, group size, timeline, and budget — whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
-    details: 'Available as: Fully private and personalized',
+    description: 'Tailor-made itineraries built around your interests, group size, timeline, and budget — whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
+    details: 'Available as: Private and personalized',
     image: SERVICE_IMAGES.CUSTOMIZED_SAFARIS,
     isPlaceholder: false,
     price: 'Custom pricing',
