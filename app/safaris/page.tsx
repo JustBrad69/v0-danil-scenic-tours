@@ -9,45 +9,59 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
+import { BLOB_IMAGES, SERVICE_IMAGES } from '@/lib/images'
 
 const heroSlideImages = [
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
+  BLOB_IMAGES.CTA_BANNER,
+  BLOB_IMAGES.LAKE_NAKURU,
+  BLOB_IMAGES.DIANI_BEACH,
+  BLOB_IMAGES.ADVENTURE_HIKING,
 ]
 
-const services = [
+interface Service {
+  title: string
+  tag: string
+  description: string
+  details: string
+  image: string
+  isPlaceholder: boolean
+  price?: string
+}
+
+const services: Service[] = [
   {
     title: 'Safari Tours',
     tag: 'Safari Tours',
     description: 'Guided game drives through Kenya\'s greatest national parks in our 4x4 pop-up roof jeeps. Witness the Big Five in their natural habitat.',
     details: 'Parks: Maasai Mara · Amboseli · Tsavo East & West · Lake Nakuru · Lake Bogoria · Aberdare · Mt. Kenya · Meru · Samburu\nAvailable as: Private or Group',
-    image: '/images/elephant-kilimanjaro.webp',
+    image: SERVICE_IMAGES.SAFARI_TOURS,
     isPlaceholder: false,
+    price: 'Starting from $350/Day',
   },
   {
     title: 'Cultural Expeditions',
     tag: 'Cultural',
     description: 'Immerse yourself in Kenya\'s vibrant traditions and daily life. Meet local communities, learn their customs, and savour authentic cuisine — including Kalenjin mursik and Gikuyu githeri.',
     details: 'Available as: Private or Group',
-    image: '/images/cultural-gathering.webp',
+    image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
     isPlaceholder: false,
+    price: 'Starting from $250/Day',
   },
   {
     title: 'Adventure Safaris',
     tag: 'Adventure',
     description: 'For thrill-seekers: hiking, biking, and hot air ballooning across Kenya\'s most spectacular terrain.',
     details: 'Available as: Private or Group',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
+    image: SERVICE_IMAGES.ADVENTURE_SAFARIS,
     isPlaceholder: false,
+    price: 'Starting from $280/Day',
   },
   {
     title: 'Beach Escapes',
     tag: 'Beach',
     description: 'Unwind on the pristine shores of Kenya\'s Indian Ocean coast — Diani, Watamu, or Malindi. Relax in luxury beach resorts and explore marine life through snorkelling and diving.',
     details: 'Available as: Private or customized',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
+    image: SERVICE_IMAGES.BEACH_ESCAPES,
     isPlaceholder: false,
   },
   {
@@ -55,8 +69,9 @@ const services = [
     tag: 'All',
     description: 'Fully tailor-made itineraries built around your interests, group size, timeline, and budget — whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
     details: 'Available as: Fully private and personalized',
-    image: '/images/zebras-savanna.webp',
+    image: SERVICE_IMAGES.CUSTOMIZED_SAFARIS,
     isPlaceholder: false,
+    price: 'Custom pricing',
   },
 ]
 

@@ -4,14 +4,9 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
+import { HERO_IMAGES } from '@/lib/images'
 
-const slideImages = [
-  '/images/cheetah-resting.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
-]
+const slideImages = HERO_IMAGES
 
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)

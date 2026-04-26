@@ -8,6 +8,7 @@ import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { Star } from 'lucide-react'
+import { BLOB_IMAGES } from '@/lib/images'
 
 const allTestimonials = [
   {
@@ -41,10 +42,10 @@ const allTestimonials = [
 ]
 
 const heroSlideImages = [
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp',
+  BLOB_IMAGES.LAKE_NAKURU,
+  BLOB_IMAGES.DIANI_BEACH,
+  BLOB_IMAGES.MAASAI_MARA,
+  BLOB_IMAGES.TSAVO_EAST,
 ]
 
 export default function AboutPage() {

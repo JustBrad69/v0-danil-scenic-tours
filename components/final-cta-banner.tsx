@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { BLOB_IMAGES } from '@/lib/images'
 
 export default function FinalCTABanner() {
   return (
@@ -9,7 +10,7 @@ export default function FinalCTABanner() {
       {/* Background Image */}
       <div className="absolute inset-0 ken-burns-zoom" style={{ zIndex: 0 }}>
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp"
+          src={BLOB_IMAGES.CTA_BANNER}
           alt="Maasai Mara sunset with acacia trees"
           fill
           className="object-cover"
