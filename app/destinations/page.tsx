@@ -3,12 +3,19 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import dynamic from 'next/dynamic' // Added for the map
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
 import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
+
+// Dynamic import to prevent SSR crash
+const SafariMap = dynamic(() => import('@/components/SafariMap'), { 
+  ssr: false,
+  loading: () => <div className="h-[450px] w-full bg-gray-200 animate-pulse rounded-2xl" />
+})
 
 const heroSlideImages = [
   BLOB_IMAGES.CTA_BANNER,
@@ -17,80 +24,94 @@ const heroSlideImages = [
   BLOB_IMAGES.MAASAI_MARA,
 ]
 
+// Added 'id' fields to match the map pins
 const destinations = [
   {
+    id: 'maasai-mara',
     name: 'Maasai Mara National Reserve',
     description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July–October).',
     image: BLOB_IMAGES.CTA_BANNER,
     isPlaceholder: false,
   },
   {
+    id: 'amboseli',
     name: 'Amboseli National Park',
     description: 'Famous elephant herds set against the breathtaking backdrop of Mt. Kilimanjaro.',
     image: LOCAL_IMAGES.AMBOSELI_ELEPHANTS,
     isPlaceholder: false,
   },
   {
+    id: 'tsavo',
     name: 'Tsavo East & West National Parks',
     description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
     image: LOCAL_IMAGES.CHEETAH_RESTING,
     isPlaceholder: false,
   },
   {
+    id: 'lake-nakuru',
     name: 'Lake Nakuru National Park',
     description: 'Rift Valley gem renowned for its flamingo colonies, rhinos, and leopards.',
     image: BLOB_IMAGES.LAKE_NAKURU,
     isPlaceholder: false,
   },
   {
+    id: 'lake-bogoria',
     name: 'Lake Bogoria National Reserve',
     description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
     image: BLOB_IMAGES.TSAVO_EAST,
     isPlaceholder: false,
   },
   {
+    id: 'aberdare',
     name: 'Aberdare National Park',
     description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
     image: BLOB_IMAGES.MAASAI_MARA,
     isPlaceholder: false,
   },
   {
+    id: 'mt-kenya',
     name: 'Mt. Kenya',
     description: 'Kenya\'s second-highest mountain. Dramatic clouds, verdant slopes, and alpine trails.',
     image: BLOB_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
   },
   {
+    id: 'meru',
     name: 'Meru National Park',
     description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets, rocky outcrops, and pristine landscapes.',
     image: BLOB_IMAGES.WATAMU,
     isPlaceholder: false,
   },
   {
+    id: 'samburu',
     name: 'Samburu National Reserve',
     description: 'Remote semi-arid landscape perfect for stargazing beneath the African night sky. Home to unique wildlife species and breathtaking celestial experiences.',
     image: BLOB_IMAGES.SAMBURU,
     isPlaceholder: false,
   },
   {
+    id: 'diani-beach',
     name: 'Diani Beach',
     description: 'Pristine white sand coastline along the Indian Ocean. Perfect for snorkelling, diving, and relaxation.',
     image: BLOB_IMAGES.DIANI_BEACH,
     isPlaceholder: false,
   },
   {
+    id: 'nairobi',
     name: 'Nairobi National Park',
     description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
     image: BLOB_IMAGES.WATAMU,
     isPlaceholder: false,
   },
   {
+    id: 'ol-pejeta',
     name: 'Ol Pejeta Conservancy',
     description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
     image: BLOB_IMAGES.SAMBURU,
     isPlaceholder: false,
   },
   {
+    id: 'lake-naivasha',
     name: 'Lake Naivasha (Crescent Island)',
     description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
     image: BLOB_IMAGES.MOUNT_KENYA,
@@ -150,6 +171,14 @@ export default function DestinationsPage() {
         </div>
       </section>
 
+      {/* NEW MAP SECTION */}
+      <section className="py-12 bg-[#FAF4E8] px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-playfair text-[#2A4A35] mb-8 text-center">Explore the Geography of Your Adventure</h2>
+          <SafariMap />
+        </div>
+      </section>
+
       {/* Destination Cards */}
       <section className="py-20 md:py-28 px-4 md:px-6 bg-[#FAF4E8]">
         <div className="max-w-7xl mx-auto">
@@ -157,29 +186,16 @@ export default function DestinationsPage() {
             {destinations.map((dest, index) => (
               <div
                 key={index}
+                id={dest.id} // Added ID for scrolling
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
-                {/* Image */}
+                {/* Image Rendering */}
                 {dest.isPlaceholder ? (
-                  <div
-                    style={{
-                      backgroundColor: '#C4A882',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      aspectRatio: '4/3',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '13px',
-                      fontStyle: 'italic',
-                      color: '#6B5240',
-                      textAlign: 'center',
-                      padding: '16px',
-                    }}
-                  >
+                  <div className="flex items-center justify-center bg-[#C4A882] aspect-[4/3] p-4 text-[13px] italic text-[#6B5240] text-center font-inter">
                     {dest.image}
                   </div>
                 ) : (
-                  <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+                  <div className="relative w-full aspect-[4/3]">
                     <Image
                       src={dest.image}
                       alt={dest.name}
