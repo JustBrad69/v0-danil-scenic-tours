@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// THE FULL 13 DESTINATIONS - Mapped to your page data
 const SAFARI_LOCATIONS = [
   { id: "maasai-mara", name: "Maasai Mara National Reserve", lat: -1.48, lon: 35.14 },
   { id: "amboseli", name: "Amboseli National Park", lat: -2.63, lon: 37.25 },
@@ -29,35 +28,17 @@ const defaultIcon = L.icon({
   iconAnchor: [12, 41],
 });
 
-// Improved Map Controls for Smoother Zoom
 function MapControls() {
   const map = useMap();
-  
   const handleZoom = (type: 'in' | 'out') => {
-    if (type === 'in') {
-      map.setZoom(map.getZoom() + 1, { animate: true });
-    } else {
-      map.setZoom(map.getZoom() - 1, { animate: true });
-    }
+    map.setZoom(type === 'in' ? map.getZoom() + 1 : map.getZoom() - 1, { animate: true });
   };
 
   return (
     <div className="absolute right-4 top-4 z-[1000] flex flex-col gap-2">
       <div className="bg-white rounded-lg shadow-lg border overflow-hidden flex flex-col">
-        <button 
-          onClick={() => handleZoom('in')} 
-          className="p-3 border-b font-bold text-xl hover:bg-gray-100 transition-colors bg-white w-12 h-12 flex items-center justify-center"
-          title="Zoom In"
-        >
-          +
-        </button>
-        <button 
-          onClick={() => handleZoom('out')} 
-          className="p-3 font-bold text-xl hover:bg-gray-100 transition-colors bg-white w-12 h-12 flex items-center justify-center"
-          title="Zoom Out"
-        >
-          -
-        </button>
+        <button onClick={() => handleZoom('in')} className="w-12 h-12 border-b font-bold text-xl hover:bg-gray-100 bg-white flex items-center justify-center">+</button>
+        <button onClick={() => handleZoom('out')} className="w-12 h-12 font-bold text-xl hover:bg-gray-100 bg-white flex items-center justify-center">-</button>
       </div>
     </div>
   );
@@ -67,22 +48,25 @@ export default function SafariMap() {
   const handleMarkerClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Small delay ensures the click feels intentional before the scroll starts
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
     }
   };
 
   return (
-    <div className="w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden border-2 border-[#2A4A35] relative shadow-2xl bg-gray-100">
+    <div className="w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden border-2 border-[#2A4A35] relative shadow-2xl bg-[#FAF4E8]">
       <MapContainer 
-        center={[-0.5, 37.8]} // Slightly adjusted center for all 13 pins
+        center={[-0.5, 37.8]} 
         zoom={6} 
         className="w-full h-full" 
         zoomControl={false}
-        scrollWheelZoom={false} // Prevents "shaky" page scrolling while over the map
+        scrollWheelZoom={false}
       >
         <TileLayer 
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
-          attribution='&copy; OpenStreetMap contributors' 
+          attribution='&copy; OpenStreetMap' 
         />
         <MapControls />
         {SAFARI_LOCATIONS.map((loc) => (
@@ -90,14 +74,25 @@ export default function SafariMap() {
             key={loc.id} 
             position={[loc.lat, loc.lon]} 
             icon={defaultIcon}
-            eventHandlers={{ click: () => handleMarkerClick(loc.id) }}
+            // Logic: Hover triggers Tooltip (automatic), Click triggers Scroll
+            eventHandlers={{ 
+              click: () => handleMarkerClick(loc.id) 
+            }}
           >
-            <Popup>
-              <div className="text-center">
-                <p className="font-bold text-[#2A4A35] m-0 text-sm">{loc.name}</p>
-                <p className="text-[10px] text-gray-500 m-0">Click to view details</p>
+            {/* Tooltip replaces Popup for 'Hover' behavior */}
+            <Tooltip 
+              direction="top" 
+              offset={[0, -32]} 
+              opacity={1} 
+              className="custom-safari-tooltip"
+            >
+              <div className="text-center p-1 min-w-[120px]">
+                <p className="font-bold text-[#2A4A35] m-0 text-sm leading-tight">{loc.name}</p>
+                <p className="text-[10px] text-gray-500 mt-1 mb-0 border-t pt-1">
+                  Click to view packages
+                </p>
               </div>
-            </Popup>
+            </Tooltip>
           </Marker>
         ))}
       </MapContainer>
