@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic' // Added for the map
+import dynamic from 'next/dynamic'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
@@ -11,7 +11,7 @@ import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
 import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
 
-// Dynamic import to prevent SSR crash
+// Dynamic import to prevent SSR crash and improve initial page load speed
 const SafariMap = dynamic(() => import('@/components/SafariMap'), { 
   ssr: false,
   loading: () => <div className="h-[450px] w-full bg-gray-200 animate-pulse rounded-2xl" />
@@ -24,7 +24,6 @@ const heroSlideImages = [
   BLOB_IMAGES.MAASAI_MARA,
 ]
 
-// Added 'id' fields to match the map pins
 const destinations = [
   {
     id: 'maasai-mara',
@@ -149,7 +148,9 @@ export default function DestinationsPage() {
                 alt={`Kenya wonders slide ${index + 1}`}
                 fill
                 className="object-cover"
+                // CRITICAL: priority={index === 0} fixes LCP by preloading the first image
                 priority={index === 0}
+                sizes="100vw"
               />
             </div>
           ))}
@@ -186,7 +187,7 @@ export default function DestinationsPage() {
             {destinations.map((dest, index) => (
               <div
                 key={index}
-                id={dest.id} // Added ID for scrolling
+                id={dest.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
                 {/* Image Rendering */}
@@ -201,7 +202,7 @@ export default function DestinationsPage() {
                       alt={dest.name}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 )}
