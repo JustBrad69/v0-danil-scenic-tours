@@ -4,13 +4,12 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import FloatingButtons from '@/components/floating-buttons'
-import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
 import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
-
+const Navbar = dynamic(() => import('@/components/navbar'), { ssr: true });
+const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false });
+const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false });
 // Dynamic import to prevent SSR crash and improve initial page load speed
 const SafariMap = dynamic(() => import('@/components/SafariMap'), { 
   ssr: false,
