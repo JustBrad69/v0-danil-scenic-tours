@@ -4,18 +4,18 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
-// 1. Optimized Font Loading: Reduced weights where possible
+// 1. Optimized Font Loading
 const cormorant = Cormorant_Garamond({ 
   subsets: ["latin"],
   variable: '--font-cormorant',
-  weight: ['400', '600', '700'], // Removed 500 to save weight
+  weight: ['400', '600', '700'],
   display: 'swap',
 })
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
   variable: '--font-playfair',
-  weight: ['400', '700'], // Kept only necessary weights
+  weight: ['400', '700'],
   display: 'swap',
 })
 
@@ -35,9 +35,14 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Danil Scenic Tours | Best Tour Operator Nairobi',
   description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
-  metadataBase: new URL('https://danilscenictours.co.ke'), // Critical for SEO
+  metadataBase: new URL('https://danilscenictours.co.ke'),
   verification: {
+    // Google verification from your HTML file
     google: '8F3J1nKpoYMge2swC3AhBxFknN3Im-VpwE56RBuND8M',
+    // Bing/Edge verification meta tag
+    other: {
+      'msvalidate.01': '3DD49C6BD506A59B043AAFDAE197A96B',
+    },
   },
   openGraph: {
     title: 'Danil Scenic Tours | Best Tour Operator Nairobi',
@@ -47,7 +52,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.webp', // Ideally use a local path or short URL
+        url: '/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Kenya Safari Adventures',
@@ -64,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        {/* 2. RESOURCE HINTS: Saves ~200-500ms on Image loading */}
+        {/* 2. RESOURCE HINTS */}
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <link rel="dns-prefetch" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         
