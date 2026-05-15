@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import Navbar from '@/components/navbar'
 import Hero from '@/components/hero'
 import TrustBar from '@/components/trust-bar'
@@ -9,9 +8,7 @@ import HowItWorks from '@/components/how-it-works'
 import TestimonialsCarousel from '@/components/testimonials-carousel'
 import FinalCTABanner from '@/components/final-cta-banner'
 import Footer from '@/components/footer'
-
-const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
-const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
+import ClientOnlyUI from '@/components/client-only-ui'
 
 export default function Home() {
   return (
@@ -26,8 +23,7 @@ export default function Home() {
       <TestimonialsCarousel />
       <FinalCTABanner />
       <Footer />
-      <FloatingButtons />
-      <AccessibilityToolbar />
+      <ClientOnlyUI />
     </main>
   )
 }
