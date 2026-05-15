@@ -1,15 +1,16 @@
 'use client'
 
-// Optimized Safari Experiences Page with Dynamic Image Slideshow - v2
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import FloatingButtons from '@/components/floating-buttons'
-import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
 import { BLOB_IMAGES, SERVICE_IMAGES } from '@/lib/images'
+
+const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
+const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
 
 const heroSlideImages = [
   BLOB_IMAGES.CTA_BANNER,
@@ -95,7 +96,7 @@ const SafarisPage = () => {
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
-      
+
       {/* Hero with Slideshow */}
       <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -103,9 +104,7 @@ const SafarisPage = () => {
             <div
               key={index}
               className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
             >
               <Image
                 src={image}
@@ -162,7 +161,6 @@ const SafarisPage = () => {
         <div className="max-w-7xl mx-auto space-y-12 md:space-y-16">
           {filteredServices.map((service, index) => (
             <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              {/* Image */}
               {service.isPlaceholder ? (
                 <div
                   style={{
@@ -193,7 +191,6 @@ const SafarisPage = () => {
                 </div>
               )}
 
-              {/* Content */}
               <div className="p-6 md:p-10 space-y-4 md:space-y-6">
                 <h2 className="text-2xl md:text-4xl font-playfair text-[#2A4A35]">
                   {service.title}
@@ -210,9 +207,7 @@ const SafarisPage = () => {
                   </p>
                 )}
                 <button
-                  onClick={() => {
-                    window.location.href = '/book#booking-form'
-                  }}
+                  onClick={() => { window.location.href = '/book#booking-form' }}
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold hover:gap-3 transition-all"
                 >
                   Inquire About This {service.tag === 'All' ? 'Safari' : service.tag} <ArrowRight size={16} />
@@ -223,16 +218,8 @@ const SafarisPage = () => {
         </div>
       </section>
 
-
-
       {/* Vehicle Info */}
-      <section
-        className="py-8 px-4"
-        style={{
-          backgroundColor: '#2A4A35',
-          color: '#FDF8F0',
-        }}
-      >
+      <section className="py-8 px-4" style={{ backgroundColor: '#2A4A35', color: '#FDF8F0' }}>
         <div className="max-w-7xl mx-auto text-center font-inter">
           <p>
             ✓ All safaris are conducted in our regularly serviced 4x4 pop-up roof jeeps — equipped for optimal wildlife viewing, built for your comfort, and maintained for your safety.
