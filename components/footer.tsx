@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { ExternalLink, Mail } from 'lucide-react'
 
