@@ -1,14 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import FloatingButtons from '@/components/floating-buttons'
-import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { Star } from 'lucide-react'
 import { BLOB_IMAGES } from '@/lib/images'
+
+const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
+const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
 
 const allTestimonials = [
   {
@@ -61,7 +63,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
-      
+
       {/* Hero with Slideshow */}
       <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -69,9 +71,7 @@ export default function AboutPage() {
             <div
               key={index}
               className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
             >
               <Image
                 src={image}
@@ -79,6 +79,8 @@ export default function AboutPage() {
                 fill
                 className="object-cover"
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                sizes="100vw"
               />
             </div>
           ))}
@@ -136,45 +138,26 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-playfair text-[#2A4A35] mb-8">Company Information</h2>
           <div className="bg-white rounded-2xl p-8 space-y-4 font-inter text-[#1C1208]">
-            <div>
-              <p className="font-semibold text-[#D4870A]">Company Name</p>
-              <p>Danil Scenic Tours</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#D4870A]">Founded</p>
-              <p>2023</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#D4870A]">Legal Status</p>
-              <p>Private Limited Company, registered in Kenya</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#D4870A]">License</p>
-              <p>Licensed by the Tourism Regulatory Authority (TRA) of Kenya</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#D4870A]">Location</p>
-              <p>Nairobi, Kenya</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#D4870A]">Team Size</p>
-              <p>Passionate tour guides, drivers, tour consultants, and project managers</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#D4870A]">Languages</p>
-              <p>English, Spanish, German, French</p>
-            </div>
+            {[
+              { label: 'Company Name', value: 'Danil Scenic Tours' },
+              { label: 'Founded', value: '2023' },
+              { label: 'Legal Status', value: 'Private Limited Company, registered in Kenya' },
+              { label: 'License', value: 'Licensed by the Tourism Regulatory Authority (TRA) of Kenya' },
+              { label: 'Location', value: 'Nairobi, Kenya' },
+              { label: 'Team Size', value: 'Passionate tour guides, drivers, tour consultants, and project managers' },
+              { label: 'Languages', value: 'English, Spanish, German, French' },
+            ].map((item, i) => (
+              <div key={i}>
+                <p className="font-semibold text-[#D4870A]">{item.label}</p>
+                <p>{item.value}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* All Reviews */}
-      <section
-        className="py-20 px-4"
-        style={{
-          backgroundColor: '#1C3028',
-        }}
-      >
+      <section className="py-20 px-4" style={{ backgroundColor: '#1C3028' }}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-playfair text-[#FDF8F0] text-center mb-2">
             Guest Reviews
@@ -185,10 +168,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {allTestimonials.map((review, i) => (
-              <div
-                key={i}
-                className="bg-[#2A4A35] rounded-xl p-6 space-y-4"
-              >
+              <div key={i} className="bg-[#2A4A35] rounded-xl p-6 space-y-4">
                 <div className="flex gap-1">
                   {[...Array(review.rating)].map((_, idx) => (
                     <Star key={idx} size={16} className="fill-[#D4870A] text-[#D4870A]" />
