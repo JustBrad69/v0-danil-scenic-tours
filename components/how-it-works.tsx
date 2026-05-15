@@ -1,5 +1,3 @@
-'use client'
-
 import { MapPin, Pencil, Compass } from 'lucide-react'
 
 const steps = [
