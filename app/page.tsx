@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import Navbar from '@/components/navbar'
 import Hero from '@/components/hero'
 import TrustBar from '@/components/trust-bar'
@@ -15,14 +12,6 @@ import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
-
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
