@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import FloatingButtons from '@/components/floating-buttons'
-import AccessibilityToolbar from '@/components/accessibility-toolbar'
+
+const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
+const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
 
 const heroSlideImages = [
   '/images/cheetah-resting.webp',
@@ -33,7 +35,7 @@ export default function BookPage() {
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
-      
+
       {/* Hero with Slideshow */}
       <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -41,9 +43,7 @@ export default function BookPage() {
             <div
               key={index}
               className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
             >
               <Image
                 src={image}
@@ -85,7 +85,6 @@ export default function BookPage() {
           </p>
 
           <div className="space-y-4 flex flex-col">
-            {/* WhatsApp Button */}
             <Link
               href="https://wa.me/254722919249"
               target="_blank"
@@ -94,8 +93,6 @@ export default function BookPage() {
             >
               Chat with us on WhatsApp
             </Link>
-
-            {/* Call Button */}
             <Link
               href="tel:+254722919249"
               className="w-full py-4 px-6 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all text-center text-base md:text-lg"
