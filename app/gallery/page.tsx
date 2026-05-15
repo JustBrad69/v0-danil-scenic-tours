@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import FloatingButtons from '@/components/floating-buttons'
-import AccessibilityToolbar from '@/components/accessibility-toolbar'
+
+const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
+const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
 
 const galleryImages = [
   { image: '/images/elephant-kilimanjaro.webp', alt: 'Maasai Mara Safari Kenya buffalo herd at sunset', isPlaceholder: false },
@@ -51,7 +53,7 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
-      
+
       {/* Hero */}
       <section className="relative h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -59,9 +61,7 @@ export default function GalleryPage() {
             <div
               key={index}
               className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
             >
               <Image
                 src={image}
@@ -100,10 +100,7 @@ export default function GalleryPage() {
               <div
                 key={index}
                 className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                style={{
-                  aspectRatio: '4/3',
-                  position: 'relative',
-                }}
+                style={{ aspectRatio: '4/3', position: 'relative' }}
               >
                 {item.isPlaceholder ? (
                   <div
@@ -117,15 +114,7 @@ export default function GalleryPage() {
                       padding: '16px',
                     }}
                   >
-                    <p
-                      style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '13px',
-                        fontStyle: 'italic',
-                        color: '#6B5240',
-                        textAlign: 'center',
-                      }}
-                    >
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', fontStyle: 'italic', color: '#6B5240', textAlign: 'center' }}>
                       {item.image}
                     </p>
                   </div>
