@@ -1,5 +1,3 @@
-'use client'
-
 import { Star, FileText, Badge, Globe, MapPin } from 'lucide-react'
 
 export default function TrustBar() {
