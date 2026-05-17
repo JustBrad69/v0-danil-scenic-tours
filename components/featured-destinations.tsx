@@ -111,10 +111,10 @@ export default function FeaturedDestinations() {
                   {dest.price}
                 </p>
                 <Link
-                  href="/book#booking-form"
+                  href={dest.name === 'Maasai Mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                 >
-                  Book This Safari → <ArrowRight size={14} />
+                  {dest.name === 'Maasai Mara' ? 'Explore Maasai Mara →' : 'Book This Safari →'} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
