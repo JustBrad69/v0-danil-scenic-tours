@@ -4,7 +4,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import { Car, Building, Binoculars, Zap, Footprints, Users, UtensilsCrossed, MapPin } from 'lucide-react'
+import { Car, Building, Binoculars, Zap, Footprints, Users, UtensilsCrossed, MapPin, Plane, ChevronDown } from 'lucide-react'
 
 const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
 const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
@@ -396,6 +396,184 @@ export default function MaasaiMaraPage() {
             <p className="font-inter text-white text-base">
               For the Great Migration, plan your safari for late July through September.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Getting There Section */}
+      <section className="w-full bg-[#F2E8D5] py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+            How to Get from Nairobi to Maasai Mara
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* By Road Card */}
+            <div className="bg-white rounded-lg p-8 shadow-sm">
+              <div className="flex items-center gap-3 mb-6">
+                <Car size={32} className="text-[#D4870A]" />
+                <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold">
+                  By Road
+                </h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-lg mb-2">
+                    5–6 Hours
+                  </p>
+                  <p className="font-inter text-[#1C1208] text-sm">
+                    Scenic Great Rift Valley drive with stops at viewpoints and Narok markets.
+                  </p>
+                </div>
+                <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4870A] font-bold mt-1">•</span>
+                    <span>Travel in comfortable 4x4 vehicles</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4870A] font-bold mt-1">•</span>
+                    <span>Stops at scenic viewpoints along the way</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4870A] font-bold mt-1">•</span>
+                    <span>Visit local markets in Narok</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* By Air Card */}
+            <div className="bg-white rounded-lg p-8 shadow-sm">
+              <div className="flex items-center gap-3 mb-6">
+                <Plane size={32} className="text-[#D4870A]" />
+                <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold">
+                  By Air
+                </h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-lg mb-2">
+                    45 Minutes
+                  </p>
+                  <p className="font-inter text-[#1C1208] text-sm">
+                    Fly from Wilson Airport to Keekorok or Mara Serena airstrip with a short game drive to lodge.
+                  </p>
+                </div>
+                <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4870A] font-bold mt-1">•</span>
+                    <span>Depart from Wilson Airport in Nairobi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4870A] font-bold mt-1">•</span>
+                    <span>Arrive at Keekorok or Mara Serena airstrip</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4870A] font-bold mt-1">•</span>
+                    <span>Short game drive from airstrip to lodge</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="w-full bg-[#1C3028] py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-[#FDF8F0] text-4xl font-bold text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          
+          <div className="space-y-4">
+            {/* FAQ 1 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>How much does a 4-day safari cost?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>The cost depends on your tier (Luxury, Mid-Range, or Budget) and group size. Contact us for a personalized quote based on your preferences and travel dates.</p>
+              </div>
+            </details>
+
+            {/* FAQ 2 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>Is the hot air balloon included?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>Yes, the hot air balloon safari is included as standard in all our packages. Unlike some operators who charge extra, we include this unforgettable experience in every safari.</p>
+              </div>
+            </details>
+
+            {/* FAQ 3 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>Can I do a shorter safari?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>Yes, we offer 2-day and 3-day safari options in addition to our 4-day package. While all durations are fantastic, we recommend a minimum of 3 days to fully experience the Maasai Mara.</p>
+              </div>
+            </details>
+
+            {/* FAQ 4 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>What is the minimum group size?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>The minimum group size is 7 people. There is no maximum, so larger groups are always welcome. We can accommodate any size group with the right planning.</p>
+              </div>
+            </details>
+
+            {/* FAQ 5 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>Are private safaris available?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>Absolutely! We offer both private safaris for individuals or families and group safaris for larger parties. Choose the option that best suits your travel style.</p>
+              </div>
+            </details>
+
+            {/* FAQ 6 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>What if I miss the Great Migration?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>No worries! The Maasai Mara is home to resident lions, leopards, elephants, buffalo, and countless other wildlife year-round. You&apos;ll still experience incredible game drives regardless of the season.</p>
+              </div>
+            </details>
+
+            {/* FAQ 7 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>Is it safe?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>Yes, safety is our top priority. All our guides are trained in safety protocols, vehicles are equipped with VHF radios for communication, and lodges have professional security teams on site 24/7.</p>
+              </div>
+            </details>
+
+            {/* FAQ 8 */}
+            <details className="group">
+              <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
+                <span>What payment methods do you accept?</span>
+                <ChevronDown size={20} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm">
+                <p>We accept multiple payment methods for your convenience: M-Pesa, bank transfer, and credit/debit cards. Contact us to arrange the payment method that works best for you.</p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
