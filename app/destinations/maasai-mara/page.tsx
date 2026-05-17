@@ -199,6 +199,97 @@ export default function MaasaiMaraPage() {
         </div>
       </section>
 
+      {/* Itinerary Section */}
+      <section className="w-full bg-[#FAF4E8] py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+            4-Day Maasai Mara Safari Itinerary from Nairobi
+          </h2>
+          
+          <div className="space-y-8">
+            {/* Day 1 */}
+            <div className="relative bg-white rounded-lg p-8 shadow-sm border-l-4 border-[#D4870A]">
+              <div className="absolute -left-6 -top-6 w-12 h-12 bg-[#D4870A] rounded-full flex items-center justify-center text-white font-bold text-lg font-montserrat">
+                1
+              </div>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3 ml-6">
+                Arrival in Nairobi and City Tour
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm mb-4">
+                Airport pickup, hotel check-in, guided tour of KICC and Nairobi National Park, dinner at hotel.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-[#FAF4E8] rounded p-3">
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-xs mb-1">Luxury</p>
+                  <p className="font-inter text-[#1C1208] text-sm">Crowne Plaza Nairobi Airport</p>
+                </div>
+                <div className="bg-[#FAF4E8] rounded p-3">
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-xs mb-1">Mid-Range</p>
+                  <p className="font-inter text-[#1C1208] text-sm">Sarova Stanley</p>
+                </div>
+                <div className="bg-[#FAF4E8] rounded p-3">
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-xs mb-1">Budget</p>
+                  <p className="font-inter text-[#1C1208] text-sm">Boma Inn</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Day 2 */}
+            <div className="relative bg-white rounded-lg p-8 shadow-sm border-l-4 border-[#D4870A]">
+              <div className="absolute -left-6 -top-6 w-12 h-12 bg-[#D4870A] rounded-full flex items-center justify-center text-white font-bold text-lg font-montserrat">
+                2
+              </div>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3 ml-6">
+                Nairobi to Maasai Mara via the Great Rift Valley
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm mb-4">
+                Early breakfast, drive via Great Rift Valley viewpoint and Narok markets, arrive lodge by early afternoon.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-[#FAF4E8] rounded p-3">
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-xs mb-1">Luxury</p>
+                  <p className="font-inter text-[#1C1208] text-sm">Maisha Sweetwaters Camp</p>
+                </div>
+                <div className="bg-[#FAF4E8] rounded p-3">
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-xs mb-1">Mid-Range</p>
+                  <p className="font-inter text-[#1C1208] text-sm">Pride Inn Mara Camp</p>
+                </div>
+                <div className="bg-[#FAF4E8] rounded p-3">
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-xs mb-1">Budget</p>
+                  <p className="font-inter text-[#1C1208] text-sm">Mara Chui Lodge</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Day 3 */}
+            <div className="relative bg-white rounded-lg p-8 shadow-sm border-l-4 border-[#D4870A]">
+              <div className="absolute -left-6 -top-6 w-12 h-12 bg-[#D4870A] rounded-full flex items-center justify-center text-white font-bold text-lg font-montserrat">
+                3
+              </div>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3 ml-6">
+                Full-Day Game Drive with Hot Air Balloon Safari
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm">
+                Pre-dawn balloon at sunrise, morning game drive tracking Big Five, Maasai village visit, bush lunch in the reserve, afternoon walking safari, stargazing.
+              </p>
+            </div>
+
+            {/* Day 4 */}
+            <div className="relative bg-white rounded-lg p-8 shadow-sm border-l-4 border-[#D4870A]">
+              <div className="absolute -left-6 -top-6 w-12 h-12 bg-[#D4870A] rounded-full flex items-center justify-center text-white font-bold text-lg font-montserrat">
+                4
+              </div>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3 ml-6">
+                Return to Nairobi
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm">
+                Final breakfast, scenic drive back via Great Rift Valley, arrive Nairobi by late afternoon, drop-off at airport or hotel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Placeholder for additional content */}
       <div className="flex-1 bg-[#FAF4E8] p-8">
         {/* Content sections will be added here */}
