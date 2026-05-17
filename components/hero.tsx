@@ -64,7 +64,7 @@ export default function Hero() {
         </h1>
         
         <p className="text-white text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed" style={{ opacity: 0.85 }}>
-          Guided safaris, cultural expeditions, adventure tours & beach escapes — tailored entirely to you.
+          Guided safaris, cultural expeditions, adventure tours & beach escapes, tailored entirely to you.
         </p>
 
         <div className="flex gap-3 md:gap-4 justify-center flex-wrap">
