@@ -290,6 +290,116 @@ export default function MaasaiMaraPage() {
         </div>
       </section>
 
+      {/* Accommodation Section */}
+      <section className="w-full bg-[#F2E8D5] py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+            Accommodation Options for Every Budget
+          </h2>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-[#2A4A35]">
+                  <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Tier</th>
+                  <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Nairobi Hotel Day 1</th>
+                  <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Maasai Mara Lodge Days 2-3</th>
+                  <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">What to Expect</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* Luxury Row */}
+                <tr className="bg-white hover:bg-[#FAF4E8] transition-colors">
+                  <td className="font-montserrat font-semibold text-[#D4870A] p-4 border border-[#D4870A]">Luxury</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Crowne Plaza Nairobi Airport</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Maisha Sweetwaters Camp</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Spacious tents, gourmet dining, spa</td>
+                </tr>
+                {/* Mid-Range Row */}
+                <tr className="bg-[#FAF4E8] hover:bg-white transition-colors">
+                  <td className="font-montserrat font-semibold text-[#D4870A] p-4 border border-[#D4870A]">Mid-Range</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Sarova Stanley</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Pride Inn Mara Camp</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Comfortable tents, en-suite bathrooms, buffet</td>
+                </tr>
+                {/* Budget Row */}
+                <tr className="bg-white hover:bg-[#FAF4E8] transition-colors">
+                  <td className="font-montserrat font-semibold text-[#D4870A] p-4 border border-[#D4870A]">Budget</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Boma Inn</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Mara Chui Lodge</td>
+                  <td className="font-inter text-[#1C1208] p-4 border border-[#D4870A]">Clean comfortable tents, full-board, same game drive access</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="mt-8 bg-white rounded-lg p-6 border-l-4 border-[#D4870A]">
+            <p className="font-inter text-[#1C1208] text-sm text-center">
+              <span className="font-montserrat font-semibold text-[#2A4A35]">Note:</span> Regardless of tier, all packages include full-board meals, access to the same wildlife areas, and the same quality of guiding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Best Time Section */}
+      <section className="w-full bg-[#FAF4E8] py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+            Best Time to Visit Maasai Mara from Nairobi
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* Card 1 - July-October */}
+            <div className="bg-white rounded-lg p-8 shadow-sm">
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">
+                July–October
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm">
+                Great Migration peak season. Witness millions of wildebeest and zebras crossing rivers and grasslands in one of nature&apos;s most spectacular events.
+              </p>
+            </div>
+
+            {/* Card 2 - November-December */}
+            <div className="bg-white rounded-lg p-8 shadow-sm">
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">
+                November–December
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm">
+                Short rains bring lush vegetation and fewer crowds. Perfect for those seeking a more intimate safari experience with excellent wildlife viewing.
+              </p>
+            </div>
+
+            {/* Card 3 - January-March */}
+            <div className="bg-white rounded-lg p-8 shadow-sm">
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">
+                January–March
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm">
+                Calving season brings resident wildlife and newborns. Enjoy lower prices and fantastic predator-prey interactions with fewer visitors around.
+              </p>
+            </div>
+
+            {/* Card 4 - April-June */}
+            <div className="bg-white rounded-lg p-8 shadow-sm">
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">
+                April–June
+              </h3>
+              <p className="font-inter text-[#1C1208] text-sm">
+                Long rains bring the best birdwatching opportunities with discounted rates. Ideal for bird enthusiasts and travelers on a budget.
+              </p>
+            </div>
+          </div>
+
+          {/* Pro Tip Callout */}
+          <div className="bg-[#D4870A] rounded-lg p-8 text-center">
+            <p className="font-montserrat font-bold text-white text-lg mb-2">Pro Tip:</p>
+            <p className="font-inter text-white text-base">
+              For the Great Migration, plan your safari for late July through September.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Placeholder for additional content */}
       <div className="flex-1 bg-[#FAF4E8] p-8">
         {/* Content sections will be added here */}
