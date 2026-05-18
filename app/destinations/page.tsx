@@ -214,12 +214,12 @@ export default function DestinationsPage() {
                   <p className="text-[#1C1208] font-inter text-sm md:text-base leading-relaxed">
                     {dest.description}
                   </p>
-                  <Link
-                    href="/book#booking-form"
-                    className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
-                  >
-                    Plan a Safari Here <ArrowRight size={14} />
-                  </Link>
+                <Link
+  href={dest.id === 'maasai-mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
+  className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
+>
+  {dest.id === 'maasai-mara' ? 'Explore Maasai Mara' : 'Plan a Safari Here'} <ArrowRight size={14} />
+</Link>
                 </div>
               </div>
             ))}
