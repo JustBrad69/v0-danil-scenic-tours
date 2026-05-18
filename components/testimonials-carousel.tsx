@@ -11,7 +11,7 @@ const testimonials = [
     verified: true,
   },
   {
-    quote: 'Danson was more than a driver — he was an entertainer. He was very patient and good with the kids. 10/10 value for money.',
+    quote: 'Danson was more than a driver, he was an entertainer. He was very patient and good with the kids. 10/10 value for money.',
     author: 'Daria',
     country: 'Germany',
     date: 'January 2025',
@@ -19,7 +19,7 @@ const testimonials = [
     verified: true,
   },
   {
-    quote: 'The package they offered was budget friendly. Dan the tour guide was amazing — he knew the park like the back of his hand.',
+    quote: 'The package they offered was budget friendly. Dan the tour guide was amazing, he knew the park like the back of his hand.',
     author: 'Lyeel',
     country: 'Kenya',
     date: 'January 2025',

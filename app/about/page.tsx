@@ -163,7 +163,7 @@ export default function AboutPage() {
             Guest Reviews
           </h2>
           <p className="text-center text-[#D4870A] font-montserrat font-semibold mb-12">
-            Verified reviews from SafariBookings.com — 5.0/5 rating
+            Verified reviews from SafariBookings.com, 5.0/5 rating
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

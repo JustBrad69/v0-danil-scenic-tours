@@ -42,7 +42,7 @@ const services: Service[] = [
   {
     title: 'Cultural Expeditions',
     tag: 'Cultural',
-    description: 'Immerse yourself in Kenya\'s vibrant traditions and daily life. Meet local communities, learn their customs, and savour authentic cuisine — including Kalenjin mursik and Gikuyu githeri.',
+    description: 'Immerse yourself in Kenya\'s vibrant traditions and daily life. Meet local communities, learn their customs, and savour authentic cuisine, including Kalenjin mursik and Gikuyu githeri.',
     details: 'Experience highlights:\n• Maasai warrior village\n• Walking tour of Old Town Mombasa and Fort Jesus\n• Lamu Cultural Festival\n• Swahili heritage\n\nAvailable as: Private or Group',
     image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
     isPlaceholder: false,
@@ -60,7 +60,7 @@ const services: Service[] = [
   {
     title: 'Beach Escapes',
     tag: 'Beach',
-    description: 'Unwind on the pristine shores of Kenya\'s Indian Ocean coast — Diani, Watamu, or Malindi. Relax in luxury beach resorts and explore marine life through snorkelling and diving.',
+    description: 'Unwind on the pristine shores of Kenya\'s Indian Ocean coast, Diani, Watamu, or Malindi. Relax in luxury beach resorts and explore marine life through snorkelling and diving.',
     details: 'Available as: Private or customized',
     image: SERVICE_IMAGES.BEACH_ESCAPES,
     isPlaceholder: false,
@@ -68,7 +68,7 @@ const services: Service[] = [
   {
     title: 'Customized Safaris',
     tag: 'All',
-    description: 'Tailor-made itineraries built around your interests, group size, timeline, and budget — whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
+    description: 'Tailor-made itineraries built around your interests, group size, timeline, and budget, whether you\'re travelling solo, as a family, with friends, or on honeymoon.',
     details: 'Available as: Private and personalized',
     image: SERVICE_IMAGES.CUSTOMIZED_SAFARIS,
     isPlaceholder: false,
@@ -222,7 +222,7 @@ const SafarisPage = () => {
       <section className="py-8 px-4" style={{ backgroundColor: '#2A4A35', color: '#FDF8F0' }}>
         <div className="max-w-7xl mx-auto text-center font-inter">
           <p>
-            ✓ All safaris are conducted in our regularly serviced 4x4 pop-up roof jeeps — equipped for optimal wildlife viewing, built for your comfort, and maintained for your safety.
+            ✓ All safaris are conducted in our regularly serviced 4x4 pop-up roof jeeps, equipped for optimal wildlife viewing, built for your comfort, and maintained for your safety.
           </p>
         </div>
       </section>
