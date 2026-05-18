@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { DESTINATION_IMAGES, LOCAL_IMAGES } from '@/lib/images'
+import { DESTINATION_IMAGES } from '@/lib/images'
 
 const destinations = [
   {
@@ -65,7 +65,6 @@ export default function FeaturedDestinations() {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
             >
-              {/* Image */}
               {dest.isPlaceholder ? (
                 <div
                   style={{
@@ -99,7 +98,6 @@ export default function FeaturedDestinations() {
                 </div>
               )}
 
-              {/* Content */}
               <div className="p-6 md:p-8 space-y-4">
                 <h3 className="text-2xl md:text-3xl font-playfair text-[#2A4A35]">
                   {dest.name}
@@ -114,7 +112,7 @@ export default function FeaturedDestinations() {
                   href={dest.name === 'Maasai Mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                 >
-                  {dest.name === 'Maasai Mara' ? 'Explore Maasai Mara →' : 'Book This Safari →'} <ArrowRight size={14} />
+                  {dest.name === 'Maasai Mara' ? 'Explore Maasai Mara' : 'Book This Safari'} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
