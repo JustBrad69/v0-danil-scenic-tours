@@ -13,7 +13,7 @@ export default function StorytellingSectionHome() {
               More Than a Safari. A Connection.
             </h2>
             <p className="font-inter text-lg text-[#1C1208] leading-relaxed" style={{ lineHeight: 1.8 }}>
-              At Danil Scenic Tours, we believe travel should change you. Not just show you things — but connect you deeply to Kenya's landscapes, its wildlife, and its people. Whether it's your first game drive or your tenth, we build every experience around you.
+              At Danil Scenic Tours, we believe travel should change you. Not just show you things, but connect you deeply to Kenya's landscapes, its wildlife, and its people. Whether it's your first game drive or your tenth, we build every experience around you.
             </p>
             <Link
               href="/about"

@@ -43,7 +43,7 @@ export default function MaasaiMaraPage() {
             If you are planning a safari in Kenya, the Maasai Mara is the destination that should sit at the top of your list. This world-famous wildlife haven offers an unmatched safari experience home to the Big Five, the legendary Great Migration, and vast golden savannahs teeming with predators and prey. A Maasai Mara safari from Nairobi brings you directly into the heart of Africa's most spectacular wildlife theatre, and with Danil Scenic Tours, your journey starts the moment you land at Jomo Kenyatta International Airport.
           </p>
           <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            Whether you are an international traveller discovering Kenya for the first time or a domestic visitor seeking an unforgettable weekend escape, our 4-day Maasai Mara safari package is designed to immerse you in the wild while ensuring comfort, safety, and authentic cultural encounters. This guide will walk you through everything you need to know — from what's included and when to visit, to accommodation options and the full day-by-day itinerary.
+            Whether you are an international traveller discovering Kenya for the first time or a domestic visitor seeking an unforgettable weekend escape, our 4-day Maasai Mara safari package is designed to immerse you in the wild while ensuring comfort, safety, and authentic cultural encounters. This guide will walk you through everything you need to know, from what's included and when to visit, to accommodation options and the full day-by-day itinerary.
           </p>
         </div>
       </section>
@@ -55,10 +55,10 @@ export default function MaasaiMaraPage() {
             What Makes a Maasai Mara Safari from Nairobi Unforgettable
           </h2>
           <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            The Maasai Mara is not just Kenya's most visited national reserve — it is one of the greatest wildlife destinations on the planet. Open grassland, acacia woodlands, and riverine forests, the Mara is home to an extraordinary concentration of wildlife. Lions lounge in the shade of fever trees. Cheetahs scan the plains for prey. Elephants march in single file along ancient migration routes. And during the Great Migration season, over 1.5 million wildebeest flood into the reserve, creating a spectacle that has been called the "greatest show on Earth."
+            The Maasai Mara is not just Kenya's most visited national reserve, it is one of the greatest wildlife destinations on the planet. Open grassland, acacia woodlands, and riverine forests, the Mara is home to an extraordinary concentration of wildlife. Lions lounge in the shade of fever trees. Cheetahs scan the plains for prey. Elephants march in single file along ancient migration routes. And during the Great Migration season, over 1.5 million wildebeest flood into the reserve, creating a spectacle that has been called the "greatest show on Earth."
           </p>
           <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            Why start your safari from Nairobi? Nairobi is Kenya's gateway city, connected to the world through Jomo Kenyatta International Airport. Most international flights land here, making it the logical and convenient starting point for any Kenya safari tour. But Nairobi is more than just a transit hub — it is a vibrant capital city with its own attractions, including Nairobi National Park (the world's only national park within a capital city), the Karen Blixen Museum, and the Giraffe Centre. Starting your safari from Nairobi allows you to experience both urban Kenyan culture and the raw wilderness of the Maasai Mara in one journey.
+            Why start your safari from Nairobi? Nairobi is Kenya's gateway city, connected to the world through Jomo Kenyatta International Airport. Most international flights land here, making it the logical and convenient starting point for any Kenya safari tour. But Nairobi is more than just a transit hub, it is a vibrant capital city with its own attractions, including Nairobi National Park (the world's only national park within a capital city), the Karen Blixen Museum, and the Giraffe Centre. Starting your safari from Nairobi allows you to experience both urban Kenyan culture and the raw wilderness of the Maasai Mara in one journey.
           </p>
           <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
             At Danil Scenic Tours, we specialize in Maasai Mara safaris from Nairobi that cater to both private and group travellers. Our packages include airport pickup, a Nairobi city tour on arrival, comfortable transport to the Mara, and a full safari experience with expert guides. We handle the logistics so you can focus entirely on the wildlife, the landscapes, and the memories you will create.
@@ -100,7 +100,7 @@ export default function MaasaiMaraPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-start gap-4 mb-4">
                 <Zap size={28} className="text-[#D4870A] flex-shrink-0 mt-1" />
-                <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg">Hot Air Balloon Safari — Included as Standard</h3>
+                <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg">Hot Air Balloon Safari, Included as Standard</h3>
               </div>
               <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Unlike many operators who charge extra for this experience, our package includes a hot air balloon safari. You will float silently over the plains, watching herds of wildebeest and zebra moving below, and predators stalking their morning prey.</p>
             </div>
@@ -123,7 +123,7 @@ export default function MaasaiMaraPage() {
                 <UtensilsCrossed size={28} className="text-[#D4870A] flex-shrink-0 mt-1" />
                 <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg">All Meals, Park Fees, and Airport Transfers</h3>
               </div>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Full-board accommodation means all meals are included — breakfast, lunch, and dinner throughout your stay. All Maasai Mara National Reserve entrance fees are covered. Airport pickup from Jomo Kenyatta International Airport and drop-off at the end of your safari are also included, ensuring a seamless start and finish to your adventure.</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Full-board accommodation means all meals are included: breakfast, lunch, and dinner throughout your stay. All Maasai Mara National Reserve entrance fees are covered. Airport pickup from Jomo Kenyatta International Airport and drop-off at the end of your safari are also included, ensuring a seamless start and finish to your adventure.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-start gap-4 mb-4">
@@ -152,7 +152,7 @@ export default function MaasaiMaraPage() {
               </div>
               <div className="p-8 space-y-4">
                 <p className="font-inter text-[#1C1208] leading-relaxed">Your Maasai Mara safari begins the moment you land at Jomo Kenyatta International Airport. Our driver will meet you at arrivals and transfer you to your Nairobi hotel. After checking in and settling into your room, you will depart for a guided tour of Nairobi.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">The city tour includes stops at the iconic Kenyatta International Convention Centre (KICC), Nairobi National Park (where you can see lions, rhinos, and giraffes against a backdrop of city skyscrapers), the National Museum, and other key landmarks. This is your introduction to Kenya's capital — a bustling modern city with deep historical roots. After the tour, you return to your hotel for lunch and spend the rest of the afternoon at leisure. Dinner is served at the hotel, and you will have time to rest before the early start tomorrow.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">The city tour includes stops at the iconic Kenyatta International Convention Centre (KICC), Nairobi National Park (where you can see lions, rhinos, and giraffes against a backdrop of city skyscrapers), the National Museum, and other key landmarks. This is your introduction to Kenya's capital, a bustling modern city with deep historical roots. After the tour, you return to your hotel for lunch and spend the rest of the afternoon at leisure. Dinner is served at the hotel, and you will have time to rest before the early start tomorrow.</p>
                 <div>
                   <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">Accommodation for Day 1:</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -184,7 +184,7 @@ export default function MaasaiMaraPage() {
                 <p className="font-inter text-[#1C1208] leading-relaxed">Continuing toward the Mara, you will pass through Narok, the gateway town to Maasai country. Here, you will stop at the colourful Narok markets where Maasai traders sell handcrafted beadwork, traditional shukas (Maasai wraps), and carved souvenirs. This is a great opportunity to browse and buy authentic Kenyan handicrafts.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">By early afternoon, you arrive at your lodge or tented camp in the Maasai Mara. Check in, enjoy lunch, and spend the rest of the day relaxing at the camp. As the sun begins to set, you may choose to take a short walk around the camp grounds or simply sit on your private veranda and watch the wildlife that often wanders near the lodges. Dinner is served as the African sky fills with stars.</p>
                 <div>
-                  <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">Accommodation for Days 2–3:</p>
+                  <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">Accommodation for Days 2-3:</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-[#FAF4E8] rounded-xl p-4">
                       <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Luxury</p>
@@ -210,11 +210,11 @@ export default function MaasaiMaraPage() {
                 <h3 className="font-playfair text-white text-2xl font-bold">Full-Day Maasai Mara Game Drive with Hot Air Balloon Safari</h3>
               </div>
               <div className="p-8 space-y-4">
-                <p className="font-inter text-[#1C1208] leading-relaxed">This is the highlight day of your safari. Wake up before dawn for preparations and an early breakfast. Before setting out for the game drive, you will enjoy a breathtaking hot air balloon safari over the Maasai Mara National Reserve. As the balloon gently rises into the morning sky, you will watch the sunrise cast golden light across the plains while spotting wildlife below from a unique aerial view — herds of elephants moving through the savannah, giraffes standing tall against the horizon, and predators returning from their nightly hunts.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">After landing, you will continue with an early morning game drive through the Maasai Mara National Reserve. The early morning is when the reserve comes alive — predators returning from nocturnal hunts, herbivores grazing in the cool morning air, and the soft golden light perfect for photography. Your guide will take you to key wildlife hotspots, tracking the movements of lion prides, cheetah families, and elephant herds. The Maasai Mara is home to the Big Five (lion, leopard, elephant, buffalo, and rhinoceros) as well as the "Special Five" (cheetah, zebra, giraffe, hippo, and hyena). You will observe these animals in their natural habitat, often just metres away from your vehicle.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">Mid-morning, you will head to a Maasai village (boma) for a cultural visit. Meet the Maasai warriors and elders, learn about their semi-nomadic lifestyle, and watch traditional dances and ceremonies. The Maasai will teach you the art of beadwork — how they create the intricate necklaces, bracelets, and earrings that are central to their cultural identity. This visit provides a human context to the landscape you are exploring and highlights the deep connection the Maasai have with the land and its wildlife.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">This is the highlight day of your safari. Wake up before dawn for preparations and an early breakfast. Before setting out for the game drive, you will enjoy a breathtaking hot air balloon safari over the Maasai Mara National Reserve. As the balloon gently rises into the morning sky, you will watch the sunrise cast golden light across the plains while spotting wildlife below from a unique aerial view, herds of elephants moving through the savannah, giraffes standing tall against the horizon, and predators returning from their nightly hunts.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">After landing, you will continue with an early morning game drive through the Maasai Mara National Reserve. The early morning is when the reserve comes alive, predators returning from nocturnal hunts, herbivores grazing in the cool morning air, and the soft golden light perfect for photography. Your guide will take you to key wildlife hotspots, tracking the movements of lion prides, cheetah families, and elephant herds. The Maasai Mara is home to the Big Five (lion, leopard, elephant, buffalo, and rhinoceros) as well as the "Special Five" (cheetah, zebra, giraffe, hippo, and hyena). You will observe these animals in their natural habitat, often just metres away from your vehicle.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">Mid-morning, you will head to a Maasai village (boma) for a cultural visit. Meet the Maasai warriors and elders, learn about their semi-nomadic lifestyle, and watch traditional dances and ceremonies. The Maasai will teach you the art of beadwork, how they create the intricate necklaces, bracelets, and earrings that are central to their cultural identity. This visit provides a human context to the landscape you are exploring and highlights the deep connection the Maasai have with the land and its wildlife.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">After the cultural visit, enjoy a bush lunch inside the reserve. Your guide will find a scenic spot where you can eat while surrounded by the sights and sounds of the African wilderness. Bush lunches are a safari tradition and one of the most memorable dining experiences you will have.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">In the afternoon, you will embark on a guided walking safari. You will explore the Mara on foot — learning to identify animal tracks, understanding the role of termite mounds in the ecosystem, and discovering the medicinal plants that the Maasai have used for centuries. Walking in the bush is humbling and exhilarating, and it gives you a profound appreciation for the complexity of the Mara's ecosystem.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">In the afternoon, you will embark on a guided walking safari. You will explore the Mara on foot, learning to identify animal tracks, understanding the role of termite mounds in the ecosystem, and discovering the medicinal plants that the Maasai have used for centuries. Walking in the bush is humbling and exhilarating, and it gives you a profound appreciation for the complexity of the Mara's ecosystem.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">As the day comes to an end, you will return to your lodge or tented camp for a relaxing dinner and overnight stay. Later in the evening, you can unwind under the clear Maasai Mara sky and enjoy a breathtaking stargazing experience, made even more special by the reserve's minimal light pollution.</p>
               </div>
             </div>
@@ -248,7 +248,7 @@ export default function MaasaiMaraPage() {
                 <tr className="bg-[#2A4A35]">
                   <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Tier</th>
                   <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Nairobi Hotel (Day 1)</th>
-                  <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Maasai Mara Lodge (Days 2–3)</th>
+                  <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">Maasai Mara Lodge (Days 2-3)</th>
                   <th className="font-montserrat font-bold text-white text-left p-4 border border-[#D4870A]">What to Expect</th>
                 </tr>
               </thead>
@@ -276,7 +276,7 @@ export default function MaasaiMaraPage() {
           </div>
           <div className="mt-8 bg-white rounded-2xl p-6 border-l-4 border-[#D4870A]">
             <p className="font-inter text-[#1C1208] text-sm text-center">
-              <span className="font-montserrat font-semibold text-[#2A4A35]">Important:</span> Regardless of which tier you choose, all accommodation options include full-board meals, access to the same wildlife areas, and the same quality of guiding. The difference is in the level of comfort and amenities — not in the safari experience itself.
+              <span className="font-montserrat font-semibold text-[#2A4A35]">Important:</span> Regardless of which tier you choose, all accommodation options include full-board meals, access to the same wildlife areas, and the same quality of guiding. The difference is in the level of comfort and amenities, not in the safari experience itself.
             </p>
           </div>
         </div>
@@ -326,9 +326,9 @@ export default function MaasaiMaraPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <Car size={32} className="text-[#D4870A]" />
-                <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold">By Road (5–6 Hours)</h3>
+                <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold">By Road (5-6 Hours)</h3>
               </div>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed mb-4">Most of our clients travel by road, which allows you to experience the journey as part of the adventure. You will drive through the scenic Great Rift Valley, stop at viewpoints, browse Narok markets, and arrive at the Mara with a deeper sense of the landscape and culture. The roads are mostly paved, though the final section into the Mara can be rough — which is why we use 4x4 vehicles.</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed mb-4">Most of our clients travel by road, which allows you to experience the journey as part of the adventure. You will drive through the scenic Great Rift Valley, stop at viewpoints, browse Narok markets, and arrive at the Mara with a deeper sense of the landscape and culture. The roads are mostly paved, though the final section into the Mara can be rough, which is why we use 4x4 vehicles.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
@@ -353,19 +353,19 @@ export default function MaasaiMaraPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#2A4A35] rounded-2xl p-6">
               <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Local Nairobi-Based Operator</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We are based in Kahawa West, Nairobi, and we know this city and this country inside out. When you book with us, you are booking with people who live here, work here, and care deeply about showcasing the best of Kenya. We are not a faceless international booking platform — we are a family-run business that treats every client like a guest.</p>
+              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We are based in Kahawa West, Nairobi, and we know this city and this country inside out. When you book with us, you are booking with people who live here, work here, and care deeply about showcasing the best of Kenya. We are not a faceless international booking platform, we are a family-run business that treats every client like a guest.</p>
             </div>
             <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">All-Inclusive Pricing — No Hidden Costs</h3>
+              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">All-Inclusive Pricing, No Hidden Costs</h3>
               <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">When we say "all-inclusive," we mean it. Transport, accommodation, meals, park fees, hot air balloon safari, walking safari, Maasai village visit, Nairobi city tour, and airport transfers are all included. The only thing not included is your international flight and personal expenses like souvenirs or tips.</p>
             </div>
             <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Flexible Departures — Daily Starting Points</h3>
+              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Flexible Departures, Daily Starting Points</h3>
               <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We offer daily departures from Nairobi, so you do not need to wait for a group to form. Whether you want to start on a Monday, Friday, or Sunday, we can accommodate you. Private safaris depart whenever you are ready.</p>
             </div>
             <div className="bg-[#2A4A35] rounded-2xl p-6">
               <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Expert Guides Who Make the Difference</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Our driver-guides are the heart of the experience. They are also storytellers and problem-solvers who ensure your safari runs smoothly from start to finish. We are also committed to responsible tourism — we work with lodges that support local communities and ensure our guides follow ethical wildlife viewing practices.</p>
+              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Our driver-guides are the heart of the experience. They are also storytellers and problem-solvers who ensure your safari runs smoothly from start to finish. We are also committed to responsible tourism, we work with lodges that support local communities and ensure our guides follow ethical wildlife viewing practices.</p>
             </div>
           </div>
         </div>
@@ -415,14 +415,14 @@ export default function MaasaiMaraPage() {
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Bring extra memory cards and batteries</span></li>
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Use a zoom lens (200mm or higher) for wildlife photography</span></li>
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Shoot in early morning or late afternoon for best lighting</span></li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Respect wildlife — do not ask your guide to drive off-road or harass animals for a photo</span></li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Respect wildlife, do not ask your guide to drive off-road or harass animals for a photo</span></li>
                 </ul>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Booking Timeline</h3>
                 <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book at least 3–6 months in advance for peak season (July–October)</span></li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book 4–8 weeks in advance for shoulder season (November–June)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book at least 3-6 months in advance for peak season (July-October)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book 4-8 weeks in advance for shoulder season (November-June)</span></li>
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Contact us for last-minute availability</span></li>
                 </ul>
               </div>
@@ -448,12 +448,12 @@ export default function MaasaiMaraPage() {
                 a: 'Yes. Unlike many operators who charge extra for the balloon safari, we include it as standard in our 4-day package. This makes our offering exceptional value.',
               },
               {
-                q: 'Can I do a shorter safari — 2 or 3 days instead of 4?',
+                q: 'Can I do a shorter safari, 2 or 3 days instead of 4?',
                 a: 'Yes. While we recommend the 4-day package for a full experience (including the Nairobi city tour and hot air balloon), we can customize 2-day or 3-day packages that focus solely on the Maasai Mara. It is highly advisable to consider a minimum of a 3-day package. Contact us to discuss options.',
               },
               {
                 q: 'What is the minimum and maximum group size?',
-                a: 'The minimum group size is 7. There is no maximum — we have the manpower and tour vehicles to accommodate any group size.',
+                a: 'The minimum group size is 7. There is no maximum, we have the manpower and tour vehicles to accommodate any group size.',
               },
               {
                 q: 'Do you offer private safaris, or only group tours?',
@@ -461,7 +461,7 @@ export default function MaasaiMaraPage() {
               },
               {
                 q: 'What if I cannot see the Great Migration during my visit?',
-                a: 'The Great Migration is seasonal and unpredictable. Even outside migration season (July–October), the Maasai Mara offers world-class wildlife viewing. The reserve\'s resident lion prides, leopards, elephants, and buffalo are present year-round, and game drives are spectacular regardless of migration timing.',
+                a: 'The Great Migration is seasonal and unpredictable. Even outside migration season (July-October), the Maasai Mara offers world-class wildlife viewing. The reserve\'s resident lion prides, leopards, elephants, and buffalo are present year-round, and game drives are spectacular regardless of migration timing.',
               },
               {
                 q: 'Is it safe to travel to the Maasai Mara?',

@@ -27,7 +27,7 @@ const destinations = [
   {
     id: 'maasai-mara',
     name: 'Maasai Mara National Reserve',
-    description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July–October).',
+    description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July-October).',
     image: BLOB_IMAGES.CTA_BANNER,
     isPlaceholder: false,
   },
