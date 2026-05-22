@@ -7,13 +7,13 @@ import dynamic from 'next/dynamic'
 import Footer from '@/components/footer'
 import { ArrowRight } from 'lucide-react'
 import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
-const Navbar = dynamic(() => import('@/components/navbar'), { ssr: true });
-const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false });
-const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false });
-// Dynamic import to prevent SSR crash and improve initial page load speed
-const SafariMap = dynamic(() => import('@/components/SafariMap'), { 
+
+const Navbar = dynamic(() => import('@/components/navbar'), { ssr: true })
+const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
+const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
+const SafariMap = dynamic(() => import('@/components/SafariMap'), {
   ssr: false,
-  loading: () => <div className="h-[450px] w-full bg-gray-200 animate-pulse rounded-2xl" />
+  loading: () => <div className="h-[450px] w-full bg-gray-200 animate-pulse rounded-2xl" />,
 })
 
 const heroSlideImages = [
@@ -63,7 +63,7 @@ const destinations = [
     id: 'aberdare',
     name: 'Aberdare National Park',
     description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
-    image: BLOB_IMAGES.MAASAI_MARA,
+    image: BLOB_IMAGES.ABERDARE,
     isPlaceholder: false,
   },
   {
@@ -77,7 +77,7 @@ const destinations = [
     id: 'meru',
     name: 'Meru National Park',
     description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets, rocky outcrops, and pristine landscapes.',
-    image: BLOB_IMAGES.WATAMU,
+    image: BLOB_IMAGES.MERU,
     isPlaceholder: false,
   },
   {
@@ -130,7 +130,7 @@ export default function DestinationsPage() {
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
-      
+
       {/* Hero with Slideshow */}
       <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -138,16 +138,13 @@ export default function DestinationsPage() {
             <div
               key={index}
               className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
             >
               <Image
                 src={image}
                 alt={`Kenya wonders slide ${index + 1}`}
                 fill
                 className="object-cover"
-                // CRITICAL: priority={index === 0} fixes LCP by preloading the first image
                 priority={index === 0}
                 sizes="100vw"
               />
@@ -171,10 +168,12 @@ export default function DestinationsPage() {
         </div>
       </section>
 
-      {/* NEW MAP SECTION */}
+      {/* Map Section */}
       <section className="py-12 bg-[#FAF4E8] px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-playfair text-[#2A4A35] mb-8 text-center">Explore the Geography of Your Adventure</h2>
+          <h2 className="text-3xl font-playfair text-[#2A4A35] mb-8 text-center">
+            Explore the Geography of Your Adventure
+          </h2>
           <SafariMap />
         </div>
       </section>
@@ -189,7 +188,6 @@ export default function DestinationsPage() {
                 id={dest.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
-                {/* Image Rendering */}
                 {dest.isPlaceholder ? (
                   <div className="flex items-center justify-center bg-[#C4A882] aspect-[4/3] p-4 text-[13px] italic text-[#6B5240] text-center font-inter">
                     {dest.image}
@@ -206,7 +204,6 @@ export default function DestinationsPage() {
                   </div>
                 )}
 
-                {/* Content */}
                 <div className="p-6 md:p-8 space-y-4">
                   <h3 className="text-xl md:text-2xl font-playfair text-[#2A4A35]">
                     {dest.name}
@@ -214,12 +211,12 @@ export default function DestinationsPage() {
                   <p className="text-[#1C1208] font-inter text-sm md:text-base leading-relaxed">
                     {dest.description}
                   </p>
-                <Link
-  href={dest.id === 'maasai-mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
-  className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
->
-  {dest.id === 'maasai-mara' ? 'Explore Maasai Mara' : 'Plan a Safari Here'} <ArrowRight size={14} />
-</Link>
+                  <Link
+                    href={dest.id === 'maasai-mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
+                    className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
+                  >
+                    {dest.id === 'maasai-mara' ? 'Explore Maasai Mara' : 'Plan a Safari Here'} <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             ))}
