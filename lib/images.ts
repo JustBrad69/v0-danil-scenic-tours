@@ -3,7 +3,6 @@
  * All image references should be imported from this file to maintain consistency
  * and simplify future updates to image URLs
  */
-
 // Local images
 export const LOCAL_IMAGES = {
   LOGO: '/logo.webp',
@@ -20,39 +19,19 @@ export const LOCAL_IMAGES = {
 
 // Blob storage images
 export const BLOB_IMAGES = {
-  // Diani Beach / Beach Escapes
   DIANI_BEACH: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
-
-  // Lake Nakuru
   LAKE_NAKURU: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
-
-  // Maasai Mara
   MAASAI_MARA: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
-
-  // Tsavo East
   TSAVO_EAST: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp',
-
-  // Mount Kenya
   MOUNT_KENYA: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20094056-epSavrISmZLiwYYh4tsgGqat52e34W.webp',
-
-  // Watamu
   WATAMU: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105006-p0LsV0tdCnZNmkjIG5Aey8nntoVSAo.webp',
-
-  // Samburu
   SAMBURU: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105056-xa82k3Wfrb10L11nrnWTuyqp0AybAo.webp',
-
-  // Aberdare
   ABERDARE: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20105258-8JEgBeQ61PSLAly1hdLtvwRg4Q28qR.webp',
-
-  // Adventure - Rock climbing/hiking
   ADVENTURE_HIKING: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
-
-  // Safari experience photos
   SAFARI_PHOTO_1: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2010.39.00-zWbc5Kff8Ov83PkpY3KGpLCAFeWlks.webp',
   SAFARI_PHOTO_2: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2022.58.01-CLCCC7SKHsOzZrZZbCo84McmWU3mT7.webp',
-
-  // CTA Banner / Hero alternate
   CTA_BANNER: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+  MERU: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20091948-biQwM7Q4NGVZhod3fPu11cfeAmNkch.webp',
 }
 
 /**
