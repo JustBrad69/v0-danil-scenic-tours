@@ -10,7 +10,7 @@ const destinations = [
     image: DESTINATION_IMAGES.MAASAI_MARA,
     isPlaceholder: false,
     price: 'Starting from $350/Day',
-    href: '/destinations/maasai-mara',
+    href: '/destinations/maasai-mara-safari-tours',
     cta: 'Explore Maasai Mara',
   },
   {
@@ -19,7 +19,7 @@ const destinations = [
     image: DESTINATION_IMAGES.AMBOSELI,
     isPlaceholder: false,
     price: 'Starting from $280/Day',
-    href: '/destinations/amboseli',
+    href: '/destinations/amboseli-safari-tours',
     cta: 'Explore Amboseli',
   },
   {
