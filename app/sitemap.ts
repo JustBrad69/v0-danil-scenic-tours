@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/book', priority: 0.9, changeFreq: 'weekly' },
     { path: '/destinations', priority: 0.8, changeFreq: 'weekly' },
     { path: '/destinations/maasai-mara', priority: 0.95, changeFreq: 'weekly' },
+    { path: '/destinations/amboseli', priority: 0.95, changeFreq: 'weekly' },
     { path: '/gallery', priority: 0.5, changeFreq: 'monthly' },
     { path: '/about', priority: 0.7, changeFreq: 'monthly' },
   ]
