@@ -30,7 +30,7 @@ const destinations = [
     description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July-October).',
     image: BLOB_IMAGES.CTA_BANNER,
     isPlaceholder: false,
-    href: '/destinations/maasai-mara',
+    href: '/destinations/maasai-mara-safari-tours',
     cta: 'Explore Maasai Mara',
   },
   {
@@ -39,7 +39,7 @@ const destinations = [
     description: 'Famous elephant herds set against the breathtaking backdrop of Mt. Kilimanjaro.',
     image: LOCAL_IMAGES.AMBOSELI_ELEPHANTS,
     isPlaceholder: false,
-    href: '/destinations/amboseli',
+    href: '/destinations/amboseli-safari-tours',
     cta: 'Explore Amboseli',
   },
   {
