@@ -40,10 +40,10 @@ export default function AmboseliPage() {
       <section className="w-full bg-[#FAF4E8] py-20 px-4">
         <div className="max-w-4xl mx-auto space-y-6">
           <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            If you are seeking Africa's most iconic elephant experience, Amboseli National Park should be at the top of your safari wishlist. Located at the foot of Mount Kilimanjaro, Africa's tallest mountain, Amboseli offers a wildlife spectacle unlike any other — massive elephant herds moving across golden plains with the snow-capped peak of Kilimanjaro towering in the background. An Amboseli safari from Nairobi brings you face-to-face with these gentle giants, alongside lions, cheetahs, zebras, and over 400 bird species. With Danil Scenic Tours, your journey begins the moment you land at Jomo Kenyatta International Airport.
+            If you are seeking Africa's most iconic elephant experience, Amboseli National Park should be at the top of your safari wishlist. Located at the foot of Mount Kilimanjaro, Africa's tallest mountain, Amboseli offers a wildlife spectacle unlike any other, with massive elephant herds moving across golden plains with the snow-capped peak of Kilimanjaro towering in the background. An Amboseli safari from Nairobi brings you face-to-face with these gentle giants, alongside lions, cheetahs, zebras, and over 400 bird species. With Danil Scenic Tours, your journey begins the moment you land at Jomo Kenyatta International Airport.
           </p>
           <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            Whether you are an international traveler discovering Kenya for the first time or a domestic visitor seeking a weekend escape into the wild, our 4-day Amboseli safari package is designed to immerse you in one of East Africa's most photographed landscapes. This guide will walk you through everything you need to know — from what's included and when to visit, to accommodation options and the full day-by-day itinerary.
+            Whether you are an international traveler discovering Kenya for the first time or a domestic visitor seeking a weekend escape into the wild, our 4-day Amboseli safari package is designed to immerse you in one of East Africa's most photographed landscapes. This guide will walk you through everything you need to know, from what's included and when to visit, to accommodation options and the full day-by-day itinerary.
           </p>
         </div>
       </section>
@@ -61,19 +61,19 @@ export default function AmboseliPage() {
             <div>
               <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">Africa's Best Elephant Viewing</h3>
               <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-                Amboseli is home to over 1,600 elephants, making it one of the best places in Africa to observe these majestic creatures up close. The park's elephant herds are among the most studied in the world, and you will see everything from playful calves to massive tuskers. The open terrain means visibility is excellent — elephants are often just metres away from your vehicle.
+                Amboseli is home to over 1,600 elephants, making it one of the best places in Africa to observe these majestic creatures up close. The park's elephant herds are among the most studied in the world, and you will see everything from playful calves to massive tuskers. The open terrain means visibility is excellent, with elephants often just metres away from your vehicle.
               </p>
             </div>
             <div>
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">Mount Kilimanjaro — The Ultimate Backdrop</h3>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">Mount Kilimanjaro, The Ultimate Backdrop</h3>
               <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-                While Kilimanjaro itself is located across the border in Tanzania, Amboseli offers the clearest and most dramatic views of the mountain from Kenyan soil. On clear mornings, the snow-capped summit rises 5,895 metres above sea level, creating a breathtaking backdrop for wildlife photography. Imagine photographing a herd of elephants crossing a dusty plain with Africa's highest peak behind them — this is Amboseli's signature image.
+                While Kilimanjaro itself is located across the border in Tanzania, Amboseli offers the clearest and most dramatic views of the mountain from Kenyan soil. On clear mornings, the snow-capped summit rises 5,895 metres above sea level, creating a breathtaking backdrop for wildlife photography. Imagine photographing a herd of elephants crossing a dusty plain with Africa's highest peak behind them. This is Amboseli's signature image.
               </p>
             </div>
             <div>
               <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">Why Start Your Safari from Nairobi?</h3>
               <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-                Nairobi is Kenya's gateway city, connected to the world through Jomo Kenyatta International Airport. Most international flights land here, making it the logical and convenient starting point for any Kenya safari tour. But Nairobi is more than just a transit hub — it is a vibrant capital city with its own attractions, including the KICC rooftop, Nairobi National Park, the Karen Blixen Museum, and the Giraffe Centre. Starting your safari from Nairobi allows you to experience both urban Kenyan culture and the wilderness of Amboseli in one seamless journey.
+                Nairobi is Kenya's gateway city, connected to the world through Jomo Kenyatta International Airport. Most international flights land here, making it the logical and convenient starting point for any Kenya safari tour. But Nairobi is more than just a transit hub. It is a vibrant capital city with its own attractions, including the KICC rooftop, Nairobi National Park, the Karen Blixen Museum, and the Giraffe Centre. Starting your safari from Nairobi allows you to experience both urban Kenyan culture and the wilderness of Amboseli in one seamless journey.
               </p>
               <p className="font-inter text-[#1C1208] text-lg leading-relaxed mt-4">
                 At Danil Scenic Tours, we specialize in Amboseli safari tours that cater to both private and group travelers. Our packages include airport pickup from JKIA, a Kimana craft stop en route to Amboseli, comfortable transport, a full safari experience with expert guides, Nairobi National Park game drive, and a Carnivore dinner on Day 3. We handle the logistics so you can focus entirely on the wildlife, the landscapes, and the memories you will create.
@@ -140,14 +140,14 @@ export default function AmboseliPage() {
                 <UtensilsCrossed size={28} className="text-[#D4870A] flex-shrink-0 mt-1" />
                 <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg">All Meals, Park Fees, and Airport Transfers</h3>
               </div>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Full-board accommodation means all meals are included — breakfast, lunch, and dinner throughout your stay. All Amboseli National Park entrance fees are covered. Airport pickup from Jomo Kenyatta International Airport and drop-off at the end of your safari are also included, ensuring a good start and finish to your adventure.</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Full-board accommodation means all meals are included, with breakfast, lunch, and dinner throughout your stay. All Amboseli National Park entrance fees are covered. Airport pickup from Jomo Kenyatta International Airport and drop-off at the end of your safari are also included, ensuring a good start and finish to your adventure.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-start gap-4 mb-4">
                 <MapPin size={28} className="text-[#D4870A] flex-shrink-0 mt-1" />
                 <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg">Airport Pickup and Kimana Craft Stop on Day 1</h3>
               </div>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">On Day 1, our driver picks you up from Jomo Kenyatta International Airport (JKIA) and you head straight toward Amboseli. Along the way, you stop at Kimana to browse and purchase handmade crafts and souvenirs from local artisans — a great introduction to Kenyan creativity. You arrive at the lodge in time for lunch, enjoy a short afternoon rest, and then set out on an evening game drive to begin your wildlife adventure.</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">On Day 1, our driver picks you up from Jomo Kenyatta International Airport (JKIA) and you head straight toward Amboseli. Along the way, you stop at Kimana to browse and purchase handmade crafts and souvenirs from local artisans, a great introduction to Kenyan creativity. You arrive at the lodge in time for lunch, enjoy a short afternoon rest, and then set out on an evening game drive to begin your wildlife adventure.</p>
             </div>
           </div>
         </div>
@@ -169,8 +169,8 @@ export default function AmboseliPage() {
               </div>
               <div className="p-8 space-y-4">
                 <p className="font-inter text-[#1C1208] leading-relaxed">Your Amboseli adventure begins the moment our driver meets you at arrivals at Jomo Kenyatta International Airport (JKIA). From there, you head directly toward Amboseli, with the excitement of the safari already building as Nairobi's skyline gives way to the open landscapes of southern Kenya.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">Kimana Craft Stop: En route to Amboseli, you will make a stop in Kimana to browse a vibrant market of handmade crafts and souvenirs. Local artisans display beadwork, carvings, textiles, and Maasai-inspired keepsakes — perfect for gifts or personal mementos. This is a great opportunity to support local craftspeople and take home a piece of Kenya before you even step foot in the park.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">You arrive at the lodge in time for lunch, giving you a chance to settle in, freshen up, and enjoy a relaxed midday break. As the afternoon heat eases, you will head out on an evening game drive through Amboseli National Park — your first taste of the incredible wildlife that awaits. Watch for elephant herds gathering near the swamps as the sun begins to set over Mount Kilimanjaro. Return to the lodge for dinner as the African night comes alive around you.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">Kimana Craft Stop: En route to Amboseli, you will make a stop in Kimana to browse a vibrant market of handmade crafts and souvenirs. Local artisans display beadwork, carvings, textiles, and Maasai-inspired keepsakes, perfect for gifts or personal mementos. This is a great opportunity to support local craftspeople and take home a piece of Kenya before you even step foot in the park.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">You arrive at the lodge in time for lunch, giving you a chance to settle in, freshen up, and enjoy a relaxed midday break. As the afternoon heat eases, you will head out on an evening game drive through Amboseli National Park, your first taste of the incredible wildlife that awaits. Watch for elephant herds gathering near the swamps as the sun begins to set over Mount Kilimanjaro. Return to the lodge for dinner as the African night comes alive around you.</p>
                 <div>
                   <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">Accommodation for Days 1–2:</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -198,10 +198,10 @@ export default function AmboseliPage() {
                 <h3 className="font-playfair text-white text-2xl font-bold">Full-Day Amboseli Game Drive and Cultural Experience</h3>
               </div>
               <div className="p-8 space-y-4">
-                <p className="font-inter text-[#1C1208] leading-relaxed">This is the highlight day of your Amboseli safari. Wake up before dawn for an early morning game drive through Amboseli National Park. The early morning is the best time to see wildlife — elephants moving toward the swamps, predators returning from nocturnal hunts, and Mount Kilimanjaro often visible in the clear morning light.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">This is the highlight day of your Amboseli safari. Wake up before dawn for an early morning game drive through Amboseli National Park. The early morning is the best time to see wildlife, with elephants moving toward the swamps, predators returning from nocturnal hunts, and Mount Kilimanjaro often visible in the clear morning light.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">Your guide will take you to key wildlife hotspots, tracking elephant herds, lion prides, and cheetah families. Amboseli is home to over 30 bird species, including flamingos, pelicans, and African fish eagles. You will also see large herds of zebras, wildebeest, and gazelles grazing across the plains.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">Mid-morning, you will stop for a bush breakfast — coffee, pastries, and fresh fruit served in the wild, surrounded by the sounds of the African bush.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">After breakfast, visit a Maasai village. Meet the Maasai warriors and elders, learn about their semi-nomadic lifestyle, and watch traditional dances and ceremonies. The Maasai will teach you the art of beadwork — how they create the intricate necklaces, bracelets, and earrings that are central to their cultural identity. You will learn about their roles as men and women in the community, their relationship with cattle, and their deep respect for the land and its wildlife. This visit provides a human context to the landscape you are exploring.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">Mid-morning, you will stop for a bush breakfast, with coffee, pastries, and fresh fruit served in the wild, surrounded by the sounds of the African bush.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">After breakfast, visit a Maasai village. Meet the Maasai warriors and elders, learn about their semi-nomadic lifestyle, and watch traditional dances and ceremonies. The Maasai will teach you the art of beadwork, how they create the intricate necklaces, bracelets, and earrings that are central to their cultural identity. You will learn about their roles as men and women in the community, their relationship with cattle, and their deep respect for the land and its wildlife. This visit provides a human context to the landscape you are exploring.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">Return to the lodge for lunch and a rest period during the heat of the day. Many lodges have swimming pools where you can cool off while watching wildlife pass by.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">In the afternoon, embark on an afternoon game drive through Amboseli. Your guide will take you to Observation Hill, a volcanic hill that offers panoramic views of the entire park. From the top, you can see elephants and hippos wading through the swamps below, Mount Kilimanjaro towering in the distance, and the endless plains stretching to the horizon. This is one of the most photographed viewpoints in East Africa.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">Set up a small sunset picnic on the hill as you watch the sun set over Kilimanjaro. The golden light, the silhouettes of elephants, and the mountain backdrop create an unforgettable moment.</p>
@@ -217,7 +217,7 @@ export default function AmboseliPage() {
               </div>
               <div className="p-8 space-y-4">
                 <p className="font-inter text-[#1C1208] leading-relaxed">After breakfast, check out of the lodge and begin the drive back to Nairobi. The journey takes approximately 4 to 5 hours, and you will arrive in the city around lunchtime. Check into your hotel and enjoy a well-earned rest after two exciting days in the bush.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">Afternoon Game Drive at Nairobi National Park: In the late afternoon, you will head out for a game drive at Nairobi National Park — the world's only wildlife park located within a capital city. With the Nairobi skyline as a backdrop, spot lions, rhinos, giraffes, zebras, and buffalo roaming freely just minutes from the city centre. It is a remarkable and uniquely Kenyan experience that perfectly rounds off your safari.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">Afternoon Game Drive at Nairobi National Park: In the late afternoon, you will head out for a game drive at Nairobi National Park, the world's only wildlife park located within a capital city. With the Nairobi skyline as a backdrop, spot lions, rhinos, giraffes, zebras, and buffalo roaming freely just minutes from the city centre. It is a remarkable and uniquely Kenyan experience that perfectly rounds off your safari.</p>
                 <p className="font-inter text-[#1C1208] leading-relaxed">Dinner at the Carnivore Restaurant: End your day at the legendary Carnivore Restaurant, one of Nairobi's most iconic dining experiences. Famous for its all-you-can-eat spit-roasted meats served on Maasai swords, the Carnivore is a celebration of bold flavours and great atmosphere. It is the perfect way to toast the memories of your Amboseli safari before your final night in Kenya. After dinner, you will be transferred back to your hotel.</p>
                 <div>
                   <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">Accommodation for Day 3:</p>
@@ -246,7 +246,7 @@ export default function AmboseliPage() {
                 <h3 className="font-playfair text-white text-2xl font-bold">Departure from JKIA</h3>
               </div>
               <div className="p-8">
-                <p className="font-inter text-[#1C1208] leading-relaxed">After breakfast at your hotel, your Amboseli safari comes to a close. Depending on your flight time, your driver will transfer you to Jomo Kenyatta International Airport (JKIA) at the appropriate time. If your flight is later in the day, there may be an opportunity for a relaxed morning in Nairobi — whether that means a final coffee, a last-minute shopping trip, or simply soaking in the city before heading home. Your driver will advise on timing based on your departure schedule.</p>
+                <p className="font-inter text-[#1C1208] leading-relaxed">After breakfast at your hotel, your Amboseli safari comes to a close. Depending on your flight time, your driver will transfer you to Jomo Kenyatta International Airport (JKIA) at the appropriate time. If your flight is later in the day, there may be an opportunity for a relaxed morning in Nairobi, whether that means a final coffee, a last-minute shopping trip, or simply soaking in the city before heading home. Your driver will advise on timing based on your departure schedule.</p>
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@ export default function AmboseliPage() {
           </div>
           <div className="mt-8 bg-white rounded-2xl p-6 border-l-4 border-[#D4870A]">
             <p className="font-inter text-[#1C1208] text-sm text-center">
-              <span className="font-montserrat font-semibold text-[#2A4A35]">Important:</span> Regardless of which tier you choose, all accommodation options include full-board meals, access to the same wildlife areas, and the same quality of guiding. The difference is in the level of comfort and amenities — not in the safari experience itself.
+              <span className="font-montserrat font-semibold text-[#2A4A35]">Important:</span> Regardless of which tier you choose, all accommodation options include full-board meals, access to the same wildlife areas, and the same quality of guiding. The difference is in the level of comfort and amenities, not in the safari experience itself.
             </p>
           </div>
         </div>
@@ -313,12 +313,12 @@ export default function AmboseliPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">June to October: Dry Season — Best for Kilimanjaro Views</h3>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">June to October: Dry Season, Best for Kilimanjaro Views</h3>
               <p className="font-inter text-[#1C1208] text-sm leading-relaxed">This is peak season for Amboseli. The dry weather means clearer skies, making Mount Kilimanjaro visible almost every morning. Wildlife congregates around the remaining water sources, making game viewing exceptional. The lack of rain also means easier road access and better photography conditions. Note that this is the busiest and most expensive time to visit.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">January to February: Short Dry Season</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Another excellent window for visiting Amboseli. The weather is warm and dry, Kilimanjaro is often visible, and wildlife is abundant. Prices are slightly lower than the June–October peak season.</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Another excellent window for visiting Amboseli. The weather is warm and dry, Kilimanjaro is often visible, and wildlife is abundant. Prices are slightly lower than the June to October peak season.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">November to December: Short Rains</h3>
@@ -331,7 +331,7 @@ export default function AmboseliPage() {
           </div>
           <div className="bg-[#D4870A] rounded-2xl p-8 text-center">
             <p className="font-montserrat font-bold text-white text-lg mb-2">Pro Tip</p>
-            <p className="font-inter text-white text-base">If your primary goal is to photograph elephants with Mount Kilimanjaro in the background, visit between June and October or January and February. If you prefer lower prices, fewer crowds, and dramatic green landscapes, visit during November–December or March–May.</p>
+            <p className="font-inter text-white text-base">If your primary goal is to photograph elephants with Mount Kilimanjaro in the background, visit between June and October or January and February. If you prefer lower prices, fewer crowds, and dramatic green landscapes, visit during November to December or March to May.</p>
           </div>
         </div>
       </section>
@@ -351,7 +351,7 @@ export default function AmboseliPage() {
                 <Car size={32} className="text-[#D4870A]" />
                 <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold">By Road (4–5 Hours)</h3>
               </div>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Most of our clients travel by road, which allows you to experience the journey as part of the adventure. You will drive through the scenic landscapes of southern Kenya, stop in Emali for refreshments, and arrive at Amboseli with a deeper sense of the landscape and culture. The roads are mostly paved, though the final section into the park can be dusty — which is why we use 4x4 vehicles.</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Most of our clients travel by road, which allows you to experience the journey as part of the adventure. You will drive through the scenic landscapes of southern Kenya, stop in Emali for refreshments, and arrive at Amboseli with a deeper sense of the landscape and culture. The roads are mostly paved, though the final section into the park can be dusty, which is why we use 4x4 vehicles.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
@@ -379,19 +379,19 @@ export default function AmboseliPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#2A4A35] rounded-2xl p-6">
               <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">We Are a Nairobi-Based Local Operator</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We are based in Kahawa West, Nairobi, and we know this city and this country inside out. When you book with us, you are booking with people who live here, work here, and care deeply about showcasing the best of Kenya. We are not a faceless international booking platform — we are a family-run business that treats every client like a guest.</p>
+              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We are based in Kahawa West, Nairobi, and we know this city and this country inside out. When you book with us, you are booking with people who live here, work here, and care deeply about showcasing the best of Kenya. We are not a faceless international booking platform. We are a family-run business that treats every client like a guest.</p>
             </div>
             <div className="bg-[#2A4A35] rounded-2xl p-6">
               <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">All-Inclusive Pricing with No Hidden Costs</h3>
               <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">When we say "all-inclusive," we mean it. Transport, accommodation, meals, park fees, Maasai village visit, observation hill sunset, stargazing, Nairobi attractions tour, and airport transfers are all included. The only thing not included is your international flight and personal expenses like souvenirs or tips.</p>
             </div>
             <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Flexible Departures — Daily Starting Points</h3>
+              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Flexible Departures, Daily Starting Points</h3>
               <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We offer daily departures from Nairobi, so you do not need to wait for a group to form. Whether you want to start on a Monday, Friday, or Sunday, we can accommodate you. Private safaris depart whenever you are ready.</p>
             </div>
             <div className="bg-[#2A4A35] rounded-2xl p-6">
               <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Expert Guides Who Make the Difference</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Our driver-guides are the heart of the experience. They are also storytellers and problem-solvers who ensure your safari runs smoothly from start to finish. We are committed to responsible tourism — we work with lodges that support local communities and ensure our guides follow ethical wildlife viewing practices (no off-road driving, no harassment of animals).</p>
+              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Our driver-guides are the heart of the experience. They are also storytellers and problem-solvers who ensure your safari runs smoothly from start to finish. We are committed to responsible tourism. We work with lodges that support local communities and ensure our guides follow ethical wildlife viewing practices (no off-road driving, no harassment of animals).</p>
             </div>
           </div>
         </div>
@@ -441,14 +441,14 @@ export default function AmboseliPage() {
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Bring extra memory cards and batteries</span></li>
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Use a zoom lens (200mm or higher) for wildlife photography</span></li>
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Shoot in early morning or late afternoon for best lighting</span></li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Respect wildlife — do not ask your guide to drive off-road or harass animals for a photo</span></li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Respect wildlife, do not ask your guide to drive off-road or harass animals for a photo</span></li>
                 </ul>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Booking Timeline</h3>
                 <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book at least 3–6 months in advance for peak season (June–October)</span></li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book 4–8 weeks in advance for shoulder season (November–May)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book at least 3 to 6 months in advance for peak season (June to October)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Book 4 to 8 weeks in advance for shoulder season (November to May)</span></li>
                   <li className="flex items-start gap-2"><span className="text-[#D4870A] font-bold flex-shrink-0">•</span><span>Contact us for last-minute availability</span></li>
                 </ul>
               </div>
@@ -471,19 +471,19 @@ export default function AmboseliPage() {
               },
               {
                 q: 'Can I see Mount Kilimanjaro from Amboseli?',
-                a: 'Yes! Amboseli offers the best views of Kilimanjaro from Kenyan soil. The mountain is visible on clear mornings, especially during the dry season (June–October and January–February). Cloud cover can obscure the view during the rainy months (March–May and November–December).',
+                a: 'Yes! Amboseli offers the best views of Kilimanjaro from Kenyan soil. The mountain is visible on clear mornings, especially during the dry season (June to October and January to February). Cloud cover can obscure the view during the rainy months (March to May and November to December).',
               },
               {
                 q: 'Is Amboseli good for seeing elephants?',
                 a: 'Absolutely. Amboseli is famous for having some of Africa\'s largest elephant herds. You will see elephants up close every day, often with Kilimanjaro as the backdrop.',
               },
               {
-                q: 'Can I do a shorter safari — 2 days instead of 4?',
+                q: 'Can I do a shorter safari, 2 days instead of 4?',
                 a: 'Yes. While we recommend the 4-day package for the full experience (including the Kimana craft stop, Observation Hill sunset, Nairobi National Park game drive, and Carnivore dinner), we can customize 2 or 3-day packages. Contact us to discuss options.',
               },
               {
                 q: 'What is the minimum and maximum group size?',
-                a: 'The minimum group size is 7. There is no maximum — for larger groups, we use multiple vehicles.',
+                a: 'The minimum group size is 7. There is no maximum, for larger groups, we use multiple vehicles.',
               },
               {
                 q: 'Do you offer private safaris, or only group tours?',
