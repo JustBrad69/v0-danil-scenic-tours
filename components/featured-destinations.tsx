@@ -10,6 +10,8 @@ const destinations = [
     image: DESTINATION_IMAGES.MAASAI_MARA,
     isPlaceholder: false,
     price: 'Starting from $350/Day',
+    href: '/destinations/maasai-mara',
+    cta: 'Explore Maasai Mara',
   },
   {
     name: 'Amboseli',
@@ -17,6 +19,8 @@ const destinations = [
     image: DESTINATION_IMAGES.AMBOSELI,
     isPlaceholder: false,
     price: 'Starting from $280/Day',
+    href: '/destinations/amboseli',
+    cta: 'Explore Amboseli',
   },
   {
     name: 'Lake Nakuru',
@@ -24,6 +28,8 @@ const destinations = [
     image: DESTINATION_IMAGES.LAKE_NAKURU,
     isPlaceholder: false,
     price: 'Starting from $250/Day',
+    href: '/book#booking-form',
+    cta: 'Book This Safari',
   },
   {
     name: 'Nairobi National Park',
@@ -31,6 +37,8 @@ const destinations = [
     image: DESTINATION_IMAGES.WATAMU,
     isPlaceholder: false,
     price: 'Starting from $150/Day',
+    href: '/book#booking-form',
+    cta: 'Book This Safari',
   },
   {
     name: 'Ol Pejeta Conservancy',
@@ -38,6 +46,8 @@ const destinations = [
     image: DESTINATION_IMAGES.SAMBURU,
     isPlaceholder: false,
     price: 'Starting from $320/Day',
+    href: '/book#booking-form',
+    cta: 'Book This Safari',
   },
   {
     name: 'Lake Naivasha',
@@ -45,6 +55,8 @@ const destinations = [
     image: DESTINATION_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
     price: 'Starting from $200/Day',
+    href: '/book#booking-form',
+    cta: 'Book This Safari',
   },
 ]
 
@@ -109,10 +121,10 @@ export default function FeaturedDestinations() {
                   {dest.price}
                 </p>
                 <Link
-                  href={dest.name === 'Maasai Mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
+                  href={dest.href}
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                 >
-                  {dest.name === 'Maasai Mara' ? 'Explore Maasai Mara' : 'Book This Safari'} <ArrowRight size={14} />
+                  {dest.cta} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
