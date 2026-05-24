@@ -30,6 +30,8 @@ const destinations = [
     description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July-October).',
     image: BLOB_IMAGES.CTA_BANNER,
     isPlaceholder: false,
+    href: '/destinations/maasai-mara',
+    cta: 'Explore Maasai Mara',
   },
   {
     id: 'amboseli',
@@ -37,6 +39,8 @@ const destinations = [
     description: 'Famous elephant herds set against the breathtaking backdrop of Mt. Kilimanjaro.',
     image: LOCAL_IMAGES.AMBOSELI_ELEPHANTS,
     isPlaceholder: false,
+    href: '/destinations/amboseli',
+    cta: 'Explore Amboseli',
   },
   {
     id: 'tsavo',
@@ -44,6 +48,8 @@ const destinations = [
     description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
     image: LOCAL_IMAGES.CHEETAH_RESTING,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'lake-nakuru',
@@ -51,6 +57,8 @@ const destinations = [
     description: 'Rift Valley gem renowned for its flamingo colonies, rhinos, and leopards.',
     image: BLOB_IMAGES.LAKE_NAKURU,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'lake-bogoria',
@@ -58,6 +66,8 @@ const destinations = [
     description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
     image: BLOB_IMAGES.TSAVO_EAST,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'aberdare',
@@ -65,6 +75,8 @@ const destinations = [
     description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
     image: BLOB_IMAGES.ABERDARE,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'mt-kenya',
@@ -72,6 +84,8 @@ const destinations = [
     description: 'Kenya\'s second-highest mountain. Dramatic clouds, verdant slopes, and alpine trails.',
     image: BLOB_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'meru',
@@ -79,6 +93,8 @@ const destinations = [
     description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets, rocky outcrops, and pristine landscapes.',
     image: BLOB_IMAGES.MERU,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'samburu',
@@ -86,6 +102,8 @@ const destinations = [
     description: 'Remote semi-arid landscape perfect for stargazing beneath the African night sky. Home to unique wildlife species and breathtaking celestial experiences.',
     image: BLOB_IMAGES.SAMBURU,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'diani-beach',
@@ -93,6 +111,8 @@ const destinations = [
     description: 'Pristine white sand coastline along the Indian Ocean. Perfect for snorkelling, diving, and relaxation.',
     image: BLOB_IMAGES.DIANI_BEACH,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'nairobi',
@@ -100,6 +120,8 @@ const destinations = [
     description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
     image: BLOB_IMAGES.WATAMU,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'ol-pejeta',
@@ -107,6 +129,8 @@ const destinations = [
     description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
     image: BLOB_IMAGES.SAMBURU,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
   {
     id: 'lake-naivasha',
@@ -114,6 +138,8 @@ const destinations = [
     description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
     image: BLOB_IMAGES.MOUNT_KENYA,
     isPlaceholder: false,
+    href: '/book#booking-form',
+    cta: 'Plan a Safari Here',
   },
 ]
 
@@ -212,10 +238,10 @@ export default function DestinationsPage() {
                     {dest.description}
                   </p>
                   <Link
-                    href={dest.id === 'maasai-mara' ? '/destinations/maasai-mara' : '/book#booking-form'}
+                    href={dest.href}
                     className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                   >
-                    {dest.id === 'maasai-mara' ? 'Explore Maasai Mara' : 'Plan a Safari Here'} <ArrowRight size={14} />
+                    {dest.cta} <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>
