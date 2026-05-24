@@ -1,0 +1,18 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Amboseli Safari Tours | 4-Day Kenya Safari from Nairobi | Danil Scenic Tours',
+  description: 'Experience an unforgettable Amboseli safari from Nairobi. 4-day all-inclusive package with elephant viewing, Kilimanjaro views, cultural visits, and Nairobi National Park. Book today!',
+  openGraph: {
+    title: 'Amboseli Safari Tours | Danil Scenic Tours',
+    description: 'Experience an unforgettable Amboseli safari from Nairobi. 4-day all-inclusive package with elephant viewing, Kilimanjaro views, and cultural visits.',
+    url: 'https://danilscenictours.co.ke/destinations/amboseli-safari-tours',
+    siteName: 'Danil Scenic Tours',
+    images: [{ url: 'https://danilscenictours.co.ke/og-image.webp', width: 1200, height: 630 }],
+    type: 'website',
+  },
+}
+
+export default function AmboseliLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
+}
