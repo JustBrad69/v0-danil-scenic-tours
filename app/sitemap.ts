@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/destinations', priority: 0.8, changeFreq: 'weekly' },
     { path: '/destinations/maasai-mara-safari-tours', priority: 0.95, changeFreq: 'weekly' },
     { path: '/destinations/amboseli-safari-tours', priority: 0.95, changeFreq: 'weekly' },
+    { path: '/destinations/tsavo-safari-tours', priority: 0.95, changeFreq: 'weekly' },
     { path: '/gallery', priority: 0.5, changeFreq: 'monthly' },
     { path: '/about', priority: 0.7, changeFreq: 'monthly' },
   ]
