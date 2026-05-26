@@ -48,8 +48,8 @@ const destinations = [
     description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
     image: LOCAL_IMAGES.CHEETAH_RESTING,
     isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
+    href: '/destinations/tsavo-safari-tours',
+    cta: 'Explore Tsavo',
   },
   {
     id: 'lake-nakuru',
