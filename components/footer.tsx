@@ -58,7 +58,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="opacity-75">Address</p>
-                <p>Northern Bypass Rd, Githurai, Nairobi, Kenya</p>
+                <p>Northern Bypass Rd, Nairobi, Kenya</p>
               </div>
               <div>
                 <p className="opacity-75 mb-2">Email Us</p>
