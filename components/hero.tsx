@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,8 +13,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % slideImages.length)
-    }, 5000) // Change image every 5 seconds
-
+    }, 5000)
     return () => clearInterval(interval)
   }, [])
 
@@ -33,7 +31,7 @@ export default function Hero() {
           >
             <Image
               src={image}
-              alt={`Maasai Mara Safari and Kenya wildlife tour by Danil Scenic Tours in Nairobi`}
+              alt="Maasai Mara Safari and Kenya wildlife tour by Danil Scenic Tours in Nairobi"
               fill
               className="object-cover"
               priority={index === 0}
@@ -58,15 +56,14 @@ export default function Hero() {
         <div className="text-[#D4870A] text-xs md:text-sm font-montserrat tracking-widest mb-4">
           NAIROBI, KENYA · EST. 2023
         </div>
-        
+
         <h1 className="font-playfair text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-          Best Tour Operator in Nairobi
+          Explore Kenya Safari Tours & Wildlife Adventures
         </h1>
-        
+
         <p className="text-white text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed" style={{ opacity: 0.85 }}>
           Guided safaris, cultural expeditions, adventure tours & beach escapes, tailored entirely to you.
         </p>
-
         <div className="flex gap-3 md:gap-4 justify-center flex-wrap">
           <Link
             href="/safaris"
