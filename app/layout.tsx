@@ -4,7 +4,6 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
-// 1. Optimized Font Loading
 const cormorant = Cormorant_Garamond({ 
   subsets: ["latin"],
   variable: '--font-cormorant',
@@ -34,18 +33,16 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'Kenya Safari Tours & Packages starting from Nairobi | Danil Scenic Tours',
-  description: 'Explore Kenya Safari Tours & Wildlife Adventures',
+  description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
   metadataBase: new URL('https://danilscenictours.co.ke'),
   verification: {
-    // Google verification from your HTML file
     google: '8F3J1nKpoYMge2swC3AhBxFknN3Im-VpwE56RBuND8M',
-    // Bing/Edge verification meta tag
     other: {
       'msvalidate.01': '3DD49C6BD506A59B043AAFDAE197A96B',
     },
   },
   openGraph: {
-    title: 'Danil Scenic Tours | Best Tour Operator Nairobi',
+    title: 'Kenya Safari Tours & Packages starting from Nairobi | Danil Scenic Tours',
     description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
     url: 'https://danilscenictours.co.ke',
     siteName: 'Danil Scenic Tours',
@@ -69,10 +66,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        {/* 2. RESOURCE HINTS */}
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <link rel="dns-prefetch" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
-        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
