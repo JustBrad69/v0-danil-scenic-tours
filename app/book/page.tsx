@@ -46,7 +46,6 @@ const TOUR_OPTIONS = [
 const ACCOMMODATION_TIERS = ['Budget', 'Mid-Range', 'Luxury']
 const TRIP_TYPES = ['Solo', 'Couple', 'Family', 'Friends Group', 'Corporate / Team']
 const CONTACT_PREFERENCES = ['WhatsApp', 'Email', 'Phone Call']
-
 const STORAGE_KEY = 'danil_inquiry_form'
 
 interface FormData {
@@ -118,12 +117,7 @@ export default function BookPage() {
     const saved = loadSaved()
     const params = new URLSearchParams(window.location.search)
     const tourParam = params.get('tour')
-
-    const merged: FormData = {
-      ...defaultForm,
-      ...saved,
-    }
-
+    const merged: FormData = { ...defaultForm, ...saved }
     if (tourParam) {
       const matched = TOUR_OPTIONS.find(t =>
         t.toLowerCase().replace(/\s+/g, '-') === tourParam.toLowerCase()
@@ -132,7 +126,6 @@ export default function BookPage() {
         merged.selectedTours = [...merged.selectedTours, matched]
       }
     }
-
     setForm(merged)
   }, [])
 
@@ -165,7 +158,6 @@ export default function BookPage() {
 
   function validateStep(s: number): boolean {
     const newErrors: Partial<Record<keyof FormData, string>> = {}
-
     if (s === 1) {
       if (!form.firstName.trim()) newErrors.firstName = 'First name is required'
       if (!form.lastName.trim()) newErrors.lastName = 'Last name is required'
@@ -173,20 +165,17 @@ export default function BookPage() {
       else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = 'Enter a valid email'
       if (!form.phone.trim()) newErrors.phone = 'Phone number is required'
     }
-
     if (s === 2) {
       if (form.selectedTours.length === 0) newErrors.selectedTours = 'Select at least one tour'
       if (!form.arrivalDate) newErrors.arrivalDate = 'Arrival date is required'
       if (!form.departureDate) newErrors.departureDate = 'Departure date is required'
       if (form.adults < 1) newErrors.adults = 'At least 1 adult is required'
     }
-
     if (s === 3) {
       if (!form.accommodationTier) newErrors.accommodationTier = 'Please select a tier'
       if (!form.tripType) newErrors.tripType = 'Please select a trip type'
       if (!form.contactPreference) newErrors.contactPreference = 'Please select a preference'
     }
-
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -200,7 +189,7 @@ export default function BookPage() {
   }
 
   function buildSummary(): string {
-    const lines = [
+    return [
       `*New Safari Inquiry from Danil Scenic Tours Website*`,
       ``,
       `*Name:* ${form.firstName} ${form.lastName}`,
@@ -219,8 +208,7 @@ export default function BookPage() {
       form.specialRequirements
         ? `*Special Requirements:* ${form.specialRequirements}`
         : `*Special Requirements:* None`,
-    ]
-    return lines.join('\n')
+    ].join('\n')
   }
 
   function handleWhatsApp() {
@@ -235,6 +223,7 @@ export default function BookPage() {
   }
 
   const totalTravelers = form.adults + form.children
+  const emailHref = `mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&subject=Safari%20Inquiry`
 
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
@@ -263,10 +252,7 @@ export default function BookPage() {
         </div>
         <div
           className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)',
-            zIndex: 1,
-          }}
+          style={{ background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)', zIndex: 1 }}
         />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-cormorant text-5xl md:text-6xl text-white mb-4 leading-tight">
@@ -302,7 +288,9 @@ export default function BookPage() {
                     <span className={`font-montserrat text-xs hidden sm:block ${step === i + 1 ? 'text-[#D4870A] font-semibold' : 'text-[#1C1208] opacity-60'}`}>
                       {label}
                     </span>
-                    {i < 2 && <div className={`w-8 sm:w-16 h-0.5 mx-1 ${step > i + 1 ? 'bg-[#2A4A35]' : 'bg-gray-200'}`} />}
+                    {i < 2 && (
+                      <div className={`w-8 sm:w-16 h-0.5 mx-1 ${step > i + 1 ? 'bg-[#2A4A35]' : 'bg-gray-200'}`} />
+                    )}
                   </div>
                 ))}
               </div>
@@ -318,7 +306,6 @@ export default function BookPage() {
                   <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Your Details</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 1 of 3 — Tell us who you are</p>
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
@@ -347,7 +334,6 @@ export default function BookPage() {
                     {errors.lastName && <p className="text-red-500 text-xs mt-1 font-inter">{errors.lastName}</p>}
                   </div>
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
                     Email Address <span className="text-red-500">*</span>
@@ -361,7 +347,6 @@ export default function BookPage() {
                   />
                   {errors.email && <p className="text-red-500 text-xs mt-1 font-inter">{errors.email}</p>}
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
                     Phone / WhatsApp Number <span className="text-red-500">*</span>
@@ -375,7 +360,6 @@ export default function BookPage() {
                   />
                   {errors.phone && <p className="text-red-500 text-xs mt-1 font-inter">{errors.phone}</p>}
                 </div>
-
                 <button
                   onClick={nextStep}
                   className="w-full py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2"
@@ -392,7 +376,6 @@ export default function BookPage() {
                   <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Your Trip</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 2 of 3 — Tell us about your safari</p>
                 </div>
-
                 <div ref={dropdownRef}>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
                     Tours of Interest <span className="text-red-500">*</span>
@@ -442,7 +425,6 @@ export default function BookPage() {
                   )}
                   {errors.selectedTours && <p className="text-red-500 text-xs mt-1 font-inter">{errors.selectedTours}</p>}
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
@@ -471,7 +453,6 @@ export default function BookPage() {
                     {errors.departureDate && <p className="text-red-500 text-xs mt-1 font-inter">{errors.departureDate}</p>}
                   </div>
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Group Size <span className="text-red-500">*</span>
@@ -528,7 +509,6 @@ export default function BookPage() {
                   </div>
                   {errors.adults && <p className="text-red-500 text-xs mt-1 font-inter">{errors.adults}</p>}
                 </div>
-
                 <div className="flex gap-3">
                   <button
                     onClick={prevStep}
@@ -553,7 +533,6 @@ export default function BookPage() {
                   <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Your Preferences</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 3 of 3 — Help us tailor your experience</p>
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Accommodation Preference <span className="text-red-500">*</span>
@@ -575,7 +554,6 @@ export default function BookPage() {
                   </div>
                   {errors.accommodationTier && <p className="text-red-500 text-xs mt-1 font-inter">{errors.accommodationTier}</p>}
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Trip Type <span className="text-red-500">*</span>
@@ -597,7 +575,6 @@ export default function BookPage() {
                   </div>
                   {errors.tripType && <p className="text-red-500 text-xs mt-1 font-inter">{errors.tripType}</p>}
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Preferred Contact Method <span className="text-red-500">*</span>
@@ -619,7 +596,6 @@ export default function BookPage() {
                   </div>
                   {errors.contactPreference && <p className="text-red-500 text-xs mt-1 font-inter">{errors.contactPreference}</p>}
                 </div>
-
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
                     Special Requirements
@@ -633,7 +609,6 @@ export default function BookPage() {
                     className="w-full border border-gray-200 rounded-lg px-4 py-3 font-inter text-sm text-[#1C1208] outline-none transition-all focus:border-[#D4870A] resize-none"
                   />
                 </div>
-
                 <div className="flex gap-3">
                   <button
                     onClick={prevStep}
@@ -651,14 +626,13 @@ export default function BookPage() {
               </div>
             )}
 
-            {/* STEP 4: Review and Submit */}
+            {/* STEP 4 */}
             {step === 4 && !submitted && (
               <div className="space-y-6">
                 <div>
                   <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Review Your Inquiry</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Check your details before sending</p>
                 </div>
-
                 <div className="bg-[#FAF4E8] rounded-xl p-6 space-y-4 font-inter text-sm text-[#1C1208]">
                   <div className="grid grid-cols-2 gap-3">
                     <div>
@@ -709,21 +683,18 @@ export default function BookPage() {
                     )}
                   </div>
                 </div>
-
                 <button
                   onClick={() => setStep(1)}
                   className="text-[#D4870A] font-montserrat font-semibold text-sm underline"
                 >
                   Edit my details
                 </button>
-
                 <button
                   onClick={handleWhatsApp}
                   className="w-full py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
                 >
                   Send Inquiry
                 </button>
-
                 <p className="text-xs text-[#1C1208] opacity-60 font-inter text-center">
                   Your inquiry will be sent via WhatsApp. We respond within 2 hours during business hours.
                 </p>
@@ -750,10 +721,7 @@ export default function BookPage() {
                   <p>4. We finalise your itinerary together</p>
                 </div>
                 <button
-                  onClick={() => {
-                    setStep(1)
-                    setSubmitted(false)
-                  }}
+                  onClick={() => { setStep(1); setSubmitted(false) }}
                   className="font-montserrat font-semibold text-[#D4870A] text-sm underline"
                 >
                   Submit another inquiry
@@ -778,12 +746,13 @@ export default function BookPage() {
                 className="w-full py-4 px-6 bg-[#25D366] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
               >
                 Chat on WhatsApp
-            <Link
-  href={`mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&subject=Safari%20Inquiry`}
-  className="w-full py-4 px-6 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
->
-  Send us an Email
-</Link>
+              </Link>
+              <Link
+                href={emailHref}
+                className="w-full py-4 px-6 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+              >
+                Send us an Email
+              </Link>
               <Link
                 href="tel:+254722919249"
                 className="w-full py-4 px-6 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
@@ -795,6 +764,7 @@ export default function BookPage() {
               Available Monday to Friday, 8:00 AM - 6:00 PM EAT. We respond within 2 hours.
             </p>
           </div>
+
         </div>
       </section>
 
