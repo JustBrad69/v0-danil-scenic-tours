@@ -778,12 +778,12 @@ export default function BookPage() {
                 className="w-full py-4 px-6 bg-[#25D366] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
               >
                 Chat on WhatsApp
-              </Link>
-             href="mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&amp;subject=Safari%20Inquiry"
-                className="w-full py-4 px-6 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
-              >
-                Send us an Email
-              </a>
+            <Link
+  href={`mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&subject=Safari%20Inquiry`}
+  className="w-full py-4 px-6 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+>
+  Send us an Email
+</Link>
               <Link
                 href="tel:+254722919249"
                 className="w-full py-4 px-6 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
