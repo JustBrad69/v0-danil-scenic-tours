@@ -107,7 +107,6 @@ export default function BookPage() {
   const [form, setForm] = useState<FormData>(defaultForm)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  // Hero slideshow
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroSlideImages.length)
@@ -115,7 +114,6 @@ export default function BookPage() {
     return () => clearInterval(interval)
   }, [])
 
-  // Load saved form data and check URL params for auto-fill
   useEffect(() => {
     const saved = loadSaved()
     const params = new URLSearchParams(window.location.search)
@@ -138,7 +136,6 @@ export default function BookPage() {
     setForm(merged)
   }, [])
 
-  // Close dropdown on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -226,42 +223,9 @@ export default function BookPage() {
     return lines.join('\n')
   }
 
-  function buildEmailBody(): string {
-    return [
-      `New Safari Inquiry`,
-      ``,
-      `Name: ${form.firstName} ${form.lastName}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone}`,
-      ``,
-      `Tours: ${form.selectedTours.join(', ')}`,
-      `Arrival: ${form.arrivalDate}`,
-      `Departure: ${form.departureDate}`,
-      `Adults (18+): ${form.adults}`,
-      `Children (under 18): ${form.children}`,
-      `Total Travelers: ${form.adults + form.children}`,
-      ``,
-      `Accommodation Tier: ${form.accommodationTier}`,
-      `Trip Type: ${form.tripType}`,
-      `Preferred Contact: ${form.contactPreference}`,
-      ``,
-      `Special Requirements: ${form.specialRequirements || 'None'}`,
-    ].join('\n')
-  }
-
   function handleWhatsApp() {
     const message = encodeURIComponent(buildSummary())
-    window.open(`https://wa.me/254742797207?text=${message}`, '_blank')
-    setSubmitted(true)
-  }
-
-  function handleEmail() {
-    const subject = encodeURIComponent(`Safari Inquiry from ${form.firstName} ${form.lastName}`)
-    const body = encodeURIComponent(buildEmailBody())
-    window.open(
-      `mailto:bradnyaim@gmail.com?cc=emberai.solutions@gmail.com&subject=${subject}&body=${body}`,
-      '_blank'
-    )
+    window.open(`https://wa.me/254722919249?text=${message}`, '_blank')
     setSubmitted(true)
   }
 
@@ -347,7 +311,7 @@ export default function BookPage() {
 
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
 
-            {/* STEP 1: Your Details */}
+            {/* STEP 1 */}
             {step === 1 && (
               <div className="space-y-6">
                 <div>
@@ -406,7 +370,7 @@ export default function BookPage() {
                     type="tel"
                     value={form.phone}
                     onChange={e => update('phone', e.target.value)}
-                    placeholder="e.g. +1 234 567 8900"
+                    placeholder="e.g. +254 722 919 249"
                     className={`w-full border rounded-lg px-4 py-3 font-inter text-sm text-[#1C1208] outline-none transition-all focus:border-[#D4870A] ${errors.phone ? 'border-red-400' : 'border-gray-200'}`}
                   />
                   {errors.phone && <p className="text-red-500 text-xs mt-1 font-inter">{errors.phone}</p>}
@@ -421,7 +385,7 @@ export default function BookPage() {
               </div>
             )}
 
-            {/* STEP 2: Your Trip */}
+            {/* STEP 2 */}
             {step === 2 && (
               <div className="space-y-6">
                 <div>
@@ -429,7 +393,6 @@ export default function BookPage() {
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 2 of 3 — Tell us about your safari</p>
                 </div>
 
-                {/* Tour Multi-select Dropdown */}
                 <div ref={dropdownRef}>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
                     Tours of Interest <span className="text-red-500">*</span>
@@ -480,7 +443,6 @@ export default function BookPage() {
                   {errors.selectedTours && <p className="text-red-500 text-xs mt-1 font-inter">{errors.selectedTours}</p>}
                 </div>
 
-                {/* Date Range */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
@@ -510,7 +472,6 @@ export default function BookPage() {
                   </div>
                 </div>
 
-                {/* Group Size */}
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Group Size <span className="text-red-500">*</span>
@@ -585,7 +546,7 @@ export default function BookPage() {
               </div>
             )}
 
-            {/* STEP 3: Preferences */}
+            {/* STEP 3 */}
             {step === 3 && (
               <div className="space-y-6">
                 <div>
@@ -593,7 +554,6 @@ export default function BookPage() {
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 3 of 3 — Help us tailor your experience</p>
                 </div>
 
-                {/* Accommodation Tier */}
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Accommodation Preference <span className="text-red-500">*</span>
@@ -616,7 +576,6 @@ export default function BookPage() {
                   {errors.accommodationTier && <p className="text-red-500 text-xs mt-1 font-inter">{errors.accommodationTier}</p>}
                 </div>
 
-                {/* Trip Type */}
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Trip Type <span className="text-red-500">*</span>
@@ -639,7 +598,6 @@ export default function BookPage() {
                   {errors.tripType && <p className="text-red-500 text-xs mt-1 font-inter">{errors.tripType}</p>}
                 </div>
 
-                {/* Contact Preference */}
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
                     Preferred Contact Method <span className="text-red-500">*</span>
@@ -662,7 +620,6 @@ export default function BookPage() {
                   {errors.contactPreference && <p className="text-red-500 text-xs mt-1 font-inter">{errors.contactPreference}</p>}
                 </div>
 
-                {/* Special Requirements */}
                 <div>
                   <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
                     Special Requirements
@@ -699,7 +656,7 @@ export default function BookPage() {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Review Your Inquiry</h2>
-                  <p className="font-inter text-[#1C1208] text-sm opacity-70">Check your details then choose how to send</p>
+                  <p className="font-inter text-[#1C1208] text-sm opacity-70">Check your details before sending</p>
                 </div>
 
                 <div className="bg-[#FAF4E8] rounded-xl p-6 space-y-4 font-inter text-sm text-[#1C1208]">
@@ -760,30 +717,15 @@ export default function BookPage() {
                   Edit my details
                 </button>
 
-                <div className="space-y-3">
-                  <p className="font-montserrat font-semibold text-[#2A4A35] text-sm text-center">Send your inquiry via:</p>
-                  <button
-                    onClick={handleWhatsApp}
-                    className="w-full py-4 bg-[#25D366] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
-                  >
-                    Send via WhatsApp
-                  </button>
-                  <button
-                    onClick={handleEmail}
-                    className="w-full py-4 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
-                  >
-                    Send via Email
-                  </button>
-                  <Link
-                    href="tel:+254722919249"
-                    className="w-full py-4 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
-                  >
-                    Call Now: +254 722 919 249
-                  </Link>
-                </div>
+                <button
+                  onClick={handleWhatsApp}
+                  className="w-full py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+                >
+                  Send Inquiry
+                </button>
 
                 <p className="text-xs text-[#1C1208] opacity-60 font-inter text-center">
-                  Available Monday to Friday, 8:00 AM - 6:00 PM EAT. We respond within 2 hours.
+                  Your inquiry will be sent via WhatsApp. We respond within 2 hours during business hours.
                 </p>
               </div>
             )}
@@ -818,6 +760,41 @@ export default function BookPage() {
                 </button>
               </div>
             )}
+          </div>
+
+          {/* Direct Contact Section */}
+          <div className="mt-8 bg-white rounded-2xl shadow-lg p-8 md:p-10">
+            <h3 className="font-playfair text-[#2A4A35] text-2xl text-center mb-2">
+              Prefer to Reach Out Directly?
+            </h3>
+            <p className="font-inter text-[#1C1208] text-sm text-center opacity-70 mb-6">
+              Skip the form and contact us right away.
+            </p>
+            <div className="space-y-3">
+              <Link
+                href="https://wa.me/254722919249"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 px-6 bg-[#25D366] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+              >
+                Chat on WhatsApp
+              </Link>
+              
+                href="mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&subject=Safari%20Inquiry"
+                className="w-full py-4 px-6 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+              >
+                Send us an Email
+              </a>
+              <Link
+                href="tel:+254722919249"
+                className="w-full py-4 px-6 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+              >
+                Call Now: +254 722 919 249
+              </Link>
+            </div>
+            <p className="text-xs text-[#1C1208] opacity-60 font-inter text-center mt-6">
+              Available Monday to Friday, 8:00 AM - 6:00 PM EAT. We respond within 2 hours.
+            </p>
           </div>
         </div>
       </section>
