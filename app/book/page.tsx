@@ -251,7 +251,7 @@ export default function BookPage() {
 
   function handleWhatsApp() {
     const message = encodeURIComponent(buildSummary())
-    window.open(`https://wa.me/254722919249?text=${message}`, '_blank')
+    window.open(`https://wa.me/254742797207?text=${message}`, '_blank')
     setSubmitted(true)
   }
 
@@ -259,7 +259,7 @@ export default function BookPage() {
     const subject = encodeURIComponent(`Safari Inquiry from ${form.firstName} ${form.lastName}`)
     const body = encodeURIComponent(buildEmailBody())
     window.open(
-      `mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&subject=${subject}&body=${body}`,
+      `mailto:bradnyaim@gmail.com?cc=emberai.solutions@gmail.com&subject=${subject}&body=${body}`,
       '_blank'
     )
     setSubmitted(true)
