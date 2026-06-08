@@ -779,8 +779,7 @@ export default function BookPage() {
               >
                 Chat on WhatsApp
               </Link>
-              
-                href="mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&subject=Safari%20Inquiry"
+             href="mailto:danilscenic@gmail.com?cc=safari@danilscenictours.co.ke&amp;subject=Safari%20Inquiry"
                 className="w-full py-4 px-6 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base"
               >
                 Send us an Email
