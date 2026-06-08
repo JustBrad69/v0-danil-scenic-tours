@@ -510,7 +510,7 @@ export default function MaasaiMaraPage() {
           </p>
           <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
             <Link
-              href="/book"
+             href="/book?tour=Maasai+Mara+Safari"
               className="px-6 md:px-10 py-3 md:py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all text-sm md:text-base"
             >
               Start Planning
