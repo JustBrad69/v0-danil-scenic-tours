@@ -118,10 +118,10 @@ const destinations = [
     id: 'nairobi',
     name: 'Nairobi National Park',
     description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
-    image: BLOB_IMAGES.WATAMU,
+    image: LOCAL_IMAGES.ZEBRAS_SAVANNA,
     isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
+    href: '/destinations/nairobi-national-park-safari-tours',
+    cta: 'Explore Nairobi National Park',
   },
   {
     id: 'ol-pejeta',
@@ -136,10 +136,10 @@ const destinations = [
     id: 'lake-naivasha',
     name: 'Lake Naivasha (Crescent Island)',
     description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
-    image: BLOB_IMAGES.MOUNT_KENYA,
+    image: LOCAL_IMAGES.CROWNED_CRANE,
     isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
+    href: '/destinations/lake-naivasha-safari-tours',
+    cta: 'Explore Lake Naivasha',
   },
 ]
 
