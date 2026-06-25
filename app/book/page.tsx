@@ -303,12 +303,12 @@ export default function BookPage() {
             {step === 1 && (
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Your Details</h2>
+                  <h2 className="text-3xl font-playfair font-bold text-[#2A4A35] mb-1">Your Details</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 1 of 3 — Tell us who you are</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                    <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                       First Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -321,7 +321,7 @@ export default function BookPage() {
                     {errors.firstName && <p className="text-red-500 text-xs mt-1 font-inter">{errors.firstName}</p>}
                   </div>
                   <div>
-                    <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                    <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                       Last Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -335,7 +335,7 @@ export default function BookPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -348,7 +348,7 @@ export default function BookPage() {
                   {errors.email && <p className="text-red-500 text-xs mt-1 font-inter">{errors.email}</p>}
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                     Phone / WhatsApp Number <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -373,11 +373,11 @@ export default function BookPage() {
             {step === 2 && (
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Your Trip</h2>
+                  <h2 className="text-3xl font-playfair font-bold text-[#2A4A35] mb-1">Your Trip</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 2 of 3 — Tell us about your safari</p>
                 </div>
                 <div ref={dropdownRef}>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                     Tours of Interest <span className="text-red-500">*</span>
                   </label>
                   <div
@@ -427,7 +427,7 @@ export default function BookPage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                    <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                       Arrival Date <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -440,7 +440,7 @@ export default function BookPage() {
                     {errors.arrivalDate && <p className="text-red-500 text-xs mt-1 font-inter">{errors.arrivalDate}</p>}
                   </div>
                   <div>
-                    <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                    <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                       Departure Date <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -454,7 +454,7 @@ export default function BookPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-3">
                     Group Size <span className="text-red-500">*</span>
                   </label>
                   <div className="grid grid-cols-2 gap-4">
@@ -530,11 +530,11 @@ export default function BookPage() {
             {step === 3 && (
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Your Preferences</h2>
+                  <h2 className="text-3xl font-playfair font-bold text-[#2A4A35] mb-1">Your Preferences</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Step 3 of 3 — Help us tailor your experience</p>
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-3">
                     Accommodation Preference <span className="text-red-500">*</span>
                   </label>
                   <div className="grid grid-cols-3 gap-3">
@@ -555,7 +555,7 @@ export default function BookPage() {
                   {errors.accommodationTier && <p className="text-red-500 text-xs mt-1 font-inter">{errors.accommodationTier}</p>}
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-3">
                     Trip Type <span className="text-red-500">*</span>
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -576,7 +576,7 @@ export default function BookPage() {
                   {errors.tripType && <p className="text-red-500 text-xs mt-1 font-inter">{errors.tripType}</p>}
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-3">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-3">
                     Preferred Contact Method <span className="text-red-500">*</span>
                   </label>
                   <div className="grid grid-cols-3 gap-3">
@@ -597,7 +597,7 @@ export default function BookPage() {
                   {errors.contactPreference && <p className="text-red-500 text-xs mt-1 font-inter">{errors.contactPreference}</p>}
                 </div>
                 <div>
-                  <label className="block font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">
+                  <label className="block font-montserrat font-bold text-[#2A4A35] text-sm mb-1">
                     Special Requirements
                     <span className="font-normal text-[#1C1208] opacity-50 ml-1">(optional)</span>
                   </label>
@@ -630,54 +630,54 @@ export default function BookPage() {
             {step === 4 && !submitted && (
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl font-playfair text-[#2A4A35] mb-1">Review Your Inquiry</h2>
+                  <h2 className="text-3xl font-playfair font-bold text-[#2A4A35] mb-1">Review Your Inquiry</h2>
                   <p className="font-inter text-[#1C1208] text-sm opacity-70">Check your details before sending</p>
                 </div>
                 <div className="bg-[#FAF4E8] rounded-xl p-6 space-y-4 font-inter text-sm text-[#1C1208]">
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Name</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Name</p>
                       <p>{form.firstName} {form.lastName}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Email</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Email</p>
                       <p>{form.email}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Phone</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Phone</p>
                       <p>{form.phone}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Preferred Contact</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Preferred Contact</p>
                       <p>{form.contactPreference}</p>
                     </div>
                     <div className="col-span-2">
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Tours Selected</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Tours Selected</p>
                       <p>{form.selectedTours.join(', ')}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Arrival</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Arrival</p>
                       <p>{form.arrivalDate}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Departure</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Departure</p>
                       <p>{form.departureDate}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Travelers</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Travelers</p>
                       <p>{form.adults} adult(s), {form.children} child(ren)</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Accommodation</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Accommodation</p>
                       <p>{form.accommodationTier}</p>
                     </div>
                     <div>
-                      <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Trip Type</p>
+                      <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Trip Type</p>
                       <p>{form.tripType}</p>
                     </div>
                     {form.specialRequirements && (
                       <div className="col-span-2">
-                        <p className="font-montserrat font-semibold text-[#D4870A] text-xs mb-1">Special Requirements</p>
+                        <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Special Requirements</p>
                         <p>{form.specialRequirements}</p>
                       </div>
                     )}
@@ -708,17 +708,31 @@ export default function BookPage() {
                   <Check size={32} className="text-white" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-playfair text-[#2A4A35] mb-2">Inquiry Sent</h2>
+                  <h2 className="text-3xl font-playfair font-bold text-[#2A4A35] mb-2">Inquiry Sent</h2>
                   <p className="font-inter text-[#1C1208] text-base leading-relaxed">
                     Thank you, {form.firstName}. Our team will reach out to you via {form.contactPreference} within 2 hours during business hours.
                   </p>
                 </div>
                 <div className="bg-[#FAF4E8] rounded-xl p-4 font-inter text-sm text-[#1C1208] text-left space-y-2">
-                  <p className="font-montserrat font-semibold text-[#2A4A35]">What happens next:</p>
-                  <p>1. Our safari consultant reviews your inquiry</p>
-                  <p>2. We prepare a personalised quote for your dates and group</p>
-                  <p>3. We contact you via {form.contactPreference} to discuss details</p>
-                  <p>4. We finalise your itinerary together</p>
+                  <p className="font-montserrat font-bold text-[#2A4A35]">What happens next:</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                      <span>Our safari consultant reviews your inquiry</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                      <span>We prepare a personalised quote for your dates and group</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                      <span>We contact you via {form.contactPreference} to discuss details</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                      <span>We finalise your itinerary together</span>
+                    </li>
+                  </ul>
                 </div>
                 <button
                   onClick={() => { setStep(1); setSubmitted(false) }}
@@ -732,7 +746,7 @@ export default function BookPage() {
 
           {/* Direct Contact Section */}
           <div className="mt-8 bg-white rounded-2xl shadow-lg p-8 md:p-10">
-            <h3 className="font-playfair text-[#2A4A35] text-2xl text-center mb-2">
+            <h3 className="font-playfair font-bold text-[#2A4A35] text-2xl text-center mb-2">
               Prefer to Reach Out Directly?
             </h3>
             <p className="font-inter text-[#1C1208] text-sm text-center opacity-70 mb-6">
