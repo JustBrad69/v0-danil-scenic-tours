@@ -467,11 +467,13 @@ export default function NairobiNationalParkPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <span>Ol Pejeta Conservancy, Big Five safari and rhino conservation</span>
+                  <Link href="/destinations/ol-pejeta-safari-tours" className="text-[#D4870A] hover:underline">Ol Pejeta Conservancy</Link>
+                  <span>, Big Five safari and rhino conservation</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <span>Lake Naivasha Safari, boat rides, Hell's Gate, and walking safaris</span>
+                  <Link href="/destinations/lake-naivasha-safari-tours" className="text-[#D4870A] hover:underline">Lake Naivasha Safari</Link>
+                  <span>, boat rides, Hell's Gate, and walking safaris</span>
                 </li>
               </ul>
             </div>
