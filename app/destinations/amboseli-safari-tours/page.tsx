@@ -511,7 +511,65 @@ export default function AmboseliPage() {
           </div>
         </div>
       </section>
-
+{/* Explore More Kenya Safari Experiences */}
+      <section className="w-full bg-[#FAF4E8] py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
+            Explore More Kenya Safari Experiences
+          </h2>
+          <p className="font-inter text-[#1C1208] text-lg text-center mb-12">
+            Looking to extend your Kenya safari adventure? Discover our comprehensive destination pages and package options.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Individual Safari Destinations</h3>
+              <ul className="space-y-3 font-inter text-[#1C1208] text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <Link href="/destinations/maasai-mara-safari-tours" className="text-[#D4870A] hover:underline">Maasai Mara Safari Tours</Link>
+                  <span>, experience the Great Wildebeest Migration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <Link href="/destinations/tsavo-safari-tours" className="text-[#D4870A] hover:underline">Tsavo National Park</Link>
+                  <span>, vast landscapes and diverse wildlife</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <Link href="/destinations/ol-pejeta-safari-tours" className="text-[#D4870A] hover:underline">Ol Pejeta Conservancy</Link>
+                  <span>, Big Five safari and rhino conservation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <Link href="/destinations/lake-naivasha-safari-tours" className="text-[#D4870A] hover:underline">Lake Naivasha Safari</Link>
+                  <span>, boat rides, Hell's Gate, and walking safaris</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <Link href="/destinations/nairobi-national-park-safari-tours" className="text-[#D4870A] hover:underline">Nairobi City Tour</Link>
+                  <span>, urban safari and cultural attractions (1 day)</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Hub Pages</h3>
+              <ul className="space-y-3 font-inter text-[#1C1208] text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <span>Kenya Safari Tours, learn about different safari types and destinations</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
+                  <span>Kenya Safari Packages, view multi-destination combinations and pricing</span>
+                </li>
+              </ul>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed mt-6">
+                All safaris include professional guides, comfortable transport, and authentic Kenyan experiences. Connect with Danil Scenic Tours to craft your perfect Kenya safari itinerary.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Final CTA */}
       <section className="relative overflow-hidden py-32 px-4 md:py-48">
         <div className="absolute inset-0" style={{ zIndex: 0 }}>
