@@ -50,7 +50,7 @@ const services = [
     image: SERVICE_IMAGES.BEACH_ESCAPES,
     isPlaceholder: false,
     price: 'Starting from $180/Night',
-    hasModal: false,
+    hasModal: true,
   },
 ]
 
@@ -115,14 +115,9 @@ export default function ServicesGrid() {
                   <p className="text-[#1C1208] font-inter leading-relaxed">
                     {service.teaser}
                   </p>
-                  {service.title !== 'Beach Escapes' && (
-                    <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
-                      {service.price}
-                    </p>
-                  )}
-                  {service.title === 'Beach Escapes' && (
-                    <div className="h-6"></div>
-                  )}
+                  <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+                    {service.price}
+                  </p>
                   {service.hasModal && (
                     <DialogTrigger asChild>
                       <button className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold hover:gap-3 transition-all">
