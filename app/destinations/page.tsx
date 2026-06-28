@@ -127,10 +127,10 @@ const destinations = [
     id: 'ol-pejeta',
     name: 'Ol Pejeta Conservancy',
     description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
-    image: BLOB_IMAGES.SAMBURU,
+    image: LOCAL_IMAGES.ELEPHANT_KILIMANJARO,
     isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
+    href: '/destinations/ol-pejeta-safari-tours',
+    cta: 'Explore Ol Pejeta',
   },
   {
     id: 'lake-naivasha',
