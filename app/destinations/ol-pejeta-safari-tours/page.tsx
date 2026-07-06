@@ -191,20 +191,23 @@ export default function OlPejetaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-[#D4870A]">
               <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">June to October</h3>
-              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Peak Dry Season, Best Overall</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">This is the optimal period for wildlife viewing at Ol Pejeta. Vegetation is sparse, making animals easier to locate in open conditions. Animals congregate around reliable water sources, increasing encounter chances. Clear skies provide excellent visibility and photography conditions. The weather is cool and dry, average 18 to 22 degrees Celsius. June to September are particularly excellent. Book well in advance during this peak season.</p>
+              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Best Overall</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The long dry season is the peak time to visit Ol Pejeta. Vegetation thins out, animals gather around water sources, and clear skies make for excellent game viewing and photography. Roads are firm and easily navigable, and you have the best chance of spotting all Big Five in open terrain. October remains firmly within this dry season window and is an excellent month to visit.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">December to February</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Secondary Dry Season. Excellent alternative to peak season. Clear skies and golden light ideal for photography. Animals gather at water sources. Weather is warm and dry. December is festive but book early for holiday-season demand. January to February offer a good balance of wildlife viewing and fewer crowds than peak season.</p>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">December to February</h3>
+              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Also Excellent</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The short dry season offers warm, sunny conditions with minimal rainfall. Wildlife remains active and visible, and this period is a great alternative to the peak June to October season, often with fewer visitors.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">March and November</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Shoulder Seasons. March experiences green landscapes and good wildlife viewing opportunities. November sees the short rains create beautiful scenery and fewer tourists. These months offer good value and less crowding while maintaining acceptable wildlife viewing conditions.</p>
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">November</h3>
+              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Shoulder Season</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Short rains begin in November, bringing occasional afternoon showers that quickly pass. The landscape turns lush and green, offering a different but equally beautiful experience. Game viewing is still good, and accommodation rates are often lower.</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">April to May, October</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Rainy Season. Not recommended for traditional safari experiences. Heavy rainfall can make roads muddy. Tall grass obscures wildlife viewing. However, the landscape is lush and dramatic. Birding enthusiasts appreciate the green season. Plan only if you have flexibility with wildlife sighting expectations.</p>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-red-200">
+              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">March to May</h3>
+              <p className="font-montserrat font-semibold text-red-500 text-sm mb-3">Not Recommended</p>
+              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The long rains fall heavily during this period, making roads muddy and difficult. Animals disperse widely across the conservancy as water becomes abundant everywhere, making sightings harder. This is the only period we advise against visiting.</p>
             </div>
           </div>
         </div>
