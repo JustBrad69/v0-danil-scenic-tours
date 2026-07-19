@@ -11,7 +11,7 @@ import { ChevronDown, Plus, Minus, CheckSquare, Square, ChevronRight, ChevronLef
 const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
 const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
 
-const EMAILJS_SERVICE_ID = 'service_8y6hkr8'
+const EMAILJS_SERVICE_ID = 'service_d7oazpu'
 const EMAILJS_TEMPLATE_ID = 'template_z7afdte'
 const EMAILJS_PUBLIC_KEY = 'BXE-qX9e_QzruN0OR'
 
