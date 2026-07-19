@@ -7,7 +7,6 @@ import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { ChevronDown, Plus, Minus, CheckSquare, Square, ChevronRight, ChevronLeft, Check, Loader2 } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 
 const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
 const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
@@ -210,6 +209,7 @@ export default function BookPage() {
     setSending(true)
     setSendError(false)
     try {
+      const emailjs = (await import('@emailjs/browser')).default
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -221,11 +221,11 @@ export default function BookPage() {
           selected_tours: form.selectedTours.join(', '),
           arrival_date: form.arrivalDate,
           departure_date: form.departureDate,
-          adults: form.adults,
-          teens: form.teens,
-          children: form.children,
-          infants: form.infants,
-          total_travelers: totalTravelers,
+          adults: String(form.adults),
+          teens: String(form.teens),
+          children: String(form.children),
+          infants: String(form.infants),
+          total_travelers: String(totalTravelers),
           accommodation_tier: form.accommodationTier,
           trip_type: form.tripType,
           contact_preference: form.contactPreference,
@@ -235,7 +235,8 @@ export default function BookPage() {
       )
       setSubmitted(true)
       localStorage.removeItem(STORAGE_KEY)
-    } catch {
+    } catch (err) {
+      console.error('EmailJS error:', err)
       setSendError(true)
     } finally {
       setSending(false)
@@ -479,7 +480,6 @@ export default function BookPage() {
                     Group Size <span className="text-red-500">*</span>
                   </label>
                   <div className="grid grid-cols-2 gap-4">
-                    {/* Adults */}
                     <div className="bg-[#FAF4E8] rounded-xl p-4">
                       <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">Adults</p>
                       <p className="font-inter text-xs text-[#1C1208] opacity-60 mb-3">18 years and above</p>
@@ -493,7 +493,6 @@ export default function BookPage() {
                         </button>
                       </div>
                     </div>
-                    {/* Teens */}
                     <div className="bg-[#FAF4E8] rounded-xl p-4">
                       <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">Teens</p>
                       <p className="font-inter text-xs text-[#1C1208] opacity-60 mb-3">13 to 17 years</p>
@@ -507,7 +506,6 @@ export default function BookPage() {
                         </button>
                       </div>
                     </div>
-                    {/* Children */}
                     <div className="bg-[#FAF4E8] rounded-xl p-4">
                       <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">Children</p>
                       <p className="font-inter text-xs text-[#1C1208] opacity-60 mb-3">3 to 12 years</p>
@@ -521,7 +519,6 @@ export default function BookPage() {
                         </button>
                       </div>
                     </div>
-                    {/* Infants */}
                     <div className="bg-[#FAF4E8] rounded-xl p-4">
                       <p className="font-montserrat font-semibold text-[#2A4A35] text-sm mb-1">Infants</p>
                       <p className="font-inter text-xs text-[#1C1208] opacity-60 mb-3">0 to 2 years</p>
@@ -694,10 +691,7 @@ export default function BookPage() {
                     <div className="col-span-2">
                       <p className="font-montserrat font-bold text-[#D4870A] text-xs mb-1">Travelers</p>
                       <p>
-                        {form.adults} adult(s),{' '}
-                        {form.teens} teen(s),{' '}
-                        {form.children} child(ren),{' '}
-                        {form.infants} infant(s) — Total: {totalTravelers}
+                        {form.adults} adult(s), {form.teens} teen(s), {form.children} child(ren), {form.infants} infant(s) — Total: {totalTravelers}
                       </p>
                     </div>
                     <div>
