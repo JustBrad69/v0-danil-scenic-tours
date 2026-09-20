@@ -1,101 +1,44 @@
-"use client";
+'use client'
 
-import React from "react";
-import { MapContainer, TileLayer, Marker, Tooltip, useMap } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import dynamic from 'next/dynamic'
 
-const SAFARI_LOCATIONS = [
-  { id: "maasai-mara", name: "Maasai Mara National Reserve", lat: -1.48, lon: 35.14 },
-  { id: "amboseli", name: "Amboseli National Park", lat: -2.63, lon: 37.25 },
-  { id: "tsavo", name: "Tsavo East & West", lat: -2.99, lon: 38.46 },
-  { id: "lake-nakuru", name: "Lake Nakuru National Park", lat: -0.35, lon: 36.08 },
-  { id: "lake-bogoria", name: "Lake Bogoria Reserve", lat: 0.25, lon: 36.10 },
-  { id: "aberdare", name: "Aberdare National Park", lat: -0.42, lon: 36.73 },
-  { id: "mt-kenya", name: "Mt. Kenya", lat: -0.15, lon: 37.31 },
-  { id: "meru", name: "Meru National Park", lat: 0.18, lon: 38.20 },
-  { id: "samburu", name: "Samburu National Reserve", lat: 0.61, lon: 37.53 },
-  { id: "diani-beach", name: "Diani Beach", lat: -4.28, lon: 39.59 },
-  { id: "nairobi", name: "Nairobi National Park", lat: -1.37, lon: 36.85 },
-  { id: "ol-pejeta", name: "Ol Pejeta Conservancy", lat: 0.02, lon: 36.93 },
-  { id: "lake-naivasha", name: "Lake Naivasha (Crescent Island)", lat: -0.77, lon: 36.35 },
-];
+export type SafariMapLocationId =
+  | 'nairobi'
+  | 'maasai-mara'
+  | 'amboseli'
+  | 'tsavo'
+  | 'lake-nakuru'
+  | 'lake-naivasha'
+  | 'ol-pejeta'
+  | 'diani-beach'
 
-const defaultIcon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
-
-function MapControls() {
-  const map = useMap();
-  const handleZoom = (type: 'in' | 'out') => {
-    map.setZoom(type === 'in' ? map.getZoom() + 1 : map.getZoom() - 1, { animate: true });
-  };
-
-  return (
-    <div className="absolute right-4 top-4 z-[1000] flex flex-col gap-2">
-      <div className="bg-white rounded-lg shadow-lg border overflow-hidden flex flex-col">
-        <button onClick={() => handleZoom('in')} className="w-12 h-12 border-b font-bold text-xl hover:bg-gray-100 bg-white flex items-center justify-center">+</button>
-        <button onClick={() => handleZoom('out')} className="w-12 h-12 font-bold text-xl hover:bg-gray-100 bg-white flex items-center justify-center">-</button>
-      </div>
-    </div>
-  );
+export type SafariMapProps = {
+  locationIds: SafariMapLocationId[]
+  showRouteLine?: boolean
 }
 
-export default function SafariMap() {
-  const handleMarkerClick = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      // Small delay ensures the click feels intentional before the scroll starts
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
-    }
-  };
-
-  return (
-    <div className="w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden border-2 border-[#2A4A35] relative shadow-2xl bg-[#FAF4E8]">
-      <MapContainer 
-        center={[-0.5, 37.8]} 
-        zoom={6} 
-        className="w-full h-full" 
-        zoomControl={false}
-        scrollWheelZoom={false}
-      >
-        <TileLayer 
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
-          attribution='&copy; OpenStreetMap' 
-        />
-        <MapControls />
-        {SAFARI_LOCATIONS.map((loc) => (
-          <Marker 
-            key={loc.id} 
-            position={[loc.lat, loc.lon]} 
-            icon={defaultIcon}
-            // Logic: Hover triggers Tooltip (automatic), Click triggers Scroll
-            eventHandlers={{ 
-              click: () => handleMarkerClick(loc.id) 
-            }}
-          >
-            {/* Tooltip replaces Popup for 'Hover' behavior */}
-            <Tooltip 
-              direction="top" 
-              offset={[0, -32]} 
-              opacity={1} 
-              className="custom-safari-tooltip"
-            >
-              <div className="text-center p-1 min-w-[120px]">
-                <p className="font-bold text-[#2A4A35] m-0 text-sm leading-tight">{loc.name}</p>
-                <p className="text-[10px] text-gray-500 mt-1 mb-0 border-t pt-1">
-                  Click to view packages
-                </p>
-              </div>
-            </Tooltip>
-          </Marker>
-        ))}
-      </MapContainer>
+const SafariMapClient = dynamic(() => import('./SafariMapClient'), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="flex h-[360px] w-full items-center justify-center rounded-2xl border-2 border-[#2A4A35]/20 bg-[#F2E8D5] sm:h-[420px] md:h-[520px]"
+      aria-label="Loading safari map"
+    >
+      <p className="font-montserrat text-sm font-semibold text-[#2A4A35]">
+        Loading safari map...
+      </p>
     </div>
-  );
+  ),
+})
+
+export default function SafariMap({
+  locationIds,
+  showRouteLine = false,
+}: SafariMapProps) {
+  return (
+    <SafariMapClient
+      locationIds={locationIds}
+      showRouteLine={showRouteLine}
+    />
+  )
 }
