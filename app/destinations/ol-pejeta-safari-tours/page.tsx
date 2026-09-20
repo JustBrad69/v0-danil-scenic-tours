@@ -1,447 +1,844 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
+import {
+  Binoculars,
+  Car,
+  CheckCircle2,
+  ChevronDown,
+  Clock,
+  MapPin,
+  Shield,
+  Users,
+  XCircle,
+} from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import { Car, Binoculars, Shield, UtensilsCrossed, ChevronDown } from 'lucide-react'
+import ClientOnlyUI from '@/components/client-only-ui'
 import { LOCAL_IMAGES } from '@/lib/images'
 
-const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
-const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
+export const metadata: Metadata = {
+  title:
+    'Ol Pejeta Conservancy Safari from Nairobi | 2-Day Big Five Tour | Danil Scenic Tours',
+  description:
+    'Explore Ol Pejeta Conservancy on a 2-day safari from Nairobi. Big Five game drives, rhino conservation, Maisha Sweetwaters Camp, 4x4 transport, guide, and park fees included.',
+  alternates: {
+    canonical: '/destinations/ol-pejeta-safari-tours',
+  },
+  openGraph: {
+    title:
+      'Ol Pejeta Conservancy Safari from Nairobi | Danil Scenic Tours',
+    description:
+      'A 2-day Big Five conservation safari from Nairobi with Maisha Sweetwaters Camp, professional guide, 4x4 transport, and Ol Pejeta game drives.',
+    url: '/destinations/ol-pejeta-safari-tours',
+    type: 'website',
+    images: [
+      {
+        url: LOCAL_IMAGES.ELEPHANT_KILIMANJARO,
+        alt: 'Elephants on safari in central Kenya',
+      },
+    ],
+  },
+}
+
+const itinerary = [
+  {
+    day: '1',
+    title: 'Nairobi to Ol Pejeta Conservancy',
+    sections: [
+      {
+        title: 'Morning Departure',
+        description:
+          'Your safari begins with an early morning departure from Nairobi at approximately 7:00 AM.',
+      },
+      {
+        title: 'Scenic Drive through Central Kenya',
+        description:
+          "Travel through Kenya's central highlands toward the Nanyuki area. Along the route, enjoy views of farmland, highland scenery, and Mount Kenya when weather conditions permit.",
+      },
+      {
+        title: 'Arrival and Lunch',
+        description:
+          'Proceed to Maisha Sweetwaters Camp for check-in and lunch. Settle into your tented accommodation and prepare for the afternoon safari.',
+      },
+      {
+        title: 'Afternoon Game Drive',
+        description:
+          "Enter Ol Pejeta Conservancy for an afternoon game drive across open plains and woodland habitats. Search for elephants, lions, buffaloes, black rhinos, leopards, giraffes, zebras, hartebeest, impala, cheetahs, hyenas, and birdlife.",
+      },
+      {
+        title: 'Evening at Camp',
+        description:
+          'Return to Maisha Sweetwaters Camp for dinner and an overnight stay in the Laikipia region.',
+      },
+    ],
+    accommodation: 'Maisha Sweetwaters Camp',
+    meals: 'Lunch & Dinner',
+  },
+  {
+    day: '2',
+    title: 'Ol Pejeta to Nairobi',
+    sections: [
+      {
+        title: 'Breakfast',
+        description:
+          'Begin the morning with breakfast at Maisha Sweetwaters Camp.',
+      },
+      {
+        title: 'Checkout and Return Journey',
+        description:
+          'Check out and begin the return journey through the central highlands toward Nairobi.',
+      },
+      {
+        title: 'Nairobi Drop-Off',
+        description:
+          'Arrive in Nairobi for your agreed hotel or airport transfer, concluding the 2-day Ol Pejeta safari.',
+      },
+    ],
+    accommodation: null,
+    meals: 'Breakfast',
+  },
+]
+
+const wildlife = [
+  {
+    title: 'Northern White Rhinos',
+    description:
+      'Ol Pejeta is home to the last two northern white rhinos on earth, making the conservancy one of the most significant rhino conservation destinations in the world.',
+  },
+  {
+    title: 'Black Rhinos',
+    description:
+      'The conservancy is an important sanctuary for black rhinos, providing opportunities to observe this endangered species during guided game drives.',
+  },
+  {
+    title: 'Lions',
+    description:
+      'Lions occur throughout the conservancy and may be encountered resting, moving through the grasslands, or tracking prey.',
+  },
+  {
+    title: 'Elephants',
+    description:
+      'Elephant herds move across the open plains and woodland habitats of the conservancy.',
+  },
+  {
+    title: 'Buffalo',
+    description:
+      'Cape buffalo are regularly encountered in the conservancy, often in groups around grazing areas and water sources.',
+  },
+  {
+    title: 'Leopards',
+    description:
+      'Leopards are present but naturally more elusive. Woodland and mixed habitat provide suitable cover for these solitary cats.',
+  },
+]
+
+const additionalWildlife = [
+  'Giraffes',
+  'Zebras',
+  'Hartebeest',
+  'Impala',
+  'Cheetahs',
+  'Hyenas',
+  "Grevy's zebras",
+  'Birdlife across the conservancy',
+]
+
+const campAmenities = [
+  'Comfortable tented rooms with en suite bathrooms',
+  'Full-board meals',
+  'Dining and lounge areas',
+  'Professional camp staff',
+  'Wilderness setting in the Laikipia region',
+]
+
+const seasons = [
+  {
+    title: 'June to October',
+    subtitle: 'Dry Season',
+    description:
+      'Drier conditions generally make wildlife easier to locate as animals concentrate around available water sources and vegetation becomes thinner.',
+  },
+  {
+    title: 'December to February',
+    subtitle: 'Short Dry Period',
+    description:
+      'Warm and generally dry conditions provide another strong period for game viewing and photography.',
+  },
+  {
+    title: 'November',
+    subtitle: 'Short Rains',
+    description:
+      'Short rains bring greener scenery and seasonal changes across the conservancy while wildlife viewing remains possible.',
+  },
+  {
+    title: 'March to May',
+    subtitle: 'Long Rains',
+    description:
+      'The wetter season produces lush landscapes and changing road conditions. Wildlife can become more dispersed as water becomes widely available.',
+  },
+]
+
+const included = [
+  'Full-board accommodation at Maisha Sweetwaters Camp',
+  'Private 4x4 safari vehicle with pop-up roof',
+  'Professional English-speaking safari guide',
+  'Ol Pejeta Conservancy game drive',
+  'Ol Pejeta Conservancy entry fees',
+  'Nairobi airport or hotel pickup and drop-off',
+]
+
+const excluded = [
+  'Tips and gratuities',
+  'Optional activities not included in the itinerary',
+  'Personal expenses',
+  'Travel insurance',
+  'International flights',
+]
+
+const whyDanil = [
+  {
+    title: 'Nairobi-Based Safari Operator',
+    description:
+      'Your safari is managed by a locally based team from the initial Nairobi pickup through the return journey.',
+  },
+  {
+    title: 'Conservation-Focused Destination',
+    description:
+      'Ol Pejeta combines classic Big Five game viewing with some of Kenya’s most important rhino conservation work.',
+  },
+  {
+    title: 'Complete Safari Logistics',
+    description:
+      'Accommodation, guide services, private 4x4 transport, park fees, meals, and Nairobi transfers are included in the package.',
+  },
+  {
+    title: 'Private and Group Options',
+    description:
+      'Contact Danil Scenic Tours with your travel dates and group size to arrange the safari format that suits your trip.',
+  },
+]
+
+const clothing = [
+  'Lightweight neutral-coloured clothing',
+  'Warm layer or fleece for cool mornings',
+  'Comfortable walking shoes',
+  'Hat or cap',
+  'Sunglasses',
+  'Long sleeves and trousers for sun and insect protection',
+]
+
+const health = [
+  'High-SPF sunscreen',
+  'Insect repellent',
+  'Personal medication',
+  'Hand sanitizer',
+]
+
+const cameraGear = [
+  'Camera or smartphone',
+  'Binoculars',
+  'Extra batteries or portable charger',
+  'Memory cards or storage',
+]
+
+const essentials = [
+  'Passport or identification',
+  'Light jacket',
+  'Comfortable evening clothing',
+  'Personal toiletries',
+  'Small day bag',
+]
+
+const faqs = [
+  {
+    question: 'How much does the Ol Pejeta safari cost?',
+    answer:
+      'The group price starts from USD 920 per person. Contact us with your travel dates and group size for confirmed availability and the final quote.',
+  },
+  {
+    question: 'How long is the Ol Pejeta safari?',
+    answer:
+      'The package runs for 2 days and 1 night, with accommodation at Maisha Sweetwaters Camp.',
+  },
+  {
+    question: 'Will I definitely see the Big Five?',
+    answer:
+      'All five Big Five species occur in the Ol Pejeta ecosystem, but wildlife sightings are never guaranteed. Your guide will use local knowledge and game-drive conditions to maximise viewing opportunities.',
+  },
+  {
+    question: 'Can I see the northern white rhinos?',
+    answer:
+      'Ol Pejeta is home to the last two northern white rhinos on earth. Access and viewing arrangements depend on the conservancy activities available during your visit.',
+  },
+  {
+    question: 'How far is Ol Pejeta from Nairobi?',
+    answer:
+      'The safari travels north from Nairobi through the central Kenya highlands toward the Nanyuki and Ol Pejeta area. Travel time depends on road and traffic conditions.',
+  },
+  {
+    question: 'Can the safari be customised?',
+    answer:
+      'Yes. Additional Ol Pejeta activities can be discussed when booking. Optional experiences may involve additional fees and availability requirements.',
+  },
+  {
+    question: 'Is the safari suitable for families?',
+    answer:
+      'Yes. Much of the wildlife viewing takes place from the safari vehicle, making the itinerary suitable for many families. Share any specific family or mobility requirements when booking.',
+  },
+  {
+    question: 'Can I travel solo?',
+    answer:
+      'Yes. Contact Danil Scenic Tours with your dates so available private or shared arrangements can be discussed.',
+  },
+]
+
+const destinationLinks = [
+  {
+    title: 'Nairobi City Tour',
+    description: 'One-day wildlife and cultural experience',
+    href: '/destinations/nairobi-national-park-safari-tours',
+  },
+  {
+    title: 'Maasai Mara Safari Tours',
+    description: 'Great Migration and Big Five experiences',
+    href: '/destinations/maasai-mara-safari-tours',
+  },
+  {
+    title: 'Amboseli Safari Tours',
+    description: 'Elephants and Mount Kilimanjaro',
+    href: '/destinations/amboseli-safari-tours',
+  },
+  {
+    title: 'Tsavo Safari Tours',
+    description: 'Red elephants and vast wilderness',
+    href: '/destinations/tsavo-safari-tours',
+  },
+  {
+    title: 'Lake Naivasha Safari',
+    description: "Boat rides, Crescent Island, and Hell's Gate",
+    href: '/destinations/lake-naivasha-safari-tours',
+  },
+  {
+    title: 'Lake Nakuru Safari',
+    description: 'Rhinos, birdlife, and Rift Valley scenery',
+    href: '/destinations/lake-nakuru-safari-tours',
+  },
+]
 
 export default function OlPejetaPage() {
   return (
-    <div className="min-h-screen bg-[#FAF4E8] flex flex-col">
+    <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero */}
+      <section className="relative flex min-h-[78svh] w-full items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:min-h-[82svh] sm:pt-32 md:pb-20">
         <Image
           src={LOCAL_IMAGES.ELEPHANT_KILIMANJARO}
-          alt="Elephants at Ol Pejeta Conservancy on the Laikipia Plateau in Kenya"
+          alt="Wildlife on safari in central Kenya"
           fill
           priority
-          className="object-cover"
           sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)' }} />
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <h1 className="font-playfair text-white text-5xl md:text-6xl font-bold mb-4">
+
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.80)_0%,rgba(28,18,8,0.30)_100%)]" />
+
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <p className="mb-4 font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+            2 Days / 1 Night
+          </p>
+
+          <h1 className="font-playfair text-4xl font-bold leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Ol Pejeta Conservancy Safari
           </h1>
-          <p className="font-inter text-white text-lg md:text-xl" style={{ opacity: 0.85 }}>
-            2-Day Big Five Wildlife Tour from Nairobi
+
+          <p className="mx-auto mt-5 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg md:text-xl">
+            Big Five wildlife, rhino conservation, and a guided safari through
+            Kenya's central highlands.
           </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/safari-packages"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
+            >
+              View Pricing
+            </Link>
+
+            <Link
+              href="/book?tour=Ol+Pejeta+Conservancy+Safari"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
+            >
+              Book This Safari
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Safari at a Glance */}
+      <section className="bg-[#F2E8D5] px-4 py-12 sm:py-14 md:py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article className="rounded-2xl bg-white p-5">
+              <Clock
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Duration
+              </p>
+
+              <p className="mt-2 font-inter text-[#1C1208]">
+                2 Days / 1 Night
+              </p>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5">
+              <MapPin
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Destination
+              </p>
+
+              <p className="mt-2 font-inter text-[#1C1208]">
+                Ol Pejeta Conservancy
+              </p>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5">
+              <Shield
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Accommodation
+              </p>
+
+              <p className="mt-2 font-inter text-[#1C1208]">
+                Maisha Sweetwaters Camp
+              </p>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5">
+              <Users
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Group Price
+              </p>
+
+              <p className="mt-2 font-montserrat text-lg font-bold text-[#2A4A35]">
+                From USD 920
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold">
-            Experience Kenya's Premier Big Five Safari at Ol Pejeta Conservancy
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-playfair text-3xl font-bold leading-tight text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Experience Big Five Conservation at Ol Pejeta
           </h2>
-          <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            Ol Pejeta Conservancy is one of Kenya's leading wildlife conservation areas and one of Africa's most inspiring conservation success stories. Located on the Laikipia Plateau in central Kenya, north of Nairobi, this 90,000-acre conservation area offers spectacular opportunities to see Kenya's Big Five, lions, rhinos, buffalo, leopards, and elephants.
-          </p>
-          <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            What sets Ol Pejeta apart is its commitment to conservation alongside visitor experiences. Your safari directly supports anti-poaching efforts, community development programs, and wildlife research. This is not just a safari, it is a meaningful wildlife encounter that protects endangered species.
-          </p>
-          <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            Your 2-day, 1-night safari at Ol Pejeta combines comfortable accommodation at Maisha Sweetwaters Camp, expert guides, rewarding game drives, and the landscapes of the Laikipia Plateau. You will return to Nairobi refreshed, inspired, and with memories of authentic African wilderness.
-          </p>
+
+          <div className="mt-6 space-y-5">
+            <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+              Ol Pejeta Conservancy combines wildlife viewing with active
+              conservation in Kenya's central highlands. The conservancy is
+              home to the Big Five and is especially significant for rhino
+              conservation.
+            </p>
+
+            <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+              It is also home to the last two northern white rhinos on earth,
+              alongside black rhinos, elephants, lions, buffaloes, leopards,
+              cheetahs, hyenas, and other wildlife.
+            </p>
+
+            <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+              This 2-day, 1-night safari includes full-board accommodation at
+              Maisha Sweetwaters Camp, private 4x4 transport, a professional
+              guide, park fees, and Nairobi transfers.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Itinerary */}
-      <section className="w-full bg-[#F2E8D5] py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
-            Your Ol Pejeta Conservancy Safari Itinerary
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-10 text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:mb-14 md:text-5xl">
+            Ol Pejeta Safari Itinerary
           </h2>
-          <div className="space-y-10">
 
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="bg-[#2A4A35] px-8 py-4 flex items-center gap-4">
-                <span className="w-10 h-10 rounded-full bg-[#D4870A] flex items-center justify-center text-white font-montserrat font-bold text-lg flex-shrink-0">1</span>
-                <h3 className="font-playfair text-white text-2xl font-bold">Nairobi to Ol Pejeta Conservancy</h3>
-              </div>
-              <div className="p-8 space-y-4">
-                <p className="font-inter text-[#1C1208] leading-relaxed">Your safari begins with an early morning departure from Nairobi at 7:00 AM.</p>
-                <div>
-                  <p className="font-montserrat font-bold text-[#2A4A35] text-sm mb-2">The Scenic Drive</p>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">The 2-hour drive to Ol Pejeta takes you through Kenya's stunning central highlands. You will enjoy views of fertile farmlands and the majestic outline of Mount Kenya, weather permitting, rising 5,199 meters into the sky. The drive itself is part of your safari experience, a visual introduction to the landscapes you will explore.</p>
-                </div>
-                <p className="font-inter text-[#1C1208] leading-relaxed">Upon arrival in Nanyuki, you will proceed to Maisha Sweetwaters Camp for check-in and lunch. Take time to settle into your comfortable tented accommodation and refresh after your journey.</p>
-                <div>
-                  <p className="font-montserrat font-bold text-[#2A4A35] text-sm mb-2">Afternoon Game Drive</p>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">In the afternoon, you will enter Ol Pejeta Conservancy for your game drive across its diverse landscapes. The afternoon game drive allows ample time to explore the conservancy's open plains and woodland areas.</p>
-                </div>
-                <p className="font-inter text-[#1C1208] leading-relaxed">You may encounter the Big Five, elephants moving majestically across grasslands, lions resting in the shade, black rhinos grazing on open plains where vegetation is sparse, making them visible, buffalo herds congregating near water sources, and leopards occasionally visible in acacia trees.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">Other wildlife includes giraffes, zebras, hartebeest, impala, cheetahs, hyenas, and numerous bird species.</p>
-                <div>
-                  <p className="font-montserrat font-bold text-[#2A4A35] text-sm mb-2">Evening at Camp</p>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">After your game drive, you will exit the conservancy and return to Maisha Sweetwaters Camp. Enjoy dinner at the camp and rest overnight in your comfortable tented accommodation, surrounded by the sounds of the African wilderness.</p>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-6">
+            {itinerary.map((item) => (
+              <article
+                key={item.day}
+                className="overflow-hidden rounded-2xl bg-white shadow-sm"
+              >
+                <div className="flex items-center gap-4 bg-[#2A4A35] px-5 py-4 sm:px-6 md:px-8">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D4870A] font-montserrat text-lg font-bold text-white">
+                    {item.day}
+                  </span>
 
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="bg-[#2A4A35] px-8 py-4 flex items-center gap-4">
-                <span className="w-10 h-10 rounded-full bg-[#D4870A] flex items-center justify-center text-white font-montserrat font-bold text-lg flex-shrink-0">2</span>
-                <h3 className="font-playfair text-white text-2xl font-bold">Ol Pejeta to Nairobi</h3>
-              </div>
-              <div className="p-8 space-y-4">
-                <p className="font-inter text-[#1C1208] leading-relaxed">Your final safari day begins after breakfast.</p>
-                <div>
-                  <p className="font-montserrat font-bold text-[#2A4A35] text-sm mb-2">Breakfast and Checkout</p>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">Enjoy a hearty breakfast at camp, preparing you for the journey back to Nairobi.</p>
+                  <h3 className="font-playfair text-xl font-bold leading-tight text-white sm:text-2xl">
+                    {item.title}
+                  </h3>
                 </div>
-                <div>
-                  <p className="font-montserrat font-bold text-[#2A4A35] text-sm mb-2">Return to Nairobi</p>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">You will check out from Maisha Sweetwaters Camp and begin your return journey to Nairobi. Enjoy relaxed views of the countryside as you travel through the central highlands, arriving in Nairobi by early afternoon, approximately 10:30 AM to 12:00 PM, marking the end of your short but fulfilling safari experience.</p>
+
+                <div className="p-5 sm:p-6 md:p-8">
+                  <div className="space-y-5">
+                    {item.sections.map((section) => (
+                      <div key={section.title}>
+                        <h4 className="font-montserrat text-sm font-bold text-[#2A4A35]">
+                          {section.title}
+                        </h4>
+
+                        <p className="mt-2 font-inter text-sm leading-7 text-[#1C1208] sm:text-base">
+                          {section.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 grid grid-cols-1 gap-3 border-t border-[#D4870A]/20 pt-5 sm:grid-cols-2">
+                    {item.accommodation && (
+                      <p className="font-inter text-sm text-[#1C1208]">
+                        <strong>Accommodation:</strong> {item.accommodation}
+                      </p>
+                    )}
+
+                    <p className="font-inter text-sm text-[#1C1208]">
+                      <strong>Meals:</strong> {item.meals}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Accommodation */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
-            Where You Will Stay: Maisha Sweetwaters Camp
+      {/* Camp */}
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Maisha Sweetwaters Camp
           </h2>
-          <div className="bg-white rounded-2xl p-8 shadow-sm space-y-4">
-            <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-              Your home for the night is Maisha Sweetwaters Camp, located outside Ol Pejeta Conservancy in the Laikipia region. The camp offers comfortable, well-appointed tented accommodation in a serene wilderness setting.
+
+          <div className="mt-8 rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+            <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+              Your overnight stay is at Maisha Sweetwaters Camp in the Laikipia
+              region. The package includes full-board accommodation, with
+              breakfast, lunch, and dinner according to the itinerary.
             </p>
-            <div>
-              <p className="font-montserrat font-bold text-[#2A4A35] text-sm mb-3">Facilities and Amenities</p>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Comfortable tented rooms with en-suite bathrooms',
-                  'Full-board meals, breakfast, lunch, and dinner',
-                  'Dining area and lounge for relaxation',
-                  'Professional staff and 24-hour support',
-                  'Warm hospitality and authentic bush camp atmosphere',
-                  'Natural setting surrounded by wildlife',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p className="font-inter text-[#1C1208] text-sm leading-relaxed italic">
-              Maisha means "life" in Swahili, the camp lives up to its name by providing a life-enriching experience in the heart of Laikipia.
-            </p>
+
+            <h3 className="mt-6 font-montserrat text-lg font-bold text-[#2A4A35]">
+              Camp Features
+            </h3>
+
+            <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {campAmenities.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 font-inter text-sm leading-relaxed text-[#1C1208]"
+                >
+                  <CheckCircle2
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[#D4870A]"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Big Five Section */}
-      <section className="w-full bg-[#F2E8D5] py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
-            The Big Five and Wildlife at Ol Pejeta
+      {/* Wildlife */}
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Big Five and Rhino Conservation
           </h2>
-          <p className="font-inter text-[#1C1208] text-lg text-center max-w-3xl mx-auto mb-12">
-            Ol Pejeta Conservancy is renowned for excellent opportunities to spot all five members of Africa's iconic Big Five.
+
+          <p className="mx-auto mt-4 max-w-3xl text-center font-inter text-base leading-relaxed text-[#1C1208] sm:text-lg">
+            Ol Pejeta combines Big Five safari experiences with some of Kenya's
+            most important rhino conservation work.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-3">Lions</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Ol Pejeta has one of Kenya's most reliable lion populations. These apex predators are frequently spotted, especially during early morning and late afternoon game drives. You may see them resting in shade, patrolling territory, or actively hunting.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-3">Black Rhinos</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The conservancy is a stronghold for black rhinos. These critically endangered animals, weighing up to 1,400 kg, are surprisingly agile and can run up to 50 km/h. During dry season drives, sparse vegetation makes them easier to spot. Ol Pejeta's anti-poaching efforts have been crucial in protecting this species.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-3">Elephants</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Large herds of African elephants roam across Ol Pejeta's open plains. These intelligent giants are magnificent to observe as they move purposefully across the landscape, often in family groups. You may see them bathing at waterholes or feeding on acacia trees.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-3">Buffalo</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Cape buffalo are powerful, unpredictable animals often encountered in herds. These massive bovines can appear calm one moment and charge the next, they are considered Africa's most dangerous animal to encounter. Watching them at waterholes is a privilege.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm md:col-span-2">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-3">Leopards</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The most elusive of the Big Five, leopards are nocturnal and solitary. Spot one during daylight hours and you have seen something special. Ol Pejeta's diverse habitat, woodlands and grasslands, provides good leopard habitat.</p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {wildlife.map((animal) => (
+              <article
+                key={animal.title}
+                className="rounded-2xl bg-white p-5 shadow-sm sm:p-6"
+              >
+                <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
+                  {animal.title}
+                </h3>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208]">
+                  {animal.description}
+                </p>
+              </article>
+            ))}
           </div>
-          <div className="mt-8 bg-[#D4870A] rounded-2xl p-8 text-center">
-            <p className="font-montserrat font-bold text-white text-lg mb-2">Additional Wildlife</p>
-            <p className="font-inter text-white text-base">Beyond the Big Five, Ol Pejeta supports giraffes, zebras, hartebeest, impala, cheetahs, hyenas, wild dogs, Grevy's zebras, and numerous bird species. Over 300 bird species have been recorded in the conservancy.</p>
+
+          <div className="mt-8 rounded-2xl bg-[#D4870A] p-6 text-center sm:p-8">
+            <p className="font-montserrat text-lg font-bold text-white">
+              Additional Wildlife
+            </p>
+
+            <p className="mx-auto mt-3 max-w-4xl font-inter text-sm leading-relaxed text-white sm:text-base">
+              {additionalWildlife.join(', ')}.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Best Time */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
-            Best Time to Visit Ol Pejeta Conservancy
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Best Time to Visit Ol Pejeta
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-[#D4870A]">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">June to October</h3>
-              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Best Overall</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The long dry season is the peak time to visit Ol Pejeta. Vegetation thins out, animals gather around water sources, and clear skies make for excellent game viewing and photography. Roads are firm and easily navigable, and you have the best chance of spotting all Big Five in open terrain. October remains firmly within this dry season window and is an excellent month to visit.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">December to February</h3>
-              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Also Excellent</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The short dry season offers warm, sunny conditions with minimal rainfall. Wildlife remains active and visible, and this period is a great alternative to the peak June to October season, often with fewer visitors.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">November</h3>
-              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Shoulder Season</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Short rains begin in November, bringing occasional afternoon showers that quickly pass. The landscape turns lush and green, offering a different but equally beautiful experience. Game viewing is still good, and accommodation rates are often lower.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-red-200">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">March to May</h3>
-              <p className="font-montserrat font-semibold text-red-500 text-sm mb-3">Not Recommended</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The long rains fall heavily during this period, making roads muddy and difficult. Animals disperse widely across the conservancy as water becomes abundant everywhere, making sightings harder. This is the only period we advise against visiting.</p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {seasons.map((season) => (
+              <article
+                key={season.title}
+                className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8"
+              >
+                <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
+                  {season.title}
+                </h3>
+
+                <p className="mt-1 font-montserrat text-sm font-semibold text-[#D4870A]">
+                  {season.subtitle}
+                </p>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208]">
+                  {season.description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Getting There */}
-      <section className="w-full bg-[#F2E8D5] py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             Getting to Ol Pejeta from Nairobi
           </h2>
-          <div className="bg-white rounded-2xl p-8 shadow-sm space-y-6">
+
+          <div className="mt-10 rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
             <div className="flex items-start gap-4">
-              <Car size={32} className="text-[#D4870A] flex-shrink-0" />
+              <Car
+                size={28}
+                className="mt-1 shrink-0 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
               <div>
-                <p className="font-montserrat font-bold text-[#2A4A35] text-lg mb-2">Distance and Duration</p>
-                <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Ol Pejeta Conservancy lies 200 km north of Nairobi, approximately 2 hours' drive via the Nairobi-Nanyuki Highway through the scenic central highlands.</p>
+                <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
+                  Scenic Road Journey
+                </h3>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
+                  The journey travels north from Nairobi through Kenya's
+                  central highlands toward Nanyuki and Ol Pejeta Conservancy.
+                  Along the route, the landscape changes from Nairobi's urban
+                  surroundings to farmland and highland scenery.
+                </p>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
+                  Mount Kenya may be visible along the journey when weather
+                  conditions permit.
+                </p>
               </div>
-            </div>
-            <div>
-              <p className="font-montserrat font-bold text-[#2A4A35] text-lg mb-2">The Route</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Your journey begins with early 7:00 AM pickup from your Nairobi hotel. You will travel through the vibrant outskirts of Nairobi, then into the central highlands region. The landscape transitions from urban to rural to highland forest views.</p>
-            </div>
-            <div>
-              <p className="font-montserrat font-bold text-[#2A4A35] text-lg mb-2">Scenic Highlights</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Mount Kenya, the second-highest mountain in Africa at 5,199 meters, rises to the east, weather permitting. You will pass through fertile farmlands, local villages, and highland forests. The journey itself provides insight into Kenya's geography and local communities. Upon arriving in the Nanyuki area, you will proceed to Maisha Sweetwaters Camp and then enter the conservancy.</p>
-            </div>
-            <div>
-              <p className="font-montserrat font-bold text-[#2A4A35] text-lg mb-2">Road Conditions</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">The roads are generally paved and well-maintained. Your driver-guide is experienced with the route and familiar with road conditions.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What's Included / Not Included */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
-            What's Included in Your Ol Pejeta Safari
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">What's Included</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Full-board accommodation at Maisha Sweetwaters Camp (breakfast, lunch, dinner)',
-                  'Private transport in a 4x4 tour jeep with pop-up roof for optimal wildlife viewing and photography',
-                  'Professional, English-speaking guide with wildlife expertise',
-                  'Game drive at Ol Pejeta Conservancy',
-                  'Park entry fees for Ol Pejeta Conservancy',
-                  'Hotel pickup and dropoff from Nairobi',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-green-600 font-bold flex-shrink-0">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">What's Not Included</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Tips and gratuities',
-                  'Any activities not mentioned in the itinerary',
-                  'Personal expenses and items',
-                  'Travel insurance',
-                  'International flights',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-red-600 font-bold flex-shrink-0">✗</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+      {/* Included */}
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
+          <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+            <h2 className="font-playfair text-3xl font-bold text-[#2A4A35]">
+              What's Included
+            </h2>
+
+            <ul className="mt-6 space-y-3">
+              {included.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base"
+                >
+                  <CheckCircle2
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[#D4870A]"
+                    aria-hidden="true"
+                  />
+
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+            <h2 className="font-playfair text-3xl font-bold text-[#2A4A35]">
+              What's Not Included
+            </h2>
+
+            <ul className="mt-6 space-y-3">
+              {excluded.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base"
+                >
+                  <XCircle
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[#D4870A]"
+                    aria-hidden="true"
+                  />
+
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
         </div>
       </section>
 
       {/* Why Danil */}
-      <section className="w-full bg-[#1C3028] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#FDF8F0] text-4xl font-bold text-center mb-12">
-            Why Choose Danil Scenic Tours for Your Ol Pejeta Safari
+      <section className="bg-[#1C3028] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#FDF8F0] sm:text-4xl md:text-5xl">
+            Why Choose Danil Scenic Tours
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Local Nairobi-Based Expertise</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">We are based in Nairobi and know these routes intimately. We understand seasonal wildlife patterns, road conditions, and can provide local insights that distant operators cannot.</p>
-            </div>
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Flexible Departures</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Start any day that suits your schedule. No waiting for group bookings, both private and group options available.</p>
-            </div>
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">All-Inclusive Transparency</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">What you see is what you pay. No hidden costs, no surprise charges. Everything is explained upfront.</p>
-            </div>
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Proven Reputation</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">5.0/5 rating from 24+ verified guests. TRA Licensed. Trusted by travelers from around the world.</p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {whyDanil.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl bg-[#2A4A35] p-5 sm:p-6"
+              >
+                <h3 className="font-montserrat text-base font-bold text-[#D4870A] sm:text-lg">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#FDF8F0]">
+                  {item.description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* What to Pack */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             What to Pack for Ol Pejeta
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Clothing and Footwear</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Lightweight, neutral-colored clothing (khaki, olive, tan)',
-                  'Warm layer or fleece for cool early mornings',
-                  'Comfortable walking shoes',
-                  'Hat or baseball cap',
-                  'Sunglasses (UV protection)',
-                  'Optional, long sleeves and pants for sun and insect protection',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Sun and Health Protection</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'High SPF sunscreen (SPF 50+)',
-                  'Mosquito repellent (DEET-based)',
-                  'Any personal medications',
-                  'Hand sanitizer',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Camera and Binoculars</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Camera or smartphone for wildlife photography',
-                  'Binoculars for spotting distant animals',
-                  'Extra batteries or portable charger',
-                  'Memory cards or external storage',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Other Essentials</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Passport or ID',
-                  'Light jacket or sweatshirt',
-                  'Comfortable clothing for evening at camp',
-                  'Toiletries (camp provides basics)',
-                  'Notebook for recording sightings',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {[
+              {
+                title: 'Clothing and Footwear',
+                items: clothing,
+              },
+              {
+                title: 'Sun and Health Protection',
+                items: health,
+              },
+              {
+                title: 'Camera and Binoculars',
+                items: cameraGear,
+              },
+              {
+                title: 'Other Essentials',
+                items: essentials,
+              },
+            ].map((section) => (
+              <article
+                key={section.title}
+                className="rounded-2xl bg-white p-5 shadow-sm sm:p-6"
+              >
+                <h3 className="font-montserrat text-lg font-bold text-[#2A4A35]">
+                  {section.title}
+                </h3>
+
+                <ul className="mt-4 space-y-2">
+                  {section.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 font-inter text-sm leading-relaxed text-[#1C1208]"
+                    >
+                      <span
+                        className="shrink-0 font-bold text-[#D4870A]"
+                        aria-hidden="true"
+                      >
+                        •
+                      </span>
+
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="w-full bg-[#1C3028] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#FDF8F0] text-4xl font-bold text-center mb-12">
-            Frequently Asked Questions About Ol Pejeta Safari
+      <section className="bg-[#1C3028] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-10 text-center font-playfair text-3xl font-bold text-[#FDF8F0] sm:text-4xl md:text-5xl">
+            Frequently Asked Questions
           </h2>
+
           <div className="space-y-4">
-            {[
-              {
-                q: 'Will I definitely see the Big Five?',
-                a: 'While we cannot guarantee Big Five sightings, Ol Pejeta has excellent populations of all five species. During dry seasons (June to October, December to February), sighting chances are highest due to sparse vegetation and concentrated water sources. Early morning and late afternoon game drives offer optimal viewing. Even if you do not see all five, you will encounter diverse, impressive wildlife.',
-              },
-              {
-                q: 'How far from Nairobi is Ol Pejeta?',
-                a: 'Ol Pejeta is located approximately 200 km north of Nairobi, a 2-hour drive via the Nairobi-Nanyuki Highway. Your guide will handle all driving, you relax and enjoy the scenic route.',
-              },
-              {
-                q: 'Is Ol Pejeta safe?',
-                a: 'Yes, absolutely. Ol Pejeta is a professional, well-managed conservancy with excellent security and experienced guides. You will experience wildlife safely from your vehicle during game drives. Maisha Sweetwaters Camp has 24-hour staff and security. Follow your guide\'s instructions and maintain normal safety practices.',
-              },
-              {
-                q: 'What is the physical fitness requirement?',
-                a: 'This safari is suitable for most fitness levels. You will be in a vehicle during game drives, minimal physical exertion. The only walking is minimal, to meals, your tent, viewpoints. Elderly travelers and families with children participate comfortably. Let us know of any mobility concerns when booking.',
-              },
-              {
-                q: 'Can I customize my itinerary?',
-                a: 'Yes. Want to add night drives, additional game drives, or visits to the Sweetwaters Chimpanzee Sanctuary? Danil Scenic Tours can arrange customizations. Additional activities may incur extra fees. Discuss your interests when booking.',
-              },
-              {
-                q: 'Is this good for families?',
-                a: 'Absolutely. Families with children enjoy Ol Pejeta safaris. The vehicle experience suits most children, and wildlife encounters fascinate young explorers. Maisha Sweetwaters Camp offers family-friendly accommodation. Lunch and meals are good quality. Discuss any special requirements when booking.',
-              },
-              {
-                q: 'Can I do this solo?',
-                a: 'Yes, solo travelers are welcome. You will join other travelers in shared group safaris, or book a private tour for a completely personalized experience. Either way, your guide provides expert interpretation and ensures you have a memorable safari.',
-              },
-              {
-                q: 'What about the Sweetwaters Chimpanzee Sanctuary?',
-                a: 'Maisha Sweetwaters Camp is adjacent to Sweetwaters Chimpanzee Sanctuary, Kenya\'s only chimpanzee facility. Visits can be arranged as an add-on activity during your stay. This unique experience sees rescued and orphaned chimpanzees in natural, protected enclosures.',
-              },
-            ].map((item, i) => (
-              <details key={i} className="group">
-                <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
-                  <span>{item.q}</span>
-                  <ChevronDown size={20} className="transition-transform group-open:rotate-180 flex-shrink-0 ml-4" />
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl bg-[#2A4A35]"
+              >
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-montserrat text-sm font-semibold text-white sm:px-6 sm:text-base">
+                  <span>{faq.question}</span>
+
+                  <ChevronDown
+                    size={20}
+                    className="shrink-0 transition-transform group-open:rotate-180"
+                    aria-hidden="true"
+                  />
                 </summary>
-                <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm leading-relaxed">
-                  <p>{item.a}</p>
+
+                <div className="border-t border-white/10 px-5 py-4 sm:px-6">
+                  <p className="font-inter text-sm leading-relaxed text-[#FDF8F0] sm:text-base">
+                    {faq.answer}
+                  </p>
                 </div>
               </details>
             ))}
@@ -449,100 +846,132 @@ export default function OlPejetaPage() {
         </div>
       </section>
 
-      {/* Explore More Kenya Safari Experiences */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
+      {/* Explore More */}
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             Explore More Kenya Safari Experiences
           </h2>
-          <p className="font-inter text-[#1C1208] text-lg text-center mb-12">
-            Looking for longer safaris or different destinations? Explore our complete safari portfolio.
+
+          <p className="mx-auto mt-4 max-w-3xl text-center font-inter text-base leading-relaxed text-[#1C1208] sm:text-lg">
+            Continue exploring individual destinations or compare complete
+            Kenya safari packages.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Individual Safari Destinations</h3>
-              <ul className="space-y-3 font-inter text-[#1C1208] text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/nairobi-national-park-safari-tours" className="text-[#D4870A] hover:underline">Nairobi City Tour</Link>
-                  <span>, 1-day urban safari and cultural experience</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/maasai-mara-safari-tours" className="text-[#D4870A] hover:underline">Maasai Mara Safari Tours</Link>
-                  <span>, Kenya's premier wildlife destination (4 days)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/amboseli-safari-tours" className="text-[#D4870A] hover:underline">Amboseli National Park Safari</Link>
-                  <span>, elephants and Mount Kilimanjaro views (3 days)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/tsavo-safari-tours" className="text-[#D4870A] hover:underline">Tsavo National Park Safari</Link>
-                  <span>, vast wilderness and red elephants (3 days)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/lake-naivasha-safari-tours" className="text-[#D4870A] hover:underline">Lake Naivasha Safari</Link>
-                  <span>, freshwater lake and Hell's Gate adventure (2 days)</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Hub Pages</h3>
-              <ul className="space-y-3 font-inter text-[#1C1208] text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <span>Kenya Safari Tours, learn about different safari types and destinations</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <span>Kenya Safari Packages, view multi-destination combinations and pricing</span>
-                </li>
-              </ul>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed mt-6">
-                Combine Ol Pejeta with other destinations for an extended safari experience. Ask about our multi-destination packages.
-              </p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+            <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+              <h3 className="font-montserrat text-lg font-bold text-[#2A4A35]">
+                Individual Safari Destinations
+              </h3>
+
+              <div className="mt-5 space-y-3">
+                {destinationLinks.map((destination) => (
+                  <Link
+                    key={destination.href}
+                    href={destination.href}
+                    className="block min-h-11 rounded-lg py-2 transition-colors hover:text-[#D4870A]"
+                  >
+                    <span className="font-montserrat text-sm font-semibold text-[#D4870A]">
+                      {destination.title}
+                    </span>
+
+                    <span className="mt-1 block font-inter text-sm leading-relaxed text-[#1C1208]">
+                      {destination.description}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+              <h3 className="font-montserrat text-lg font-bold text-[#2A4A35]">
+                Safari Planning
+              </h3>
+
+              <div className="mt-5 space-y-3">
+                <Link
+                  href="/safari-tours"
+                  className="flex min-h-12 items-center justify-between rounded-lg border border-[#D4870A]/20 px-4 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:text-[#D4870A]"
+                >
+                  Kenya Safari Tours
+                  <ChevronDown
+                    size={16}
+                    className="-rotate-90"
+                    aria-hidden="true"
+                  />
+                </Link>
+
+                <Link
+                  href="/safari-packages"
+                  className="flex min-h-12 items-center justify-between rounded-lg border border-[#D4870A]/20 px-4 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:text-[#D4870A]"
+                >
+                  Kenya Safari Packages
+                  <ChevronDown
+                    size={16}
+                    className="-rotate-90"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-[#F2E8D5] p-5">
+                <p className="font-montserrat text-sm font-bold text-[#2A4A35]">
+                  Ol Pejeta Group Price
+                </p>
+
+                <p className="mt-2 font-playfair text-3xl font-bold text-[#D4870A]">
+                  From USD 920
+                </p>
+
+                <p className="mt-2 font-inter text-sm leading-relaxed text-[#1C1208]">
+                  Contact us with your dates and group size for confirmed
+                  availability and pricing.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="relative overflow-hidden py-32 px-4 md:py-48">
-        <div className="absolute inset-0" style={{ zIndex: 0 }}>
-          <Image
-            src={LOCAL_IMAGES.ELEPHANT_KILIMANJARO}
-            alt="Elephants roaming the plains at Ol Pejeta Conservancy"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)', zIndex: 1 }}
+      <section className="relative overflow-hidden px-4 py-20 sm:py-24 md:py-32">
+        <Image
+          src={LOCAL_IMAGES.ELEPHANT_KILIMANJARO}
+          alt="Elephants on a Kenya safari"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h2 className="font-cormorant text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-tight">
-            Experience the Ultimate Big Five Safari
+
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.78)_0%,rgba(28,18,8,0.32)_100%)]" />
+
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
+          <h2 className="font-cormorant text-4xl leading-tight text-white sm:text-5xl md:text-6xl">
+            Plan Your Ol Pejeta Safari
           </h2>
-          <p className="font-inter text-white text-lg mb-12 opacity-85">
-            Ready to witness Kenya's Big Five in one of Africa's most meaningful conservation areas? Ol Pejeta Conservancy awaits with professional guides, excellent wildlife viewing, and the knowledge that your visit directly supports conservation efforts protecting endangered species.
+
+          <p className="mx-auto mt-5 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg">
+            Experience Big Five wildlife, rhino conservation, and a night at
+            Maisha Sweetwaters Camp on this 2-day safari from Nairobi.
           </p>
-          <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
+
+          <p className="mt-4 font-montserrat text-lg font-bold text-[#D4870A]">
+            Group Price: From USD 920 per person
+          </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/book?tour=Ol+Pejeta+Conservancy+Safari"
-              className="px-6 md:px-10 py-3 md:py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all text-sm md:text-base"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
             >
-              Start Planning
+              Book This Safari
             </Link>
+
             <Link
               href="https://wa.me/254722919249"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 md:px-10 py-3 md:py-4 border-2 border-white text-white font-montserrat font-semibold rounded-lg hover:bg-white hover:text-[#2A4A35] transition-all text-sm md:text-base"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
             >
               Chat on WhatsApp
             </Link>
@@ -551,8 +980,7 @@ export default function OlPejetaPage() {
       </section>
 
       <Footer />
-      <FloatingButtons />
-      <AccessibilityToolbar />
-    </div>
+      <ClientOnlyUI />
+    </main>
   )
 }
