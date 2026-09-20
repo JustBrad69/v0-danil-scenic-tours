@@ -13,7 +13,7 @@ export type SafariMapLocationId =
   | 'diani-beach'
 
 export type SafariMapProps = {
-  locationIds: SafariMapLocationId[]
+  locations: SafariMapLocationId[]
   showRouteLine?: boolean
 }
 
@@ -21,7 +21,7 @@ const SafariMapClient = dynamic(() => import('./SafariMapClient'), {
   ssr: false,
   loading: () => (
     <div
-      className="flex h-[360px] w-full items-center justify-center rounded-2xl border-2 border-[#2A4A35]/20 bg-[#F2E8D5] sm:h-[420px] md:h-[520px]"
+      className="flex h-[340px] w-full items-center justify-center rounded-2xl border border-[#2A4A35]/20 bg-[#F2E8D5] sm:h-[420px] md:h-[500px]"
       aria-label="Loading safari map"
     >
       <p className="font-montserrat text-sm font-semibold text-[#2A4A35]">
@@ -32,12 +32,12 @@ const SafariMapClient = dynamic(() => import('./SafariMapClient'), {
 })
 
 export default function SafariMap({
-  locationIds,
+  locations,
   showRouteLine = false,
 }: SafariMapProps) {
   return (
     <SafariMapClient
-      locationIds={locationIds}
+      locations={locations}
       showRouteLine={showRouteLine}
     />
   )
