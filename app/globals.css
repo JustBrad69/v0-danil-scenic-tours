@@ -75,8 +75,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -101,10 +102,12 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -119,8 +122,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
 }
 
@@ -137,6 +147,24 @@
   --danil-whatsapp: #25D366;
 }
 
+/* Font utilities backed by the optimized next/font variables */
+.font-cormorant {
+  font-family: var(--font-cormorant), Georgia, 'Times New Roman', serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+/* Accessibility font sizing */
 html.font-large {
   font-size: 120%;
 }
@@ -164,6 +192,7 @@ html.dyslexia-font * {
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.08);
   }
@@ -174,6 +203,7 @@ html.dyslexia-font * {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -181,18 +211,22 @@ html.dyslexia-font * {
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(212, 135, 10, 0.7);
   }
+
   50% {
     box-shadow: 0 0 0 10px rgba(212, 135, 10, 0);
   }
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -218,7 +252,7 @@ html.dyslexia-font * {
   text-wrap: balance;
 }
 
-/* Logo Blend Mode Fix - Ensures white background disappears across all states */
+/* Logo Blend Mode Fix */
 .navbar-logo-wrapper {
   background: transparent !important;
   mix-blend-mode: multiply !important;
@@ -230,4 +264,29 @@ html.dyslexia-font * {
 .navbar-logo-wrapper [role='img'] {
   mix-blend-mode: multiply !important;
   background: transparent !important;
+}
+
+/* Reduce continuous animation work on smaller devices */
+@media (max-width: 640px) {
+  .ken-burns-zoom,
+  .pulse-glow,
+  .bounce-animation {
+    animation: none;
+  }
+}
+
+/* Respect user motion preferences across the site */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
