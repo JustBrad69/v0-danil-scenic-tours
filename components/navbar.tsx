@@ -13,14 +13,19 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 80)
     }
-    window.addEventListener('scroll', handleScroll)
+
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const links = [
     { label: 'Home', href: '/' },
-    { label: 'Our Safaris', href: '/safaris' },
+    { label: 'Kenya Safari Tours', href: '/safari-tours' },
     { label: 'Destinations', href: '/destinations' },
+    { label: 'Safari Packages', href: '/safari-packages' },
     { label: 'About Us', href: '/about' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'Book Now', href: '/book' },
@@ -33,26 +38,32 @@ export default function Navbar() {
           ? 'bg-[#FAF4E8] text-[#1C1208] shadow-md'
           : 'bg-transparent text-white'
       }`}
+      aria-label="Main navigation"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="navbar-logo-wrapper">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
+        <Link
+          href="/"
+          className="navbar-logo-wrapper flex-shrink-0"
+          aria-label="Danil Scenic Tours home"
+        >
           <Image
             src="/logo.webp"
             alt="Danil Scenic Tours Logo"
             width={180}
             height={50}
             priority
-            className="h-12 w-auto object-contain"
+            sizes="(max-width: 640px) 144px, 180px"
+            className="h-10 sm:h-12 w-auto object-contain"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden lg:flex gap-5 xl:gap-8 items-center">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-[#D4870A] transition-colors font-montserrat text-sm"
+              className="hover:text-[#D4870A] transition-colors font-montserrat text-sm whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -61,8 +72,12 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          type="button"
+          className="lg:hidden flex items-center justify-center p-2 -mr-2"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -70,13 +85,16 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#2A4A35] text-white absolute top-full w-full shadow-lg animate-in slide-in-from-top">
-          <div className="px-4 py-4 space-y-4">
+        <div
+          id="mobile-navigation"
+          className="lg:hidden bg-[#2A4A35] text-white absolute top-full left-0 w-full shadow-lg animate-in slide-in-from-top max-h-[calc(100vh-72px)] overflow-y-auto"
+        >
+          <div className="px-4 sm:px-6 py-4 space-y-1">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 hover:text-[#D4870A] transition-colors font-montserrat text-sm"
+                className="block py-3 hover:text-[#D4870A] transition-colors font-montserrat text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
