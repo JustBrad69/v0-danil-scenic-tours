@@ -6,31 +6,35 @@ import { SERVICE_IMAGES, BLOB_IMAGES } from '@/lib/images'
 const services = [
   {
     title: 'Safari Tours',
-    teaser: 'Big Five game drives through Kenya\'s greatest national parks.',
+    teaser:
+      "Big Five game drives through Kenya's greatest national parks and reserves.",
     image: SERVICE_IMAGES.SAFARI_TOURS,
-    price: 'Starting from $350/Day',
     href: '/safari-tours',
+    cta: 'Explore Safari Tours',
   },
   {
     title: 'Cultural Expeditions',
-    teaser: 'Live the traditions, taste the cuisine, meet the people.',
+    teaser:
+      'Experience Kenyan traditions, communities, heritage, cuisine, and local culture.',
     image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
-    price: 'Starting from $250/Day',
     href: '/safari-tours',
+    cta: 'Explore Experiences',
   },
   {
     title: 'Adventure Safaris',
-    teaser: 'Hiking, biking, and hot air ballooning for the thrill-seeker.',
+    teaser:
+      'Combine wildlife with hiking, walking experiences, cycling, and other outdoor adventures.',
     image: SERVICE_IMAGES.ADVENTURE_SAFARIS,
-    price: 'Starting from $280/Day',
     href: '/safari-tours',
+    cta: 'Explore Adventures',
   },
   {
     title: 'Beach Escapes',
-    teaser: 'Unwind on Kenya\'s pristine Indian Ocean coastline.',
+    teaser:
+      "Unwind on Kenya's Indian Ocean coast after your safari adventure.",
     image: SERVICE_IMAGES.BEACH_ESCAPES,
-    price: 'Starting from $180/Night',
-    href: '/safari-tours',
+    href: '/destinations/diani-beach-safari-tours',
+    cta: 'Explore Diani Beach',
   },
 ]
 
@@ -38,130 +42,162 @@ export default function ServicesGrid() {
   return (
     <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-10 text-center font-playfair text-3xl leading-tight text-[#2A4A35] sm:text-4xl md:mb-16 md:text-5xl">
-          Kenya Safari Tours, Kenya Safari Packages & Private Safari Tours
-        </h2>
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+            Travel Experiences
+          </p>
 
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 md:gap-12">
+          <h2 className="mt-3 font-playfair text-3xl font-bold leading-tight text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Kenya Safari Tours, Cultural Experiences & Beach Escapes
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-3xl font-inter text-base leading-relaxed text-[#1C1208] sm:text-lg">
+            Explore wildlife safaris, cultural experiences, outdoor
+            adventures, and coastal escapes across Kenya.
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
           {services.map((service) => (
             <article
               key={service.title}
-              className="overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 lg:hover:shadow-xl"
+              className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
-                <Image
-                  src={service.image}
-                  alt={`${service.title} with Danil Scenic Tours in Kenya`}
-                  fill
-                  sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
-                  className="object-cover object-center"
-                />
-              </div>
+              <Link
+                href={service.href}
+                className="flex h-full flex-col"
+                aria-label={service.cta}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} with Danil Scenic Tours`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
 
-              <div className="space-y-4 p-5 sm:p-6 md:p-8">
-                <h3 className="font-playfair text-2xl leading-tight text-[#2A4A35]">
-                  {service.title}
-                </h3>
+                <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-8">
+                  <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
+                    {service.title}
+                  </h3>
 
-                <p className="font-inter leading-relaxed text-[#1C1208]">
-                  {service.teaser}
-                </p>
+                  <p className="mt-3 flex-1 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
+                    {service.teaser}
+                  </p>
 
-                <p className="font-montserrat text-base font-semibold text-[#2A4A35]">
-                  {service.price}
-                </p>
+                  <span className="mt-5 inline-flex min-h-11 items-center gap-2 font-montserrat text-sm font-semibold text-[#D4870A]">
+                    {service.cta}
 
-                <Link
-                  href={service.href}
-                  className="inline-flex min-h-11 items-center gap-2 py-2 font-montserrat font-semibold text-[#D4870A] transition-all hover:gap-3"
-                  aria-label={`Learn more about ${service.title}`}
-                >
-                  Learn More
-                  <ArrowRight size={16} aria-hidden="true" />
-                </Link>
-              </div>
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </div>
+              </Link>
             </article>
           ))}
         </div>
 
-        <h2 className="mb-10 mt-16 text-center font-playfair text-3xl leading-tight text-[#2A4A35] sm:mt-20 sm:text-4xl md:mb-16 md:mt-24 md:text-5xl">
-          Custom Safari Adventures & Professional Car Hire
-        </h2>
+        <div className="mx-auto mt-16 max-w-4xl text-center sm:mt-20">
+          <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+            Tailored Travel
+          </p>
 
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 md:gap-12">
-          <article
-            className="overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 lg:hover:shadow-xl"
-            aria-label="Custom Safaris service"
-          >
-            <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
+          <h2 className="mt-3 font-playfair text-3xl font-bold leading-tight text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Custom Safari Adventures & Professional Transport
+          </h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <article className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src={SERVICE_IMAGES.CUSTOMIZED_SAFARIS}
-                alt="Custom safari experience with Danil Scenic Tours in Kenya"
+                src={BLOB_IMAGES.SAFARI_PHOTO_1}
+                alt="Custom Kenya safari experience with Danil Scenic Tours"
                 fill
-                sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
-                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
               />
             </div>
 
-            <div className="space-y-4 p-5 sm:p-6 md:p-8">
-              <h3 className="font-playfair text-2xl leading-tight text-[#2A4A35]">
+            <div className="p-5 sm:p-6 md:p-8">
+              <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
                 Custom Safaris
               </h3>
 
-              <p className="font-inter leading-relaxed text-[#1C1208]">
-                Tailor-made itineraries designed specifically for your interests,
-                budget, and pace. From private family getaways to specialized
-                photography expeditions.
+              <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
+                Build a tailor-made itinerary around your preferred
+                destinations, travel dates, group size, accommodation style,
+                interests, and pace.
               </p>
 
               <Link
-                href="/book#booking-form"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#F97316] px-5 py-3 font-montserrat text-sm font-semibold text-white transition-all hover:shadow-lg sm:px-6 sm:text-base"
+                href="/book"
+                className="mt-5 inline-flex min-h-11 items-center gap-2 font-montserrat text-sm font-semibold text-[#D4870A]"
               >
-                Consult an Expert Planner
-                <ArrowRight size={16} aria-hidden="true" />
+                Plan a Custom Safari
+
+                <ArrowRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
           </article>
 
-          <article
-            className="overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 lg:hover:shadow-xl"
-            aria-label="Professional Car Hire service"
-          >
-            <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
+          <article className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src={BLOB_IMAGES.SAFARI_PHOTO_2}
-                alt="Safari 4x4 Land Cruiser available for professional car hire with Danil Scenic Tours"
+                alt="Safari 4x4 Land Cruiser transport with Danil Scenic Tours"
                 fill
-                sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
-                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
               />
             </div>
 
-            <div className="space-y-4 p-5 sm:p-6 md:p-8">
-              <h3 className="font-playfair text-2xl leading-tight text-[#2A4A35]">
+            <div className="p-5 sm:p-6 md:p-8">
+              <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
                 Professional Car Hire
               </h3>
 
-              <p className="font-inter leading-relaxed text-[#1C1208]">
-                Explore Kenya at your own pace with our fleet of reliable 4x4 Land
-                Cruisers and Safari Vans. Available with professional drivers or as
-                self-drive options.
-              </p>
-
-              <p className="font-montserrat text-base font-semibold text-[#2A4A35]">
-                Starting from $120/Day
+              <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
+                Arrange reliable safari transport for your Kenya journey,
+                including 4x4 Land Cruisers and professional driver services.
               </p>
 
               <Link
-                href="/book#booking-form"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#F97316] px-5 py-3 font-montserrat text-sm font-semibold text-white transition-all hover:shadow-lg sm:px-6 sm:text-base"
+                href="/book"
+                className="mt-5 inline-flex min-h-11 items-center gap-2 font-montserrat text-sm font-semibold text-[#D4870A]"
               >
                 Request a Transport Quote
-                <ArrowRight size={16} aria-hidden="true" />
+
+                <ArrowRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
           </article>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/safari-packages"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#2A4A35] px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-[#1C3028] sm:text-base"
+          >
+            View Safari Packages & Prices
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
