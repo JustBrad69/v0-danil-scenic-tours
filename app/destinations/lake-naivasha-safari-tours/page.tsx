@@ -1,320 +1,747 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
+import {
+  Binoculars,
+  Bike,
+  Car,
+  CheckCircle2,
+  ChevronDown,
+  Clock,
+  MapPin,
+  Ship,
+  Users,
+  XCircle,
+} from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import { Car, Binoculars, Users, ChevronDown } from 'lucide-react'
+import ClientOnlyUI from '@/components/client-only-ui'
 import { LOCAL_IMAGES } from '@/lib/images'
 
-const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
-const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
+export const metadata: Metadata = {
+  title:
+    "Lake Naivasha Safari from Nairobi | 2-Day Hell's Gate & Crescent Island Tour | Danil Scenic Tours",
+  description:
+    "Explore Lake Naivasha on a 2-day safari from Nairobi with a boat ride, Crescent Island walking safari, Hell's Gate National Park, full-board accommodation, and 4x4 transport.",
+  alternates: {
+    canonical: '/destinations/lake-naivasha-safari-tours',
+  },
+  openGraph: {
+    title:
+      "Lake Naivasha Safari from Nairobi | 2-Day Hell's Gate & Crescent Island Tour",
+    description:
+      "A 2-day Lake Naivasha safari with a boat ride, Crescent Island walking safari, Hell's Gate National Park, and Lake Naivasha Sopa Resort.",
+    url: '/destinations/lake-naivasha-safari-tours',
+    type: 'website',
+    images: [
+      {
+        url: LOCAL_IMAGES.CROWNED_CRANE,
+        alt: 'Crowned crane and birdlife at Lake Naivasha in Kenya',
+      },
+    ],
+  },
+}
+
+const itinerary = [
+  {
+    day: '1',
+    title: "Rift Valley, Crescent Island and Hell's Gate",
+    sections: [
+      {
+        title: '7:00 AM - Nairobi Departure',
+        description:
+          'Your safari begins with an early morning departure from Nairobi in a 4x4 safari vehicle. Travel along the Nairobi-Naivasha Highway with a stop at the Great Rift Valley viewpoint for panoramic photographs.',
+      },
+      {
+        title: 'Arrival at Lake Naivasha',
+        description:
+          'Continue to Lake Naivasha Sopa Resort for check-in and preparation for the first activities of the safari.',
+      },
+      {
+        title: 'Lake Naivasha Boat Safari',
+        description:
+          'Take a guided boat ride across Lake Naivasha, where hippos and abundant birdlife can be observed around the freshwater lake.',
+      },
+      {
+        title: 'Crescent Island Walking Safari',
+        description:
+          'Continue to Crescent Island Sanctuary for a guided walking safari among giraffes, zebras, impalas, antelopes, and other wildlife in an open natural setting.',
+      },
+      {
+        title: 'Lunch at the Resort',
+        description:
+          'Return to Lake Naivasha Sopa Resort for lunch before the afternoon excursion.',
+      },
+      {
+        title: "Hell's Gate National Park",
+        description:
+          "Travel to Hell's Gate National Park, known for its towering cliffs, gorges, open landscapes, and geothermal features. Explore the park by vehicle, with optional cycling or hiking available at additional cost.",
+      },
+      {
+        title: 'Dinner and Overnight',
+        description:
+          'Return to Lake Naivasha Sopa Resort for dinner and your overnight stay.',
+      },
+    ],
+    accommodation: 'Lake Naivasha Sopa Resort',
+    meals: 'Lunch & Dinner',
+  },
+  {
+    day: '2',
+    title: 'Lake Naivasha to Nairobi',
+    sections: [
+      {
+        title: '8:00 AM - Breakfast and Checkout',
+        description:
+          'Enjoy breakfast at Lake Naivasha Sopa Resort before checking out.',
+      },
+      {
+        title: 'Return to Nairobi',
+        description:
+          'Depart Lake Naivasha and travel back to Nairobi, where you will be dropped off at your agreed hotel, residence, or other destination.',
+      },
+    ],
+    accommodation: null,
+    meals: 'Breakfast',
+  },
+]
+
+const experiences = [
+  {
+    icon: Ship,
+    title: 'Lake Naivasha Boat Safari',
+    description:
+      'Cruise across the freshwater lake while looking for hippos and the diverse birdlife found around Lake Naivasha.',
+  },
+  {
+    icon: Users,
+    title: 'Crescent Island Walking Safari',
+    description:
+      'Explore Crescent Island on foot with opportunities to see giraffes, zebras, impalas, and other wildlife at ground level.',
+  },
+  {
+    icon: Bike,
+    title: "Hell's Gate National Park",
+    description:
+      "Explore Hell's Gate's dramatic cliffs, gorges, open landscapes, and geothermal scenery. Cycling or hiking can be added at extra cost.",
+  },
+  {
+    icon: Binoculars,
+    title: 'Birdwatching',
+    description:
+      'Lake Naivasha supports more than 400 recorded bird species, making the lake particularly rewarding for birdwatchers and photographers.',
+  },
+]
+
+const included = [
+  'Full-board accommodation at Lake Naivasha Sopa Resort',
+  'Private transport in a 4x4 safari vehicle with pop-up roof',
+  'Professional safari guide',
+  'Lake Naivasha boat ride',
+  'Crescent Island walking safari',
+  "Hell's Gate National Park entry",
+]
+
+const excluded = [
+  "Bike hire at Hell's Gate National Park",
+  'Optional activities not listed in the itinerary',
+  'Tips and gratuities',
+  'Personal expenses',
+  'Travel insurance',
+  'International flights',
+]
+
+const seasons = [
+  {
+    title: 'June to October',
+    subtitle: 'Dry Season',
+    description:
+      'Generally drier conditions provide good opportunities for boat rides, walking activities, wildlife viewing, and photography.',
+  },
+  {
+    title: 'January to February',
+    subtitle: 'Short Dry Period',
+    description:
+      'Warm and generally dry weather makes this another strong period for Lake Naivasha activities and wildlife viewing.',
+  },
+  {
+    title: 'November to December',
+    subtitle: 'Short Rains',
+    description:
+      'The landscape becomes greener and migratory bird activity can add variety to the lake experience. Showers are often more likely later in the day.',
+  },
+  {
+    title: 'March to May',
+    subtitle: 'Long Rains',
+    description:
+      'The wetter season brings lush scenery and changing conditions for outdoor activities. Tour timing may be adjusted according to weather and road conditions.',
+  },
+]
+
+const whyDanil = [
+  {
+    title: 'Three Experiences in One Safari',
+    description:
+      "The itinerary combines a boat safari, a walking safari on Crescent Island, and a visit to Hell's Gate National Park.",
+  },
+  {
+    title: 'Full Safari Logistics',
+    description:
+      'Transport, accommodation, guiding, the boat ride, Crescent Island walking safari, and park entry are organised as one package.',
+  },
+  {
+    title: 'Nairobi Departure',
+    description:
+      'The safari begins and ends in Nairobi, making Lake Naivasha a practical short safari for travelers with limited time.',
+  },
+  {
+    title: 'Full-Board Accommodation',
+    description:
+      'Your overnight stay at Lake Naivasha Sopa Resort includes meals according to the itinerary.',
+  },
+]
+
+const clothing = [
+  'Lightweight, breathable clothing',
+  'Warm layer for the early morning',
+  'Comfortable walking shoes',
+  'Hat and sunglasses',
+  'Light rain jacket',
+]
+
+const protection = [
+  'High-SPF sunscreen',
+  'Insect repellent',
+  'Personal medication',
+  'Reusable water bottle',
+]
+
+const equipment = [
+  'Camera or smartphone',
+  'Binoculars for wildlife and birdwatching',
+  'Extra batteries or portable charger',
+  'Memory cards or storage',
+]
+
+const faqs = [
+  {
+    question: 'How much does the Lake Naivasha safari cost?',
+    answer:
+      'The group price starts from USD 948 per person. Contact us with your travel dates and group size for confirmed availability and the final quote.',
+  },
+  {
+    question: 'How long is the Lake Naivasha safari?',
+    answer:
+      'The package runs for 2 days and 1 night, with accommodation at Lake Naivasha Sopa Resort.',
+  },
+  {
+    question: 'What activities are included?',
+    answer:
+      "The package includes a Lake Naivasha boat ride, a guided walking safari at Crescent Island, and entry to Hell's Gate National Park.",
+  },
+  {
+    question: 'Is bike hire at Hell\'s Gate included?',
+    answer:
+      "No. Bike hire is optional and is not included in the package price. You can discuss cycling or hiking options when booking.",
+  },
+  {
+    question: 'What wildlife can I see at Lake Naivasha?',
+    answer:
+      'The lake is known for hippos and extensive birdlife. Crescent Island offers opportunities to see giraffes, zebras, impalas, and other wildlife on foot.',
+  },
+  {
+    question: 'Can I swim in Lake Naivasha?',
+    answer:
+      'Swimming in the open lake is not part of this safari. Wildlife viewing is conducted by boat and from designated land areas.',
+  },
+  {
+    question: 'Is the Crescent Island walking safari difficult?',
+    answer:
+      'The activity is a guided walking experience over natural terrain. Let us know about any mobility requirements before booking so the itinerary can be discussed appropriately.',
+  },
+  {
+    question: 'Is this safari suitable for families?',
+    answer:
+      'Yes. The combination of a boat ride, walking safari, and park visit can work well for families. Share the ages of younger travelers when booking so the itinerary can be planned appropriately.',
+  },
+]
+
+const destinationLinks = [
+  {
+    title: 'Nairobi City Tour',
+    description: 'One-day wildlife and cultural experience',
+    href: '/destinations/nairobi-national-park-safari-tours',
+  },
+  {
+    title: 'Ol Pejeta Conservancy',
+    description: 'Big Five and rhino conservation',
+    href: '/destinations/ol-pejeta-safari-tours',
+  },
+  {
+    title: 'Maasai Mara Safari Tours',
+    description: 'Great Migration and Big Five experiences',
+    href: '/destinations/maasai-mara-safari-tours',
+  },
+  {
+    title: 'Amboseli Safari Tours',
+    description: 'Elephants and Mount Kilimanjaro',
+    href: '/destinations/amboseli-safari-tours',
+  },
+  {
+    title: 'Tsavo Safari Tours',
+    description: 'Red elephants and vast wilderness',
+    href: '/destinations/tsavo-safari-tours',
+  },
+  {
+    title: 'Lake Nakuru Safari',
+    description: 'Rhinos, birdlife, and Rift Valley scenery',
+    href: '/destinations/lake-nakuru-safari-tours',
+  },
+]
 
 export default function LakeNaivashaPage() {
   return (
-    <div className="min-h-screen bg-[#FAF4E8] flex flex-col">
+    <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero */}
+      <section className="relative flex min-h-[78svh] w-full items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:min-h-[82svh] sm:pt-32 md:pb-20">
         <Image
           src={LOCAL_IMAGES.CROWNED_CRANE}
-          alt="Crowned crane bird at Lake Naivasha in Kenya's Great Rift Valley"
+          alt="Crowned crane and birdlife at Lake Naivasha in Kenya"
           fill
           priority
-          className="object-cover"
           sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)' }} />
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <h1 className="font-playfair text-white text-5xl md:text-6xl font-bold mb-4">
+
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.80)_0%,rgba(28,18,8,0.30)_100%)]" />
+
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <p className="mb-4 font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+            2 Days / 1 Night
+          </p>
+
+          <h1 className="font-playfair text-4xl font-bold leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Lake Naivasha Safari
           </h1>
-          <p className="font-inter text-white text-lg md:text-xl" style={{ opacity: 0.85 }}>
-            2-Day Hell's Gate and Crescent Island Safari from Nairobi
+
+          <p className="mx-auto mt-5 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg md:text-xl">
+            Boat safari, Crescent Island walking safari, and Hell's Gate
+            National Park from Nairobi.
           </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/safari-packages"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
+            >
+              View Pricing
+            </Link>
+
+            <Link
+              href="/book?tour=Lake+Naivasha+Safari"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
+            >
+              Book This Safari
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Safari at a Glance */}
+      <section className="bg-[#F2E8D5] px-4 py-12 sm:py-14 md:py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article className="rounded-2xl bg-white p-5">
+              <Clock
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Duration
+              </p>
+
+              <p className="mt-2 font-inter text-[#1C1208]">
+                2 Days / 1 Night
+              </p>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5">
+              <MapPin
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Accommodation
+              </p>
+
+              <p className="mt-2 font-inter text-[#1C1208]">
+                Lake Naivasha Sopa Resort
+              </p>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5">
+              <Car
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Transport
+              </p>
+
+              <p className="mt-2 font-inter text-[#1C1208]">
+                Private 4x4 Safari Vehicle
+              </p>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5">
+              <Users
+                size={24}
+                className="mb-4 text-[#D4870A]"
+                aria-hidden="true"
+              />
+
+              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Group Price
+              </p>
+
+              <p className="mt-2 font-montserrat text-lg font-bold text-[#2A4A35]">
+                From USD 948
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            Lake Naivasha, nestled in the heart of Kenya's Great Rift Valley, is a tranquil freshwater lake famed for its stunning scenery, abundant birdlife, and diverse wildlife. Just two hours from Nairobi, it is an ideal destination for travelers seeking a blend of relaxation, adventure, and nature experiences.
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl space-y-5">
+          <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+            Lake Naivasha is a freshwater lake in Kenya's Great Rift Valley
+            known for hippos, birdlife, open landscapes, and easy access to
+            several different outdoor experiences.
           </p>
-          <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-            This 2 Days, 1 Night safari offers a short but unforgettable escape, combining comfortable accommodation, scenic boat rides, and immersive wildlife experiences. Guests will stay at the Lake Naivasha Sopa Resort, enjoy a walking safari at Crescent Island, and explore the dramatic landscapes of Hell's Gate National Park, creating a truly memorable Kenyan adventure.
+
+          <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+            This 2-day, 1-night safari combines three distinct experiences: a
+            boat safari on Lake Naivasha, a walking safari on Crescent Island,
+            and an excursion to Hell's Gate National Park.
+          </p>
+
+          <p className="font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+            Your overnight stay is at Lake Naivasha Sopa Resort, with
+            full-board accommodation included as part of the package.
           </p>
         </div>
       </section>
 
+      {/* Experiences */}
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Lake Naivasha Safari Highlights
+          </h2>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {experiences.map((experience) => {
+              const Icon = experience.icon
+
+              return (
+                <article
+                  key={experience.title}
+                  className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8"
+                >
+                  <div className="flex items-start gap-4">
+                    <Icon
+                      size={26}
+                      className="mt-1 shrink-0 text-[#D4870A]"
+                      aria-hidden="true"
+                    />
+
+                    <div>
+                      <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
+                        {experience.title}
+                      </h3>
+
+                      <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208]">
+                        {experience.description}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Itinerary */}
-      <section className="w-full bg-[#F2E8D5] py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-10 text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:mb-14 md:text-5xl">
             Day-by-Day Itinerary
           </h2>
-          <div className="space-y-10">
 
-            {/* Day 1 */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="bg-[#2A4A35] px-8 py-4 flex items-center gap-4">
-                <span className="w-10 h-10 rounded-full bg-[#D4870A] flex items-center justify-center text-white font-montserrat font-bold text-lg flex-shrink-0">1</span>
-                <h3 className="font-playfair text-white text-2xl font-bold">Rift Valley, Crescent Island, and Hell's Gate</h3>
-              </div>
-              <div className="p-8 space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="font-montserrat font-bold text-[#D4870A] text-sm flex-shrink-0 mt-1">7:00 AM</span>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">Your safari begins with an early morning departure from Nairobi in a 4x4 tour/safari jeep. Travel along the scenic Nairobi-Naivasha Highway, stopping briefly at the Great Rift Valley viewpoint for panoramic photos. Arrive at Lake Naivasha Sopa Resort for check-in.</p>
-                </div>
-                <p className="font-inter text-[#1C1208] leading-relaxed">After settling in, embark on a boat ride on Lake Naivasha, where you can observe hippos, abundant birdlife, and the serene lake environment, then enjoy a walking safari at Crescent Island Sanctuary, a unique private reserve where giraffes, zebras, impalas, and other wildlife roam freely. This walk allows guests to experience the animals up close in an unfenced, natural setting, providing excellent photographic and educational opportunities. Afterwards, you will be driven back to the resort for lunch.</p>
-                <p className="font-inter text-[#1C1208] leading-relaxed">In the afternoon, a game drive to Hell's Gate National Park, a landscape of towering cliffs, deep gorges, and geothermal activity. You can explore the park by bike or hike the cliffs. In the evening, you return to the resort for dinner and an overnight stay at Lake Naivasha Sopa Resort.</p>
-              </div>
-            </div>
+          <div className="space-y-6">
+            {itinerary.map((item) => (
+              <article
+                key={item.day}
+                className="overflow-hidden rounded-2xl bg-white shadow-sm"
+              >
+                <div className="flex items-center gap-4 bg-[#2A4A35] px-5 py-4 sm:px-6 md:px-8">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D4870A] font-montserrat text-lg font-bold text-white">
+                    {item.day}
+                  </span>
 
-            {/* Day 2 */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="bg-[#2A4A35] px-8 py-4 flex items-center gap-4">
-                <span className="w-10 h-10 rounded-full bg-[#D4870A] flex items-center justify-center text-white font-montserrat font-bold text-lg flex-shrink-0">2</span>
-                <h3 className="font-playfair text-white text-2xl font-bold">Return to Nairobi</h3>
-              </div>
-              <div className="p-8">
-                <div className="flex items-start gap-3">
-                  <span className="font-montserrat font-bold text-[#D4870A] text-sm flex-shrink-0 mt-1">8:00 AM</span>
-                  <p className="font-inter text-[#1C1208] leading-relaxed">After breakfast, check out, then depart for Nairobi, where you will be dropped off at your destination, marking the conclusion of your safari.</p>
+                  <h3 className="font-playfair text-xl font-bold leading-tight text-white sm:text-2xl">
+                    {item.title}
+                  </h3>
                 </div>
-              </div>
-            </div>
+
+                <div className="p-5 sm:p-6 md:p-8">
+                  <div className="space-y-5">
+                    {item.sections.map((section) => (
+                      <div key={section.title}>
+                        <h4 className="font-montserrat text-sm font-bold text-[#2A4A35]">
+                          {section.title}
+                        </h4>
+
+                        <p className="mt-2 font-inter text-sm leading-7 text-[#1C1208] sm:text-base">
+                          {section.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 grid grid-cols-1 gap-3 border-t border-[#D4870A]/20 pt-5 sm:grid-cols-2">
+                    {item.accommodation && (
+                      <p className="font-inter text-sm text-[#1C1208]">
+                        <strong>Accommodation:</strong> {item.accommodation}
+                      </p>
+                    )}
+
+                    <p className="font-inter text-sm text-[#1C1208]">
+                      <strong>Meals:</strong> {item.meals}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Accommodation */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
-            Accommodation
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Lake Naivasha Sopa Resort
           </h2>
-          <div className="bg-white rounded-2xl p-8 border-l-4 border-[#D4870A]">
-            <p className="font-inter text-[#1C1208] text-lg leading-relaxed text-center">
-              Your 2-day, 1-night stay is at Lake Naivasha Sopa Resort, a well-established lakeside lodge offering comfortable rooms with en-suite bathrooms and views of the freshwater lake. Full-board accommodation includes all meals, breakfast, lunch, and dinner.
+
+          <div className="mt-8 rounded-2xl border-l-4 border-[#D4870A] bg-white p-5 shadow-sm sm:p-6 md:p-8">
+            <p className="text-center font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+              Your 2-day, 1-night package includes a stay at Lake Naivasha Sopa
+              Resort with full-board accommodation. Meals are provided
+              according to the safari itinerary.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What You Will See */}
-      <section className="w-full bg-[#F2E8D5] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
-            What You Will See
-          </h2>
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <p className="font-inter text-[#1C1208] text-lg leading-relaxed">
-              At Lake Naivasha, you will observe hippos, over 400 recorded bird species, giraffes, zebras, and impalas at Crescent Island. Hell's Gate National Park features giraffes, zebras, antelopes, and hyenas roaming across dramatic landscapes with towering cliffs, deep gorges, and geothermal activity.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Included */}
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
+          <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+            <h2 className="font-playfair text-3xl font-bold text-[#2A4A35]">
+              What's Included
+            </h2>
 
-      {/* What's Included / Not Included */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">What's Included</h3>
-            <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-              {[
-                'Full board accommodation',
-                'Private transport in a 4x4 tour jeep with pop-up roof',
-                'Professional tour guide',
-                'Boat ride on Lake Naivasha',
-                'Walking safari at Crescent Island Sanctuary',
-                'Entrance fee to Hell\'s Gate National Park',
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold flex-shrink-0">✓</span>
+            <ul className="mt-6 space-y-3">
+              {included.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base"
+                >
+                  <CheckCircle2
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[#D4870A]"
+                    aria-hidden="true"
+                  />
+
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">What's Not Included</h3>
-            <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-              {[
-                'Hire of bike(s)',
-                'Tips and gratuities',
-                'Any activity not mentioned in the itinerary',
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-red-600 font-bold flex-shrink-0">✗</span>
+          </article>
+
+          <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+            <h2 className="font-playfair text-3xl font-bold text-[#2A4A35]">
+              What's Not Included
+            </h2>
+
+            <ul className="mt-6 space-y-3">
+              {excluded.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base"
+                >
+                  <XCircle
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[#D4870A]"
+                    aria-hidden="true"
+                  />
+
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </article>
         </div>
       </section>
 
       {/* Best Time */}
-      <section className="w-full bg-[#F2E8D5] py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
-            Best Time to Visit
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Best Time to Visit Lake Naivasha
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-[#D4870A]">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-1">June to October</h3>
-              <p className="font-montserrat font-semibold text-[#D4870A] text-sm mb-3">Long Dry Season, Best Overall</p>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Clear skies, minimal rainfall, and comfortable temperatures create ideal conditions for boat rides, walking safaris, and wildlife viewing. This is the optimal season for Lake Naivasha visits.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">January to February</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Short Dry Season. Also excellent for safaris with warm, dry weather. Good wildlife viewing and photography opportunities.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-playfair text-[#2A4A35] text-2xl font-bold mb-3">November to December</h3>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed">Short Rains. The landscape becomes lush and green. Birdlife is exceptional during migratory seasons. Occasional afternoon showers, plan activities for mornings.</p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {seasons.map((season) => (
+              <article
+                key={season.title}
+                className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8"
+              >
+                <h3 className="font-playfair text-2xl font-bold text-[#2A4A35]">
+                  {season.title}
+                </h3>
+
+                <p className="mt-1 font-montserrat text-sm font-semibold text-[#D4870A]">
+                  {season.subtitle}
+                </p>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208]">
+                  {season.description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Why Danil */}
-      <section className="w-full bg-[#1C3028] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#FDF8F0] text-4xl font-bold text-center mb-12">
+      <section className="bg-[#1C3028] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#FDF8F0] sm:text-4xl md:text-5xl">
             Why Choose Danil Scenic Tours
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Expert Local Guides</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Our guides are experienced in Lake Naivasha and Hell's Gate, providing expert interpretation of wildlife, geology, and ecology.</p>
-            </div>
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Diverse Activity Mix</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Boat safaris, walking safaris, and game drives, appealing to various interests and fitness levels.</p>
-            </div>
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Birdwatching Paradise</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">Over 400 bird species recorded. Our guides are experienced birders who can identify species and locate rare sightings.</p>
-            </div>
-            <div className="bg-[#2A4A35] rounded-2xl p-6">
-              <h3 className="font-montserrat font-bold text-[#D4870A] text-lg mb-3">Transparent Pricing</h3>
-              <p className="font-inter text-[#FDF8F0] text-sm leading-relaxed">All-inclusive packages with no hidden costs. See detailed pricing on our Kenya Safari Packages page.</p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {whyDanil.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl bg-[#2A4A35] p-5 sm:p-6"
+              >
+                <h3 className="font-montserrat text-base font-bold text-[#D4870A] sm:text-lg">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 font-inter text-sm leading-relaxed text-[#FDF8F0]">
+                  {item.description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* What to Pack */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-12">
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             What to Pack
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Clothing and Footwear</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Lightweight, breathable clothing',
-                  'Warm layer for early mornings',
-                  'Comfortable walking shoes',
-                  'Hat and sunglasses',
-                  'Light rain jacket',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Sun and Health Protection</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'High SPF sunscreen',
-                  'Mosquito repellent',
-                  'Any personal medications',
-                  'Hand sanitizer',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Gadgets</h3>
-              <ul className="space-y-2 font-inter text-[#1C1208] text-sm">
-                {[
-                  'Camera and binoculars',
-                  'Binoculars for birdwatching',
-                  'Extra batteries and memory cards',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              {
+                title: 'Clothing and Footwear',
+                items: clothing,
+              },
+              {
+                title: 'Sun and Health Protection',
+                items: protection,
+              },
+              {
+                title: 'Photography and Equipment',
+                items: equipment,
+              },
+            ].map((section) => (
+              <article
+                key={section.title}
+                className="rounded-2xl bg-white p-5 shadow-sm sm:p-6"
+              >
+                <h3 className="font-montserrat text-lg font-bold text-[#2A4A35]">
+                  {section.title}
+                </h3>
+
+                <ul className="mt-4 space-y-2">
+                  {section.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 font-inter text-sm leading-relaxed text-[#1C1208]"
+                    >
+                      <span
+                        className="shrink-0 font-bold text-[#D4870A]"
+                        aria-hidden="true"
+                      >
+                        •
+                      </span>
+
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="w-full bg-[#1C3028] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#FDF8F0] text-4xl font-bold text-center mb-12">
+      <section className="bg-[#1C3028] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-10 text-center font-playfair text-3xl font-bold text-[#FDF8F0] sm:text-4xl md:text-5xl">
             Frequently Asked Questions
           </h2>
+
           <div className="space-y-4">
-            {[
-              {
-                q: 'What wildlife will I see at Lake Naivasha?',
-                a: 'You will observe hippos, abundant birdlife (over 400 species recorded), giraffes, zebras, impalas, and other wildlife at Crescent Island and Hell\'s Gate National Park.',
-              },
-              {
-                q: 'Is it safe to be on the boat?',
-                a: 'Yes, boat safaris on Lake Naivasha are conducted by experienced operators using well-maintained boats. Your guide will ensure safety protocols are followed at all times.',
-              },
-              {
-                q: 'Can I swim in Lake Naivasha?',
-                a: 'Swimming is not recommended due to the presence of hippos and crocodiles. Stick to boat rides and lakeside viewing for safety. Your resort has a pool for swimming.',
-              },
-              {
-                q: 'How difficult is the Crescent Island walking safari?',
-                a: 'The walking safari on Crescent Island is easy to moderate, suitable for most fitness levels. The terrain is grassland, and the walk is approximately 1.5 to 2 hours at a leisurely pace.',
-              },
-              {
-                q: 'What about the Hell\'s Gate activities, biking vs hiking?',
-                a: 'You can explore Hell\'s Gate by game drive (standard), and can optionally bike or hike the cliffs. Biking and hiking are optional activities with additional costs. Discuss your preferences when booking.',
-              },
-              {
-                q: 'What is the best time of day for boat safaris?',
-                a: 'Early morning (7 to 9 AM) and late afternoon (4 to 5 PM) are ideal for wildlife activity and photography. Morning light is particularly excellent.',
-              },
-              {
-                q: 'How many bird species can I see?',
-                a: 'Over 400 bird species are recorded at Lake Naivasha. In a 2-day visit, expect to see 50 to 100 plus species depending on season and your guide\'s expertise.',
-              },
-              {
-                q: 'Is this suitable for families with children?',
-                a: 'Yes, families are welcome. The boat ride is enjoyable for children. The walking safari on Crescent Island is suitable for children with reasonable mobility. Discuss age-specific considerations when booking.',
-              },
-            ].map((item, i) => (
-              <details key={i} className="group">
-                <summary className="flex cursor-pointer items-center justify-between rounded-2xl bg-[#2A4A35] px-6 py-4 font-montserrat font-semibold text-white hover:bg-[#1C1208] transition-colors">
-                  <span>{item.q}</span>
-                  <ChevronDown size={20} className="transition-transform group-open:rotate-180 flex-shrink-0 ml-4" />
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl bg-[#2A4A35]"
+              >
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-montserrat text-sm font-semibold text-white sm:px-6 sm:text-base">
+                  <span>{faq.question}</span>
+
+                  <ChevronDown
+                    size={20}
+                    className="shrink-0 transition-transform group-open:rotate-180"
+                    aria-hidden="true"
+                  />
                 </summary>
-                <div className="bg-[#2A4A35] rounded-2xl px-6 py-4 mt-1 font-inter text-[#FDF8F0] text-sm leading-relaxed">
-                  <p>{item.a}</p>
+
+                <div className="border-t border-white/10 px-5 py-4 sm:px-6">
+                  <p className="font-inter text-sm leading-relaxed text-[#FDF8F0] sm:text-base">
+                    {faq.answer}
+                  </p>
                 </div>
               </details>
             ))}
@@ -322,99 +749,133 @@ export default function LakeNaivashaPage() {
         </div>
       </section>
 
-     {/* Explore More */}
-      <section className="w-full bg-[#FAF4E8] py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-[#2A4A35] text-4xl font-bold text-center mb-6">
+      {/* Explore More */}
+      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             Explore More Kenya Safari Experiences
           </h2>
-          <p className="font-inter text-[#1C1208] text-lg text-center mb-12">
-            Looking for other safari destinations? Discover our complete safari portfolio.
+
+          <p className="mx-auto mt-4 max-w-3xl text-center font-inter text-base leading-relaxed text-[#1C1208] sm:text-lg">
+            Continue exploring individual destinations or compare complete
+            safari packages.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Individual Safari Destinations</h3>
-              <ul className="space-y-3 font-inter text-[#1C1208] text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/nairobi-national-park-safari-tours" className="text-[#D4870A] hover:underline">Nairobi City Tour</Link>
-                  <span>, urban safari and cultural attractions (1 day)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/ol-pejeta-safari-tours" className="text-[#D4870A] hover:underline">Ol Pejeta Conservancy</Link>
-                  <span>, Big Five safari (2 days)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/maasai-mara-safari-tours" className="text-[#D4870A] hover:underline">Maasai Mara Safari Tours</Link>
-                  <span>, Great Migration and predators (4 days)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/amboseli-safari-tours" className="text-[#D4870A] hover:underline">Amboseli Safari</Link>
-                  <span>, Kilimanjaro views and elephants (3 days)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <Link href="/destinations/tsavo-safari-tours" className="text-[#D4870A] hover:underline">Tsavo National Park</Link>
-                  <span>, vast wilderness (3 days)</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-montserrat font-bold text-[#2A4A35] text-lg mb-4">Hub Pages</h3>
-              <ul className="space-y-3 font-inter text-[#1C1208] text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <span>Kenya Safari Tours, learn about different safari types and destinations</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#D4870A] font-bold flex-shrink-0">•</span>
-                  <span>Kenya Safari Packages, view multi-destination combinations and pricing</span>
-                </li>
-              </ul>
-              <p className="font-inter text-[#1C1208] text-sm leading-relaxed mt-6">
-                For all pricing and package comparisons, visit our Kenya Safari Packages page.
-              </p>
-            </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+            <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+              <h3 className="font-montserrat text-lg font-bold text-[#2A4A35]">
+                Individual Safari Destinations
+              </h3>
+
+              <div className="mt-5 space-y-3">
+                {destinationLinks.map((destination) => (
+                  <Link
+                    key={destination.href}
+                    href={destination.href}
+                    className="block min-h-11 rounded-lg py-2 transition-colors hover:text-[#D4870A]"
+                  >
+                    <span className="font-montserrat text-sm font-semibold text-[#D4870A]">
+                      {destination.title}
+                    </span>
+
+                    <span className="mt-1 block font-inter text-sm leading-relaxed text-[#1C1208]">
+                      {destination.description}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
+              <h3 className="font-montserrat text-lg font-bold text-[#2A4A35]">
+                Safari Planning
+              </h3>
+
+              <div className="mt-5 space-y-3">
+                <Link
+                  href="/safari-tours"
+                  className="flex min-h-12 items-center justify-between rounded-lg border border-[#D4870A]/20 px-4 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:text-[#D4870A]"
+                >
+                  Kenya Safari Tours
+                  <ChevronDown
+                    size={16}
+                    className="-rotate-90"
+                    aria-hidden="true"
+                  />
+                </Link>
+
+                <Link
+                  href="/safari-packages"
+                  className="flex min-h-12 items-center justify-between rounded-lg border border-[#D4870A]/20 px-4 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:text-[#D4870A]"
+                >
+                  Kenya Safari Packages
+                  <ChevronDown
+                    size={16}
+                    className="-rotate-90"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-[#F2E8D5] p-5">
+                <p className="font-montserrat text-sm font-bold text-[#2A4A35]">
+                  Lake Naivasha Group Price
+                </p>
+
+                <p className="mt-2 font-playfair text-3xl font-bold text-[#D4870A]">
+                  From USD 948
+                </p>
+
+                <p className="mt-2 font-inter text-sm leading-relaxed text-[#1C1208]">
+                  Contact us with your travel dates and group size for
+                  confirmed availability and pricing.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
+
       {/* Final CTA */}
-      <section className="relative overflow-hidden py-32 px-4 md:py-48">
-        <div className="absolute inset-0" style={{ zIndex: 0 }}>
-          <Image
-            src={LOCAL_IMAGES.CROWNED_CRANE}
-            alt="Birdlife at Lake Naivasha in Kenya's Great Rift Valley"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)', zIndex: 1 }}
+      <section className="relative overflow-hidden px-4 py-20 sm:py-24 md:py-32">
+        <Image
+          src={LOCAL_IMAGES.CROWNED_CRANE}
+          alt="Birdlife at Lake Naivasha in Kenya"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h2 className="font-cormorant text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-tight">
-            Book Your Lake Naivasha Safari Today
+
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.78)_0%,rgba(28,18,8,0.32)_100%)]" />
+
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
+          <h2 className="font-cormorant text-4xl leading-tight text-white sm:text-5xl md:text-6xl">
+            Plan Your Lake Naivasha Safari
           </h2>
-          <p className="font-inter text-white text-lg mb-12 opacity-85">
-            Experience Lake Naivasha's stunning beauty, diverse birdlife, and Hell's Gate's dramatic adventure. Book your 2-day safari now with Danil Scenic Tours.
+
+          <p className="mx-auto mt-5 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg">
+            Experience Lake Naivasha by boat, walk among wildlife on Crescent
+            Island, and explore the landscapes of Hell's Gate on this 2-day
+            safari from Nairobi.
           </p>
-          <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
+
+          <p className="mt-4 font-montserrat text-lg font-bold text-[#D4870A]">
+            Group Price: From USD 948 per person
+          </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/book?tour=Lake+Naivasha+Safari"
-              className="px-6 md:px-10 py-3 md:py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all text-sm md:text-base"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
             >
-              Start Planning
+              Book This Safari
             </Link>
+
             <Link
               href="https://wa.me/254722919249"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 md:px-10 py-3 md:py-4 border-2 border-white text-white font-montserrat font-semibold rounded-lg hover:bg-white hover:text-[#2A4A35] transition-all text-sm md:text-base"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
             >
               Chat on WhatsApp
             </Link>
@@ -423,8 +884,7 @@ export default function LakeNaivashaPage() {
       </section>
 
       <Footer />
-      <FloatingButtons />
-      <AccessibilityToolbar />
-    </div>
+      <ClientOnlyUI />
+    </main>
   )
 }
