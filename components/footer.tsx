@@ -1,44 +1,53 @@
 import Link from 'next/link'
 import { ExternalLink, Mail } from 'lucide-react'
 
+const footerLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Kenya Safari Tours', href: '/safari-tours' },
+  { label: 'Destinations', href: '/destinations' },
+  { label: 'Safari Packages', href: '/safari-packages' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Book Now', href: '/book' },
+]
+
 export default function Footer() {
   return (
-    <footer
-      className="py-16 px-4"
-      style={{
-        backgroundColor: '#1C3028',
-        color: '#FDF8F0',
-      }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-[#1C3028] px-4 py-12 text-[#FDF8F0] sm:py-14 md:py-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mb-12 md:gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-cormorant font-bold">Danil Scenic Tours</h3>
+            <h3 className="font-cormorant text-2xl font-bold">
+              Danil Scenic Tours
+            </h3>
+
             <p className="font-inter text-sm leading-relaxed opacity-90">
               Creating Unforgettable Experiences
             </p>
-            <p className="font-inter text-xs opacity-75">
-              To create unforgettable experiences that connect our clientele to the stunning landscapes, magnificent wildlife, and rich cultures across Kenya.
+
+            <p className="max-w-sm font-inter text-xs leading-relaxed opacity-75">
+              To create unforgettable experiences that connect our clientele to
+              the stunning landscapes, magnificent wildlife, and rich cultures
+              across Kenya.
             </p>
           </div>
 
           {/* Navigation */}
           <div className="space-y-4">
-            <h4 className="font-montserrat font-semibold text-[#D4870A]">Navigation</h4>
-            <nav className="space-y-2">
-              {[
-                { label: 'Home', href: '/' },
-                { label: 'Our Safaris', href: '/safaris' },
-                { label: 'Destinations', href: '/destinations' },
-                { label: 'About Us', href: '/about' },
-                { label: 'Gallery', href: '/gallery' },
-                { label: 'Book Now', href: '/book' },
-              ].map((link) => (
+            <h4 className="font-montserrat font-semibold text-[#D4870A]">
+              Navigation
+            </h4>
+
+            <nav
+              className="flex flex-col"
+              aria-label="Footer navigation"
+            >
+              {footerLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block font-inter text-sm hover:text-[#D4870A] transition-colors"
+                  className="inline-flex min-h-10 items-center font-inter text-sm transition-colors hover:text-[#D4870A]"
                 >
                   {link.label}
                 </Link>
@@ -48,36 +57,57 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="font-montserrat font-semibold text-[#D4870A]">Contact</h4>
-            <div className="space-y-3 font-inter text-sm">
+            <h4 className="font-montserrat font-semibold text-[#D4870A]">
+              Contact
+            </h4>
+
+            <div className="space-y-4 font-inter text-sm">
               <div>
-                <p className="opacity-75">Phone / WhatsApp</p>
-                <Link href="tel:+254722919249" className="hover:text-[#D4870A] transition-colors">
+                <p className="mb-1 opacity-75">Phone / WhatsApp</p>
+
+                <Link
+                  href="tel:+254722919249"
+                  className="inline-flex min-h-10 items-center transition-colors hover:text-[#D4870A]"
+                >
                   +254 722 919 249
                 </Link>
               </div>
+
               <div>
-                <p className="opacity-75">Address</p>
-                <p>Northern Bypass Rd, Nairobi, Kenya</p>
+                <p className="mb-1 opacity-75">Address</p>
+                <p className="leading-relaxed">
+                  Northern Bypass Rd, Nairobi, Kenya
+                </p>
               </div>
+
               <div>
-                <p className="opacity-75 mb-2">Email Us</p>
+                <p className="mb-2 opacity-75">Email Us</p>
+
                 <div className="space-y-1">
-                  <Link 
-                    href="mailto:danilscenic@gmail.com" 
-                    className="flex items-center gap-2 hover:text-[#D4870A] transition-colors"
+                  <Link
+                    href="mailto:danilscenic@gmail.com"
+                    className="flex min-h-10 items-center gap-2 break-all transition-colors hover:text-[#D4870A]"
                     aria-label="Email danilscenic@gmail.com"
                   >
-                    <Mail size={16} />
-                    danilscenic@gmail.com
+                    <Mail
+                      size={16}
+                      className="shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>danilscenic@gmail.com</span>
                   </Link>
-                  <Link 
-                    href="mailto:safari@danilscenictours.co.ke" 
-                    className="flex items-center gap-2 hover:text-[#D4870A] transition-colors"
+
+                  <Link
+                    href="mailto:safari@danilscenictours.co.ke"
+                    className="flex min-h-10 items-center gap-2 break-all transition-colors hover:text-[#D4870A]"
                     aria-label="Email safari@danilscenictours.co.ke"
                   >
-                    <Mail size={16} />
-                    safari@danilscenictours.co.ke
+                    <Mail
+                      size={16}
+                      className="shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>safari@danilscenictours.co.ke</span>
                   </Link>
                 </div>
               </div>
@@ -86,31 +116,41 @@ export default function Footer() {
 
           {/* Reviews */}
           <div className="space-y-4">
-            <h4 className="font-montserrat font-semibold text-[#D4870A]">Verified Reviews</h4>
+            <h4 className="font-montserrat font-semibold text-[#D4870A]">
+              Verified Reviews
+            </h4>
+
             <Link
               href="https://www.safaribookings.com/p6036"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#2A4A35] border border-[#D4870A] px-4 py-2 rounded-lg font-inter text-sm hover:bg-[#D4870A] hover:text-[#1C3028] transition-colors"
+              className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#D4870A] bg-[#2A4A35] px-4 py-2 font-inter text-sm transition-colors hover:bg-[#D4870A] hover:text-[#1C3028]"
+              aria-label="View Danil Scenic Tours reviews on SafariBookings"
             >
-              SafariBookings Badge <ExternalLink size={14} />
+              SafariBookings Badge
+              <ExternalLink size={14} aria-hidden="true" />
             </Link>
-            <div className="font-inter text-sm space-y-1">
-              <p className="text-[#D4870A]">★★★★★ 5.0/5</p>
-              <p className="opacity-75">24 Verified Reviews</p>
+
+            <div className="space-y-1 font-inter text-sm">
+              <p
+                className="text-[#D4870A]"
+                aria-label="5 out of 5 stars"
+              >
+                ★★★★★ 5.0/5
+              </p>
+
+              <p className="opacity-75">
+                24 Verified Reviews
+              </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div
-          className="pt-8 border-t"
-          style={{
-            borderColor: 'rgba(212, 135, 10, 0.2)',
-          }}
-        >
-          <p className="text-center font-inter text-sm opacity-75">
-            © 2026 Danil Scenic Tours. Licensed by the Tourism Regulatory Authority of Kenya.
+        <div className="border-t border-[rgba(212,135,10,0.2)] pt-6 sm:pt-8">
+          <p className="text-center font-inter text-xs leading-relaxed opacity-75 sm:text-sm">
+            © 2026 Danil Scenic Tours. Licensed by the Tourism Regulatory
+            Authority of Kenya.
           </p>
         </div>
       </div>
