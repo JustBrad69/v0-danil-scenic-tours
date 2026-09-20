@@ -1,134 +1,125 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { DESTINATION_IMAGES } from '@/lib/images'
+import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
 
 const destinations = [
   {
     name: 'Maasai Mara',
-    description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
-    image: DESTINATION_IMAGES.MAASAI_MARA,
-    isPlaceholder: false,
-    price: 'Starting from $350/Day',
+    description:
+      'Experience legendary wildlife, big cats, sweeping savannahs, and the Great Migration.',
+    image: BLOB_IMAGES.MAASAI_MARA,
     href: '/destinations/maasai-mara-safari-tours',
-    cta: 'Explore Maasai Mara',
   },
   {
     name: 'Amboseli',
-    description: 'Famous elephant herds set against Mt. Kilimanjaro\'s breathtaking backdrop.',
-    image: DESTINATION_IMAGES.AMBOSELI,
-    isPlaceholder: false,
-    price: 'Starting from $280/Day',
+    description:
+      'See large elephant herds beneath the unforgettable backdrop of Mount Kilimanjaro.',
+    image: LOCAL_IMAGES.AMBOSELI_ELEPHANTS,
     href: '/destinations/amboseli-safari-tours',
-    cta: 'Explore Amboseli',
   },
   {
     name: 'Lake Nakuru',
-    description: 'Rift Valley gem renowned for flamingo colonies, rhinos, and leopards.',
-    image: DESTINATION_IMAGES.LAKE_NAKURU,
-    isPlaceholder: false,
-    price: 'Starting from $250/Day',
-    href: '/book#booking-form',
-    cta: 'Book This Safari',
+    description:
+      'Discover rhinos, flamingos, Rothschild giraffes, big cats, and Rift Valley scenery.',
+    image: BLOB_IMAGES.LAKE_NAKURU,
+    href: '/destinations/lake-nakuru-safari-tours',
   },
   {
     name: 'Nairobi National Park',
-    description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
-    image: DESTINATION_IMAGES.WATAMU,
-    isPlaceholder: false,
-    price: 'Starting from $150/Day',
-    href: '/book#booking-form',
-    cta: 'Book This Safari',
+    description:
+      'Experience wildlife against the Nairobi skyline on a convenient full-day city safari.',
+    image: LOCAL_IMAGES.ZEBRAS_SAVANNA,
+    href: '/destinations/nairobi-national-park-safari-tours',
   },
   {
     name: 'Ol Pejeta Conservancy',
-    description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
-    image: DESTINATION_IMAGES.SAMBURU,
-    isPlaceholder: false,
-    price: 'Starting from $320/Day',
-    href: '/book#booking-form',
-    cta: 'Book This Safari',
+    description:
+      'Explore Big Five country and one of Kenya’s most important rhino conservation areas.',
+    image: LOCAL_IMAGES.IMPALA_HERD,
+    href: '/destinations/ol-pejeta-safari-tours',
   },
   {
     name: 'Lake Naivasha',
-    description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
-    image: DESTINATION_IMAGES.MOUNT_KENYA,
-    isPlaceholder: false,
-    price: 'Starting from $200/Day',
-    href: '/book#booking-form',
-    cta: 'Book This Safari',
+    description:
+      "Cruise among hippos, walk with wildlife on Crescent Island, and explore Hell's Gate.",
+    image: LOCAL_IMAGES.CROWNED_CRANE,
+    href: '/destinations/lake-naivasha-safari-tours',
   },
 ]
 
 export default function FeaturedDestinations() {
   return (
-    <section className="py-20 md:py-28 px-4 md:px-6 bg-[#FAF4E8]">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mb-4">
-          Experience the Great Migration: Tailor-Made Maasai Mara Safaris
-        </h2>
-        <p className="text-center text-[#1C1208] font-inter mb-16 md:mb-20 max-w-2xl mx-auto text-base md:text-lg">
-          Explore some of Kenya's most spectacular destinations
-        </p>
+    <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+            Explore Kenya
+          </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {destinations.map((dest, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+          <h2 className="mt-3 font-playfair text-3xl leading-tight text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Featured Safari Destinations
+          </h2>
+
+          <p className="mt-4 font-inter text-base leading-relaxed text-[#1C1208] sm:text-lg">
+            Discover Kenya’s wildlife parks, conservancies, lakes, and
+            unforgettable safari experiences.
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          {destinations.map((destination, index) => (
+            <article
+              key={destination.name}
+              className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
             >
-              {dest.isPlaceholder ? (
-                <div
-                  style={{
-                    backgroundColor: '#C4A882',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    aspectRatio: '4/3',
-                    width: '100%',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '13px',
-                    fontStyle: 'italic',
-                    color: '#6B5240',
-                    textAlign: 'center',
-                    padding: '16px',
-                  }}
-                >
-                  {dest.image}
-                </div>
-              ) : (
-                <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <Link
+                href={destination.href}
+                className="block"
+                aria-label={`Explore ${destination.name}`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src={dest.image}
-                    alt={`${dest.name} Safari Package - 4x4 Jeep with Danil Scenic Tours Nairobi - ${dest.description}`}
+                    src={destination.image}
+                    alt={`${destination.name} safari destination in Kenya`}
                     fill
-                    className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    priority={index === 0}
-                    loading={index === 0 ? 'eager' : 'lazy'}
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
                   />
                 </div>
-              )}
 
-              <div className="p-6 md:p-8 space-y-4">
-                <h3 className="text-2xl md:text-3xl font-playfair text-[#2A4A35]">
-                  {dest.name}
-                </h3>
-                <p className="text-[#1C1208] font-inter text-sm md:text-base leading-relaxed">
-                  {dest.description}
-                </p>
-                <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
-                  {dest.price}
-                </p>
-                <Link
-                  href={dest.href}
-                  className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  {dest.cta} <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
+                <div className="p-5 sm:p-6">
+                  <h3 className="font-playfair text-2xl text-[#2A4A35]">
+                    {destination.name}
+                  </h3>
+
+                  <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
+                    {destination.description}
+                  </p>
+
+                  <span className="mt-5 inline-flex min-h-11 items-center gap-2 font-montserrat text-sm font-semibold text-[#D4870A]">
+                    Explore {destination.name}
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </div>
+              </Link>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/destinations"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#2A4A35] px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-[#1C3028] sm:text-base"
+          >
+            Explore All Destinations
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
