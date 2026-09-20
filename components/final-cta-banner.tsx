@@ -4,46 +4,47 @@ import { BLOB_IMAGES } from '@/lib/images'
 
 export default function FinalCTABanner() {
   return (
-    <section className="relative overflow-hidden py-32 px-4 md:py-48">
+    <section className="relative overflow-hidden px-4 py-20 sm:py-24 md:py-40 lg:py-48">
       {/* Background Image */}
-      <div className="absolute inset-0 ken-burns-zoom" style={{ zIndex: 0 }}>
+      <div className="absolute inset-0 z-0 ken-burns-zoom">
         <Image
           src={BLOB_IMAGES.CTA_BANNER}
           alt="Maasai Mara sunset with acacia trees"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
-          priority
         />
       </div>
 
       {/* Dark Overlay */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)',
-          zIndex: 1,
+          background:
+            'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)',
         }}
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="font-cormorant text-4xl md:text-6xl lg:text-7xl text-white mb-16 md:mb-20 leading-tight">
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <h2 className="mb-8 font-cormorant text-4xl leading-tight text-white sm:text-5xl md:mb-14 md:text-6xl lg:text-7xl">
           Your Dream Safari is One Message Away.
         </h2>
 
-        <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
+        <div className="mx-auto flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 md:gap-6">
           <Link
             href="/book"
-            className="px-6 md:px-10 py-3 md:py-4 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all pulse-glow text-sm md:text-base"
+            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-all hover:shadow-lg sm:w-auto md:px-10 md:py-4 md:text-base pulse-glow"
           >
             Start Planning
           </Link>
+
           <Link
             href="https://wa.me/254722919249"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 md:px-10 py-3 md:py-4 border-2 border-white text-white font-montserrat font-semibold rounded-lg hover:bg-white hover:text-[#2A4A35] transition-all text-sm md:text-base"
+            className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-all hover:bg-white hover:text-[#2A4A35] sm:w-auto md:px-10 md:py-4 md:text-base"
+            aria-label="Chat with Danil Scenic Tours on WhatsApp"
           >
             Chat on WhatsApp
           </Link>
