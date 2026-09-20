@@ -1,7 +1,12 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Playfair_Display, Inter, Montserrat } from 'next/font/google'
-import { Analytics } from '@Vercel/analytics/next'
-import { SpeedInsights } from '@Vercel/speed-insights/next'
+import {
+  Cormorant_Garamond,
+  Playfair_Display,
+  Inter,
+  Montserrat,
+} from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -32,8 +37,10 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Kenya Safari Tours & Packages starting from Nairobi | Danil Scenic Tours',
-  description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
+  title:
+    'Kenya Safari Tours & Packages starting from Nairobi | Danil Scenic Tours',
+  description:
+    'Premium Kenya safaris, car hire, and tailor-made adventures.',
   metadataBase: new URL('https://danilscenictours.co.ke'),
   verification: {
     google: 'RJmw-rzdCnh4bbNUWoVTRL7yG-d9kZjEP48RY17GPM8',
@@ -42,8 +49,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Kenya Safari Tours & Packages starting from Nairobi | Danil Scenic Tours',
-    description: 'Premium Kenya safaris, car hire, and tailor-made adventures.',
+    title:
+      'Kenya Safari Tours & Packages starting from Nairobi | Danil Scenic Tours',
+    description:
+      'Premium Kenya safaris, car hire, and tailor-made adventures.',
     url: 'https://danilscenictours.co.ke',
     siteName: 'Danil Scenic Tours',
     type: 'website',
