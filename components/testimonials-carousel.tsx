@@ -54,71 +54,83 @@ const testimonials = [
 
 export default function TestimonialsCarousel() {
   return (
-    <section
-      className="py-20 px-4"
-      style={{
-        backgroundColor: '#1C3028',
-      }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-playfair text-[#FDF8F0] text-center mb-2">
+    <section className="bg-[#1C3028] px-4 py-14 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="mb-2 text-center font-playfair text-3xl leading-tight text-[#FDF8F0] sm:text-4xl md:text-5xl">
           What Our Travellers Say
         </h2>
-        <p className="text-center text-[#D4870A] font-montserrat font-semibold mb-12">
+
+        <p className="mb-10 text-center font-montserrat text-sm font-semibold text-[#D4870A] sm:mb-12 sm:text-base">
           Verified reviews from SafariBookings.com
         </p>
 
-        {/* Grid Layout for 6 Reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {testimonials.map((review, index) => (
-            <div
-              key={index}
-              className="bg-[#2A4A35] rounded-2xl p-6 flex flex-col justify-between"
+        <div className="mb-10 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:mb-12 lg:grid-cols-3">
+          {testimonials.map((review) => (
+            <article
+              key={`${review.author}-${review.date}`}
+              className="flex h-full flex-col justify-between rounded-2xl bg-[#2A4A35] p-5 sm:p-6"
               aria-label={`Review from ${review.author}, ${review.country}`}
             >
               <div>
-                <Quote size={32} className="text-[#D4870A] mb-4" />
-                <p className="text-[#FDF8F0] font-inter text-sm leading-relaxed mb-6 italic">
+                <Quote
+                  size={28}
+                  className="mb-4 text-[#D4870A]"
+                  aria-hidden="true"
+                />
+
+                <p className="mb-6 font-inter text-sm italic leading-relaxed text-[#FDF8F0]">
                   "{review.quote}"
                 </p>
               </div>
 
               <div className="space-y-3">
-                <div className="flex gap-1">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-[#D4870A] text-[#D4870A]" />
+                <div
+                  className="flex gap-1"
+                  aria-label={`${review.rating} out of 5 stars`}
+                >
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      size={16}
+                      className="fill-[#D4870A] text-[#D4870A]"
+                      aria-hidden="true"
+                    />
                   ))}
                 </div>
+
                 <div>
-                  <p className="text-[#FDF8F0] font-montserrat font-semibold text-sm">
+                  <p className="font-montserrat text-sm font-semibold text-[#FDF8F0]">
                     {review.author}, {review.country}
                   </p>
-                  <p className="text-[#D4870A] font-inter text-xs">
+
+                  <p className="font-inter text-xs text-[#D4870A]">
                     {review.date}
                   </p>
+
                   {review.verified && (
-                    <p className="text-[#D4870A] font-montserrat text-xs font-semibold mt-2">
+                    <p className="mt-2 font-montserrat text-xs font-semibold text-[#D4870A]">
                       ✓ Verified Review
                     </p>
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         <div className="text-center">
-          <p className="text-[#FDF8F0] font-inter text-sm mb-4">
+          <p className="mb-4 font-inter text-xs text-[#FDF8F0] sm:text-sm">
             Source: safaribookings.com/p6036
           </p>
+
           <Link
             href="https://www.safaribookings.com/p6036"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all pulse-glow"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#D4870A] px-5 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-all hover:shadow-lg sm:px-6 sm:text-base pulse-glow"
             aria-label="Read all reviews on SafariBookings"
           >
-            Read All Reviews on Safaribookings
+            Read All Reviews on SafariBookings
           </Link>
         </div>
       </div>
