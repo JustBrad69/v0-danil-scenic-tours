@@ -1,258 +1,296 @@
-'use client'
-
-import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import Footer from '@/components/footer'
 import { ArrowRight } from 'lucide-react'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
+import ClientOnlyUI from '@/components/client-only-ui'
 import { BLOB_IMAGES, LOCAL_IMAGES } from '@/lib/images'
 
-const Navbar = dynamic(() => import('@/components/navbar'), { ssr: true })
-const AccessibilityToolbar = dynamic(() => import('@/components/accessibility-toolbar'), { ssr: false })
-const FloatingButtons = dynamic(() => import('@/components/floating-buttons'), { ssr: false })
-const SafariMap = dynamic(() => import('@/components/SafariMap'), {
-  ssr: false,
-  loading: () => <div className="h-[450px] w-full bg-gray-200 animate-pulse rounded-2xl" />,
-})
-
-const heroSlideImages = [
-  BLOB_IMAGES.CTA_BANNER,
-  BLOB_IMAGES.LAKE_NAKURU,
-  BLOB_IMAGES.DIANI_BEACH,
-  BLOB_IMAGES.MAASAI_MARA,
-]
+export const metadata: Metadata = {
+  title: 'Kenya Safari Destinations | Danil Scenic Tours',
+  description:
+    'Explore Kenya safari destinations including Maasai Mara, Amboseli, Tsavo, Lake Nakuru, Lake Naivasha, Ol Pejeta, Nairobi National Park, and Diani Beach.',
+  alternates: {
+    canonical: '/destinations',
+  },
+  openGraph: {
+    title: 'Kenya Safari Destinations | Danil Scenic Tours',
+    description:
+      'Explore Kenya wildlife parks, conservancies, Rift Valley lakes, Nairobi safari experiences, and the Indian Ocean coast.',
+    url: '/destinations',
+    type: 'website',
+    images: [
+      {
+        url: BLOB_IMAGES.MAASAI_MARA,
+        alt: 'Kenya safari destinations',
+      },
+    ],
+  },
+}
 
 const destinations = [
   {
-    id: 'maasai-mara',
-    name: 'Maasai Mara National Reserve',
-    description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July-October).',
-    image: BLOB_IMAGES.CTA_BANNER,
-    isPlaceholder: false,
+    name: 'Maasai Mara',
+    subtitle: 'Great Migration & Big Cats',
+    description:
+      'Explore Kenya’s most famous wildlife reserve, home to lions, elephants, cheetahs, leopards, buffaloes, and the seasonal Great Migration.',
+    image: BLOB_IMAGES.MAASAI_MARA,
     href: '/destinations/maasai-mara-safari-tours',
     cta: 'Explore Maasai Mara',
   },
   {
-    id: 'amboseli',
-    name: 'Amboseli National Park',
-    description: 'Famous elephant herds set against the breathtaking backdrop of Mt. Kilimanjaro.',
+    name: 'Amboseli',
+    subtitle: 'Elephants & Mount Kilimanjaro',
+    description:
+      'See elephant herds across open plains with Mount Kilimanjaro rising beyond one of Kenya’s most recognisable safari landscapes.',
     image: LOCAL_IMAGES.AMBOSELI_ELEPHANTS,
-    isPlaceholder: false,
     href: '/destinations/amboseli-safari-tours',
     cta: 'Explore Amboseli',
   },
   {
-    id: 'tsavo',
-    name: 'Tsavo East & West National Parks',
-    description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
-    image: LOCAL_IMAGES.CHEETAH_RESTING,
-    isPlaceholder: false,
+    name: 'Tsavo',
+    subtitle: 'Red Elephants & Vast Wilderness',
+    description:
+      'Discover Tsavo East and Tsavo West, with Red Elephants, volcanic landscapes, Mzima Springs, rhinos, and enormous wilderness areas.',
+    image: BLOB_IMAGES.TSAVO_EAST,
     href: '/destinations/tsavo-safari-tours',
     cta: 'Explore Tsavo',
   },
   {
-    id: 'lake-nakuru',
-    name: 'Lake Nakuru National Park',
-    description: 'Rift Valley gem renowned for its flamingo colonies, rhinos, and leopards.',
-    image: BLOB_IMAGES.LAKE_NAKURU,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'lake-bogoria',
-    name: 'Lake Bogoria National Reserve',
-    description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
-    image: BLOB_IMAGES.TSAVO_EAST,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'aberdare',
-    name: 'Aberdare National Park',
-    description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
-    image: BLOB_IMAGES.ABERDARE,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'mt-kenya',
-    name: 'Mt. Kenya',
-    description: 'Kenya\'s second-highest mountain. Dramatic clouds, verdant slopes, and alpine trails.',
-    image: BLOB_IMAGES.MOUNT_KENYA,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'meru',
-    name: 'Meru National Park',
-    description: 'Remote wilderness featuring the Big Five set against dramatic golden sunsets, rocky outcrops, and pristine landscapes.',
-    image: BLOB_IMAGES.MERU,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'samburu',
-    name: 'Samburu National Reserve',
-    description: 'Remote semi-arid landscape perfect for stargazing beneath the African night sky. Home to unique wildlife species and breathtaking celestial experiences.',
-    image: BLOB_IMAGES.SAMBURU,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'diani-beach',
-    name: 'Diani Beach',
-    description: 'Pristine white sand coastline along the Indian Ocean. Perfect for snorkelling, diving, and relaxation.',
-    image: BLOB_IMAGES.DIANI_BEACH,
-    isPlaceholder: false,
-    href: '/book#booking-form',
-    cta: 'Plan a Safari Here',
-  },
-  {
-    id: 'nairobi',
     name: 'Nairobi National Park',
-    description: 'Experience the world\'s only wildlife capital. Enjoy a unique safari backdrop where wild rhinos, lions, and giraffes roam against the iconic Nairobi city skyline.',
+    subtitle: 'Safari in the City',
+    description:
+      'Combine a Nairobi National Park game drive with the Giraffe Centre, Kazuri Beads, and other city experiences in one full-day itinerary.',
     image: LOCAL_IMAGES.ZEBRAS_SAVANNA,
-    isPlaceholder: false,
     href: '/destinations/nairobi-national-park-safari-tours',
-    cta: 'Explore Nairobi National Park',
+    cta: 'Explore Nairobi Safari',
   },
   {
-    id: 'ol-pejeta',
     name: 'Ol Pejeta Conservancy',
-    description: 'Visit East Africa\'s largest black rhino sanctuary. Home to the world\'s last remaining northern white rhinos and a dedicated chimpanzee sanctuary at the foot of Mt. Kenya.',
-    image: LOCAL_IMAGES.ELEPHANT_KILIMANJARO,
-    isPlaceholder: false,
+    subtitle: 'Big Five Conservation',
+    description:
+      'Experience Big Five wildlife and rhino conservation in Kenya’s central highlands, including the home of the last two northern white rhinos.',
+    image: LOCAL_IMAGES.IMPALA_HERD,
     href: '/destinations/ol-pejeta-safari-tours',
     cta: 'Explore Ol Pejeta',
   },
   {
-    id: 'lake-naivasha',
-    name: 'Lake Naivasha (Crescent Island)',
-    description: 'Walk alongside giraffes and zebras on Crescent Island. A serene freshwater lake experience featuring boat safaris, incredible birdwatching, and hippos in their natural habitat.',
+    name: 'Lake Naivasha',
+    subtitle: "Hippos, Hell's Gate & Crescent Island",
+    description:
+      "Take a boat safari among hippos, walk with wildlife on Crescent Island, and explore the dramatic landscapes of Hell's Gate National Park.",
     image: LOCAL_IMAGES.CROWNED_CRANE,
-    isPlaceholder: false,
     href: '/destinations/lake-naivasha-safari-tours',
     cta: 'Explore Lake Naivasha',
+  },
+  {
+    name: 'Lake Nakuru',
+    subtitle: 'Rhinos, Flamingos & Rift Valley Scenery',
+    description:
+      'Explore one of Kenya’s leading rhino sanctuaries, with flamingos, Rothschild giraffes, lions, leopards, buffaloes, and more than 400 recorded bird species.',
+    image: BLOB_IMAGES.LAKE_NAKURU,
+    href: '/destinations/lake-nakuru-safari-tours',
+    cta: 'Explore Lake Nakuru',
+  },
+  {
+    name: 'Diani Beach',
+    subtitle: 'Indian Ocean Coast',
+    description:
+      'Finish your Kenya journey on white sand beaches with snorkeling, Kisite-Mpunguti Marine Park, Wasini Island, Shimba Hills, and coastal culture.',
+    image: BLOB_IMAGES.DIANI_BEACH,
+    href: '/destinations/diani-beach-safari-tours',
+    cta: 'Explore Diani Beach',
   },
 ]
 
 export default function DestinationsPage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroSlideImages.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
 
-      {/* Hero with Slideshow */}
-      <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
-        <div className="absolute inset-0 z-0">
-          {heroSlideImages.map((image, index) => (
-            <div
-              key={index}
-              className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
-            >
-              <Image
-                src={image}
-                alt={`Kenya wonders slide ${index + 1}`}
-                fill
-                className="object-cover"
-                priority={index === 0}
-                sizes="100vw"
-              />
-            </div>
-          ))}
-        </div>
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)',
-            zIndex: 1,
-          }}
+      {/* Hero */}
+      <section className="relative flex min-h-[62svh] items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:min-h-[68svh] sm:pt-32">
+        <Image
+          src={BLOB_IMAGES.MAASAI_MARA}
+          alt="Kenya safari landscape in the Maasai Mara"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-cormorant text-5xl md:text-6xl text-white mb-4 leading-tight">
-            Discover Kenya's Wild Wonders.
+
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.82)_0%,rgba(28,18,8,0.34)_100%)]" />
+
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+            Explore Kenya
+          </p>
+
+          <h1 className="mt-4 font-playfair text-4xl font-bold leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Kenya Safari Destinations
           </h1>
-          <p className="text-white text-lg md:text-xl max-w-2xl mx-auto" style={{ opacity: 0.85 }}>
-            Custom tours to every park, reserve, and coastline across Kenya.
+
+          <p className="mx-auto mt-5 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg md:text-xl">
+            Explore Kenya’s wildlife parks, conservancies, Rift Valley lakes,
+            Nairobi safari experiences, and Indian Ocean coast before choosing
+            the trip that fits you.
           </p>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-12 bg-[#FAF4E8] px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-playfair text-[#2A4A35] mb-8 text-center">
-            Explore the Geography of Your Adventure
+      {/* Introduction */}
+      <section className="px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+            Find the Kenya Experience You Want
           </h2>
-          <SafariMap />
+
+          <p className="mt-5 font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+            Each destination page includes detailed itinerary information,
+            wildlife highlights, accommodation, the best time to visit,
+            practical planning information, FAQs, and booking options.
+          </p>
+
+          <p className="mt-4 font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+            Explore the destinations first, compare the experiences, then
+            choose the safari or beach escape that works best for your trip.
+          </p>
         </div>
       </section>
 
-      {/* Destination Cards */}
-      <section className="py-20 md:py-28 px-4 md:px-6 bg-[#FAF4E8]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {destinations.map((dest, index) => (
-              <div
-                key={index}
-                id={dest.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+      {/* Destination Grid */}
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-6">
+            {destinations.map((destination) => (
+              <article
+                key={destination.name}
+                className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
               >
-                {dest.isPlaceholder ? (
-                  <div className="flex items-center justify-center bg-[#C4A882] aspect-[4/3] p-4 text-[13px] italic text-[#6B5240] text-center font-inter">
-                    {dest.image}
-                  </div>
-                ) : (
-                  <div className="relative w-full aspect-[4/3]">
+                <Link
+                  href={destination.href}
+                  className="flex h-full flex-col"
+                  aria-label={destination.cta}
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
-                      src={dest.image}
-                      alt={dest.name}
+                      src={destination.image}
+                      alt={`${destination.name} safari destination in Kenya`}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      loading="lazy"
                     />
                   </div>
-                )}
 
-                <div className="p-6 md:p-8 space-y-4">
-                  <h3 className="text-xl md:text-2xl font-playfair text-[#2A4A35]">
-                    {dest.name}
-                  </h3>
-                  <p className="text-[#1C1208] font-inter text-sm md:text-base leading-relaxed">
-                    {dest.description}
-                  </p>
-                  <Link
-                    href={dest.href}
-                    className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
-                  >
-                    {dest.cta} <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </div>
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.12em] text-[#D4870A]">
+                      {destination.subtitle}
+                    </p>
+
+                    <h2 className="mt-2 font-playfair text-2xl font-bold text-[#2A4A35]">
+                      {destination.name}
+                    </h2>
+
+                    <p className="mt-3 flex-1 font-inter text-sm leading-relaxed text-[#1C1208]">
+                      {destination.description}
+                    </p>
+
+                    <span className="mt-5 inline-flex min-h-11 items-center gap-2 font-montserrat text-sm font-semibold text-[#D4870A]">
+                      {destination.cta}
+
+                      <ArrowRight
+                        size={16}
+                        className="transition-transform group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </div>
+                </Link>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Safari Planning */}
+      <section className="px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8 md:p-10">
+          <h2 className="font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl">
+            Want to Visit More Than One Destination?
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-3xl font-inter text-base leading-relaxed text-[#1C1208]">
+            Our multi-destination safaris combine several parks and experiences
+            into one itinerary, including routes through Maasai Mara, Lake
+            Nakuru, Lake Naivasha, Amboseli, and Diani Beach.
+          </p>
+
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/safari-tours"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#2A4A35] px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-[#1C3028]"
+            >
+              Explore Kenya Safari Tours
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+
+            <Link
+              href="/safari-packages"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:bg-[#D4870A] hover:text-[#1C1208]"
+            >
+              Compare Safari Packages
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking CTA */}
+      <section className="relative overflow-hidden px-4 py-20 sm:py-24 md:py-28">
+        <Image
+          src={BLOB_IMAGES.CTA_BANNER}
+          alt="Kenya safari landscape"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+
+        <div className="absolute inset-0 bg-[rgba(28,18,8,0.74)]" />
+
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
+          <h2 className="font-cormorant text-4xl leading-tight text-white sm:text-5xl md:text-6xl">
+            Know Where You Want to Go?
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg">
+            Send us your preferred destination, travel dates, and group size
+            and we will help you plan the trip.
+          </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              href="/book"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
+            >
+              Book Your Safari
+            </Link>
+
+            <Link
+              href="https://wa.me/254722919249"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
+            >
+              Chat on WhatsApp
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
-      <FloatingButtons />
-      <AccessibilityToolbar />
+      <ClientOnlyUI />
     </main>
   )
 }
