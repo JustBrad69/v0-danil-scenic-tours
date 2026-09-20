@@ -1,240 +1,167 @@
-'use client'
-
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogFooter,
-} from '@/components/ui/dialog'
 import { SERVICE_IMAGES, BLOB_IMAGES } from '@/lib/images'
 
 const services = [
   {
     title: 'Safari Tours',
     teaser: 'Big Five game drives through Kenya\'s greatest national parks.',
-    fullDescription: 'Discover unforgettable Kenya safari tours with guided wildlife experiences across top destinations including Maasai Mara, Amboseli, and Lake Nakuru. Enjoy comfortable transport, expert guides, and tailored safari packages for every traveler.',
     image: SERVICE_IMAGES.SAFARI_TOURS,
-    isPlaceholder: false,
     price: 'Starting from $350/Day',
-    hasModal: true,
+    href: '/safari-tours',
   },
   {
     title: 'Cultural Expeditions',
     teaser: 'Live the traditions, taste the cuisine, meet the people.',
-    fullDescription: 'Experience authentic cultural expeditions that connect you with local communities, traditions, and heritage sites across Kenya. Explore meaningful journeys that blend culture, history, and unforgettable travel experiences.\n\nExperience highlights:\n• Maasai warrior village\n• Walking tour of Old Town Mombasa and Fort Jesus\n• Lamu Cultural Festival\n• Swahili heritage',
     image: SERVICE_IMAGES.CULTURAL_EXPEDITIONS,
-    isPlaceholder: false,
     price: 'Starting from $250/Day',
-    hasModal: true,
+    href: '/safari-tours',
   },
   {
     title: 'Adventure Safaris',
     teaser: 'Hiking, biking, and hot air ballooning for the thrill-seeker.',
-    fullDescription: 'Take on thrilling adventure safaris with game drives, scenic landscapes, and exciting wildlife encounters across Kenya\'s iconic national parks and reserves.',
     image: SERVICE_IMAGES.ADVENTURE_SAFARIS,
-    isPlaceholder: false,
     price: 'Starting from $280/Day',
-    hasModal: true,
+    href: '/safari-tours',
   },
   {
     title: 'Beach Escapes',
     teaser: 'Unwind on Kenya\'s pristine Indian Ocean coastline.',
-    fullDescription: 'Unwind with relaxing beach escapes along Kenya\'s beautiful coastline, combining luxury stays, ocean views, and seamless travel experiences after your safari adventure.',
     image: SERVICE_IMAGES.BEACH_ESCAPES,
-    isPlaceholder: false,
     price: 'Starting from $180/Night',
-    hasModal: true,
+    href: '/safari-tours',
   },
 ]
 
 export default function ServicesGrid() {
-  const [openModal, setOpenModal] = useState<string | null>(null)
   return (
-    <section className="py-20 px-4 bg-[#F2E8D5]">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mb-16">
+    <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="mb-10 text-center font-playfair text-3xl leading-tight text-[#2A4A35] sm:text-4xl md:mb-16 md:text-5xl">
           Kenya Safari Tours, Kenya Safari Packages & Private Safari Tours
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {services.map((service, index) => (
-            <Dialog
-              key={index}
-              open={openModal === service.title}
-              onOpenChange={(open) =>
-                setOpenModal(open ? service.title : null)
-              }
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 md:gap-12">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 lg:hover:shadow-xl"
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                {/* Image */}
-                {service.isPlaceholder ? (
-                  <div
-                    style={{
-                      backgroundColor: '#C4A882',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      aspectRatio: '4/3',
-                      width: '100%',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '13px',
-                      fontStyle: 'italic',
-                      color: '#6B5240',
-                      textAlign: 'center',
-                      padding: '16px',
-                    }}
-                  >
-                    {service.image}
-                  </div>
-                ) : (
-                  <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} - ${service.teaser} by Danil Scenic Tours Nairobi`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover"
-                      priority={index === 0}
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                    />
-                  </div>
-                )}
-
-                {/* Content */}
-                <div className="p-8 space-y-4">
-                  <h3 className="text-2xl font-playfair text-[#2A4A35]">
-                    {service.title}
-                  </h3>
-                  <p className="text-[#1C1208] font-inter leading-relaxed">
-                    {service.teaser}
-                  </p>
-                  <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
-                    {service.price}
-                  </p>
-                  {service.hasModal && (
-                    <DialogTrigger asChild>
-                      <button className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold hover:gap-3 transition-all">
-                        Learn More <ArrowRight size={16} />
-                      </button>
-                    </DialogTrigger>
-                  )}
-                </div>
+              <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
+                <Image
+                  src={service.image}
+                  alt={`${service.title} with Danil Scenic Tours in Kenya`}
+                  fill
+                  sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
+                  className="object-cover object-center"
+                />
               </div>
 
-              {/* Modal */}
-              {service.hasModal && (
-                <DialogContent className="max-w-lg">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-playfair text-[#2A4A35]">
-                      {service.title}
-                    </DialogTitle>
-                  </DialogHeader>
-                  <DialogDescription className="text-[#1C1208] font-inter leading-relaxed text-base whitespace-pre-wrap">
-                    {service.fullDescription}
-                  </DialogDescription>
-                  {service.price && (
-                    <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
-                      {service.price}
-                    </p>
-                  )}
-                  <DialogFooter className="flex flex-col gap-3 mt-6">
-                    <Link
-                      href="/book#booking-form"
-                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all"
-                      onClick={() => setOpenModal(null)}
-                    >
-                      Consult an Expert → <ArrowRight size={16} />
-                    </Link>
-                  </DialogFooter>
-                </DialogContent>
-              )}
-            </Dialog>
+              <div className="space-y-4 p-5 sm:p-6 md:p-8">
+                <h3 className="font-playfair text-2xl leading-tight text-[#2A4A35]">
+                  {service.title}
+                </h3>
+
+                <p className="font-inter leading-relaxed text-[#1C1208]">
+                  {service.teaser}
+                </p>
+
+                <p className="font-montserrat text-base font-semibold text-[#2A4A35]">
+                  {service.price}
+                </p>
+
+                <Link
+                  href={service.href}
+                  className="inline-flex min-h-11 items-center gap-2 py-2 font-montserrat font-semibold text-[#D4870A] transition-all hover:gap-3"
+                  aria-label={`Learn more about ${service.title}`}
+                >
+                  Learn More
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
 
-        {/* Travel & Transport Solutions Section */}
-        <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mt-24 mb-16">
+        <h2 className="mb-10 mt-16 text-center font-playfair text-3xl leading-tight text-[#2A4A35] sm:mt-20 sm:text-4xl md:mb-16 md:mt-24 md:text-5xl">
           Custom Safari Adventures & Professional Car Hire
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Custom Safaris Card */}
-          <div
-            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 md:gap-12">
+          <article
+            className="overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 lg:hover:shadow-xl"
             aria-label="Custom Safaris service"
           >
-            {/* Custom Safaris Image */}
-            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+            <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
               <Image
-                src={BLOB_IMAGES.SAFARI_PHOTO_1}
-                alt="Custom Safaris - Luxury relaxation area with fruits and beachfront view by Danil Scenic Tours Nairobi"
+                src={SERVICE_IMAGES.CUSTOMIZED_SAFARIS}
+                alt="Custom safari experience with Danil Scenic Tours in Kenya"
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
-                loading="lazy"
+                sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
+                className="object-cover object-center"
               />
             </div>
 
-            {/* Content */}
-            <div className="p-8 space-y-4">
-              <h3 className="text-2xl font-playfair text-[#2A4A35]">
+            <div className="space-y-4 p-5 sm:p-6 md:p-8">
+              <h3 className="font-playfair text-2xl leading-tight text-[#2A4A35]">
                 Custom Safaris
               </h3>
-              <p className="text-[#1C1208] font-inter leading-relaxed">
-                Tailor-made itineraries designed specifically for your interests, budget, and pace. From private family getaways to specialized photography expeditions.
+
+              <p className="font-inter leading-relaxed text-[#1C1208]">
+                Tailor-made itineraries designed specifically for your interests,
+                budget, and pace. From private family getaways to specialized
+                photography expeditions.
               </p>
+
               <Link
                 href="/book#booking-form"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#F97316] px-5 py-3 font-montserrat text-sm font-semibold text-white transition-all hover:shadow-lg sm:px-6 sm:text-base"
               >
-                Consult an Expert Planner → <ArrowRight size={16} />
+                Consult an Expert Planner
+                <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
-          </div>
+          </article>
 
-          {/* Professional Car Hire Card */}
-          <div
-            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+          <article
+            className="overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 lg:hover:shadow-xl"
             aria-label="Professional Car Hire service"
           >
-            {/* Car Hire Image */}
-            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+            <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
               <Image
                 src={BLOB_IMAGES.SAFARI_PHOTO_2}
-                alt="Professional Car Hire - Safari 4x4 Land Cruiser vehicle by Danil Scenic Tours Nairobi"
+                alt="Safari 4x4 Land Cruiser available for professional car hire with Danil Scenic Tours"
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
-                loading="lazy"
+                sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
+                className="object-cover object-center"
               />
             </div>
 
-            {/* Content */}
-            <div className="p-8 space-y-4">
-              <h3 className="text-2xl font-playfair text-[#2A4A35]">
+            <div className="space-y-4 p-5 sm:p-6 md:p-8">
+              <h3 className="font-playfair text-2xl leading-tight text-[#2A4A35]">
                 Professional Car Hire
               </h3>
-              <p className="text-[#1C1208] font-inter leading-relaxed">
-                Explore Kenya at your own pace with our fleet of reliable 4x4 Land Cruisers and Safari Vans. Available with professional drivers or as self-drive options.
+
+              <p className="font-inter leading-relaxed text-[#1C1208]">
+                Explore Kenya at your own pace with our fleet of reliable 4x4 Land
+                Cruisers and Safari Vans. Available with professional drivers or as
+                self-drive options.
               </p>
-              <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+
+              <p className="font-montserrat text-base font-semibold text-[#2A4A35]">
                 Starting from $120/Day
               </p>
+
               <Link
                 href="/book#booking-form"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#F97316] px-5 py-3 font-montserrat text-sm font-semibold text-white transition-all hover:shadow-lg sm:px-6 sm:text-base"
               >
-                Request a Transport Quote → <ArrowRight size={16} />
+                Request a Transport Quote
+                <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
