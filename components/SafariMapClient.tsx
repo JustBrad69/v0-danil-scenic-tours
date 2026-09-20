@@ -7,11 +7,11 @@ import {
   Marker,
   Polyline,
   TileLayer,
-  Tooltip,
   useMap,
 } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+
 import type {
   SafariMapLocationId,
   SafariMapProps,
@@ -33,6 +33,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 36.85,
     href: '/destinations/nairobi-national-park-safari-tours',
   },
+
   'maasai-mara': {
     id: 'maasai-mara',
     name: 'Maasai Mara National Reserve',
@@ -40,6 +41,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 35.14,
     href: '/destinations/maasai-mara-safari-tours',
   },
+
   amboseli: {
     id: 'amboseli',
     name: 'Amboseli National Park',
@@ -47,6 +49,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 37.25,
     href: '/destinations/amboseli-safari-tours',
   },
+
   tsavo: {
     id: 'tsavo',
     name: 'Tsavo East & West',
@@ -54,6 +57,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 38.46,
     href: '/destinations/tsavo-safari-tours',
   },
+
   'lake-nakuru': {
     id: 'lake-nakuru',
     name: 'Lake Nakuru National Park',
@@ -61,6 +65,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 36.08,
     href: '/destinations/lake-nakuru-safari-tours',
   },
+
   'lake-naivasha': {
     id: 'lake-naivasha',
     name: 'Lake Naivasha',
@@ -68,6 +73,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 36.35,
     href: '/destinations/lake-naivasha-safari-tours',
   },
+
   'ol-pejeta': {
     id: 'ol-pejeta',
     name: 'Ol Pejeta Conservancy',
@@ -75,6 +81,7 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
     lon: 36.93,
     href: '/destinations/ol-pejeta-safari-tours',
   },
+
   'diani-beach': {
     id: 'diani-beach',
     name: 'Diani Beach',
@@ -84,51 +91,59 @@ const SAFARI_LOCATIONS: Record<SafariMapLocationId, SafariLocation> = {
   },
 }
 
-function createMarkerIcon(index: number) {
+function createMarkerIcon(
+  index: number,
+  showNumber: boolean
+) {
   return L.divIcon({
-    className: '',
+    className: 'safari-map-marker',
     html: `
       <div
         style="
-          width: 34px;
-          height: 34px;
+          width: 36px;
+          height: 36px;
           border-radius: 9999px;
           background: #D4870A;
           border: 3px solid #ffffff;
-          box-shadow: 0 4px 12px rgba(28, 18, 8, 0.28);
+          box-shadow: 0 4px 12px rgba(28, 18, 8, 0.30);
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
           color: #1C1208;
           font-size: 13px;
           font-weight: 700;
           font-family: Arial, sans-serif;
         "
       >
-        ${index + 1}
+        ${showNumber ? index + 1 : ''}
       </div>
     `,
-    iconSize: [34, 34],
-    iconAnchor: [17, 17],
-    tooltipAnchor: [0, -20],
+    iconSize: [36, 36],
+    iconAnchor: [18, 18],
   })
 }
 
 function MapControls() {
   const map = useMap()
 
-  const handleZoom = (type: 'in' | 'out') => {
-    const nextZoom =
-      type === 'in' ? map.getZoom() + 1 : map.getZoom() - 1
+  const zoomIn = () => {
+    map.setZoom(map.getZoom() + 1, {
+      animate: true,
+    })
+  }
 
-    map.setZoom(nextZoom, { animate: true })
+  const zoomOut = () => {
+    map.setZoom(map.getZoom() - 1, {
+      animate: true,
+    })
   }
 
   return (
     <div className="absolute right-3 top-3 z-[1000] flex flex-col overflow-hidden rounded-lg border border-black/10 bg-white shadow-lg sm:right-4 sm:top-4">
       <button
         type="button"
-        onClick={() => handleZoom('in')}
+        onClick={zoomIn}
         aria-label="Zoom map in"
         className="flex h-11 w-11 items-center justify-center border-b border-black/10 bg-white text-xl font-bold text-[#2A4A35] transition-colors hover:bg-[#F2E8D5]"
       >
@@ -137,7 +152,7 @@ function MapControls() {
 
       <button
         type="button"
-        onClick={() => handleZoom('out')}
+        onClick={zoomOut}
         aria-label="Zoom map out"
         className="flex h-11 w-11 items-center justify-center bg-white text-xl font-bold text-[#2A4A35] transition-colors hover:bg-[#F2E8D5]"
       >
@@ -155,7 +170,7 @@ function FitMapToLocations({
   const map = useMap()
 
   useEffect(() => {
-    if (!locations.length) {
+    if (locations.length === 0) {
       return
     }
 
@@ -166,7 +181,9 @@ function FitMapToLocations({
         map.setView(
           [locations[0].lat, locations[0].lon],
           8,
-          { animate: false }
+          {
+            animate: false,
+          }
         )
 
         return
@@ -180,7 +197,7 @@ function FitMapToLocations({
       )
 
       map.fitBounds(bounds, {
-        padding: [40, 40],
+        padding: [45, 45],
         maxZoom: 8,
         animate: false,
       })
@@ -195,7 +212,7 @@ function FitMapToLocations({
 }
 
 export default function SafariMapClient({
-  locationIds,
+  locations: locationIds,
   showRouteLine = false,
 }: SafariMapProps) {
   const router = useRouter()
@@ -204,7 +221,10 @@ export default function SafariMapClient({
     () =>
       locationIds
         .map((id) => SAFARI_LOCATIONS[id])
-        .filter(Boolean),
+        .filter(
+          (location): location is SafariLocation =>
+            Boolean(location)
+        ),
     [locationIds]
   )
 
@@ -217,19 +237,21 @@ export default function SafariMapClient({
     [locations]
   )
 
-  if (!locations.length) {
+  if (locations.length === 0) {
     return null
   }
 
   return (
-    <div>
-      <div className="relative h-[360px] w-full overflow-hidden rounded-2xl border-2 border-[#2A4A35] bg-[#FAF4E8] shadow-lg sm:h-[420px] md:h-[520px]">
+    <div className="w-full">
+      <div className="relative h-[340px] w-full overflow-hidden rounded-2xl border-2 border-[#2A4A35] bg-[#FAF4E8] shadow-lg sm:h-[420px] md:h-[500px]">
         <MapContainer
           center={[-0.5, 37.8]}
           zoom={6}
-          className="h-full w-full"
           zoomControl={false}
           scrollWheelZoom={false}
+          doubleClickZoom
+          touchZoom
+          className="h-full w-full"
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -256,37 +278,30 @@ export default function SafariMapClient({
             <Marker
               key={location.id}
               position={[location.lat, location.lon]}
-              icon={createMarkerIcon(index)}
+              icon={createMarkerIcon(
+                index,
+                showRouteLine
+              )}
               keyboard
               eventHandlers={{
-                click: () => router.push(location.href),
+                click: () => {
+                  router.push(location.href)
+                },
               }}
-            >
-              <Tooltip
-                direction="top"
-                offset={[0, -14]}
-                opacity={1}
-                className="custom-safari-tooltip"
-              >
-                <div className="min-w-[140px] p-1 text-center">
-                  <p className="m-0 text-sm font-bold leading-tight text-[#2A4A35]">
-                    {location.name}
-                  </p>
-
-                  <p className="mb-0 mt-1 border-t pt-1 text-[10px] text-gray-500">
-                    Open destination page
-                  </p>
-                </div>
-              </Tooltip>
-            </Marker>
+            />
           ))}
         </MapContainer>
       </div>
 
+      <p className="mt-3 text-center font-inter text-xs leading-relaxed text-[#1C1208]/65 sm:text-sm">
+        Select a destination marker to explore its full safari details.
+      </p>
+
       {showRouteLine && locations.length > 1 && (
-        <p className="mt-3 text-center font-inter text-xs leading-relaxed text-[#1C1208]/65">
-          Map markers show the itinerary sequence. The connecting line is an
-          overview and does not represent the exact road or flight route.
+        <p className="mt-1 text-center font-inter text-xs leading-relaxed text-[#1C1208]/55">
+          Numbered markers follow the safari itinerary. The connecting line
+          shows the journey sequence rather than the exact road or flight
+          route.
         </p>
       )}
     </div>
