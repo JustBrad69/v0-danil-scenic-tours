@@ -97,8 +97,7 @@ const structuredData = {
         url: 'https://danilscenictours.co.ke/destinations/nairobi-national-park-safari-tours',
         price: '260',
         priceCurrency: 'USD',
-        description:
-          '1-day Nairobi City Tour. Group price USD 260.',
+        description: '1-day Nairobi City Tour. Group price USD 260.',
         itemOffered: {
           '@type': 'Service',
           name: 'Nairobi City Tour',
@@ -210,15 +209,15 @@ const structuredData = {
       },
       {
         '@type': 'Offer',
-        name: '7-Day Safari: Masai Mara, Lake Nakuru & Amboseli',
-        url: 'https://danilscenictours.co.ke/safari-tours/7-day-budget-kenya-safari',
+        name: '7 Days / 6 Nights: Masai Mara, Lake Nakuru & Amboseli',
+        url: 'https://danilscenictours.co.ke/safari-tours/7-days-6-nights-maasai-mara-lake-nakuru-amboseli',
         price: '1159',
         priceCurrency: 'USD',
         description:
-          '7-day, 6-night Kenya wildlife safari through Masai Mara, Lake Nakuru, and Amboseli. Group price from USD 1,159 per person. Solo traveller price USD 2,602.',
+          '7-day, 6-night Kenya safari through Masai Mara, Lake Nakuru, and Amboseli. Group price from USD 1,159 per person. Solo traveller price USD 2,602.',
         itemOffered: {
           '@type': 'Service',
-          name: '7-Day Budget Kenya Wildlife Safari',
+          name: '7 Days / 6 Nights Masai Mara, Lake Nakuru & Amboseli Safari',
         },
       },
       {
@@ -232,6 +231,19 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: '10-Day Classic Kenya Wildlife & Diani Beach Escape',
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: '13-Day Safari & Coastal Escape',
+        url: 'https://danilscenictours.co.ke/safari-tours/13-day-kenya-safari-coastal-escape',
+        price: '3994',
+        priceCurrency: 'USD',
+        description:
+          '13-day, 12-night Kenya safari and coastal escape through Lake Naivasha, Masai Mara, Diani Beach, and Watamu. Group price from USD 3,994 per person.',
+        itemOffered: {
+          '@type': 'Service',
+          name: '13-Day Kenya Safari & Coastal Escape',
         },
       },
     ],
