@@ -3,17 +3,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowRight,
-  BedDouble,
+  CalendarDays,
+  Car,
   CheckCircle2,
-  Clock,
+  Hotel,
   MapPin,
   Plane,
-  Utensils,
+  UtensilsCrossed,
   XCircle,
 } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import ClientOnlyUI from '@/components/client-only-ui'
+import SafariMap from '@/components/SafariMap'
+import BookingTerms from '@/components/BookingTerms'
 import { BLOB_IMAGES } from '@/lib/images'
 
 export const metadata: Metadata = {
@@ -24,29 +27,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/safari-tours/10-day-kenya-wildlife-diani-beach',
   },
-  openGraph: {
-    title:
-      '10-Day Kenya Safari Package: Maasai Mara, Nakuru, Naivasha, Amboseli & Diani Beach | Danil Scenic Tours',
-    description:
-      'Explore Kenya on a 10-day wildlife safari combining Maasai Mara, Lake Nakuru, Lake Naivasha, Amboseli and Diani Beach. Full itinerary, full board, professional guide from Nairobi.',
-    url: '/safari-tours/10-day-kenya-wildlife-diani-beach',
-    type: 'website',
-    images: [
-      {
-        url: BLOB_IMAGES.MAASAI_MARA,
-        alt: '10-day Kenya wildlife safari and Diani Beach escape',
-      },
-    ],
-  },
 }
 
 const itinerary = [
   {
     day: 'Day 1',
     title: 'Welcome to Kenya: Journey to the Masai Mara',
-    description: [
-      'Your adventure begins at Jomo Kenyatta International Airport, where your safari guide will meet you on arrival and brief you on the journey ahead. Travel through the breathtaking Great Rift Valley with spectacular viewpoints and sweeping landscapes along the route.',
-      'Arrive at PrideInn Mara Camp in time for lunch, then relax before setting out on your first afternoon game drive across the legendary Masai Mara National Reserve. As the golden African sunset paints the savannah, watch for lions, elephants, buffaloes, giraffes, and cheetahs in their natural habitat. Return to camp for dinner and your first night under the African skies.',
+    paragraphs: [
+      'Your adventure begins at Jomo Kenyatta International Airport, where your safari guide will meet you on arrival and brief you on the journey ahead. Travel through the Great Rift Valley with viewpoints and sweeping landscapes along the route.',
+      'Arrive at PrideInn Mara Camp in time for lunch, then relax before setting out on your first afternoon game drive across the Masai Mara National Reserve. Return to camp for dinner and your first safari overnight.',
     ],
     accommodation: 'PrideInn Mara Camp',
     meals: 'Lunch & Dinner',
@@ -54,9 +43,9 @@ const itinerary = [
   {
     day: 'Day 2',
     title: 'A Full Day in the Heart of the Masai Mara',
-    description: [
-      "Wake to the sounds of the African wilderness. After an early breakfast, spend a full day exploring one of the world's greatest wildlife destinations. The Masai Mara is renowned for its exceptional concentration of wildlife including the Big Five and the spectacular Great Wildebeest Migration between July and October.",
-      'Your guide will lead you through rolling grasslands, acacia woodlands, and winding rivers while sharing expert knowledge of the ecosystem. A picnic lunch is served in the bush, allowing uninterrupted wildlife viewing throughout the day.',
+    paragraphs: [
+      "After an early breakfast, spend a full day exploring the Masai Mara. The reserve is known for its concentration of wildlife, including the Big Five and the Great Wildebeest Migration between July and October.",
+      'Your guide will lead you through rolling grasslands, acacia woodlands, and river areas while sharing knowledge of the ecosystem. A picnic lunch is served in the bush.',
     ],
     accommodation: 'PrideInn Mara Camp',
     meals: 'Breakfast, Lunch & Dinner',
@@ -64,9 +53,9 @@ const itinerary = [
   {
     day: 'Day 3',
     title: 'Scenic Drive to Lake Nakuru National Park',
-    description: [
-      'After breakfast, bid farewell to the Mara and journey to Lake Nakuru National Park, famous for its scenic beauty and remarkable wildlife conservation success. Arrive at Lake Nakuru Sopa Lodge for lunch before heading out on an afternoon game drive.',
-      "Lake Nakuru is one of Kenya's finest places to spot endangered white and black rhinos, the graceful Rothschild's giraffe, and seasonally thousands of flamingos gathering along the alkaline lakeshore.",
+    paragraphs: [
+      'After breakfast, leave the Mara and journey to Lake Nakuru National Park. Arrive at Lake Nakuru Sopa Lodge for lunch before heading out on an afternoon game drive.',
+      "Lake Nakuru is known for white and black rhinos, Rothschild's giraffes, and seasonal flamingos along the lakeshore.",
     ],
     accommodation: 'Lake Nakuru Sopa Lodge',
     meals: 'Breakfast, Lunch & Dinner',
@@ -74,8 +63,8 @@ const itinerary = [
   {
     day: 'Day 4',
     title: 'Discover the Wonders of Lake Nakuru',
-    description: [
-      'A full second day in Lake Nakuru National Park. Every game drive presents new wildlife encounters, including leopards lounging in acacia trees, large buffalo herds, zebras, waterbuck, baboons, and extraordinary birdlife across the lakeshore and woodland habitats.',
+    paragraphs: [
+      'Spend a full second day in Lake Nakuru National Park. Game drives may reveal leopards, buffalo herds, zebras, waterbuck, baboons, and birdlife across the lakeshore and woodland habitats.',
     ],
     accommodation: 'Lake Nakuru Sopa Lodge',
     meals: 'Breakfast, Lunch & Dinner',
@@ -83,9 +72,9 @@ const itinerary = [
   {
     day: 'Day 5',
     title: 'Relaxation at Beautiful Lake Naivasha',
-    description: [
-      'After breakfast, continue to the freshwater paradise of Lake Naivasha in the heart of the Great Rift Valley. Check into Lake Naivasha Sopa Lodge and enjoy lunch surrounded by beautifully landscaped gardens.',
-      'In the afternoon, embark on a tranquil boat safari across the lake, where pods of hippos and abundant birdlife await. Continue to Crescent Island Game Sanctuary for a guided walking safari among freely roaming giraffes, zebras, antelopes, and wildebeests. It is an unforgettable, up-close experience with wildlife on foot.',
+    paragraphs: [
+      'After breakfast, continue to Lake Naivasha in the Great Rift Valley. Check into Lake Naivasha Sopa Lodge and enjoy lunch.',
+      'In the afternoon, take a boat safari across the lake to look for hippos and birdlife. Continue to Crescent Island Game Sanctuary for a guided walking safari among giraffes, zebras, antelopes, and wildebeests.',
     ],
     accommodation: 'Lake Naivasha Sopa Lodge',
     meals: 'Breakfast, Lunch & Dinner',
@@ -93,9 +82,9 @@ const itinerary = [
   {
     day: 'Day 6',
     title: 'Amboseli National Park: Beneath Mount Kilimanjaro',
-    description: [
-      "Travel south to Amboseli National Park, one of Kenya's most iconic wildlife destinations. Set against Africa's highest mountain, Amboseli offers some of the continent's most photographed landscapes, with vast plains stretching beneath the snow-capped peak of Mount Kilimanjaro.",
-      'Arrive at Amboseli Sopa Lodge for lunch before setting out on an evening game drive. Amboseli is celebrated for its large herds of free-ranging elephants, many with impressive tusks, alongside lions, cheetahs, hyenas, zebras, and wildebeests.',
+    paragraphs: [
+      "Travel south to Amboseli National Park. Set against Africa's highest mountain, Amboseli offers wide plains beneath Mount Kilimanjaro.",
+      'Arrive at Amboseli Sopa Lodge for lunch before setting out on an evening game drive. Amboseli is known for elephants, lions, cheetahs, hyenas, zebras, and wildebeests.',
     ],
     accommodation: 'Amboseli Sopa Lodge',
     meals: 'Breakfast, Lunch & Dinner',
@@ -103,9 +92,9 @@ const itinerary = [
   {
     day: 'Day 7',
     title: 'Full Safari Adventure in Amboseli',
-    description: [
-      'A full day dedicated to discovering the unique beauty of Amboseli. Enjoy an exciting game drive with a picnic lunch at the famous Observation Hill, which offers sweeping panoramic views of the plains, swamps, and wildlife below, with Kilimanjaro often visible in the background.',
-      "This is one of Africa's finest locations for wildlife photography. Return to Amboseli Sopa Lodge for dinner and a peaceful overnight.",
+    paragraphs: [
+      'Spend a full day exploring Amboseli. Enjoy a game drive with a picnic lunch at Observation Hill, which offers views of the plains, swamps, and wildlife, with Kilimanjaro often visible in the background.',
+      'Return to Amboseli Sopa Lodge for dinner and overnight.',
     ],
     accommodation: 'Amboseli Sopa Lodge',
     meals: 'Breakfast, Lunch & Dinner',
@@ -113,20 +102,19 @@ const itinerary = [
   {
     day: 'Day 8',
     title: 'From the Savannah to the White Sands of Diani Beach',
-    description: [
-      'After breakfast, transfer to the airstrip for your domestic flight to Ukunda, the gateway to Diani Beach. Upon arrival, check into PrideInn Diani Hotel and enjoy lunch before spending the afternoon at leisure.',
-      "Take a leisurely walk along Diani's award-winning white sandy beach, where swaying palm trees, turquoise waters, and gentle ocean breezes create the perfect tropical contrast to the safari. Dinner and overnight at the hotel.",
-      'The domestic flight from Amboseli to Diani, via Nairobi where applicable, is included in the package.',
+    paragraphs: [
+      'After breakfast, transfer to the airstrip for your domestic flight to Ukunda, the gateway to Diani Beach. On arrival, check into PrideInn Diani Hotel and enjoy lunch before spending the afternoon at leisure.',
+      "Take a walk along Diani's white sandy beach before dinner and overnight at the hotel.",
     ],
     accommodation: 'PrideInn Diani Hotel',
     meals: 'Breakfast, Lunch & Dinner',
+    note: 'Domestic flight from Amboseli to Diani, via Nairobi where applicable, is included.',
   },
   {
     day: 'Day 9',
     title: 'Leisure and Optional Ocean Adventures',
-    description: [
-      'This day is entirely yours. Relax on the pristine beach, soak up the tropical sunshine, or choose from optional activities including scuba diving, snorkelling, deep-sea fishing, kite surfing, or a traditional dhow cruise.',
-      'Whether you seek adventure or complete rest, Diani Beach offers the perfect setting to conclude your Kenyan journey.',
+    paragraphs: [
+      'This day is at leisure. Relax on the beach or choose from optional activities including scuba diving, snorkelling, deep-sea fishing, kite surfing, or a traditional dhow cruise.',
     ],
     accommodation: 'PrideInn Diani Hotel',
     meals: 'Breakfast, Lunch & Dinner',
@@ -134,48 +122,21 @@ const itinerary = [
   {
     day: 'Day 10',
     title: 'Nairobi City Experience & Farewell Kenya',
-    description: [
-      "After breakfast, we head to the airport for your return flight to Nairobi. On arrival, visit the famous Giraffe Centre where you can feed and interact with the endangered Rothschild's giraffes while learning about Kenya's conservation efforts.",
-      'Subject to your departure schedule, you may choose to enjoy an optional farewell dinner at the world-famous Carnivore Restaurant before being transported to Jomo Kenyatta International Airport for your international departure.',
+    paragraphs: [
+      "After breakfast, travel to the airport for your return flight to Nairobi. On arrival, visit the Giraffe Centre, where you can learn about Rothschild's giraffes.",
+      'Subject to your departure schedule, you may choose an optional farewell dinner at Carnivore Restaurant before transfer to Jomo Kenyatta International Airport.',
     ],
     accommodation: null,
-    meals: 'Breakfast. Lunch & Dinner subject to departure schedule',
-  },
-]
-
-const accommodation = [
-  {
-    destination: 'Maasai Mara',
-    nights: 'Nights 1-2',
-    lodge: 'PrideInn Mara Camp',
-  },
-  {
-    destination: 'Lake Nakuru',
-    nights: 'Nights 3-4',
-    lodge: 'Lake Nakuru Sopa Lodge',
-  },
-  {
-    destination: 'Lake Naivasha',
-    nights: 'Night 5',
-    lodge: 'Lake Naivasha Sopa Lodge',
-  },
-  {
-    destination: 'Amboseli',
-    nights: 'Nights 6-7',
-    lodge: 'Amboseli Sopa Lodge',
-  },
-  {
-    destination: 'Diani Beach',
-    nights: 'Nights 8-9',
-    lodge: 'PrideInn Diani Hotel',
+    meals: 'Breakfast',
+    note: 'Lunch and dinner are subject to the departure schedule.',
   },
 ]
 
 const included = [
   'Meet and greet upon arrival at Jomo Kenyatta International Airport',
-  'Full board accommodation throughout with breakfast, lunch, and dinner daily',
+  'Full board accommodation throughout',
   'Transport in a 4x4 safari jeep with pop-up roof for game viewing and photography',
-  'Professional, English-speaking safari driver-guide throughout',
+  'Professional English-speaking safari driver-guide throughout',
   'All scheduled game drives as per the itinerary',
   'Domestic flight from Amboseli to Diani Beach via Nairobi where applicable',
   'Boat ride at Lake Naivasha and guided walking safari at Crescent Island',
@@ -189,17 +150,17 @@ const excluded = [
   'Visa fees where applicable',
   'Travel and medical insurance',
   'Optional excursions and activities',
-  'Maasai Village visit',
+  'Maasai village visit',
   'Personal expenses such as drinks, laundry, and souvenirs',
   'Gratuities for driver-guide and hotel staff',
-  'Any item not listed under "What\'s Included"',
+  'Any item not listed under What’s Included',
 ]
 
 const faqs = [
   {
     question: 'Is the domestic flight to Diani Beach included?',
     answer:
-      'Yes. The domestic flight from Amboseli to Diani Beach, via Nairobi where applicable, is fully included in the package. No separate booking is required.',
+      'Yes. The domestic flight from Amboseli to Diani Beach, via Nairobi where applicable, is included in the package. No separate booking is required.',
   },
   {
     question: 'Can I visit a Maasai village during this safari?',
@@ -209,7 +170,7 @@ const faqs = [
   {
     question: 'What is the best time to do this safari?',
     answer:
-      'July to October is peak season, covering the Great Migration in the Mara and excellent dry-season conditions across all parks. January to February is also excellent. See each individual destination page for destination-specific guidance.',
+      'July to October is peak season covering the Great Migration in the Mara and excellent dry season conditions across the parks. January to February is also excellent.',
   },
   {
     question: 'Can this package be customised?',
@@ -223,224 +184,192 @@ const faqs = [
   },
 ]
 
-const destinationLinks = [
-  {
-    label: 'Maasai Mara Safari Tours',
-    href: '/destinations/maasai-mara-safari-tours',
-  },
-  {
-    label: 'Lake Nakuru Safari Tours',
-    href: '/destinations/lake-nakuru-safari-tours',
-  },
-  {
-    label: 'Lake Naivasha Safari Tours',
-    href: '/destinations/lake-naivasha-safari-tours',
-  },
-  {
-    label: 'Amboseli Safari Tours',
-    href: '/destinations/amboseli-safari-tours',
-  },
-  {
-    label: 'Diani Beach Safari Tours',
-    href: '/destinations/diani-beach-safari-tours',
-  },
-]
-
 export default function TenDaySafariPage() {
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[78svh] items-center overflow-hidden px-4 pb-16 pt-28 sm:min-h-[82svh] sm:pt-32 md:pb-20">
+      <section className="relative flex min-h-[72svh] items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:min-h-[78svh] sm:pt-32">
         <Image
           src={BLOB_IMAGES.MAASAI_MARA}
-          alt="Maasai Mara wildlife on a 10-day Kenya safari"
+          alt="Kenya wildlife safari"
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.84)_0%,rgba(28,18,8,0.38)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,18,8,0.84)_0%,rgba(28,18,8,0.30)_100%)]" />
 
-        <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
-          <p className="mb-4 font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A] sm:text-sm">
             10 Days / 9 Nights
           </p>
 
-          <h1 className="mx-auto max-w-5xl font-playfair text-4xl font-bold leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-4 font-playfair text-4xl font-bold leading-[1.08] text-white sm:text-5xl md:text-6xl">
             10-Day Classic Kenya Wildlife Safari & Diani Beach Escape
           </h1>
+        </div>
+      </section>
 
-          <p className="mx-auto mt-6 max-w-3xl font-inter text-base leading-relaxed text-white/90 sm:text-lg md:text-xl">
-            This is Kenya in full. Ten days covering the country's greatest
-            wildlife parks followed by two nights on the Indian Ocean coast.
+      <section className="px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl space-y-5 font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
+          <p>
+            This is Kenya in full. Ten days covering major wildlife parks
+            followed by two nights on the Indian Ocean coast.
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="/safari-packages"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
-            >
-              View Pricing
-            </Link>
+          <p>
+            You begin in the Maasai Mara before moving through Lake Nakuru,
+            Lake Naivasha, and Amboseli. The journey concludes with a domestic
+            flight to Diani Beach.
+          </p>
 
-            <Link
-              href="/book"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
-            >
-              Book This Safari
-            </Link>
-          </div>
+          <p>
+            All parks, transfers, accommodation, and the domestic flight to the
+            coast are handled by Danil Scenic Tours.
+          </p>
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-4xl">
-          <div className="space-y-5 font-inter text-base leading-8 text-[#1C1208] sm:text-lg">
-            <p>
-              You begin in the Maasai Mara, Kenya's most iconic reserve, before
-              moving through the rhino sanctuary of Lake Nakuru, the
-              hippo-filled waters of Lake Naivasha, and the elephant herds of
-              Amboseli beneath Mount Kilimanjaro.
-            </p>
-
-            <p>
-              The journey concludes with a domestic flight to Diani Beach for
-              white sand, warm ocean, and complete relaxation.
-            </p>
-
-            <p>
-              Every detail is handled by Danil Scenic Tours. All parks,
-              transfers, accommodation, and the domestic flight to the coast
-              are covered in one package.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Safari at a Glance */}
-      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16">
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-center font-playfair text-3xl text-[#2A4A35] sm:text-4xl md:text-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             Safari at a Glance
           </h2>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl bg-white p-5">
-              <Clock
-                size={24}
-                className="mb-4 text-[#D4870A]"
-                aria-hidden="true"
-              />
-              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+              <CalendarDays size={26} className="text-[#D4870A]" />
+              <p className="mt-4 font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
                 Duration
               </p>
-              <p className="mt-2 font-inter text-[#1C1208]">
+              <p className="mt-1 font-inter font-semibold text-[#2A4A35]">
                 10 Days / 9 Nights
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-5">
-              <MapPin
-                size={24}
-                className="mb-4 text-[#D4870A]"
-                aria-hidden="true"
-              />
-              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
-                Route
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+              <MapPin size={26} className="text-[#D4870A]" />
+              <p className="mt-4 font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Destinations
               </p>
-              <p className="mt-2 font-inter leading-relaxed text-[#1C1208]">
+              <p className="mt-1 font-inter text-sm font-semibold leading-relaxed text-[#2A4A35]">
                 Maasai Mara → Lake Nakuru → Lake Naivasha → Amboseli → Diani
                 Beach
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-5">
-              <BedDouble
-                size={24}
-                className="mb-4 text-[#D4870A]"
-                aria-hidden="true"
-              />
-              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+              <Hotel size={26} className="text-[#D4870A]" />
+              <p className="mt-4 font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
                 Accommodation
               </p>
-              <p className="mt-2 font-inter leading-relaxed text-[#1C1208]">
-                PrideInn Mara Camp, Sopa Lodges, and PrideInn Diani Hotel
+              <p className="mt-1 font-inter text-sm font-semibold leading-relaxed text-[#2A4A35]">
+                PrideInn Mara Camp | Lake Nakuru Sopa Lodge | Lake Naivasha
+                Sopa Lodge | Amboseli Sopa Lodge | PrideInn Diani Hotel
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-5">
-              <Utensils
-                size={24}
-                className="mb-4 text-[#D4870A]"
-                aria-hidden="true"
-              />
-              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+              <UtensilsCrossed size={26} className="text-[#D4870A]" />
+              <p className="mt-4 font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
                 Meals
               </p>
-              <p className="mt-2 font-inter leading-relaxed text-[#1C1208]">
-                Full board throughout with breakfast, lunch, and dinner
+              <p className="mt-1 font-inter text-sm font-semibold leading-relaxed text-[#2A4A35]">
+                Full board throughout
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-5">
-              <Plane
-                size={24}
-                className="mb-4 text-[#D4870A]"
-                aria-hidden="true"
-              />
-              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
-                Transport
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+              <Car size={26} className="text-[#D4870A]" />
+              <p className="mt-4 font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Safari Transport
               </p>
-              <p className="mt-2 font-inter leading-relaxed text-[#1C1208]">
-                4x4 safari jeep with pop-up roof plus domestic flight from
-                Amboseli to Diani
+              <p className="mt-1 font-inter font-semibold text-[#2A4A35]">
+                4x4 safari jeep with pop-up roof
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-5">
-              <MapPin
-                size={24}
-                className="mb-4 text-[#D4870A]"
-                aria-hidden="true"
-              />
-              <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
-                Departure
+            <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+              <Plane size={26} className="text-[#D4870A]" />
+              <p className="mt-4 font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                Domestic Flight
               </p>
-              <p className="mt-2 font-inter leading-relaxed text-[#1C1208]">
-                Jomo Kenyatta International Airport, Nairobi
+              <p className="mt-1 font-inter text-sm font-semibold leading-relaxed text-[#2A4A35]">
+                Amboseli to Diani included
               </p>
             </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/safari-packages"
+              className="inline-flex min-h-11 items-center gap-2 font-montserrat text-sm font-semibold text-[#D4870A]"
+            >
+              View Full Pricing
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Day by Day */}
-      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+      <section className="px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
+            <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#D4870A]">
+              Your Journey
+            </p>
+
+            <h2 className="mt-3 font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
+              Safari Route Map
+            </h2>
+          </div>
+
+          <SafariMap
+            locations={[
+              'nairobi',
+              'maasai-mara',
+              'lake-nakuru',
+              'lake-naivasha',
+              'amboseli',
+              'diani-beach',
+            ]}
+            showRouteLine
+          />
+        </div>
+      </section>
+
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-10 text-center font-playfair text-3xl text-[#2A4A35] sm:text-4xl md:mb-14 md:text-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl md:text-5xl">
             Day-by-Day Itinerary
           </h2>
 
-          <div className="space-y-5">
-            {itinerary.map((item) => (
+          <div className="mt-10 space-y-5">
+            {itinerary.map((item, index) => (
               <article
                 key={item.day}
-                className="rounded-2xl border border-[#D4870A]/20 bg-white p-5 shadow-sm sm:p-6 md:p-8"
+                className="overflow-hidden rounded-2xl bg-white shadow-sm"
               >
-                <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.14em] text-[#D4870A]">
-                  {item.day}
-                </p>
+                <div className="flex items-center gap-4 bg-[#2A4A35] px-5 py-4 sm:px-6">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D4870A] font-montserrat font-bold text-[#1C1208]">
+                    {index + 1}
+                  </span>
 
-                <h3 className="mt-2 font-playfair text-2xl leading-tight text-[#2A4A35] sm:text-3xl">
-                  {item.title}
-                </h3>
+                  <div>
+                    <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                      {item.day}
+                    </p>
 
-                <div className="mt-5 space-y-4">
-                  {item.description.map((paragraph) => (
+                    <h3 className="mt-1 font-playfair text-xl font-bold leading-tight text-white sm:text-2xl">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="space-y-4 p-5 sm:p-6 md:p-8">
+                  {item.paragraphs.map((paragraph) => (
                     <p
                       key={paragraph}
                       className="font-inter text-sm leading-7 text-[#1C1208] sm:text-base"
@@ -448,31 +377,33 @@ export default function TenDaySafariPage() {
                       {paragraph}
                     </p>
                   ))}
-                </div>
 
-                <div className="mt-6 grid grid-cols-1 gap-3 border-t border-[#D4870A]/20 pt-5 sm:grid-cols-2">
-                  {item.accommodation && (
-                    <div className="flex items-start gap-2">
-                      <BedDouble
-                        size={18}
-                        className="mt-0.5 shrink-0 text-[#D4870A]"
-                        aria-hidden="true"
-                      />
-                      <p className="font-inter text-sm text-[#1C1208]">
-                        <strong>Accommodation:</strong> {item.accommodation}
+                  <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2">
+                    {item.accommodation && (
+                      <div className="rounded-xl bg-[#FAF4E8] p-4">
+                        <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                          Accommodation
+                        </p>
+                        <p className="mt-1 font-inter text-sm font-semibold text-[#2A4A35]">
+                          {item.accommodation}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="rounded-xl bg-[#FAF4E8] p-4">
+                      <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
+                        Meals
                       </p>
-                    </div>
-                  )}
+                      <p className="mt-1 font-inter text-sm font-semibold text-[#2A4A35]">
+                        {item.meals}
+                      </p>
 
-                  <div className="flex items-start gap-2">
-                    <Utensils
-                      size={18}
-                      className="mt-0.5 shrink-0 text-[#D4870A]"
-                      aria-hidden="true"
-                    />
-                    <p className="font-inter text-sm text-[#1C1208]">
-                      <strong>Meals:</strong> {item.meals}
-                    </p>
+                      {item.note && (
+                        <p className="mt-1 font-inter text-xs text-[#1C1208]/65">
+                          {item.note}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </article>
@@ -481,29 +412,32 @@ export default function TenDaySafariPage() {
         </div>
       </section>
 
-      {/* Accommodation Summary */}
-      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+      <section className="px-4 py-14 sm:py-16 md:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-10 text-center font-playfair text-3xl text-[#2A4A35] sm:text-4xl md:text-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl">
             Accommodation Summary
           </h2>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {accommodation.map((stay) => (
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              ['Maasai Mara', 'Nights 1-2', 'PrideInn Mara Camp'],
+              ['Lake Nakuru', 'Nights 3-4', 'Lake Nakuru Sopa Lodge'],
+              ['Lake Naivasha', 'Night 5', 'Lake Naivasha Sopa Lodge'],
+              ['Amboseli', 'Nights 6-7', 'Amboseli Sopa Lodge'],
+              ['Diani Beach', 'Nights 8-9', 'PrideInn Diani Hotel'],
+            ].map(([location, nights, lodge]) => (
               <article
-                key={stay.destination}
-                className="rounded-2xl bg-white p-5 text-center shadow-sm"
+                key={location}
+                className="rounded-2xl bg-white p-5 shadow-sm"
               >
                 <p className="font-montserrat text-xs font-semibold uppercase tracking-wide text-[#D4870A]">
-                  {stay.nights}
+                  {nights}
                 </p>
-
-                <h3 className="mt-2 font-playfair text-xl text-[#2A4A35]">
-                  {stay.destination}
+                <h3 className="mt-2 font-playfair text-xl font-bold text-[#2A4A35]">
+                  {location}
                 </h3>
-
                 <p className="mt-3 font-inter text-sm leading-relaxed text-[#1C1208]">
-                  {stay.lodge}
+                  {lodge}
                 </p>
               </article>
             ))}
@@ -511,12 +445,11 @@ export default function TenDaySafariPage() {
         </div>
       </section>
 
-      {/* Included / Not Included */}
-      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
+      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
-            <h2 className="font-playfair text-3xl text-[#2A4A35]">
-              What's Included
+            <h2 className="font-playfair text-3xl font-bold text-[#2A4A35]">
+              What&apos;s Included
             </h2>
 
             <ul className="mt-6 space-y-3">
@@ -528,7 +461,6 @@ export default function TenDaySafariPage() {
                   <CheckCircle2
                     size={18}
                     className="mt-0.5 shrink-0 text-[#D4870A]"
-                    aria-hidden="true"
                   />
                   <span>{item}</span>
                 </li>
@@ -537,8 +469,8 @@ export default function TenDaySafariPage() {
           </article>
 
           <article className="rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:p-8">
-            <h2 className="font-playfair text-3xl text-[#2A4A35]">
-              What's Not Included
+            <h2 className="font-playfair text-3xl font-bold text-[#2A4A35]">
+              What&apos;s Not Included
             </h2>
 
             <ul className="mt-6 space-y-3">
@@ -550,7 +482,6 @@ export default function TenDaySafariPage() {
                   <XCircle
                     size={18}
                     className="mt-0.5 shrink-0 text-[#D4870A]"
-                    aria-hidden="true"
                   />
                   <span>{item}</span>
                 </li>
@@ -560,182 +491,125 @@ export default function TenDaySafariPage() {
         </div>
       </section>
 
-      {/* Why Choose */}
-      <section className="relative overflow-hidden bg-[#2A4A35] px-4 py-14 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-playfair text-3xl text-[#FDF8F0] sm:text-4xl md:text-5xl">
+      <section className="px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl">
             Why Choose This Safari
           </h2>
 
-          <p className="mt-6 font-inter text-base leading-8 text-[#FDF8F0]/90 sm:text-lg">
-            This 10-day itinerary combines Kenya's most celebrated wildlife
-            destinations with the sandy beaches of the Indian Ocean, creating
-            the perfect balance of adventure and relaxation.
-          </p>
+          <div className="mt-8 rounded-2xl bg-white p-6 shadow-sm md:p-8">
+            <p className="font-inter text-base leading-8 text-[#1C1208]">
+              This 10-day itinerary combines Kenya&apos;s wildlife destinations
+              with the beaches of the Indian Ocean, balancing safari adventure
+              and coastal relaxation.
+            </p>
 
-          <p className="mt-4 font-inter text-base leading-8 text-[#FDF8F0]/80 sm:text-lg">
-            From Big Five encounters in the Masai Mara to Amboseli's elephants,
-            Lake Nakuru's rhino sanctuary, Lake Naivasha's serene landscape, and
-            the tropical setting of Diani Beach, this journey brings together
-            Kenya's wildlife and coast in one guided safari.
-          </p>
+            <p className="mt-4 font-inter text-base leading-8 text-[#1C1208]">
+              The journey includes the Masai Mara, Lake Nakuru, Lake Naivasha,
+              Amboseli, and Diani Beach in one guided itinerary.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-[#FAF4E8] px-4 py-14 sm:py-16 md:py-20">
+      <BookingTerms />
+
+      <section className="bg-[#1C3028] px-4 py-14 sm:py-16 md:py-20">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-10 text-center font-playfair text-3xl text-[#2A4A35] sm:text-4xl md:text-5xl">
+          <h2 className="text-center font-playfair text-3xl font-bold text-white sm:text-4xl">
             Frequently Asked Questions
           </h2>
 
-          <div className="space-y-4">
+          <div className="mt-10 space-y-3">
             {faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-xl border border-[#D4870A]/20 bg-white px-5 py-4"
+                className="overflow-hidden rounded-xl bg-[#2A4A35]"
               >
-                <summary className="cursor-pointer list-none font-montserrat text-sm font-semibold text-[#2A4A35] sm:text-base">
-                  <span className="flex items-center justify-between gap-4">
-                    {faq.question}
-
-                    <span
-                      className="text-xl text-[#D4870A] transition-transform group-open:rotate-45"
-                      aria-hidden="true"
-                    >
-                      +
-                    </span>
-                  </span>
+                <summary className="cursor-pointer px-5 py-4 font-montserrat text-sm font-semibold text-white sm:px-6 sm:text-base">
+                  {faq.question}
                 </summary>
 
-                <p className="mt-4 font-inter text-sm leading-relaxed text-[#1C1208] sm:text-base">
-                  {faq.answer}
-                </p>
+                <div className="border-t border-white/10 px-5 py-4 sm:px-6">
+                  <p className="font-inter text-sm leading-relaxed text-white/85">
+                    {faq.answer}
+                  </p>
+                </div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Destination Links */}
-      <section className="bg-[#F2E8D5] px-4 py-14 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-playfair text-3xl text-[#2A4A35] sm:text-4xl md:text-5xl">
+      <section className="px-4 py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl text-center">
+          <h2 className="font-playfair text-3xl font-bold text-[#2A4A35] sm:text-4xl">
             Explore Each Destination in Detail
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-center font-inter text-base leading-relaxed text-[#1C1208]">
-            Read the full itinerary, wildlife guide, best time to visit, and
-            FAQs for each destination included in this package.
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {destinationLinks.map((link) => (
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              ['Maasai Mara', '/destinations/maasai-mara-safari-tours'],
+              ['Lake Nakuru', '/destinations/lake-nakuru-safari-tours'],
+              ['Lake Naivasha', '/destinations/lake-naivasha-safari-tours'],
+              ['Amboseli', '/destinations/amboseli-safari-tours'],
+              ['Diani Beach', '/destinations/diani-beach-safari-tours'],
+            ].map(([name, href]) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className="flex min-h-12 items-center justify-between rounded-xl bg-white px-5 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:text-[#D4870A]"
+                key={href}
+                href={href}
+                className="flex min-h-14 items-center justify-between gap-3 rounded-xl bg-white px-4 py-4 font-montserrat text-sm font-semibold text-[#2A4A35] shadow-sm"
               >
-                {link.label}
-                <ArrowRight
-                  size={16}
-                  className="shrink-0"
-                  aria-hidden="true"
-                />
+                {name}
+                <ArrowRight size={15} className="text-[#D4870A]" />
               </Link>
             ))}
           </div>
 
-          <div className="mt-10 border-t border-[#D4870A]/20 pt-8">
-            <h3 className="text-center font-playfair text-2xl text-[#2A4A35]">
+          <div className="mt-10 rounded-2xl bg-[#F2E8D5] p-5 sm:p-6">
+            <p className="font-montserrat text-sm font-semibold text-[#2A4A35]">
               Other Combination Safari Itineraries
-            </h3>
+            </p>
 
-            <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/safari-tours/5-day-amboseli-nakuru-masai-mara"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#D4870A] px-5 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:bg-[#D4870A] hover:text-[#1C1208]"
+                className="font-montserrat text-sm font-semibold text-[#D4870A]"
               >
                 5-Day Safari
-                <ArrowRight size={15} aria-hidden="true" />
               </Link>
 
               <Link
-                href="/safari-tours/7-day-budget-kenya-safari"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#D4870A] px-5 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:bg-[#D4870A] hover:text-[#1C1208]"
+                href="/safari-tours/7-days-6-nights-maasai-mara-lake-nakuru-amboseli"
+                className="font-montserrat text-sm font-semibold text-[#D4870A]"
               >
-                7-Day Budget Safari
-                <ArrowRight size={15} aria-hidden="true" />
+                7 Days / 6 Nights Safari
               </Link>
 
               <Link
-                href="/safari-tours"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#D4870A] px-5 py-3 font-montserrat text-sm font-semibold text-[#2A4A35] transition-colors hover:bg-[#D4870A] hover:text-[#1C1208]"
+                href="/safari-tours/13-day-kenya-safari-coastal-escape"
+                className="font-montserrat text-sm font-semibold text-[#D4870A]"
               >
-                Kenya Safari Guide
-                <ArrowRight size={15} aria-hidden="true" />
+                13-Day Safari & Coastal Escape
               </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Booking CTA */}
-      <section className="relative overflow-hidden px-4 py-20 sm:py-24 md:py-32">
-        <Image
-          src={BLOB_IMAGES.DIANI_BEACH}
-          alt="Diani Beach on the Kenya coast"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-
-        <div className="absolute inset-0 bg-[rgba(28,18,8,0.72)]" />
-
-        <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <h2 className="font-playfair text-3xl text-white sm:text-4xl md:text-5xl">
-            Interested in This Safari?
-          </h2>
-
-          <p className="mt-5 font-inter text-base leading-relaxed text-white/90 sm:text-lg">
-            This package is available for both private and group bookings.
-            Contact us to check availability, confirm your dates, and discuss
-            accommodation preferences.
-          </p>
-
-          <p className="mt-3 font-inter text-sm leading-relaxed text-white/80 sm:text-base">
-            Send us your travel dates, group size, and any specific
-            preferences. We respond within 24 hours.
-          </p>
-
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/safari-packages"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208] transition-shadow hover:shadow-lg sm:text-base"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#2A4A35] px-6 py-3 font-montserrat text-sm font-semibold text-white"
             >
               View Pricing
             </Link>
 
             <Link
               href="/book"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2A4A35] sm:text-base"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#D4870A] px-6 py-3 font-montserrat text-sm font-semibold text-[#1C1208]"
             >
-              Book Online
-            </Link>
-
-            <Link
-              href="https://wa.me/254722919249"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-[#25D366] px-6 py-3 font-montserrat text-sm font-semibold text-white transition-colors hover:bg-[#25D366] sm:text-base"
-            >
-              WhatsApp Us
+              Book This Safari
             </Link>
           </div>
-
-          <p className="mt-6 font-inter text-sm text-white/75">
-            safari@danilscenictours.co.ke
-          </p>
         </div>
       </section>
 
