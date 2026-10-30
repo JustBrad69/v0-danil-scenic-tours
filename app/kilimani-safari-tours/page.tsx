@@ -180,7 +180,7 @@ export default function KilimaniSafariTours() {
         <div className="prose prose-lg max-w-none">
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Safari Tours from Kilimani, Nairobi — Kenya Wildlife Experiences with Home Pickup
+            Safari Tours from Kilimani, Nairobi - Kenya Wildlife Experiences with Home Pickup
           </h1>
 
           <p className="text-lg text-gray-700 mb-6">
@@ -228,42 +228,42 @@ export default function KilimaniSafariTours() {
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Nairobi City Tour — 1 Day
+            Nairobi City Tour - 1 Day
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             The ideal choice for Kilimani residents who want a safari experience without an overnight commitment. We collect you from your Kilimani address and head straight to Nairobi National Park where lions, rhinos, buffaloes, and giraffes with the city skyline as the backdrop. Continue to the Giraffe Centre, Kazuri Beads, and lunch at Karen Blixen Restaurant. You are back home in Kilimani by early evening. From USD 260 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Lake Naivasha Safari — 2 Days / 1 Night
+            Lake Naivasha Safari - 2 Days / 1 Night
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             A perfect Kilimani weekend escape. Two hours northwest, Lake Naivasha offers a hippo boat ride, a walking safari among giraffes and zebras on Crescent Island, and an afternoon game drive through Hell's Gate National Park. From USD 948 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Amboseli Safari — 4 Days / 3 Nights
+            Amboseli Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's most visually dramatic safari, elephant herds moving across the open plains with Mount Kilimanjaro rising behind them. From USD 890 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Maasai Mara Safari — 4 Days / 3 Nights
+            Maasai Mara Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's most celebrated reserve and the home of the Great Wildebeest Migration between July and October. Big Five game drives across open savannah, dramatic river crossings, and three full nights in the Mara. From USD 830 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Tsavo Safari — 3 Days / 2 Nights
+            Tsavo Safari - 3 Days / 2 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's largest and wildest park. Red elephants, volcanic landscapes, and vast open terrain that feels genuinely remote. The Tsavo route south from Kilimani is straightforward via Mombasa Road. From USD 550 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Multi-Destination Combinations — 5 to 13 Days
+            Multi-Destination Combinations - 5 to 13 Days
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             For a more comprehensive Kenya experience, our combination packages link multiple parks and destinations in one guided journey. The 5-day Amboseli, Lake Nakuru and Masai Mara combination, the 10-day Classic with a Diani Beach finish, and the 13-day Safari and Coastal Escape are all available with Kilimani pickup on Day 1.
@@ -272,7 +272,7 @@ export default function KilimaniSafariTours() {
           <p className="text-lg text-gray-700 mb-6">
             View all packages and pricing: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
             <br />
-            Multi-destination combinations available — 5 days to 13 days across Kenya.
+            Multi-destination combinations available - 5 days to 13 days across Kenya.
           </p>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
@@ -280,14 +280,14 @@ export default function KilimaniSafariTours() {
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 mb-8">
             <li>Home pickup from Kilimani, Hurlingham, Kileleshwa, and Lavington</li>
-            <li>Professional, experienced guides — knowledgeable, punctual, and guest-focused</li>
-            <li>Full board on all packages — breakfast, lunch, and dinner included throughout</li>
+            <li>Professional, experienced guides - knowledgeable, punctual, and guest-focused</li>
+            <li>Full board on all packages - breakfast, lunch, and dinner included throughout</li>
             <li>Private 4x4 Land Cruiser with pop-up roof on every safari</li>
             <li>All park and conservancy entry fees pre-covered</li>
             <li>Private safari options for couples, families, and visiting guests</li>
             <li>Flexible itineraries for busy Nairobi professional schedules</li>
             <li>M-Pesa, bank transfer, and card payments accepted</li>
-            <li>Responsive — WhatsApp reply within 24 hours, often same day</li>
+            <li>Responsive - WhatsApp reply within 24 hours, often same day</li>
           </ul>
 
           <div className="bg-white p-8 rounded-lg shadow-sm my-12 border border-gray-100">
@@ -309,7 +309,7 @@ export default function KilimaniSafariTours() {
           </div>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
-            Frequently Asked Questions — Safari Tours from Kilimani
+            Frequently Asked Questions - Safari Tours from Kilimani
           </h2>
 
           <div className="space-y-6">
@@ -361,20 +361,12 @@ export default function KilimaniSafariTours() {
             Send us a WhatsApp message with your preferred safari, your travel dates, and your group size. We respond within 24 hours with availability and a confirmed quote. For urgent bookings, call us directly on <a href="tel:+254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>.
           </p>
 
-          <div className="space-y-3 text-lg text-gray-700 mb-12">
-            <p>
-              → WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>
-            </p>
-            <p>
-              → Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a>
-            </p>
-            <p>
-              → Visit Us: Northern Bypass Rd, Kahawa West, Nairobi
-            </p>
-            <p>
-              → View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
-            </p>
-          </div>
+          <ul className="list-disc pl-6 space-y-3 text-lg text-gray-700 mb-12">
+            <li>WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a></li>
+            <li>Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a></li>
+            <li>Visit Us: Northern Bypass Rd, Kahawa West, Nairobi</li>
+            <li>View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link></li>
+          </ul>
 
           <div className="mt-16 pt-8 border-t border-gray-200">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Related Pages</h3>
