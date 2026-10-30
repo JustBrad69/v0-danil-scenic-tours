@@ -341,6 +341,44 @@ export default function SafariToursPage() {
               </article>
             ))}
           </div>
+
+          {/* Areas We Serve Dropdown */}
+          <div className="mt-16 w-full max-w-2xl mx-auto">
+            <details className="group rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-playfair text-2xl font-bold text-[#2A4A35] transition-colors hover:text-[#D4870A]">
+                Areas we serve
+                <span className="text-[#2A4A35] transition-transform duration-300 group-open:rotate-180">
+                  <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              
+              <div className="mt-6 flex flex-col space-y-4 border-t border-black/5 pt-6">
+                <Link href="/kahawa-west-safari-tours" className="flex items-center justify-between font-montserrat text-sm font-semibold text-[#D4870A] transition-colors hover:text-[#2A4A35]">
+                  Safari Tours in Kahawa West
+                  <ArrowRight size={16} />
+                </Link>
+                <Link href="/karen-safari-tours" className="flex items-center justify-between font-montserrat text-sm font-semibold text-[#D4870A] transition-colors hover:text-[#2A4A35]">
+                  Safari Tours from Karen
+                  <ArrowRight size={16} />
+                </Link>
+                <Link href="/kilimani-safari-tours" className="flex items-center justify-between font-montserrat text-sm font-semibold text-[#D4870A] transition-colors hover:text-[#2A4A35]">
+                  Safari Tours from Kilimani
+                  <ArrowRight size={16} />
+                </Link>
+                <Link href="/nairobi-cbd-safari-tours" className="flex items-center justify-between font-montserrat text-sm font-semibold text-[#D4870A] transition-colors hover:text-[#2A4A35]">
+                  Safari Tours from Nairobi CBD
+                  <ArrowRight size={16} />
+                </Link>
+                <Link href="/westlands-safari-tours" className="flex items-center justify-between font-montserrat text-sm font-semibold text-[#D4870A] transition-colors hover:text-[#2A4A35]">
+                  Safari Tours from Westlands
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </details>
+          </div>
+
         </div>
       </section>
 
