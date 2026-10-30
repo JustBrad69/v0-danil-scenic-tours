@@ -116,28 +116,28 @@ const serviceSchema = {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Nairobi City Tour — 1 Day"
+          "name": "Nairobi City Tour - 1 Day"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Maasai Mara Safari — 4 Days / 3 Nights"
+          "name": "Maasai Mara Safari - 4 Days / 3 Nights"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Amboseli Safari — 4 Days / 3 Nights"
+          "name": "Amboseli Safari - 4 Days / 3 Nights"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Lake Naivasha Safari — 2 Days / 1 Night"
+          "name": "Lake Naivasha Safari - 2 Days / 1 Night"
         }
       }
     ]
@@ -166,7 +166,7 @@ export default function KahawaWestSafariTours() {
         <div className="prose prose-lg max-w-none">
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Safari Tours in Kahawa West, Nairobi — Your Local Wildlife Adventure Starts Here
+            Safari Tours in Kahawa West, Nairobi - Your Local Wildlife Adventure Starts Here
           </h1>
 
           <p className="text-lg text-gray-700 mb-8">
@@ -174,7 +174,7 @@ export default function KahawaWestSafariTours() {
           </p>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
-            Kahawa West's Own Safari Operator — Right Here on the Northern Bypass
+            Kahawa West's Own Safari Operator - Right Here on the Northern Bypass
           </h2>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
@@ -199,28 +199,28 @@ export default function KahawaWestSafariTours() {
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Nairobi City Tour — 1 Day
+            Nairobi City Tour - 1 Day
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             A full-day Nairobi experience combining a National Park game drive, the Giraffe Centre, Kazuri Beads, and lunch at Karen Blixen Restaurant. Back home the same evening. From USD 260 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Maasai Mara Safari — 4 Days / 3 Nights
+            Maasai Mara Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's most iconic reserve. Big Five game drives, open savannah, and the Great Wildebeest Migration between July and October. From USD 830 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Amboseli Safari — 4 Days / 3 Nights
+            Amboseli Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Elephant herds against the backdrop of Mount Kilimanjaro. One of Africa's most photographed wildlife destinations, 4 hours south of Nairobi. From USD 890 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Lake Naivasha Safari — 2 Days / 1 Night
+            Lake Naivasha Safari - 2 Days / 1 Night
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             A hippo boat ride, a walking safari on Crescent Island, and a game drive through Hell's Gate, all in two days. From USD 948 per person.
@@ -314,20 +314,12 @@ export default function KahawaWestSafariTours() {
             We are in Kahawa West and we are ready to take you on safari. Send us a WhatsApp with your preferred safari, travel dates, and group size. We respond within 24 hours.
           </p>
 
-          <div className="space-y-3 text-lg text-gray-700 mb-12">
-            <p>
-              → WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>
-            </p>
-            <p>
-              → Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a>
-            </p>
-            <p>
-              → Visit Us: Northern Bypass Rd, Kahawa West, Nairobi
-            </p>
-            <p>
-              → View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
-            </p>
-          </div>
+          <ul className="list-disc pl-6 space-y-3 text-lg text-gray-700 mb-12">
+            <li>WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a></li>
+            <li>Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a></li>
+            <li>Visit Us: Northern Bypass Rd, Kahawa West, Nairobi</li>
+            <li>View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link></li>
+          </ul>
 
           <div className="mt-16 pt-8 border-t border-gray-200">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Related Pages</h3>
