@@ -180,7 +180,7 @@ export default function KarenSafariTours() {
         <div className="prose prose-lg max-w-none">
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Safari Tours from Karen, Nairobi — Premium Kenya Wildlife Experiences with Home Pickup
+            Safari Tours from Karen, Nairobi - Premium Kenya Wildlife Experiences with Home Pickup
           </h1>
 
           <p className="text-lg text-gray-700 mb-6">
@@ -225,35 +225,35 @@ export default function KarenSafariTours() {
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Nairobi City Tour — 1 Day
+            Nairobi City Tour - 1 Day
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             The most Karen-adjacent safari on our list. We collect you from your home and drive straight to Nairobi National Park which borders your suburb for a morning game drive. Lions, rhinos, giraffes, and buffaloes with the Nairobi skyline behind them. Continue to the Giraffe Centre on Koitobos Road (a 10-minute drive from central Karen), then Kazuri Beads and lunch at Karen Blixen Restaurant. You are home by early evening. From USD 260 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Amboseli Safari — 4 Days / 3 Nights
+            Amboseli Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Karen's most natural safari extension. Drive south from your suburb through Athi River and into Amboseli National Park Africa's finest destination for elephant photography, with Kilimanjaro as your permanent backdrop. Karen residents consistently rate Amboseli as their favourite park for its proximity and visual impact. From USD 890 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Maasai Mara Safari — 4 Days / 3 Nights
+            Maasai Mara Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's legendary reserve, four hours west of Karen via Narok. Big Five game drives, the world-famous Great Wildebeest Migration between July and October, and sweeping savannah landscapes that feel a world apart from Nairobi life. From USD 830 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Tsavo Safari — 3 Days / 2 Nights
+            Tsavo Safari - 3 Days / 2 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's largest wilderness. Tsavo East and West together form a vast, dramatic landscape of red dust plains, volcanic geography, and large elephant herds. From Karen, the route south toward Tsavo is direct and well-paved. From USD 550 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Lake Naivasha Safari — 2 Days / 1 Night
+            Lake Naivasha Safari - 2 Days / 1 Night
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             A perfect short escape for Karen residents. Two hours north, Lake Naivasha offers a hippo boat safari, a walking experience at Crescent Island, and an afternoon game drive through Hell's Gate. From USD 948 per person.
@@ -262,23 +262,23 @@ export default function KarenSafariTours() {
           <p className="text-lg text-gray-700 mb-6">
             View all packages and pricing: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
             <br />
-            Multi-destination combinations available — 5 days to 13 days across Kenya.
+            Multi-destination combinations available - 5 days to 13 days across Kenya.
           </p>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
             Why Karen Residents Choose Danil Scenic Tours
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 mb-8">
-            <li>Home pickup from Karen and Langata — your safari starts at your gate</li>
+            <li>Home pickup from Karen and Langata - your safari starts at your gate</li>
             <li>Professional, experienced guides with deep knowledge of every destination</li>
-            <li>Full board on all packages — no meal planning, no unexpected restaurant costs</li>
-            <li>Private 4x4 Land Cruiser with pop-up roof — quality game viewing from the right vehicle</li>
-            <li>All park and conservancy entry fees included — no surprises at the gate</li>
+            <li>Full board on all packages - no meal planning, no unexpected restaurant costs</li>
+            <li>Private 4x4 Land Cruiser with pop-up roof - quality game viewing from the right vehicle</li>
+            <li>All park and conservancy entry fees included - no surprises at the gate</li>
             <li>Private safari options for couples, families, and visiting international guests</li>
-            <li>Group rates for 7 or more — families and friend groups welcome</li>
+            <li>Group rates for 7 or more - families and friend groups welcome</li>
             <li>Flexible itineraries for expat and diplomatic schedules</li>
             <li>M-Pesa, bank transfer, and card payments accepted</li>
-            <li>Responsive — WhatsApp us and receive a response the same day</li>
+            <li>Responsive - WhatsApp us and receive a response the same day</li>
           </ul>
 
           <div className="bg-white p-8 rounded-lg shadow-sm my-12 border border-gray-100">
@@ -302,7 +302,7 @@ export default function KarenSafariTours() {
           </div>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
-            Frequently Asked Questions — Safari Tours from Karen
+            Frequently Asked Questions - Safari Tours from Karen
           </h2>
 
           <div className="space-y-6">
@@ -354,20 +354,12 @@ export default function KarenSafariTours() {
             WhatsApp us with your preferred safari, your travel dates, and your group size. We respond within 24 hours with availability and a confirmed quote. For urgent requests or last-minute availability, call us directly on <a href="tel:+254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>.
           </p>
 
-          <div className="space-y-3 text-lg text-gray-700 mb-12">
-            <p>
-              → WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>
-            </p>
-            <p>
-              → Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a>
-            </p>
-            <p>
-              → Visit Us: Northern Bypass Rd, Kahawa West, Nairobi
-            </p>
-            <p>
-              → View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
-            </p>
-          </div>
+          <ul className="list-disc pl-6 space-y-3 text-lg text-gray-700 mb-12">
+            <li>WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a></li>
+            <li>Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a></li>
+            <li>Visit Us: Northern Bypass Rd, Kahawa West, Nairobi</li>
+            <li>View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link></li>
+          </ul>
 
           <div className="mt-16 pt-8 border-t border-gray-200">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Related Pages</h3>
