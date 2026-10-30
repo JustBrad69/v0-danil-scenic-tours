@@ -5,7 +5,7 @@ import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: 'Safari Tours from Nairobi CBD | Hotel Pickup Included | Danil Scenic Tours',
-  description: 'Planning a Kenya safari from Nairobi CBD? Danil Scenic Tours offers hotel & office pickup across the CBD — Maasai Mara, Amboseli, and more. Call +254 722 919 249.',
+  description: 'Planning a Kenya safari from Nairobi CBD? Danil Scenic Tours offers hotel & office pickup across the CBD - Maasai Mara, Amboseli, and more. Call +254 722 919 249.',
 }
 
 const localBusinessSchema = {
@@ -180,11 +180,11 @@ export default function NairobiCBDSafariTours() {
         <div className="prose prose-lg max-w-none">
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Safari Tours from Nairobi CBD — Hotel Pickup, Expert Guides & Kenya's Best Wildlife Parks
+            Safari Tours from Nairobi CBD - Hotel Pickup, Expert Guides & Kenya's Best Wildlife Parks
           </h1>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
-            Your Safari Starts at Your CBD Hotel or Office — No Logistics on Your Part
+            Your Safari Starts at Your CBD Hotel or Office - No Logistics on Your Part
           </h2>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
@@ -215,35 +215,35 @@ export default function NairobiCBDSafariTours() {
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Nairobi City Tour — 1 Day
+            Nairobi City Tour - 1 Day
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             The most accessible safari from the CBD. We get you from your hotel, take you through Nairobi National Park for a morning game drive with lions, rhinos, and giraffes against the city skyline, then continue to the Giraffe Centre and Kazuri Beads. Lunch at Karen Blixen Restaurant, and you are back at your CBD hotel by evening. From USD 260 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Lake Naivasha Safari — 2 Days / 1 Night
+            Lake Naivasha Safari - 2 Days / 1 Night
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             A perfect weekend escape from the CBD. Two hours from Nairobi, Lake Naivasha offers a hippo boat ride, a walking safari at Crescent Island, and an afternoon game drive through Hell's Gate National Park. You return to the CBD on Day 2. From USD 948 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Ol Pejeta Conservancy Safari — 2 Days / 1 Night
+            Ol Pejeta Conservancy Safari - 2 Days / 1 Night
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Drive north through Kenya's central highlands to Ol Pejeta, home to the Big Five and the last northern white rhinos on earth. Overnight at Maisha Sweetwaters Camp, return to the CBD on Day 2. From USD 920 per person.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Maasai Mara Safari — 4 Days / 3 Nights
+            Maasai Mara Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Kenya's signature safari experience. Depart from your CBD hotel on Day 1, arrive in the Mara for an afternoon game drive, and spend three full days tracking lions, elephants, leopards, and between July and October the spectacular Great Wildebeest Migration. From USD 830 per person (group rate).
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Amboseli Safari — 4 Days / 3 Nights
+            Amboseli Safari - 4 Days / 3 Nights
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             Mount Kilimanjaro as your backdrop, massive elephant herds as your foreground. Amboseli is one of Africa's most photographed safari destinations and just 4 hours south of Nairobi. From USD 890 per person (group rate).
@@ -252,23 +252,23 @@ export default function NairobiCBDSafariTours() {
           <p className="text-lg text-gray-700 mb-6">
             View all packages and pricing: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
             <br />
-            Multi-destination combinations also available — from 5 to 13 days.
+            Multi-destination combinations also available - from 5 to 13 days.
           </p>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
             Why CBD Clients Choose Danil Scenic Tours
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 mb-8">
-            <li>Direct hotel and office pickup from anywhere in Nairobi CBD — no separate transfer required</li>
+            <li>Direct hotel and office pickup from anywhere in Nairobi CBD - no separate transfer required</li>
             <li>Professional, punctual guides who understand the needs of business and international clients</li>
-            <li>Full board on all packages — breakfast, lunch, and dinner included throughout</li>
+            <li>Full board on all packages - breakfast, lunch, and dinner included throughout</li>
             <li>Private 4x4 Land Cruiser with pop-up roof on every safari</li>
-            <li>All park entry fees pre-covered — no cash required at park gates</li>
-            <li>Flexible booking — WhatsApp us today and depart as early as tomorrow morning for select packages</li>
+            <li>All park entry fees pre-covered - no cash required at park gates</li>
+            <li>Flexible booking - WhatsApp us today and depart as early as tomorrow morning for select packages</li>
             <li>Solo traveller rates available on all major packages</li>
             <li>M-Pesa, bank transfer, and card payments accepted</li>
             <li>Registered, verified safari operator with a physical office in Nairobi</li>
-            <li>Responsive communication — we answer within 24 hours, often same-day</li>
+            <li>Responsive communication - we answer within 24 hours, often same-day</li>
           </ul>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
@@ -311,7 +311,7 @@ export default function NairobiCBDSafariTours() {
           </div>
 
           <h2 className="text-3xl font-semibold text-gray-900 mt-12 mb-6">
-            Frequently Asked Questions — Safari Tours from Nairobi CBD
+            Frequently Asked Questions - Safari Tours from Nairobi CBD
           </h2>
 
           <div className="space-y-6">
@@ -363,20 +363,12 @@ export default function NairobiCBDSafariTours() {
             Send us a WhatsApp message with your hotel or office location, your preferred dates, and the type of safari you have in mind. We respond within 24 hours usually the same day. For urgent bookings, call us directly on <a href="tel:+254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>.
           </p>
 
-          <div className="space-y-3 text-lg text-gray-700 mb-12">
-            <p>
-              → WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a>
-            </p>
-            <p>
-              → Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a>
-            </p>
-            <p>
-              → Book Online: <Link href="/book" className="text-blue-600 hover:underline">danilscenictours.co.ke/book</Link>
-            </p>
-            <p>
-              → View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link>
-            </p>
-          </div>
+          <ul className="list-disc pl-6 space-y-3 text-lg text-gray-700 mb-12">
+            <li>WhatsApp: <a href="https://wa.me/254722919249" className="text-blue-600 hover:underline">+254 722 919 249</a></li>
+            <li>Email: <a href="mailto:safari@danilscenictours.co.ke" className="text-blue-600 hover:underline">safari@danilscenictours.co.ke</a></li>
+            <li>Book Online: <Link href="/book" className="text-blue-600 hover:underline">danilscenictours.co.ke/book</Link></li>
+            <li>View All Packages: <Link href="/safari-packages" className="text-blue-600 hover:underline">danilscenictours.co.ke/safari-packages</Link></li>
+          </ul>
 
           <p className="text-lg text-gray-700 italic mb-12">
             Staying in Nairobi CBD for just a few days? Our team can help you plan the right safari for your exact time window. WhatsApp us now and we will have a tailored recommendation ready within the hour.
